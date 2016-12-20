@@ -19,15 +19,15 @@
     <title>Lonely - Free bootstrap 3 one page template</title>
 
     <!-- CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="css/nivo-lightbox.css" rel="stylesheet" />
-	<link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
-	<link href="css/owl.carousel.css" rel="stylesheet" media="screen" />
-    <link href="css/owl.theme.css" rel="stylesheet" media="screen" />	
-	<link href="css/animate.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet">
-	<link href="color/default.css" rel="stylesheet">
+    <link href="<%=request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="<%=request.getContextPath() %>/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="<%=request.getContextPath() %>/css/nivo-lightbox.css" rel="stylesheet" />
+	<link href="<%=request.getContextPath() %>/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+	<link href="<%=request.getContextPath() %>/css/owl.carousel.css" rel="stylesheet" media="screen" />
+    <link href="<%=request.getContextPath() %>/css/owl.theme.css" rel="stylesheet" media="screen" />	
+	<link href="<%=request.getContextPath() %>/css/animate.css" rel="stylesheet" />
+    <link href="<%=request.getContextPath() %>/css/style.css" rel="stylesheet">
+	<link href="<%=request.getContextPath() %>/color/default.css" rel="stylesheet">
     <!-- =======================================================
         Theme Name: Lonely
         Theme URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
@@ -47,7 +47,7 @@
     <section id="intro" class="intro">
 	
 		<div class="slogan">
-			<a href="index.html"><img src="img/logo.png" alt="" /></a>
+			<a href="index.html"><img src="<%=request.getContextPath() %>/img/logo.png" alt="" /></a>
 		</div>
 		<div class="page-scroll">
 			<a href="#about">
@@ -111,18 +111,18 @@
 	</footer>
 
     <!-- Core JavaScript Files -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>	
-	<script src="js/jquery.sticky.js"></script>
-	<script src="js/jquery.scrollTo.js"></script>
-	<script src="js/stellar.js"></script>
-	<script src="js/wow.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/nivo-lightbox.min.js"></script>
+    <script src="<%=request.getContextPath() %>/js/jquery.min.js"></script>
+    <script src="<%=request.getContextPath() %>/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath() %>/js/jquery.easing.min.js"></script>	
+	<script src="<%=request.getContextPath() %>/js/jquery.sticky.js"></script>
+	<script src="<%=request.getContextPath() %>/js/jquery.scrollTo.js"></script>
+	<script src="<%=request.getContextPath() %>/js/stellar.js"></script>
+	<script src="<%=request.getContextPath() %>/js/wow.min.js"></script>
+	<script src="<%=request.getContextPath() %>/js/owl.carousel.min.js"></script>
+	<script src="<%=request.getContextPath() %>/js/nivo-lightbox.min.js"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="js/custom.js"></script>
-    <script src="contactform/contactform.js"></script>
+    <script src="<%=request.getContextPath() %>/js/custom.js"></script>
+    <script src="<%=request.getContextPath() %>/contactform/contactform.js"></script>
     
 </body>
 
