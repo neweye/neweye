@@ -1,4 +1,4 @@
-package com.board.dto;
+package com.neweye.dto;
 
 public class Board {
 	private int boardNum;

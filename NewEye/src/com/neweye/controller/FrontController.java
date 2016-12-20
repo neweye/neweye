@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.board.action.Action;
 import com.board.dao.BoardDao;
-import com.board.db.sqlconfig.IBatisDBConnector;
 import com.board.service.BoardService;
 import com.ibatis.sqlmap.client.SqlMapClient;
+import com.neweye.action.Action;
+import com.neweye.db.sqlconfig.IBatisDBConnector;
 
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.board.dao.BoardDao;
-import com.board.dto.Board;
+import com.neweye.dto.Board;
 
 public class BoardService {
 

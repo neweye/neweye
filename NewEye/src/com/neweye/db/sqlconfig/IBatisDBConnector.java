@@ -1,4 +1,4 @@
-package com.board.db.sqlconfig;
+package com.neweye.db.sqlconfig;
 
 import java.io.Reader;
 

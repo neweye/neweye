@@ -3,8 +3,8 @@ package com.neweye.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.board.dto.Board;
 import com.ibatis.sqlmap.client.SqlMapClient;
+import com.neweye.dto.Board;
 
 public class BoardDao{
 	private static BoardDao instance=new BoardDao();

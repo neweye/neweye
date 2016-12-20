@@ -8,8 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.board.dto.Board;
 import com.ibatis.sqlmap.client.SqlMapClient;
+import com.neweye.dto.Board;
 import com.neweye.dto.MemberVO;
 import com.neweye.jdbc.DataSource;
 import com.neweye.jdbc.connection.ConnectionProvider;
