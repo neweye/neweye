@@ -11,7 +11,61 @@
 
 </head>
 
+
+
+
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+
+<!-- ///////////Carousel 시작/////////// -->
+<div class="container">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="img/banner_file39.jpg" alt="Chania" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="img/banner_file40.jpg" alt="Chania" width="460" height="345">
+      </div>
+    
+      <div class="item">
+        <img src="img/banner_file42.jpg" alt="Flower" width="460" height="345">
+      </div>
+
+      <div class="item">
+        <img src="img/banner_file43.jpg" alt="Flower" width="460" height="345">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- ///////////Carousel 끝/////////// -->
+
+
+
+
 	<!-- Section: about -->
     <section id="about" class="home-section">
 		<div class="container">
@@ -63,7 +117,7 @@
 							<div class="icon">
 								<i class="fa fa-graduation-cap fa-5x"></i>
 							</div>
-						<span class="color-white">Bachelor of Design</span>
+						<span class="color-white">DSLR</span>
 						</div>
 					</div>
 					<div class="col-xs-6 col-sm-3 col-md-3">
@@ -71,7 +125,7 @@
 							<div class="icon">
 								<i class="fa fa-heart fa-5x"></i>
 							</div>
-						<span class="color-white">10x failed in love</span>
+						<span class="color-white">LENS</span>
 						</div>
 					</div>
 					<div class="col-xs-6 col-sm-3 col-md-3">
@@ -79,7 +133,7 @@
 							<div class="icon">
 								<i class="fa fa-plane fa-5x"></i>
 							</div>
-						<span class="color-white">I love traveling</span>
+						<span class="color-white">ACC</span>
 						</div>
 					</div>
 					<div class="col-xs-6 col-sm-3 col-md-3">
@@ -117,14 +171,14 @@
                 <div class="col-sm-12 col-md-12 col-lg-12" >
 					<div class="wow bounceInUp" data-wow-delay="0.4s">
                     <div id="owl-works" class="owl-carousel">
-                        <div class="item"><a href="img/gallery/1.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/1.jpg" class="img-responsive" alt="img"></a></div>
-                        <div class="item"><a href="img/gallery/2.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/2.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="img/gallery/3.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/3.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="img/gallery/4.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/4.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="img/gallery/5.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/5.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="img/gallery/6.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/6.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="img/gallery/7.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/7.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="img/gallery/8.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/8.jpg" class="img-responsive " alt="img"></a></div>
+                        <div class="item"><a href="img/gallery/NK0002548_main_img.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/NK0002548_main_img.jpg" class="img-responsive" alt="img"></a></div>
+                        <div class="item"><a href="img/gallery/NK0002374_main_img.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/NK0002374_main_img.jpg" class="img-responsive " alt="img"></a></div>
+                        <div class="item"><a href="img/gallery/NK0002459_main_img.png" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/NK0002459_main_img.png" class="img-responsive " alt="img"></a></div>
+                        <div class="item"><a href="img/gallery/NK0001156_Image_middle1.png" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/NK0001156_Image_middle1.png" class="img-responsive " alt="img"></a></div>
+                        <div class="item"><a href="img/gallery/NK0001250_Image_middle1.png" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/NK0001250_Image_middle1.png" class="img-responsive " alt="img"></a></div>
+                        <div class="item"><a href="img/gallery/NK0001237_Image_middle1.png" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/NK0001237_Image_middle1.png" class="img-responsive " alt="img"></a></div>
+                        <div class="item"><a href="img/gallery/NK0001232_Image_middle1.png" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/NK0001232_Image_middle1.png" class="img-responsive " alt="img"></a></div>
+                        <div class="item"><a href="img/gallery/NK0001139_image_middle1.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="img/gallery/NK0001139_image_middle1.jpg" class="img-responsive " alt="img"></a></div>
                     </div>
 					</div>
                 </div>
