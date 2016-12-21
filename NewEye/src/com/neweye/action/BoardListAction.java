@@ -11,7 +11,7 @@ import com.ibatis.sqlmap.client.SqlMapClient;
 import com.neweye.db.sqlconfig.IBatisDBConnector;
 import com.neweye.dto.Board;
 
-public class ListAction implements Action{
+public class BoardListAction implements Action{
 
 	private BoardService boardService;
 	public void setBoardService(BoardService boardService){
