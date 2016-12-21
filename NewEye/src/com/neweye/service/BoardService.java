@@ -1,4 +1,4 @@
-package com.test.service;
+package com.neweye.service;
 
 import java.sql.SQLException;
 import java.util.List;
