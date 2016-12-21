@@ -5,7 +5,7 @@
 <%@ include file="sub_menu.jsp" %>  --%>  
   <article>
     <h2>Join Us</h2>
-    <form id="join" action="join.do" method="post" name="formm">
+    <form id="join" action="join.ne" method="post" name="formm">
       <fieldset>
         <legend>Basic Info</legend>
         <label>User ID</label>

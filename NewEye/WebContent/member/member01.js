@@ -29,12 +29,12 @@ function idcheck() {
     document.formm.id.focus();
     return;
   }
-  var url = "idCheckForm.do?id="+ document.formm.id.value;
+  var url = "idCheckForm.ne?id="+ document.formm.id.value;
   window.open( url, "_blank_1","toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=400, height=200");
 }
 
 function post_zip() {
-  var url = "findZipNum.do";
+  var url = "findZipNum.ne";
   window.open( url, "_blank_1",
 "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=550, height=300, top=300, left=300, ");
 }

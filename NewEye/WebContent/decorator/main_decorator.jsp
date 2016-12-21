@@ -118,6 +118,7 @@
 								<li><a href="#contact">Talk to me</a></li>
 								<li><a href="admin/adminLoginForm.ne">ADMIN</a></li>
 								<li><a href="contract.ne">JOIN</a></li>
+								<li><a href="loginForm.ne">LOGIN</a></li>
 							</ul>
 						</div>
 						<!-- /.Navbar-collapse -->
