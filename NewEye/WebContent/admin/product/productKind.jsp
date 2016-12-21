@@ -12,7 +12,7 @@
 	<c:forEach items="${productKindList }" var="productVO">
 		<div id="item">
 			<a href="productDetail.ne?pseq=${productVO.pseq}"> <img
-				src="product_images/${productVO.image}" />
+				src="productimg/${productVO.image}" />
 				<h3>${productVO.name}</h3>
 				<p>${productVO.price2}</p>
 			</a>

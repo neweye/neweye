@@ -14,7 +14,7 @@
 				<legend> Item detail Info</legend>
 				<a href="productDetail.ne?pseq=${productVO.pseq}">
 					<span style="float: left;">
-						<img src="product_images/${productVO.image}" />
+						<img src="productimg/${productVO.image}" />
 					</span>
 					<h2>${productVO.name}</h2>
 				</a> 

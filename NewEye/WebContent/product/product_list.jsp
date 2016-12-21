@@ -48,7 +48,8 @@ div.bottom {
       <div class="div_all">
             <div id="product_list">
          <ul>
-            <li><a href="#"><img src="<%=request.getContextPath() %>/img/D500.png"/></a></li>
+            <li><a href="productDetail.ne?pseq=${productVO.pseq}">
+            <img src="<%=request.getContextPath() %>/productimg/D500.png"/></a></li>
          </ul>
          <ul>
             <li>new</li>

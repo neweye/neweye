@@ -19,10 +19,12 @@ public class ProductKindAction implements Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String url = "product/productKind.jsp";
+		String url = "product/product_list.jsp";
 
-		String kind = request.getParameter("kind").trim();
+		//String kind = request.getParameter("kind").trim();
 
+		String kind="";
+		
 		/*ProductDAO productDAO = ProductDAO_JDBC.getInstance();*/
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		ArrayList<ProductVO> productKindList=null;

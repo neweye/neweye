@@ -27,7 +27,7 @@ public class AdminProductWriteAction implements Action {
     HttpSession session = request.getSession();
     
     int sizeLimit = 5 * 1024 * 1024;
-    String savePath = "product_images";
+    String savePath = "productimg";
     ServletContext context = session.getServletContext();
     String uploadFilePath = context.getRealPath(savePath);
     
