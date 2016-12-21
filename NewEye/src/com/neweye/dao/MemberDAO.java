@@ -1,20 +1,20 @@
 package com.neweye.dao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.neweye.dto.MemberVO;
 
 public interface MemberDAO {
+	
+	
+	public int confirmID(String userid) throws SQLException;
+	public MemberVO getMember(String id) throws SQLException;
+	public int insertMember(MemberVO memberVO) throws SQLException;
+	
+	public ArrayList<MemberVO> listMember(String member_name) throws SQLException;
+	
 
-	List<MemberVO> getMemberList() throws SQLException;
-
-	MemberVO getMember(String userid) throws SQLException;
-	
-	void insertMember(MemberVO member) throws SQLException;
-	
-	void updateMember(MemberVO member) throws SQLException;
-	
-	void deleteMember(String userid) throws SQLException;	
 	
 }
