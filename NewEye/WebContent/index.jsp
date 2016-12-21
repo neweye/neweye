@@ -7,63 +7,10 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-
-</head>
-
-
 
 
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-
-
-<!-- ///////////Carousel 시작/////////// -->
-<div class="container">
-  <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="img/banner_file39.jpg" alt="Chania" width="460" height="345">
-      </div>
-
-      <div class="item">
-        <img src="img/banner_file40.jpg" alt="Chania" width="460" height="345">
-      </div>
-    
-      <div class="item">
-        <img src="img/banner_file42.jpg" alt="Flower" width="460" height="345">
-      </div>
-
-      <div class="item">
-        <img src="img/banner_file43.jpg" alt="Flower" width="460" height="345">
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-
-<!-- ///////////Carousel 끝/////////// -->
-
-
 
 
 	<!-- Section: about -->

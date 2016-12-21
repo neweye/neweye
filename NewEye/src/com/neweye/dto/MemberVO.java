@@ -3,27 +3,27 @@ package com.neweye.dto;
 import java.sql.Timestamp;
 
 public class MemberVO {
+	
 	private String id;
-	private String pwd;
+	private String password;
 	private String name;
 	private String email;
-	private String zipNum;
+	private String zip_num;
 	private String address;
 	private String phone;
 	private String useyn;
 	private Timestamp indate;
-	
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPwd() {
-		return pwd;
+	public String getPassword() {
+		return password;
 	}
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getName() {
 		return name;
@@ -37,11 +37,11 @@ public class MemberVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getZipNum() {
-		return zipNum;
+	public String getZip_num() {
+		return zip_num;
 	}
-	public void setZipNum(String zipNum) {
-		this.zipNum = zipNum;
+	public void setZip_num(String zip_num) {
+		this.zip_num = zip_num;
 	}
 	public String getAddress() {
 		return address;
@@ -67,6 +67,8 @@ public class MemberVO {
 	public void setIndate(Timestamp indate) {
 		this.indate = indate;
 	}
+		
+	
 	
 	
 }
