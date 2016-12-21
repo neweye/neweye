@@ -5,13 +5,10 @@ import java.util.ArrayList;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.neweye.dao.MemberDAO;
+import com.neweye.db.sqlconfig.IBatisDBConnector;
 import com.neweye.dto.MemberVO;
-import com.nonage.dao.iBatis.MemberDAO_iBatis;
-import com.nonage.db.sqlconfig.IBatisDBConnector;
 
-public class MemberDAO_iBatis implements MemberDAO{
-
-	
+public class MemberDAO_iBatis implements MemberDAO {
 	private SqlMapClient client = IBatisDBConnector.getSqlMapInstance();
 	private static MemberDAO_iBatis instance = new MemberDAO_iBatis();
 
@@ -21,35 +18,44 @@ public class MemberDAO_iBatis implements MemberDAO{
 	public static MemberDAO_iBatis getInstance() {
 		return instance;
 	}
-	
-	
-	
-	
-	
-	
+
 	@Override
 	public int confirmID(String userid) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = -1;
+		MemberVO member = (MemberVO) client.queryForObject("confirmID", userid);
+		if (member != null) {
+			result = 1;
+		} else {
+			result = -1;
+		}
+		return result;
 	}
 
 	@Override
 	public MemberVO getMember(String id) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		MemberVO member = (MemberVO) client.queryForObject("getMember", id);
+		return member;
 	}
 
 	@Override
 	public int insertMember(MemberVO memberVO) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = -1;
+		if (client.insert("insertMember", memberVO) != null) {
+			result=-1;
+		} else {
+			result=1;
+		}
+		return result;
 	}
 
 	@Override
 	public ArrayList<MemberVO> listMember(String member_name)
 			throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		if (member_name == "") {
+			member_name= "%";
+		}
+		ArrayList<MemberVO> memberList =(ArrayList<MemberVO>)client.queryForList("listMember",member_name);		
+		return memberList;
 	}
 
 }
