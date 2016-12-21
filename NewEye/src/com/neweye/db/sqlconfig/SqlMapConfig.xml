@@ -4,7 +4,7 @@
     "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
     
 <sqlMapConfig>
-	<properties resource="com/board/db/sqlconfig/SqlMapConfig.properties" />
+	<properties resource="com/neweye/db/sqlconfig/SqlMapConfig.properties" />
 	
 	<settings
 		cacheModelsEnabled="true"
