@@ -115,7 +115,7 @@
 								<li><a href="#gallery">My gallery</a></li>
 								<li><a href="#contact">Talk to me</a></li>
 								<li><a href="admin/adminLoginForm.ne">ADMIN</a></li>
-								<li><a href="contract.do">JOIN</a></li>
+								<li><a href="contract.ne">JOIN</a></li>
 							</ul>
 						</div>
 						<!-- /.Navbar-collapse -->
