@@ -13,18 +13,15 @@
 	<typeAlias alias="product" type="com.neweye.dto.ProductVO" />
 
 	<select id="listNewProduct" resultClass="product">
-		select * from
-		new_pro_view 
+		select * from product order by indate desc
 	</select>
 
 	<select id="listBestProduct" resultClass="product">
-		select * from
-		best_pro_view
+		select * from product order by read_count desc
 	</select>
 
 	<select id="getProduct" parameterClass="str" resultClass="product">
-		select
-		* from product where pseq=#pseq#
+		select * from product where pseq=#pseq#
 	</select>
 
 	<select id="listKindProduct" parameterClass="str" resultClass="product">
@@ -36,22 +33,21 @@
 	</select>
 
 	<select id="listProduct" parameterClass="str" resultClass="product">
-		select pseq,   first_level,   second_level,   kind,   name,   price,   indate,   read_count,   quantity,   useyn,   content,   img_List,   img_detail,   sizee,   weight,   ratio,   pixel,   speed,   seqpictures,   screen,   iso,   movframe,   format,   filter,   functions,    zoomyn,   minfocus,   maxfocus,   minaperture,   maxaperture,   distance,   types
+		select pseq, first_level, second_level, kind, name, price, indate, read_count, quantity, useyn, content, img_List, img_detail, sizee, weight, ratio, pixel, speed, seqpictures, screen, iso, movframe, format, filter, functions,  zoomyn, minfocus, maxfocus, minaperture, maxaperture, distance, types
 		from product
 		where name like '%'||#name#||'%' order by pseq desc
 	</select>
 
 	<update id="insertProduct" parameterClass="product">
 		insert into product
-		(pseq, kind, name, price1, price2, price3, content, image)
-		values(product_seq.nextval, #kind#,#name#,#price1#, #price2#,#price3#,
-		#content#,#image#)
+		(pseq, first_level, second_level, kind, name, price, indate, read_count, quantity, useyn, content, img_List, img_detail, sizee, weight, ratio, pixel, speed, seqpictures, screen, iso, movframe, format, filter, functions, zoomyn, minfocus, maxfocus, minaperture, maxaperture, distance, types)
+		values(product_seq.nextval, #first_level#, #second_level#, #kind#, #name#, #price#, #indate#, #read_count#, #quantity#, #useyn#, #content#, #img_List#, #img_detail#, #sizee#, #weight#, #ratio#, #pixel#, #speed#, #seqpictures#, #screen#, #iso#, #movframe#, #format#, #filter#, #functions#, # zoomyn#, #minfocus#, #maxfocus#, #minaperture#, #maxaperture#, #distance#, #types#
+		)
 	</update>
 
 	<update id="updateProduct" parameterClass="product">
 		update product set
-		kind=#kind#, useyn=#useyn#, name=#name#, price1=#price1#, price2=#price2#, price3=#price3#, content=#content#,
-		image=#image#, bestyn=#bestyn#
+		first_level=#first_level#, second_level=#second_level#, kind=#kind#, name=#name#, price=#price#, indate=#indate#, read_count=#read_count#, quantity=#quantity#, useyn=#useyn#, content=#content#, img_List=#img_List#, img_detail=#img_detail#, sizee=#sizee#, weight=#weight#, ratio=#ratio#, pixel=#pixel#, speed=#speed#, seqpictures=#seqpictures#, screen=#screen#, iso=#iso#, movframe=#movframe#, format=#format#, filter=#filter#, functions=#functions#, zoomyn=# zoomyn#, minfocus=#minfocus#, maxfocus=#maxfocus#, minaperture=#minaperture#, maxaperture=#maxaperture#, distance=#distance#, types=#types# 
 		where pseq=#pseq#
 	</update>
 

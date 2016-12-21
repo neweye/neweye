@@ -40,8 +40,7 @@
     	 ${productVO.name}     
    		</a>
    	  </td>
-      <td><fmt:formatNumber value="${productVO.price1}"/></td>
-      <td><fmt:formatNumber value="${productVO.price2}"/></td>
+      <td><fmt:formatNumber value="${productVO.price}"/></td>
       <td><fmt:formatDate value="${productVO.indate}"/></td>
       <td>
       	<c:choose>

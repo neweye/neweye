@@ -44,12 +44,12 @@ div.bottom {
 <body>
    <!-- <body id="page-top" data-spy="scroll" data-target=".navbar-custom"> -->
    <article>
-      <%-- <c:forEach items="${ }" var=""> 여기 나중에 반복 돌려야함 --%>
+      <c:forEach items="${productKindList}" var="productVO"> 
       <div class="div_all">
             <div id="product_list">
          <ul>
             <li><a href="productDetail.ne?pseq=${productVO.pseq}">
-            <img src="<%=request.getContextPath() %>/productimg/D500.png"/></a></li>
+            <img src="<%=request.getContextPath() %>/productimg/${productVO.img_List}"/></a></li>
          </ul>
          <ul>
             <li>new</li>
@@ -64,7 +64,7 @@ div.bottom {
       </div>
       </div>
       <div class="bottom"></div>
-      <%-- </c:forEach> --%>
+      </c:forEach>
    </article>
 </body>
 </html>

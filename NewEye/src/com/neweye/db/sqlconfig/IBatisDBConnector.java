@@ -11,7 +11,7 @@ public final class IBatisDBConnector {
 	private static SqlMapClient mySQLMap;
 
 	static {
-		try { // 접속설정파일로드
+		try { // 접속설정파일로드/////////////////////////////////////////////
 			String resource = "com/neweye/db/sqlconfig/SqlMapConfig.xml";
 			Reader reader = Resources.getResourceAsReader(resource);
 			mySQLMap = SqlMapClientBuilder.buildSqlMapClient(reader);

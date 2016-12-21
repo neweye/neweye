@@ -23,7 +23,7 @@ public class ProductKindAction implements Action {
 
 		//String kind = request.getParameter("kind").trim();
 
-		String kind="";
+		String kind="0";
 		
 		/*ProductDAO productDAO = ProductDAO_JDBC.getInstance();*/
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();

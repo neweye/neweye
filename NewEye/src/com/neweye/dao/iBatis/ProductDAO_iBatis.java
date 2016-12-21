@@ -1,13 +1,7 @@
 package com.neweye.dao.iBatis;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
-import neweye.jdbc.connection.ConnectionProvider;
-import neweye.jdbc.JdbcUtil;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.neweye.dao.ProductDAO;
@@ -52,8 +46,10 @@ public class ProductDAO_iBatis implements ProductDAO {
 	public ArrayList<ProductVO> listKindProduct(String kind)
 			throws SQLException {
 		ArrayList<ProductVO> listKindProduct = null;
-		listKindProduct = (ArrayList<ProductVO>) client.queryForList(
-				"listKindProduct", kind);
+		
+		if(client==null) System.out.println("클라이언트를 찾습니다");
+		
+		listKindProduct = (ArrayList<ProductVO>) client.queryForList("listKindProduct", kind);
 		return listKindProduct;
 	}
 

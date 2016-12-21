@@ -36,7 +36,7 @@ public class AdminProductUpdateAction implements Action {
 				"UTF-8", // 4. 인코딩 타입 지정
 				new DefaultFileRenamePolicy() // 5. 덮어쓰기를 방지 위한 부분
 		); // 이 시점을 기해 파일은 이미 저장이 되었다
-
+		//수정해야함
 		ProductVO productVO = new ProductVO();
 		productVO.setPseq(Integer.parseInt(multi.getParameter("pseq")));
 		productVO.setKind(multi.getParameter("kind"));
