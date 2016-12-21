@@ -8,6 +8,6 @@
 	<typeAlias alias="int" type="java.lang.Integer" />	
 	
 	<select id="workerCheck" parameterClass="str" resultClass="str">
-		select pwd from worker where id=#id#
+		select password from worker where id=#id#
 	</select>
 </sqlMap>

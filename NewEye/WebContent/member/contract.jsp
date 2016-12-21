@@ -3,8 +3,12 @@
 <%-- <%@ include file="../header.jsp" %>	  --%>
 <%-- <%@ include file="sub_img.jsp"%> 
 <%@ include file="sub_menu.jsp" %>    --%>
+
+
   <article>
-    <h2>Join Us</h2>
+  <br><br>
+  <div id="wrapper">
+    <h2>회원가입</h2><h4>Join Us</h4>
     <form id="join" action="joinForm.ne" 
 method="post" name="formm">
         언제나 새로운 즐거움이 가득한 Nonage의 회원가입 페이지 입니다. <br>
@@ -194,6 +198,7 @@ method="post" name="formm">
       <input type="button" value="Next" class="submit"  onclick="go_next()" style="float: right;"> 
     </form>
   </article>
+  </div>
 <%-- <%@ include file="../footer.jsp" %>   --%>
 
 

@@ -36,7 +36,7 @@
 	</select>
 
 	<select id="listProduct" parameterClass="str" resultClass="product">
-		select pseq, indate, name, price1, price2, useyn, bestyn
+		select pseq,   first_level,   second_level,   kind,   name,   price,   indate,   read_count,   quantity,   useyn,   content,   img_List,   img_detail,   sizee,   weight,   ratio,   pixel,   speed,   seqpictures,   screen,   iso,   movframe,   format,   filter,   functions,    zoomyn,   minfocus,   maxfocus,   minaperture,   maxaperture,   distance,   types
 		from product
 		where name like '%'||#name#||'%' order by pseq desc
 	</select>

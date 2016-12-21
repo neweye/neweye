@@ -21,14 +21,14 @@ public class AdminLoginAction implements Action {
     String msg = "";
     String workerId = request.getParameter("workerId").trim();
     System.out.println(workerId+"!!!!!!!!!!!!!!!!!!!!");
-    String workerPwd = request.getParameter("workerPwd").trim();
-    System.out.println(workerPwd+"!!!!!!!!!!!!!!!!!!!!!");
+    String workerPassword = request.getParameter("workerPassword").trim();
+    System.out.println(workerPassword+"!!!!!!!!!!!!!!!!!!!!!");
 
     WorkerDAO workerDAO = WorkerDAO_iBatis.getInstance();
 
     int result=-1;
 	try {
-		result = workerDAO.workerCheck(workerId, workerPwd);
+		result = workerDAO.workerCheck(workerId, workerPassword);
 	} catch (SQLException e) {
 		e.printStackTrace();
 	}

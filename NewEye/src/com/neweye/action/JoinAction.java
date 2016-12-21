@@ -28,12 +28,11 @@ public class JoinAction implements Action {
 		MemberVO memberVO = new MemberVO();
 		
 		memberVO.setId(request.getParameter("id"));
-		memberVO.setPwd(request.getParameter("pwd"));
+		memberVO.setPassword(request.getParameter("password"));
 		memberVO.setName(request.getParameter("name"));
 		memberVO.setEmail(request.getParameter("email"));
 		memberVO.setZipNum(request.getParameter("zipNum"));
-		memberVO.setAddress(request.getParameter("addr1") +
-		request.getParameter("addr2"));
+		memberVO.setAddress(request.getParameter("addr1") +	request.getParameter("addr2"));
 		memberVO.setPhone(request.getParameter("phone"));		
 	
 		//MemberDAO memberDAO = MemberDAO_JDBC.getInstance();

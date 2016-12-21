@@ -21,7 +21,7 @@ public class LoginAction implements Action {
 		HttpSession session = request.getSession();
 
 		String id = request.getParameter("id");
-		String pwd = request.getParameter("pwd");
+		String password = request.getParameter("password");
 
 		//MemberDAO memberDAO = MemberDAO_JDBC.getInstance();
 		MemberDAO memberDAO = MemberDAO_iBatis.getInstance();
@@ -34,7 +34,7 @@ public class LoginAction implements Action {
 		}
 
 		if (memberVO != null) {
-			if (memberVO.getPwd().equals(pwd)) {
+			if (memberVO.getPassword().equals(password)) {
 				session.removeAttribute("id");
 				session.setAttribute("loginUser", memberVO);
 				url = "index.ne?login=1";

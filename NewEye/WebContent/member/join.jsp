@@ -11,9 +11,9 @@
         <label>User ID</label>
         <input type="text"      name="id"        size="12"  >
         <input type="hidden"    name="reid">
-        <input type="button"    value="중복 체크"  class="dup" onclick="idcheck()"><br>
+       <!--  <input type="button"    value="중복 체크"  class="dup" onclick="idcheck()"><br> -->
         <label>Password</label>  
-        <input type="password"  name="pwd"><br> 
+        <input type="password"  name="password"><br> 
         <label>Retype Password</label> 
         <input type="password"  name="pwdCheck"><br> 
         <label>Name</label>

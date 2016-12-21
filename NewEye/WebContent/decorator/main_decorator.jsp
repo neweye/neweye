@@ -12,6 +12,10 @@
 <decorator:head />
 
 <head>
+
+
+
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
@@ -58,15 +62,15 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="<%=request.getContextPath()%>/img/carousel04.png" alt="dlsr01">
+					<img src="<%=request.getContextPath()%>/img/dslr01.jpg" alt="dlsr01">
 				</div>
 
 				<div class="item">
-					<img src="<%=request.getContextPath()%>/img/carousel05.png" alt="dlsr02">
+					<img src="<%=request.getContextPath()%>/img/dslr02.png" alt="dlsr02">
 				</div>
 
 				<div class="item">
-					<img src="<%=request.getContextPath()%>/img/carousel06.png" alt="dlsr03">
+					<img src="<%=request.getContextPath()%>/img/dslr03.jpg" alt="dlsr03">
 				</div>
 				
 			</div>
