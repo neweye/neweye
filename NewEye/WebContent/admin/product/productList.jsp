@@ -23,7 +23,7 @@
     <tr>
         <th>번호</th><th>상품명</th><th>원가</th><th>판매가</th><th>등록일</th><th>사용유무</th>
     </tr>
-    <c:choose>
+     <c:choose>
     <c:when test="${productListSize<=0}">
     <tr>
       <td width="100%" colspan="7" align="center" height="23">
@@ -41,12 +41,12 @@
    		</a>
    	  </td>
       <td><fmt:formatNumber value="${productVO.price}"/></td>
-      <td><fmt:formatDate value="${productVO.indate}"/></td>
+      <td>${productVO.indate}</td>
       <td>
       	<c:choose>
    	 		<c:when test='${productVO.useyn=="y"}'>사용</c:when>
    	 		<c:otherwise>미사용</c:otherwise>   	 		
-   	 	</c:choose>	 
+   	 	</c:choose>	  
    	  </td> 
     </tr>
     </c:forEach>

@@ -21,11 +21,9 @@ public class FrontController extends HttpServlet {
 	private Map commandMap = new HashMap(); // 명령어와 명령어 처리 클래스를 쌍으로 저장
 
 	public void init(ServletConfig config) throws ServletException {
-		// Common properties
 		loadProperties("com/neweye/properties/Command");
 	}
 
-	// properties 설정
 	private void loadProperties(String path) {
 		ResourceBundle rbHome = ResourceBundle.getBundle(path);// 누구를 실행할지를 rb에 저장.
 		Enumeration<String> actionEnumHome = rbHome.getKeys();
@@ -50,15 +48,13 @@ public class FrontController extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		requestPro(request, response); // get방식과 post방식을 모두 requestPro로 처리
+		requestPro(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		requestPro(request, response);
 	}
-
-	// 사용자의 요청을 분석해서 해당 작업을 처리
 
 	private void requestPro(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -67,9 +63,11 @@ public class FrontController extends HttpServlet {
 		Action com = null;
 		try {
 			String command = request.getRequestURI();
+
 			if (command.indexOf(request.getContextPath()) == 0) {
 				command = command.substring(request.getContextPath().length());
 			}
+			
 			com = (Action) commandMap.get(command);
 			if (com == null) {
 				System.out.println("not found : " + command);
@@ -83,14 +81,12 @@ public class FrontController extends HttpServlet {
 
 		} catch (Throwable e) {
 			throw new ServletException(e);
-
 		}
 
-		if (view == null)
-			return;
+		if (view == null) return;
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
 
 	}
-
 }
