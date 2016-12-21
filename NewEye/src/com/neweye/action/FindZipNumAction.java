@@ -9,9 +9,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.nonage.dao.AddressDAO;
-import com.nonage.dao.iBatis.AddressDAO_iBatis;
-import com.nonage.dto.AddressVO;
+import com.neweye.dao.AddressDAO;
+import com.neweye.dao.iBatis.AddressDAO_iBatis;
+import com.neweye.dto.AddressVO;
 
 public class FindZipNumAction implements Action {
 

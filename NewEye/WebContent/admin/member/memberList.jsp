@@ -7,7 +7,7 @@
 <script type="text/javascript">
   function go_search()
   {
-     document.frm.action="admin/MemberList.do";
+     document.frm.action="admin/MemberList.ne";
      document.frm.submit();
   }
 </script>

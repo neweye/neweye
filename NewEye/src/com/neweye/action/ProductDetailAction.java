@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nonage.dao.ProductDAO;
-import com.nonage.dao.iBatis.ProductDAO_iBatis;
-import com.nonage.dto.ProductVO;
+import com.neweye.dao.ProductDAO;
+import com.neweye.dao.iBatis.ProductDAO_iBatis;
+import com.neweye.dto.ProductVO;
 
 public class ProductDetailAction implements Action {
 

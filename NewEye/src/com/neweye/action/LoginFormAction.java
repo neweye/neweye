@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nonage.dto.MemberVO;
+import com.neweye.dto.MemberVO;
 
 public class LoginFormAction implements Action {
 
@@ -21,7 +21,7 @@ public class LoginFormAction implements Action {
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		
 		if (loginUser != null) {
-			url = "index.do";		
+			url = "index.ne";		
 		} 
 		
 		return url;	

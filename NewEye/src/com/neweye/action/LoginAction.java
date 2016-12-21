@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nonage.dao.MemberDAO;
-import com.nonage.dao.iBatis.MemberDAO_iBatis;
-import com.nonage.dto.MemberVO;
+import com.neweye.dao.MemberDAO;
+import com.neweye.dao.iBatis.MemberDAO_iBatis;
+import com.neweye.dto.MemberVO;
 
 public class LoginAction implements Action {
 
@@ -37,7 +37,7 @@ public class LoginAction implements Action {
 			if (memberVO.getPwd().equals(pwd)) {
 				session.removeAttribute("id");
 				session.setAttribute("loginUser", memberVO);
-				url = "index.do?login=1";
+				url = "index.ne?login=1";
 			}
 		}
 		return url;

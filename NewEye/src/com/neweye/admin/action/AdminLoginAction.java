@@ -17,10 +17,12 @@ public class AdminLoginAction implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    String url = "adminLoginForm.do";
+    String url = "adminLoginForm.ne";
     String msg = "";
     String workerId = request.getParameter("workerId").trim();
+    System.out.println(workerId+"!!!!!!!!!!!!!!!!!!!!");
     String workerPwd = request.getParameter("workerPwd").trim();
+    System.out.println(workerPwd+"!!!!!!!!!!!!!!!!!!!!!");
 
     WorkerDAO workerDAO = WorkerDAO_iBatis.getInstance();
 
@@ -28,14 +30,13 @@ public class AdminLoginAction implements Action {
 	try {
 		result = workerDAO.workerCheck(workerId, workerPwd);
 	} catch (SQLException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
     
     if (result == 1) {// 로그인 성공
       HttpSession session = request.getSession();
       session.setAttribute("workerId", workerId);
-      url = "adminProductList.do";
+      url = "adminProductList.ne";
     } else if (result == 0) {
       msg = "비밀번호를 확인하세요.";
     } else if (result == -1) {

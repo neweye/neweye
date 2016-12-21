@@ -11,10 +11,10 @@ import javax.servlet.http.HttpSession;
 
 import oracle.net.aso.e;
 
-import com.nonage.dao.OrderDAO;
-import com.nonage.dao.iBatis.OrderDAO_iBatis;
-import com.nonage.dto.MemberVO;
-import com.nonage.dto.OrderVO;
+import com.neweye.dao.OrderDAO;
+import com.neweye.dao.iBatis.OrderDAO_iBatis;
+import com.neweye.dto.MemberVO;
+import com.neweye.dto.OrderVO;
 
 public class OrderListAction implements Action {
 
@@ -26,7 +26,7 @@ public class OrderListAction implements Action {
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 
 		if (loginUser == null) {
-			url = "loginForm.do";
+			url = "loginForm.ne";
 		} else {
 			OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
 			int oseq = Integer.parseInt(request.getParameter("oseq"));

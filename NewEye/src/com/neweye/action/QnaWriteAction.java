@@ -8,24 +8,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nonage.dao.QnaDAO;
-import com.nonage.dao.iBatis.QnaDAO_iBatis;
-import com.nonage.dto.MemberVO;
-import com.nonage.dto.QnaVO;
+import com.neweye.dao.QnaDAO;
+import com.neweye.dao.iBatis.QnaDAO_iBatis;
+import com.neweye.dto.MemberVO;
+import com.neweye.dto.QnaVO;
 
 public class QnaWriteAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "qnaList.do";
+		String url = "qnaList.ne";
 			
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 
 		if (loginUser == null) {
-			url = "loginForm.do";
+			url = "loginForm.ne";
 		} else {
 			QnaVO qnaVO = new QnaVO();
 			qnaVO.setSubject(request.getParameter("subject"));

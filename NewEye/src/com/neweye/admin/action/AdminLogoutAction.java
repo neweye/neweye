@@ -14,7 +14,7 @@ public class AdminLogoutAction implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    String url="adminLoginForm.do";
+    String url="adminLoginForm.ne";
     
     HttpSession session=request.getSession(false);
     if(session!=null){

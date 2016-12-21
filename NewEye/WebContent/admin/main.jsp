@@ -7,20 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Nonage Admin</title>
-<link rel="stylesheet" href="../admin/css/admin.css">
-<script type="text/javascript">
-function worker_check()
-{
-  if(document.frm.workId.value==""){
-      alert("아이디를 입력하세요.");
-      return false;
-  }else if(document.frm.workPw.value==""){
-     alert("비밀번호를 입력하세요.");
-      return false;
-    }
-    return true;  
-}
-</script>
 </head>
 
 <body>
@@ -36,8 +22,7 @@ function worker_check()
     <div class="clear"></div>
     <article>
       <div id="loginform">
-      <form name="frm" method="post" 
-action="adminLogin.do">
+      <form name="frm" method="post" action="adminLogin.ne">
       <table>
         <tr>
           <td> 아 이 디 </td>

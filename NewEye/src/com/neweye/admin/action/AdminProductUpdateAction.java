@@ -21,7 +21,7 @@ public class AdminProductUpdateAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "adminProductList.do";
+		String url = "adminProductList.ne";
 
 		HttpSession session = request.getSession();
 

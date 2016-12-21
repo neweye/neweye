@@ -7,15 +7,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.nonage.dao.CartDAO;
-import com.nonage.dao.iBatis.CartDAO_iBatis;
+import com.neweye.dao.CartDAO;
+import com.neweye.dao.iBatis.CartDAO_iBatis;
 
 public class CartDeleteAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "cartList.do";
+		String url = "cartList.ne";
 
 		String[] cseqArr = request.getParameterValues("cseq");
 

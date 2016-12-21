@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nonage.dao.OrderDAO;
-import com.nonage.dao.iBatis.OrderDAO_iBatis;
-import com.nonage.dto.MemberVO;
-import com.nonage.dto.OrderVO;
+import com.neweye.dao.OrderDAO;
+import com.neweye.dao.iBatis.OrderDAO_iBatis;
+import com.neweye.dto.MemberVO;
+import com.neweye.dto.OrderVO;
 
 public class OrderDetailAction implements Action {
 
@@ -23,7 +23,7 @@ public class OrderDetailAction implements Action {
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		if (loginUser == null) {
-			url = "loginForm.do";
+			url = "loginForm.ne";
 		} else {
 			int oseq = Integer.parseInt(request.getParameter("oseq"));
 			OrderDAO orderDAO = OrderDAO_iBatis.getInstance();

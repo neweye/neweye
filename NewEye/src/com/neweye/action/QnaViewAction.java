@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nonage.dao.QnaDAO;
-import com.nonage.dao.iBatis.QnaDAO_iBatis;
-import com.nonage.dto.MemberVO;
-import com.nonage.dto.QnaVO;
+import com.neweye.dao.QnaDAO;
+import com.neweye.dao.iBatis.QnaDAO_iBatis;
+import com.neweye.dto.MemberVO;
+import com.neweye.dto.QnaVO;
 
 public class QnaViewAction implements Action {
 
@@ -24,7 +24,7 @@ public class QnaViewAction implements Action {
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 
 		if (loginUser == null) {
-			url = "loginForm.do";
+			url = "loginForm.ne";
 		} else {
 			int qseq = Integer.parseInt(request.getParameter("qseq"));
 			/* QnaDAO qnaDAO = QnaDAO_JDBC.getInstance(); */

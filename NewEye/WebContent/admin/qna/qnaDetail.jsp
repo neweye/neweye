@@ -7,14 +7,14 @@
 <script type="text/javascript">
 	function go_list() {
 		var theForm = document.frm;
-		theForm.action = "adminQnaList.do";
+		theForm.action = "adminQnaList.ne";
 		theForm.submit();
 	}
 
 	function go_rep(qseq) {
 		var theForm = document.frm;
 		theForm.qseq.value = qseq;
-		theForm.action = "adminQnaRepsave.do";
+		theForm.action = "adminQnaRepsave.ne";
 		theForm.submit();
 	}
 </script>

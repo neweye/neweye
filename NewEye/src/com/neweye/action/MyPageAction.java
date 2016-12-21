@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nonage.dao.OrderDAO;
-import com.nonage.dao.iBatis.OrderDAO_iBatis;
-import com.nonage.dto.MemberVO;
-import com.nonage.dto.OrderVO;
+import com.neweye.dao.OrderDAO;
+import com.neweye.dao.iBatis.OrderDAO_iBatis;
+import com.neweye.dto.MemberVO;
+import com.neweye.dto.OrderVO;
 
 public class MyPageAction implements Action {
 
@@ -23,7 +23,7 @@ public class MyPageAction implements Action {
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 
 		if (loginUser == null) {
-			url = "loginForm.do";
+			url = "loginForm.ne";
 		} else {
 			/*OrderDAO orderDAO = OrderDAO_iBatis.getInstance();*/
 			OrderDAO orderDAO = OrderDAO_iBatis.getInstance();

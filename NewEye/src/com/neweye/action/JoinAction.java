@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nonage.dao.MemberDAO;
-import com.nonage.dao.iBatis.MemberDAO_iBatis;
-import com.nonage.dto.MemberVO;
+import com.neweye.dao.MemberDAO;
+import com.neweye.dao.iBatis.MemberDAO_iBatis;
+import com.neweye.dto.MemberVO;
 
 public class JoinAction implements Action {
 

@@ -8,8 +8,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.nonage.dao.MemberDAO;
-import com.nonage.dao.iBatis.MemberDAO_iBatis;
+import com.neweye.dao.MemberDAO;
+import com.neweye.dao.iBatis.MemberDAO_iBatis;
 
 public class IdCheckFormAction implements Action {
 

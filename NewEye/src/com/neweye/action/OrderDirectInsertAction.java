@@ -9,24 +9,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nonage.dao.CartDAO;
-import com.nonage.dao.OrderDAO;
-import com.nonage.dao.iBatis.CartDAO_iBatis;
-import com.nonage.dao.iBatis.OrderDAO_iBatis;
-import com.nonage.dto.CartVO;
-import com.nonage.dto.MemberVO;
+import com.neweye.dao.CartDAO;
+import com.neweye.dao.OrderDAO;
+import com.neweye.dao.iBatis.CartDAO_iBatis;
+import com.neweye.dao.iBatis.OrderDAO_iBatis;
+import com.neweye.dto.CartVO;
+import com.neweye.dto.MemberVO;
 
 public class OrderDirectInsertAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String url = "orderList.do";
+		String url = "orderList.ne";
 
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		if (loginUser == null) {
-			url = "loginForm.do";
+			url = "loginForm.ne";
 		} else {
 			ArrayList<CartVO> cartList =new ArrayList<CartVO>();
 			CartVO cartVO = new CartVO();
@@ -38,7 +38,7 @@ public class OrderDirectInsertAction implements Action {
 			OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
 			try {				 
 				int maxOseq = orderDAO.insertOrder(cartList, loginUser.getId());
-				url = "orderList.do?oseq=" + maxOseq;
+				url = "orderList.ne?oseq=" + maxOseq;
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

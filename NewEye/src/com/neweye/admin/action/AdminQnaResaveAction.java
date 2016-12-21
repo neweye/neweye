@@ -19,7 +19,7 @@ public class AdminQnaResaveAction implements Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String url = "adminQnaList.do";
+		String url = "adminQnaList.ne";
 
 		String qseq = request.getParameter("qseq").trim();
 		String reply = request.getParameter("reply").trim();

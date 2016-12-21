@@ -21,7 +21,7 @@
     if (count == 0) {
       alert("주문처리할 항목을 선택해 주세요.");
     } else {
-      document.frm.action = "adminOrderSave.do";
+      document.frm.action = "adminOrderSave.ne";
       document.frm.submit();
     }
   }
@@ -29,7 +29,7 @@
   function go_order_search() {
 		var theForm = document.frm;
 		var key=document.frm.key.value;
-		theForm.action = "adminOrderSearch.do?key="+key;
+		theForm.action = "adminOrderSearch.ne?key="+key;
 		theForm.submit();
 	}
 </script>

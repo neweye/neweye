@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nonage.dao.CartDAO;
-import com.nonage.dao.iBatis.CartDAO_iBatis;
-import com.nonage.dto.CartVO;
-import com.nonage.dto.MemberVO;
+import com.neweye.dao.CartDAO;
+import com.neweye.dao.iBatis.CartDAO_iBatis;
+import com.neweye.dto.CartVO;
+import com.neweye.dto.MemberVO;
 
 public class CartListAction implements Action {
 
@@ -27,7 +27,7 @@ public class CartListAction implements Action {
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		
 		if (loginUser == null) {
-			url = "loginForm.do";
+			url = "loginForm.ne";
 		} else {
 			CartDAO cartDAO = CartDAO_iBatis.getInstance();
 			/*CartDAO cartDAO = CartDAO_JDBC.getInstance();*/

@@ -6,22 +6,22 @@ import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
-public class IBatisDBConnector {
+public final class IBatisDBConnector {
 
-	protected static SqlMapClient client;
+	private static SqlMapClient mySQLMap;
 
 	static {
-		try {
-			String resource = "com/board/db/sqlconfig/SqlMapConfig.xml";
+		try { // 접속설정파일로드
+			String resource = "com/neweye/db/sqlconfig/SqlMapConfig.xml";
 			Reader reader = Resources.getResourceAsReader(resource);
-			client = SqlMapClientBuilder.buildSqlMapClient(reader);
-		} catch (Exception e) {
+			mySQLMap = SqlMapClientBuilder.buildSqlMapClient(reader);
+		}catch (Exception e){
 			e.printStackTrace();
 		}
+	}
 
+	public static SqlMapClient getSqlMapInstance(){ // 인스턴스 반환 메서드
+		return mySQLMap;
 	}
-	
-	public static SqlMapClient getSqlMapInstance(){
-		return client;
-	}
+
 }

@@ -16,7 +16,7 @@ public class AdminOrderSaveAction implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-      String url = "adminOrderList.do";
+      String url = "adminOrderList.ne";
       
       String[] resultArr = request.getParameterValues("result");
       

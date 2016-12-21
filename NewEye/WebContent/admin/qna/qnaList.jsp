@@ -8,7 +8,7 @@
 	function go_view(qseq) {
 		var theForm = document.frm;
 		theForm.qseq.value = qseq;
-		theForm.action = "adminQnaDetail.do";
+		theForm.action = "adminQnaDetail.ne";
 		theForm.submit();
 	}
 </script>

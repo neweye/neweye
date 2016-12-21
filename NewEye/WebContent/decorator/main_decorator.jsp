@@ -87,7 +87,7 @@
 	<!-- /Section: intro -->
 	
 	<div class="slogan">
-			<a href="index.jsp"><img src="<%=request.getContextPath()%>/img/logo.png" alt="NewEye" /></a>
+			<a href="<%=request.getContextPath() %>/index.jsp"><img src="<%=request.getContextPath()%>/img/logo.png" alt="NewEye" /></a>
 	</div>
 	<div class="page-scroll">
 	<!-- <a href="#about"> <i class="fa fa-angle-down fa-5x animated"></i></a> -->
@@ -114,7 +114,7 @@
 								<li><a href="#about">About Me</a></li>
 								<li><a href="#gallery">My gallery</a></li>
 								<li><a href="#contact">Talk to me</a></li>
-								<li><a href="<%=request.getContextPath() %>/admin/adminLoginForm.do">ADMIN)</a></li>
+								<li><a href="admin/adminLoginForm.ne">ADMIN</a></li>
 							</ul>
 						</div>
 						<!-- /.Navbar-collapse -->

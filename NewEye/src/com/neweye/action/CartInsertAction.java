@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.nonage.dao.CartDAO;
-import com.nonage.dao.iBatis.CartDAO_iBatis;
-import com.nonage.dto.CartVO;
-import com.nonage.dto.MemberVO;
+import com.neweye.dao.CartDAO;
+import com.neweye.dao.iBatis.CartDAO_iBatis;
+import com.neweye.dto.CartVO;
+import com.neweye.dto.MemberVO;
 
 public class CartInsertAction implements Action {
 
@@ -19,12 +19,12 @@ public class CartInsertAction implements Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String url = "cartList.do";
+		String url = "cartList.ne";
 
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		if (loginUser == null) {
-			url = "loginForm.do";
+			url = "loginForm.ne";
 		} else {
 			CartVO cartVO = new CartVO();
 			cartVO.setId(loginUser.getId());
