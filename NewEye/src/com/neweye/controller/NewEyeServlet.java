@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.neweye.action.Action;
 
-@WebServlet("/NonageServlet")
-public class NonageServlet extends HttpServlet {
+@WebServlet("/NewEye")
+public class NewEyeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request,
@@ -23,7 +23,6 @@ public class NonageServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		
 		String command = request.getParameter("command");
-		System.out.println("NonageServlet에서 요청을 받음을 확인 : " + command);
 		ActionFactory af = ActionFactory.getInstance();
 		Action action = af.getAction(command);
 		if (action != null) {
@@ -31,7 +30,7 @@ public class NonageServlet extends HttpServlet {
 		}else{
 			PrintWriter out=response.getWriter();
 			out.println("<h1>해당 페이지가 없습니다.</h1>");
-			out.println("<a href=\"NonageServlet?command=index\">메인페이지로 이동</a>");
+			out.println("<a href=\"NewEye?command=index\">메인페이지로 이동</a>");
 		}
 	}
 
@@ -43,10 +42,4 @@ public class NonageServlet extends HttpServlet {
 	}
 
 }
-
-
-
-
-
-
 

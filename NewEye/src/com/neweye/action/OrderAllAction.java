@@ -35,7 +35,6 @@ public class OrderAllAction implements Action {
 
 					OrderVO orderVO = orderListIng.get(0);
 					orderVO.setPname(orderVO.getPname() + " 외 " + orderListIng.size() + "건");
-					System.out.println(orderVO.getIndate());
 
 					int totalPrice = 0;
 					for (OrderVO ovo : orderListIng) {

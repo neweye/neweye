@@ -21,7 +21,6 @@ public class AdminOrderSaveAction implements Action {
       String[] resultArr = request.getParameterValues("result");
       
       for(String oseq:resultArr){
-        System.out.println(oseq);
         /*OrderDAO orderDAO = OrderDAO_JDBC.getInstance();*/
         OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
         try {

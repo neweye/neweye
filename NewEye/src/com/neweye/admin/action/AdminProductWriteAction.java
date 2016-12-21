@@ -1,8 +1,8 @@
 package com.neweye.admin.action;
 
 import java.io.IOException;
-
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -31,23 +31,54 @@ public class AdminProductWriteAction implements Action {
     ServletContext context = session.getServletContext();
     String uploadFilePath = context.getRealPath(savePath);
     
-    MultipartRequest multi = new MultipartRequest(request, // 1. 요청 객체
-        uploadFilePath, // 2. 업로드될 파일이 저장될 파일 경로명
-        sizeLimit, // 3. 업로드될 파일의 최대 크기(5Mb)
-        "UTF-8", // 4. 인코딩 타입 지정
-        new DefaultFileRenamePolicy() // 5. 덮어쓰기를 방지 위한 부분
-    ); // 이 시점을 기해 파일은 이미 저장이 되었다
+    MultipartRequest multi = new MultipartRequest(request,
+        uploadFilePath,
+        sizeLimit,
+        "UTF-8",
+        new DefaultFileRenamePolicy()
+    );
     
     ProductVO productVO = new ProductVO();
+    
+    productVO.setPseq(Integer.parseInt(multi.getParameter("pseq")));
+    productVO.setFirst_level(multi.getParameter("first_level"));
+    productVO.setSecond_level(multi.getParameter("second_level"));
     productVO.setKind(multi.getParameter("kind"));
     productVO.setName(multi.getParameter("name"));
-    productVO.setPrice1(Integer.parseInt(multi.getParameter("price1")));
-    productVO.setPrice2(Integer.parseInt(multi.getParameter("price2")));
-    productVO.setPrice3(Integer.parseInt(multi.getParameter("price2"))
-        - Integer.parseInt(multi.getParameter("price1")));
+    productVO.setPrice(Integer.parseInt(multi.getParameter("price")));
+    productVO.setWeight(Integer.parseInt(multi.getParameter("weight")));
+    
+    /////////////////////출시일///////////////////////////////
+    multi.getParameter("indate");
+    Timestamp tm = new Timestamp(sizeLimit);
+    productVO.setIndate(tm);
+    
+    productVO.setRead_count(Integer.parseInt(multi.getParameter("Read_count")));
+    productVO.setQuantity(Integer.parseInt(multi.getParameter("Quantity")));
+    productVO.setUseyn(multi.getParameter("useyn"));
     productVO.setContent(multi.getParameter("content"));
-    productVO.setImage(multi.getFilesystemName("image"));
-
+    productVO.setImg_List(multi.getParameter("img_List"));
+    productVO.setImg_detail(multi.getParameter("img_detail"));
+    productVO.setSizee(multi.getParameter("sizee"));
+    productVO.setWeight(Integer.parseInt(multi.getParameter("weight")));
+    productVO.setRatio(Float.parseFloat(multi.getParameter("ratio")));
+    productVO.setPixel(Integer.parseInt(multi.getParameter("pixel")));
+    productVO.setSpeed(Integer.parseInt(multi.getParameter("speed")));
+    productVO.setSeqpictures(Integer.parseInt(multi.getParameter("seqpictures")));
+    productVO.setScreen(Float.parseFloat(multi.getParameter("screen")));
+    productVO.setIso(Integer.parseInt(multi.getParameter("iso")));
+    productVO.setMovframe(Integer.parseInt(multi.getParameter("movframe")));
+    productVO.setFormat(multi.getParameter("format"));
+    productVO.setFilter(Integer.parseInt(multi.getParameter("filter")));
+    productVO.setFunctions(multi.getParameter("functions"));
+    productVO.setZoomyn(multi.getParameter("zoomyn"));
+    productVO.setMinfocus(Float.parseFloat(multi.getParameter("minfocus")));
+    productVO.setMaxfocus(Float.parseFloat(multi.getParameter("maxfocus")));
+    productVO.setMinaperture(Float.parseFloat(multi.getParameter("minaperture")));
+    productVO.setMaxaperture(Float.parseFloat(multi.getParameter("maxaperture")));
+    productVO.setDistance(Integer.parseInt(multi.getParameter("distance")));
+    productVO.setTypes(multi.getParameter("types"));
+    
     /*ProductDAO productDAO = ProductDAO_JDBC.getInstance();*/
     ProductDAO productDAO = ProductDAO_iBatis.getInstance();
     try {

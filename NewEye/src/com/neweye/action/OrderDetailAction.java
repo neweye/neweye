@@ -41,7 +41,6 @@ public class OrderDetailAction implements Action {
 			request.setAttribute("orderDetail", orderList.get(0));
 			request.setAttribute("orderList", orderList);
 			request.setAttribute("totalPrice", totalPrice);
-			System.out.println(orderList);
 		}
 		return url;
 	}

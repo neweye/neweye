@@ -20,9 +20,7 @@ public class AdminLoginAction implements Action {
     String url = "adminLoginForm.ne";
     String msg = "";
     String workerId = request.getParameter("workerId").trim();
-    System.out.println(workerId+"!!!!!!!!!!!!!!!!!!!!");
     String workerPassword = request.getParameter("workerPassword").trim();
-    System.out.println(workerPassword+"!!!!!!!!!!!!!!!!!!!!!");
 
     WorkerDAO workerDAO = WorkerDAO_iBatis.getInstance();
 
