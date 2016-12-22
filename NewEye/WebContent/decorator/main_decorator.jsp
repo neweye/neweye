@@ -91,7 +91,7 @@
 		
 	</section>
 	<!-- /Section: intro -->
-	<br/><br/><br/>
+	<br/>
 	<div class="slogan">
 			<a href="<%=request.getContextPath() %>/index.jsp"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
 	</div>
