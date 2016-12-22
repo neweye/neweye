@@ -42,9 +42,9 @@ public class MyPageAction implements Action {
 
 					int totalPrice = 0;
 					for (OrderVO ovo : orderListIng) {
-						totalPrice += ovo.getPrice() * ovo.getQuantity();
+						totalPrice += ovo.getPrice2() * ovo.getQuantity();
 					}
-					orderVO.setPrice(totalPrice);
+					orderVO.setPrice2(totalPrice);
 					orderList.add(orderVO);
 				}
 			} catch (Exception e) {

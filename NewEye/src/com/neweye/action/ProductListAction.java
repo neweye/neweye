@@ -63,7 +63,6 @@ public class ProductListAction implements Action {
 	}
 	private void category(HttpServletRequest request, HttpServletResponse response){
 		String category = request.getParameter("category").trim().toUpperCase();
-		System.out.println(category);
 		/* ProductDAO productDAO = ProductDAO_JDBC.getInstance(); */
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		ArrayList<ProductVO> productKindList = null;
