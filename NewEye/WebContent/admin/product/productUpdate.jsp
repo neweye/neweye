@@ -10,7 +10,7 @@
 <form name="frm" method="post" enctype="multipart/form-data">
 <input type="hidden" name="pseq" value="${productVO.pseq}">
 <input type="hidden" name="code" >
-<input type="hidden" name="nonmakeImg" value="${productVO.image}">
+<input type="hidden" name="nonmakeImg" value="${productVO.img_list}">
 <table id="list">
   <tr>
     <th>상품분류</th>
@@ -82,9 +82,9 @@
   <tr>
     <th>상품이미지</th>
     <td colspan="5">
-      <img src="<c:url value="/product_images"/>/${productVO.image}" width="200pt" />     
+      <img src="<c:url value="/product_images"/>/${productVO.img_list}" width="200pt" />     
       <br>
-      <input type="file" name="image">
+      <input type="file" name="img_list">
     </td> 
   </tr>    
 </table>

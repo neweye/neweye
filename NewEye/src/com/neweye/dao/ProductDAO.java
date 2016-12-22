@@ -4,9 +4,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.neweye.dto.ProductVO;
+import com.neweye.dto.SearchVO;
 
 public interface ProductDAO {
-
+	
+	// 리스트 업어오기.
+	public ArrayList<ProductVO> listSelProduct(SearchVO search) throws SQLException;
+	
 	// 신상품 리스트 얻어오기.
 	public ArrayList<ProductVO> listNewProduct() throws SQLException;
 

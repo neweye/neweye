@@ -6,7 +6,8 @@
 <sqlMap namespace="Board">
 	<typeAlias alias="str" type="java.lang.String" />
 	<typeAlias alias="int" type="java.lang.Integer" />
-	<typeAlias alias="board" type="com.board.dto.Board" />
+	<typeAlias alias="board" type="com.neweye.dto.Board" />
+	<typeAlias alias="order" type="com.neweye.dto.Search" />
 	
 	<select id="selectAllBoard" resultClass="board">
 		select * from board order by boardnum desc
