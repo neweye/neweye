@@ -93,6 +93,7 @@ public class ProductDAO_iBatis implements ProductDAO {
 	@Override
 	public String pageNumber(int tpage, String name) throws SQLException {
 		String str = "";
+		String str2 = "";
 
 		int total_pages = totalRecord(name);
 		int page_count = total_pages / counts + 1;
@@ -116,6 +117,12 @@ public class ProductDAO_iBatis implements ProductDAO {
 			str += "<a href='adminProductList.ne?tpage="
 					+ (start_page - 1);
 			str += "&key=<%=product_name%>'>&lt;</a>&nbsp;&nbsp;";
+			
+			str2 += "<a href='ProductList.ne?tpage=1&key="
+					+ name + "'>&lt;&lt;</a>&nbsp;&nbsp;";
+			str2 += "<a href='ProductList.ne?tpage="
+					+ (start_page - 1);
+			str2 += "&key=<%=product_name%>'>&lt;</a>&nbsp;&nbsp;";
 		}
 
 		for (int i = start_page; i <= end_page; i++) {
@@ -123,6 +130,8 @@ public class ProductDAO_iBatis implements ProductDAO {
 				str += "<font color=red>[" + i + "]&nbsp;&nbsp;</font>";
 			} else {
 				str += "<a href='adminProductList.ne?tpage="
+						+ i + "&key=" + name + "'>[" + i + "]</a>&nbsp;&nbsp;";
+				str2 += "<a href='ProductList.ne?tpage="
 						+ i + "&key=" + name + "'>[" + i + "]</a>&nbsp;&nbsp;";
 			}
 		}
@@ -132,6 +141,12 @@ public class ProductDAO_iBatis implements ProductDAO {
 					+ (end_page + 1) + "&key=" + name
 					+ "'> &gt; </a>&nbsp;&nbsp;";
 			str += "<a href='adminProductList.ne?tpage="
+					+ page_count + "&key=" + name
+					+ "'> &gt; &gt; </a>&nbsp;&nbsp;";
+			str2 += "<a href='ProductList.ne?tpage="
+					+ (end_page + 1) + "&key=" + name
+					+ "'> &gt; </a>&nbsp;&nbsp;";
+			str2 += "<a href='ProductList.ne?tpage="
 					+ page_count + "&key=" + name
 					+ "'> &gt; &gt; </a>&nbsp;&nbsp;";
 		}
