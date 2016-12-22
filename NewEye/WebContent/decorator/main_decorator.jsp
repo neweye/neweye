@@ -105,7 +105,7 @@
 								</li>
 								<li>
 									<div class="dropdown">
-									<li><a href="mypageForm.ne">MYPAGE</a></li>
+									<a href="mypageForm.ne">MYPAGE</a>
 									<div class="dropdown-content">
 										    <p>주문조회</p>
 										    <p>회원정보</p>
