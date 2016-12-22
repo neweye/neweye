@@ -13,10 +13,7 @@ public interface ProductDAO {
    
    // 신상품 리스트 얻어오기.
    public ArrayList<ProductVO> listNewProduct() throws SQLException;
-	
-	// 리스트 업어오기.
-	public ArrayList<ProductVO> listSelProduct(SearchVO search) throws SQLException;
-	
+
    // 베스트 상품 리스트 얻어오기
    public ArrayList<ProductVO> listBestProduct() throws SQLException;
 
@@ -42,13 +39,8 @@ public interface ProductDAO {
    
    // 상품 조회수 증가/////////////////////////////////////////////////////
    public int increaseReadCount(ProductVO product) throws SQLException;
-	// 상품종류별 상품 리스트 얻어오기
-	public ArrayList<ProductVO> listKindProduct(String kind) throws SQLException;
-	
-	/*
-	 * 관리자페이지에서 사용되는 메서드
-	 */
-	public int totalRecord(String product_name) throws SQLException;
+
+   ArrayList<ProductVO> listCategoryProduct(String Category) throws SQLException;
 
    
    

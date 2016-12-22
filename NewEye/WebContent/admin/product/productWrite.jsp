@@ -97,7 +97,3 @@ input.class{
 <%-- <%@ include file="/admin/footer.jsp"%> --%>
 </body>
 </html>
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/neweye/neweye.git

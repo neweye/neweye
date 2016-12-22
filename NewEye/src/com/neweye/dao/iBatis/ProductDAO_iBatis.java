@@ -36,17 +36,6 @@ public class ProductDAO_iBatis implements ProductDAO {
 	}
 
 	@Override
-	public ArrayList<ProductVO> listSelProduct(SearchVO search) throws SQLException {
-		ArrayList<ProductVO> listNewProduct = null;
-		if(search.getOrderby().equals("asc")){
-		listNewProduct = (ArrayList<ProductVO>) client.queryForList("listAscProduct", search.getColumn());
-		}else{
-			listNewProduct = (ArrayList<ProductVO>) client.queryForList("listDescProduct", search.getColumn());
-		}
-		return listNewProduct;
-	}
-
-	@Override
 	public ArrayList<ProductVO> listNewProduct() throws SQLException {
 		ArrayList<ProductVO> listNewProduct = null;
 		listNewProduct = (ArrayList<ProductVO>) client.queryForList(

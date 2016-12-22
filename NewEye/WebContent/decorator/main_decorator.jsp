@@ -191,7 +191,6 @@
 	<script src="<%=request.getContextPath()%>/js/custom.js"></script>
 	<script src="<%=request.getContextPath()%>/contactform/contactform.js"></script>
 	<script src="<%=request.getContextPath()%>/product/products.js"></script>
-	<script src="<%=request.getContextPath()%>/mypage/mypage01.js"></script>
 
 </body>
 
