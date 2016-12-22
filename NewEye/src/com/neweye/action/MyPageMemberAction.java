@@ -16,7 +16,7 @@ public class MyPageMemberAction implements Action {
    @Override
    public String execute(HttpServletRequest request,
          HttpServletResponse response) throws ServletException, IOException {
-      String url = "/mypage/mypageMember.jsp";
+      String url = "/mypage/myPageMember.jsp";
             
 
       return url;
