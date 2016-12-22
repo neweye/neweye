@@ -93,6 +93,7 @@ input.btn_product_detail:active {
 
  <!-- 상품 상세 상단 영역 시작 -->
  <article>
+ <form method="post" name="formm">
   <table class="product_detail" border="1px">
    <tr>
     <td rowspan="3" id="td_img_detail">
@@ -106,7 +107,7 @@ input.btn_product_detail:active {
    </tr>
    <tr>
     <td>수랑 :</td>
-    <td><input type="text" name="" style="width:30px"/> &nbsp;
+    <td><input type="text" name="quantity" style="width:30px"/> &nbsp;
     (잔여수량 : ${productVO.quantity})</td>
    </tr>
    <tr>
@@ -118,6 +119,7 @@ input.btn_product_detail:active {
     
    </tr>
   </table>
+  </form>
  </article>
  <!-- 상품 상세 상단 영역 끝 -->
 

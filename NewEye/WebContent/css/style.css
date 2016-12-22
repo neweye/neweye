@@ -7,8 +7,6 @@
 </head>
 <style>
 
-
-
 /*
     Theme Name: Lonely
     Theme URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
@@ -111,7 +109,7 @@ img.img-responsive {
 
 .nav.navbar-nav {
 	background : #ffe600;
-    background-color: rgba(000,051,051,.6);
+    background-color: #fff;
 }
 
 #menu .nav.navbar-bar {
@@ -261,13 +259,36 @@ hr {
 .marginbot-40{margin-bottom:40px !important;}
 .marginbot-50{margin-bottom:50px !important;}
 
+
+/* ===========================
+--- Drop Down
+============================ */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index : 800;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 /* ===========================
 --- General sections
 ============================ */
 
 .home-section {
-    padding-top: 120px;
-    padding-bottom: 110px;
+    padding: 20px;
 	display:block;
     position:relative;
     z-index:120;
@@ -380,9 +401,9 @@ hr {
 --- Gallery
 ============================= */
 
-
-.item {
-    margin: 10px;
+#myCarousel {
+	background: #f9f9f9;
+	padding: 10px;
 }
 
 .item img {

@@ -4,8 +4,13 @@ function go_list() {
 }
 
 function go_buynow() { 
+	if (document.formm.quantity.value == "") {
+		  alert("수량을 입력하여 주세요.");
+		  document.formm.quantity.focus();
+		 } else {
  document.formm.action = "orderDirectInsert.ne";
  document.formm.submit();
+		 }
 }
 
 

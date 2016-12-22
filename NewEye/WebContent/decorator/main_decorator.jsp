@@ -5,16 +5,18 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="decorator"
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
-
+<%
+	response.setHeader("Pragma", "No-cache");
+	response.setHeader("Cache-Control", "no-cache");
+	response.addHeader("Cache-Control", "no-store");
+	response.setDateHeader("Expires", 1L);
+%>
 <!DOCTYPE html>
 <html>
 <title>NewEye<decorator:title /></title>
 <decorator:head />
 
 <head>
-
-
-
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,50 +49,6 @@
 	<div id="preloader">
 		<div id="load"></div>
 	</div>
-	<!-- Section: intro -->
-	<section id="intro" class="intro" style="height:200px;">
-
-		<!-- ///////////Carousel 시작/////////// -->
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="<%=request.getContextPath()%>/img/carousel06.png" alt="dlsr01">
-				</div>
-
-				<div class="item">
-					<img src="<%=request.getContextPath()%>/img/carousel04.png" alt="dlsr02">
-				</div>
-
-				<div class="item">
-					<img src="<%=request.getContextPath()%>/img/carousel05.png"
-						alt="dlsr03">
-				</div>
-
-			</div>
-
-			<!-- Left and right controls -->
-			<a class="left carousel-control" href="#myCarousel" role="button"
-				data-slide="prev"> <span
-				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a> <a class="right carousel-control" href="#myCarousel" role="button"
-				data-slide="next"> <span
-				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-
-		<!-- ///////////Carousel 끝/////////// -->
-
-	</section>
-	<!-- /Section: intro -->
 	<div class="slogan">
 			<a href="<%=request.getContextPath() %>/index.jsp"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
 	</div>
@@ -115,7 +73,19 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="menu">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="#intro">Home</a></li>
+								<li class="active">
+									<div class="dropdown">
+										<a href="#intro">Home</a>
+										<div class="dropdown-content">
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										</div>
+									</div>
+								</li>
 								<li><a href="catagory.ne">PRODUCT</a></li>
 								<li><a href="admin/adminLoginForm.ne">ADMIN</a></li>
 								<li><a href="#">MYPAGE</a></li>
@@ -177,6 +147,7 @@
 	<!-- Custom Theme JavaScript -->
 	<script src="<%=request.getContextPath()%>/js/custom.js"></script>
 	<script src="<%=request.getContextPath()%>/contactform/contactform.js"></script>
+	<script src="<%=request.getContextPath()%>/product/products.js"></script>
 
 </body>
 
