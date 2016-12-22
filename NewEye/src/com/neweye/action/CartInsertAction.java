@@ -20,7 +20,6 @@ public class CartInsertAction implements Action {
 			throws ServletException, IOException {
 
 		String url = "cartList.ne";
-		System.out.println("여긴가");
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		if (loginUser == null) {
@@ -35,11 +34,7 @@ public class CartInsertAction implements Action {
 			cartVO.setPseq(Integer.parseInt(str.trim()));
 			} else {
 				//decide what to do when end of file
-				System.out.println("수량이 왜 못넘어갈까...");
 			}
-			
-			System.out.println("4444");
-
 			
 			cartVO.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 			
