@@ -50,7 +50,7 @@
 		<div id="load"></div>
 	</div>
 	<div class="slogan">
-			<a href="<%=request.getContextPath() %>/index.jsp"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
+			<a href="<%=request.getContextPath() %>/index.ne"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
 	</div>
 	<div class="page-scroll">
 		<!-- <a href="#about"> <i class="fa fa-angle-down fa-5x animated"></i></a> -->
@@ -76,7 +76,44 @@
 								<li class="active">
 									<div class="dropdown">
 										<a href="#intro">Home</a>
-										<div class="dropdown-content">
+									</div>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+								</li>
+								<li>
+									<div class="dropdown">
+									<a href="catagory.ne">PRODUCT</a>
+									</div>&nbsp;&nbsp;&nbsp;
+								</li>
+								<li>
+									<div class="dropdown">
+									<a href="catagory.ne">DLSR</a>
+									<div class="dropdown-content">
+										    <p>FX</p>
+										    <p>DX</p>
+										</div>
+									</div>&nbsp;&nbsp;&nbsp;
+								</li>
+								<li>
+									<div class="dropdown">
+									<a href="catagory.ne">LENS</a>
+									<div class="dropdown-content">
+										    <p>FX</p>
+										    <p>DX</p>
+										</div>
+									</div>&nbsp;&nbsp;&nbsp;
+								</li>
+								<li>
+									<div class="dropdown">
+									<a href="catagory.ne">ACC</a>
+									<div class="dropdown-content">
+										    <p>FX</p>
+										    <p>DX</p>
+										</div>
+									</div>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+								</li>
+								<li>
+									<div class="dropdown">
+									<a href="admin/adminLoginForm.ne">ADMIN</a>
+									<div class="dropdown-content">
 										    <p>Hello World!</p>
 										    <p>Hello World!</p>
 										    <p>Hello World!</p>
@@ -84,11 +121,21 @@
 										    <p>Hello World!</p>
 										    <p>Hello World!</p>
 										</div>
-									</div>
+									</div>&nbsp;&nbsp;&nbsp;
 								</li>
-								<li><a href="catagory.ne">PRODUCT</a></li>
-								<li><a href="admin/adminLoginForm.ne">ADMIN</a></li>
-								<li><a href="#">MYPAGE</a></li>
+								<li>
+									<div class="dropdown">
+									<a href="#">MYPAGE</a>
+									<div class="dropdown-content">
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										</div>
+									</div>&nbsp;&nbsp;&nbsp;
+								</li>
 								<c:choose>
 									<c:when test="${empty sessionScope.loginUser}">
 										<li><a href="loginForm.ne">LOGIN</a></li>
