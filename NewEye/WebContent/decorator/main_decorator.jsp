@@ -56,7 +56,6 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-
                   <!-- Brand and toggle get grouped for better mobile display -->
                   <div class="navbar-header">
                      <button type="button" class="navbar-toggle"
@@ -142,8 +141,6 @@
                         </li>
                      </ul>
                   </div>
-                  <!-- /.Navbar-collapse -->
-
                </div>
             </div>
          </div>
