@@ -119,9 +119,9 @@ li#product_list_price {
 		<%-- <c:forEach var="i" items="" begin="0" varStatus="status" end="20"> --%>
 		<c:forEach items="${productKindList}" var="productVO">
 
+					<c:if test="${productVO.useyn=='Y'}">
 			<span class="div_areasize">
 				<div class="div_all">
-					<c:if test="${productVO.useyn=='Y'}">
 						<div id="product_list">
 							<ul class="plist">
 								<li><a href="productDetail.ne?pseq=${productVO.pseq}">
@@ -155,11 +155,11 @@ li#product_list_price {
 							</ul>
 						</div>
 
-					</c:if>
 
 				</div>
 			</span>
 
+					</c:if>
 		</c:forEach>
 		<div class="bottom"></div>
 	</article>
