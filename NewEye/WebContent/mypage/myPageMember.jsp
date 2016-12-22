@@ -20,14 +20,13 @@
                <div class="form-group">
                   <input type="text" name="id" class="form-control" id="id"
                      data-rule="minlen:4" readonly="readonly"
-                     data-msg="Please enter at least 4 chars" value="${loginUser.id} "/>
+                     data-msg="Please enter at least 4 chars" value="${loginUser.id}"/>
                   <div class="validation"></div>
                </div>
-
                <div class="form-group">
                   <input type="password" class="form-control" name="password"
                      id="password" placeholder="Your Password" data-rule="email"
-                     data-msg="Please enter a valid email" value="${loginUser.password} "/>
+                     data-msg="Please enter a valid email" value="${loginUser.password}"/>
                   <div class="validation"></div>
                </div>
 
