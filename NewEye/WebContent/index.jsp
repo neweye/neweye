@@ -49,17 +49,17 @@
 	</section>
 	<!-- ///////////Carousel 끝/////////// -->
 	
-	<!-- ///////////베스트 상품 시작/////////// -->
-	<section id="bestGoods" class="home-section parallax text-center">
-		<div>베스트 상품란</div>
-	</section>
-	<!-- ///////////베스트 상품 끝/////////// -->
-	
 	<!-- ///////////최근 상품 시작/////////// -->
 	<section id="newGoods" class="home-section parallax text-center">
-		<div>최근 상품란</div>
+		<div><%@ include file="/product/product_list_new.jsp" %></div>
 	</section>
 	<!-- ///////////최근 상품 끝/////////// -->
+	
+	<!-- ///////////베스트 상품 시작/////////// -->
+	<section id="bestGoods" class="home-section parallax text-center">
+		<div><%@ include file="/product/product_list_best.jsp" %></div>
+	</section>
+	<!-- ///////////베스트 상품 끝/////////// -->
 	
 	<!-- Section: separator -->
     <section id="separator" class="home-section parallax text-center" data-stellar-background-ratio="0.5">
