@@ -15,25 +15,23 @@ import com.neweye.dao.iBatis.ProductDAO_iBatis;
 import com.neweye.dto.ProductVO;
 
 public class ProductKindAction implements Action {
-	
-	
-	
+
 	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public String execute(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 
 		String url = "product/product_list.jsp";
 
-		//String kind = request.getParameter("kind").trim();
+		// String kind = request.getParameter("kind").trim();
 
-		String kind="1";
-		
-		/*ProductDAO productDAO = ProductDAO_JDBC.getInstance();*/
+		String kind = "5";
+
+		/* ProductDAO productDAO = ProductDAO_JDBC.getInstance(); */
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
-		ArrayList<ProductVO> productKindList=null;
+		ArrayList<ProductVO> productKindList = null;
 		try {
 			productKindList = productDAO.listKindProduct(kind);
-		
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -43,8 +41,7 @@ public class ProductKindAction implements Action {
 		return url;
 
 	}
-	
-	
-	
-}
 
+	
+
+}
