@@ -18,7 +18,7 @@ public class AdminProductDetailAction implements Action {
   public String execute(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    String url = "product/product_detail.jsp";
+    String url = "product/productDetail.jsp";
 
     String pseq = request.getParameter("pseq").trim();
 
@@ -38,11 +38,8 @@ public class AdminProductDetailAction implements Action {
     if (request.getParameter("tpage") != null) {
       tpage = request.getParameter("tpage");
     }
-    String kindList[] = { "0", "Heels", "Boots", "Sandals", "Slipers",
-        "Shcakers", "Sale" };
     request.setAttribute("tpage", tpage);
-    int index=Integer.parseInt(productVO.getKind().trim());
-    request.setAttribute("kind", kindList[index]);
+    request.setAttribute("kind", productVO.getKind().trim());
     
     return url;
   }
