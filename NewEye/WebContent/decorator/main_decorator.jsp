@@ -125,7 +125,7 @@
 								</li>
 								<li>
 									<div class="dropdown">
-									<a href="#">MYPAGE</a>
+									<li><a href="mypageForm.ne">MYPAGE</a></li>
 									<div class="dropdown-content">
 										    <p>Hello World!</p>
 										    <p>Hello World!</p>
