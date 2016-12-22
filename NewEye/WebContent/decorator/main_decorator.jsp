@@ -46,14 +46,8 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 	<!-- Preloader -->
-	<div id="preloader">
-		<div id="load"></div>
-	</div>
 	<div class="slogan">
 			<a href="<%=request.getContextPath() %>/index.ne"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
-	</div>
-	<div class="page-scroll">
-		<!-- <a href="#about"> <i class="fa fa-angle-down fa-5x animated"></i></a> -->
 	</div>
 
 	<!-- Navigation -->
@@ -85,7 +79,7 @@
 								</li>
 								<li>
 									<div class="dropdown">
-									<a href="catagory.ne">DLSR</a>
+									<a href="catagory.ne"><span>DLSR</span></a>
 									<div class="dropdown-content">
 										    <p>FX</p>
 										    <p>DX</p>
@@ -94,7 +88,7 @@
 								</li>
 								<li>
 									<div class="dropdown">
-									<a href="catagory.ne">LENS</a>
+									<a href="catagory.ne"><span>LENS</span></a>
 									<div class="dropdown-content">
 										    <p>FX</p>
 										    <p>DX</p>
@@ -103,7 +97,7 @@
 								</li>
 								<li>
 									<div class="dropdown">
-									<a href="catagory.ne">ACC</a>
+									<a href="catagory.ne"><span>ACC</span></a>
 									<div class="dropdown-content">
 										    <p>FX</p>
 										    <p>DX</p>
@@ -112,41 +106,41 @@
 								</li>
 								<li>
 									<div class="dropdown">
-									<a href="admin/adminLoginForm.ne">ADMIN</a>
-									<div class="dropdown-content">
-										    <p>Hello World!</p>
-										    <p>Hello World!</p>
-										    <p>Hello World!</p>
-										    <p>Hello World!</p>
-										    <p>Hello World!</p>
-										    <p>Hello World!</p>
-										</div>
-									</div>&nbsp;&nbsp;&nbsp;
-								</li>
-								<li>
-									<div class="dropdown">
 									<a href="#">MYPAGE</a>
 									<div class="dropdown-content">
-										    <p>Hello World!</p>
-										    <p>Hello World!</p>
-										    <p>Hello World!</p>
-										    <p>Hello World!</p>
-										    <p>Hello World!</p>
-										    <p>Hello World!</p>
+										    <p>주문조회</p>
+										    <p>회원정보</p>
 										</div>
 									</div>&nbsp;&nbsp;&nbsp;
 								</li>
 								<c:choose>
 									<c:when test="${empty sessionScope.loginUser}">
-										<li><a href="loginForm.ne">LOGIN</a></li>
-										<li><a href="contract.ne">JOIN</a></li>
+										<li>
+											<div class="dropdown">
+											<a href="loginForm.ne">LOGIN</a>
+											</div>&nbsp;&nbsp;&nbsp;
+										</li>
+										<li>
+											<div class="dropdown">
+											<a href="contract.ne">JOIN</a>
+											</div>&nbsp;&nbsp;&nbsp;
+										</li>
 									</c:when>
 									<c:otherwise>
 										<li style="color: orange">
 											${sessionScope.loginUser.name}(${sessionScope.loginUser.id})</li>
-										<li><a href="logout.ne">LOGOUT</a></li>
+										<li>
+											<div class="dropdown">
+											<a href="logout.ne">LOGOUT</a>
+											</div>&nbsp;&nbsp;&nbsp;
+										</li>
 									</c:otherwise>
-								</c:choose>								
+								</c:choose>
+								<li>
+									<div class="dropdown">
+									<a href="admin/adminLoginForm.ne"><span>ADMIN</span></a>
+									</div>&nbsp;&nbsp;&nbsp;
+								</li>							
 							</ul>
 						</div>
 						<!-- /.Navbar-collapse -->

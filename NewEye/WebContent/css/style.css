@@ -269,6 +269,10 @@ hr {
     display: inline-block;
 }
 
+.dropdown span {
+    color: grey;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
