@@ -47,7 +47,6 @@
 	<div id="preloader">
 		<div id="load"></div>
 	</div>
-
 	<!-- Section: intro -->
 	<section id="intro" class="intro" style="height:200px;">
 
@@ -92,13 +91,7 @@
 
 	</section>
 	<!-- /Section: intro -->
-
-	<br/>
-	<br/>
 	<div class="slogan">
-		<a href="<%=request.getContextPath()%>/index.jsp"><img
-			src="<%=request.getContextPath()%>/img/logo.png" alt="NewEye" /></a>
-			<a href="<%=request.getContextPath() %>/index.jsp"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
 			<a href="<%=request.getContextPath() %>/index.jsp"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
 	</div>
 	<div class="page-scroll">
@@ -128,7 +121,7 @@
 								<li><a href="#">MYPAGE</a></li>
 								<c:choose>
 									<c:when test="${empty sessionScope.loginUser}">
-										<li><a href="loginForm.ne" style="width: 110px;">LOGIN</li>
+										<li><a href="loginForm.ne">LOGIN</a></li>
 										<li><a href="contract.ne">JOIN</a></li>
 									</c:when>
 									<c:otherwise>
@@ -136,11 +129,7 @@
 											${sessionScope.loginUser.name}(${sessionScope.loginUser.id})</li>
 										<li><a href="logout.ne">LOGOUT</a></li>
 									</c:otherwise>
-								</c:choose>
-								
-
-								<li><a href="contract.ne">JOIN</a></li>
-								<li><a href="loginForm.ne">LOGIN</a></li>
+								</c:choose>								
 							</ul>
 						</div>
 						<!-- /.Navbar-collapse -->
