@@ -1,6 +1,6 @@
 
 a,a:hover {
-	color: #d43076;
+	color: #FAED7D;
 }
 
 .intro .page-scroll a:hover {
@@ -8,11 +8,11 @@ a,a:hover {
 }
 
 .icon:hover .fa{
-	color: #d43076;
+	color: #FAED7D;
 }
 
 ul.nav li a:hover {
-	color: #d43076;
+	color: #FAED7D;
 }
 
 .owl-theme .owl-controls .owl-page.active span,

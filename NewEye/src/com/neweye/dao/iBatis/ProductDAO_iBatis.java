@@ -43,6 +43,8 @@ public class ProductDAO_iBatis implements ProductDAO {
 	public ProductVO getProduct(String pseq) throws SQLException {
 		ProductVO product = new ProductVO();
 		product = (ProductVO) client.queryForObject("getProduct", pseq);
+		increaseReadCount(product);
+		product.setRead_count((product.getRead_count()+1));
 		return product;
 	}
 
@@ -50,8 +52,6 @@ public class ProductDAO_iBatis implements ProductDAO {
 	public ArrayList<ProductVO> listKindProduct(String kind)
 			throws SQLException {
 		ArrayList<ProductVO> listKindProduct = null;
-		
-		if(client==null) System.out.println("클라이언트를 찾습니다");
 		
 		listKindProduct = (ArrayList<ProductVO>) client.queryForList("listKindProduct", kind);
 		return listKindProduct;
@@ -152,6 +152,11 @@ public class ProductDAO_iBatis implements ProductDAO {
 		return result;
 	}
 
-
+	// 상품 조회수/////////////////////////////
+	@Override
+	public int increaseReadCount(ProductVO product) throws SQLException {
+		client.update("increaseReadCount",product);
+		return 0;
+	}
 
 }

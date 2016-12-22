@@ -69,7 +69,12 @@
 		where pseq=#pseq#
 	</update>
 
-
+			<!-- //////////////////////////////////////////////////////////////////// -->
+	<update id="increaseReadCount" parameterClass="product">
+		update product 
+		set read_count = #read_count# + 1 
+		where pseq=#pseq#
+	</update>
 
 
 </sqlMap>
