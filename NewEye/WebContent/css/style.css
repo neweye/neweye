@@ -85,7 +85,7 @@ img.img-responsive {
 
 /* ------- Navigation ------------ */
 #navigation {
-	background: #fff;
+	background: 003333;
 	z-index: 9999;
 	width:100%;
     box-sizing:border-box;
@@ -110,7 +110,8 @@ img.img-responsive {
 }
 
 .nav.navbar-nav {
-    background-color: rgba(255,255,255,.6);
+	background : #ffe600;
+    background-color: rgba(000,051,051,.6);
 }
 
 #menu .nav.navbar-bar {
@@ -160,7 +161,7 @@ img.img-responsive {
 .navbar-toggle {
     padding: 4px 6px;
     font-size: 14px;
-    color: #fff;
+    color: #ffe600;
 }
 
 .navbar-toggle:focus,

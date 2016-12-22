@@ -2,8 +2,15 @@
 
 <decorators defaultdir="/decorator">
 	<decorator name="main" page="main_decorator.jsp">
-		<pattern>/product/*</pattern>
-		<pattern>/*</pattern>
+		<pattern>/</pattern>
 	</decorator>
+
+	<decorator name="admin" page="adminmain_decorator.jsp">
+			<pattern>/admin/*.ne</pattern>
+	</decorator>
+	
+	<excludes>	
+		<pattern>/admin/adminLoginForm.ne</pattern>	
+	</excludes>
 	
 </decorators>

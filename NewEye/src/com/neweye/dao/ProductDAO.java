@@ -33,6 +33,9 @@ public interface ProductDAO {
 	
 	public int updateProduct(ProductVO product) throws SQLException;
 	
+	// 상품 조회수 증가/////////////////////////////////////////////////////
+	public int increaseReadCount(ProductVO product) throws SQLException;
+
 	
 	
 }

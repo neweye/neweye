@@ -24,7 +24,7 @@ div.div_all {
  padding: 5px auto; 
  width: 300px;
  height: 360px;
- /* border: 1px solid blue; */
+ border: 1px solid blue;
  text-align: left;
 	vertical-align: top;
 	display: table-cell;
