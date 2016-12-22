@@ -22,14 +22,13 @@ public class LoginAction implements Action {
 
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
-
+		
 		//MemberDAO memberDAO = MemberDAO_JDBC.getInstance();
 		MemberDAO memberDAO = MemberDAO_iBatis.getInstance();
 		MemberVO memberVO=null;
 		try {
 			memberVO = memberDAO.getMember(id);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
