@@ -73,7 +73,19 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="menu">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="#intro">Home</a></li>
+								<li class="active">
+									<div class="dropdown">
+										<a href="#intro">Home</a>
+										<div class="dropdown-content">
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										    <p>Hello World!</p>
+										</div>
+									</div>
+								</li>
 								<li><a href="catagory.ne">PRODUCT</a></li>
 								<li><a href="admin/adminLoginForm.ne">ADMIN</a></li>
 								<li><a href="#">MYPAGE</a></li>
