@@ -29,19 +29,19 @@ function idcheck() {
     document.formm.id.focus();
     return;
   }
-  var url = "idCheckForm.ne?id="+ document.formm.id.value;
+  var url = "idCheckForm.do?id="+ document.formm.id.value;
   window.open( url, "_blank_1","toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=400, height=200");
 }
 
 function post_zip() {
-  var url = "findZipNum.ne";
+  var url = "findZipNum.do";
   window.open( url, "_blank_1",
 "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=550, height=300, top=300, left=300, ");
 }
 
 function go_next() {
   if (document.formm.okon1[0].checked == true) {
-    document.formm.action = "joinForm.ne";
+    document.formm.action = "joinForm.do";
     document.formm.submit();
   } else if (document.formm.okon1[1].checked == true) {
     alert('약관에 동의하셔야만 합니다.');

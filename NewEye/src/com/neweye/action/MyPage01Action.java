@@ -8,12 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 
 public class MyPage01Action implements Action {
 
-   @Override
-   public String execute(HttpServletRequest request,
-         HttpServletResponse response) throws ServletException, IOException {
-      String url = "/mypage/myPageForm.jsp";
+	@Override
+	public String execute(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		String url = "/mypage/myPageForm.jsp";
 
-      return url;
-   }
+		return url;
+	}
 
 }

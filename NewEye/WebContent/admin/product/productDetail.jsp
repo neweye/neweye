@@ -19,7 +19,11 @@
                <h2>${productVO.name}</h2>
             </a> 
             <label> 가 격 : </label>
+<<<<<<< HEAD
             <input type="text" name="price">${productVO.price} 원<br />
+=======
+            <p>${productVO.price} 원</p>
+>>>>>>> branch 'master' of https://github.com/neweye/neweye.git
             <label> 수 량 : </label> <input type="text" name="quantity" size="2" value="1"><br> 
             <input type="hidden" name="pseq" value="${productVO.pseq}"><br>
          </fieldset>
@@ -32,3 +36,8 @@
       </form>
    </div>
 </article>
+<<<<<<< HEAD
+=======
+
+<%-- <%@ include file="../footer.jsp"%> --%>
+>>>>>>> branch 'master' of https://github.com/neweye/neweye.git

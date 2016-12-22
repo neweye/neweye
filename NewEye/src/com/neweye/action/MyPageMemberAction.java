@@ -13,13 +13,13 @@ import com.neweye.dto.MemberVO;
 
 public class MyPageMemberAction implements Action {
 
-   @Override
-   public String execute(HttpServletRequest request,
-         HttpServletResponse response) throws ServletException, IOException {
-      String url = "/mypage/mypageMember.jsp";
-            
+	@Override
+	public String execute(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		String url = "/mypage/mypageMember.jsp";
+				
 
-      return url;
-   }
+		return url;
+	}
 
 }

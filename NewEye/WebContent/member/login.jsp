@@ -22,9 +22,11 @@
 					<input name="id" type="text" value="${id}" class="form-control"
 						placeholder="Your Id"><br>
 					<div class="validation"></div>
+					
 					<input name="password" type="password" class="form-control"
 						placeholder="Your Password"><br>
 					<div class="validation"></div>
+					
 					<div class="clear"></div>
 
 
