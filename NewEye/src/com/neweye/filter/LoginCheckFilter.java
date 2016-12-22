@@ -46,8 +46,8 @@ public class LoginCheckFilter implements Filter {
 			if (login) {
 				chain.doFilter(request, response);
 			} else {
-				RequestDispatcher dispatcher = request
-						.getRequestDispatcher("member/login.jsp");
+				System.out.println("-----다른곳으로-----");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("member/login.jsp");
 				dispatcher.forward(request, response);
 			}
 		}else{
@@ -58,11 +58,10 @@ public class LoginCheckFilter implements Filter {
 
 	private boolean includeUri(HttpServletRequest request) {
 		String requestUri = request.getRequestURI().toString().trim().toLowerCase();
-
+		
 		boolean result = false;
 		
 		for (int i = 0; i < uri.length; i++) {	
-			//System.out.println(uri[i]);
 			if (requestUri.contains((uri[i]))) {
 				return true;
 			}
