@@ -68,11 +68,10 @@
 						<div class="collapse navbar-collapse" id="menu">
 							<ul class="nav navbar-nav">
 								<li class="active">
-									<div class="dropdown">
 										<a href="#intro">Home</a>
-									</div>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 								</li>
 								<li>
+									|&nbsp;&nbsp;&nbsp;
 									<div class="dropdown">
 									<a href="catagory.ne">PRODUCT</a>
 									</div>&nbsp;&nbsp;&nbsp;
@@ -140,7 +139,7 @@
 									<div class="dropdown">
 									<a href="admin/adminLoginForm.ne"><span>ADMIN</span></a>
 									</div>&nbsp;&nbsp;&nbsp;
-								</li>							
+								</li>
 							</ul>
 						</div>
 						<!-- /.Navbar-collapse -->
