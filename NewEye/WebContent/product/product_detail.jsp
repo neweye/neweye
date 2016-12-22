@@ -112,6 +112,7 @@ input.btn_product_detail:active {
    </tr>
    <tr>
     <td colspan="3">
+     <input type="hidden" name="pseq" value="${productVO.pseq}"/>
      <input type="button" class="btn_product_detail" value="ADD TO CART" class="submit" onclick="go_addcart()"/>&nbsp;&nbsp;
      <input type="button" class="btn_product_detail" value="BUY NOW" class="submit" onclick="go_buynow()" />&nbsp;&nbsp;
      <input type="button" class="btn_product_detail" value="LIST" onclick="go_list()"/>

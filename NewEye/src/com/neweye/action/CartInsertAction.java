@@ -20,21 +20,35 @@ public class CartInsertAction implements Action {
 			throws ServletException, IOException {
 
 		String url = "cartList.ne";
-
+		System.out.println("여긴가");
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		if (loginUser == null) {
 			url = "loginForm.ne";
 		} else {
 			CartVO cartVO = new CartVO();
-			cartVO.setId(loginUser.getId());
-			cartVO.setPseq(Integer.parseInt(request.getParameter("pseq")));
-			cartVO.setQuantity(Integer.parseInt(request
-					.getParameter("quantity")));
-			CartDAO cartDAO = CartDAO_iBatis.getInstance();
+			
 			try {
+			cartVO.setId(loginUser.getId());
+			String str=request.getParameter("pseq");
+			if(str != null) {
+			cartVO.setPseq(Integer.parseInt(str.trim()));
+			} else {
+				//decide what to do when end of file
+				System.out.println("수량이 왜 못넘어갈까...");
+			}
+			
+			System.out.println("4444");
+
+			
+			cartVO.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+			
+			CartDAO cartDAO = CartDAO_iBatis.getInstance();
 				cartDAO.insertCart(cartVO);
-			} catch (SQLException e) {				
+			
+
+				
+			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}

@@ -3,7 +3,7 @@ function go_cart() {
 		alert("수량을 입력하여 주세요.");
 		document.formm.quantity.focus();
 	} else {
-		document.formm.action = "cartInsert.do";
+		document.formm.action = "cartInsert.ne";
 		document.formm.submit();
 	}
 }
@@ -28,7 +28,7 @@ function go_cart_delete() {
 		alert("삭제할 항목을 선택해 주세요.");
 
 	} else {
-		document.formm.action = "cartDelete.do";
+		document.formm.action = "cartDelete.ne";
 		document.formm.submit();
 	}
 }
@@ -51,7 +51,7 @@ function go_order_insert() {
 		alert("주문할 항목을 선택해 주세요.");
 
 	} else {
-		document.formm.action = "orderInsert.do";
+		document.formm.action = "orderInsert.ne";
 		document.formm.submit();
 	}
 }
@@ -74,12 +74,12 @@ function go_order_delete() {
 		alert("삭제할 항목을 선택해 주세요.");
 
 	} else {
-		document.formm.action = "orderDelete.do";
+		document.formm.action = "orderDelete.ne";
 		document.formm.submit();
 	}
 }
 
 function go_order() {
-	document.formm.action = "mypage.do";
+	document.formm.action = "mypage.ne";
 	document.formm.submit();
 }

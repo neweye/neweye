@@ -18,12 +18,12 @@
 			</tr>
 			<c:forEach items="${orderList}" var="orderVO">
 				<tr>
-					<td><a href="productDetail.do?pseq=${cartVO.pseq}">
+					<td><a href="productDetail.ne?pseq=${cartVO.pseq}">
 							<h3>${orderVO.pname}</h3>
 					</a></td>
 					<td>${orderVO.quantity}</td>
 					<td><fmt:formatNumber
-							value="${orderVO.price2*orderVO.quantity}" type="currency" /></td>
+							value="${orderVO.price*orderVO.quantity}" type="currency" /></td>
 					<td><fmt:formatDate value="${orderVO.indate}" type="date" /></td>
 					<td>처리 진행 중</td>
 				</tr>
@@ -39,7 +39,7 @@
 		<div class="clear"></div>
 		<div id="buttons" style="float: right">
 			<input type="button" value="쇼핑 계속하기" class="cancel"
-				onclick="location.href='index.do'">
+				onclick="location.href='index.ne'">
 		</div>
 	</form>
 </article>

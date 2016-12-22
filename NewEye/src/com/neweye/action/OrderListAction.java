@@ -37,7 +37,7 @@ public class OrderListAction implements Action {
 				orderList = orderDAO.listOrderById(loginUser.getId(), "1", oseq);
 
 				for (OrderVO orderVO : orderList) {
-					totalPrice += orderVO.getPrice2() * orderVO.getQuantity();
+					totalPrice += orderVO.getPrice() * orderVO.getQuantity();
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();

@@ -39,22 +39,5 @@ public class ProductDetailAction implements Action {
 	}
 	
 	
-	/*
 	
-	// ////////////////////////////////////////////////////////////////
-		private ProductVO selectArticle(int pseq, boolean increaseCount)
-				throws SQLException {
-			ProductVO productVO = ProductDAO.selectById(product);
-			if (productVO == null) {
-				throw new Exception("상품 없음: " + pseq);
-			}
-			if (increaseCount) {
-				productVO.increaseReadCount(pseq);
-				productVO.setReadCount(productVO.getReadCount() + 1);
-			}
-		}
-	
-	
-	*/
-
 }

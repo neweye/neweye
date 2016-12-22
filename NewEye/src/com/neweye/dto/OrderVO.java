@@ -14,7 +14,7 @@ public class OrderVO {
   private int pseq;
   private String pname;
   private int quantity;
-  private int price2;  
+  private int price;  
   private String result;    
   
   public int getOdseq() {
@@ -23,11 +23,11 @@ public class OrderVO {
   public void setOdseq(int odseq) {
     this.odseq = odseq;
   }
-  public int getPrice2() {
-    return price2;
+  public int getPrice() {
+    return price;
   }
-  public void setPrice2(int price2) {
-    this.price2 = price2;
+  public void setPrice(int price) {
+    this.price = price;
   }
   public int getOseq() {
     return oseq;
@@ -101,7 +101,7 @@ public String toString() {
 			+ ", indate=" + indate + ", mname=" + mname + ", zipNum=" + zipNum
 			+ ", address=" + address + ", phone=" + phone + ", pseq=" + pseq
 			+ ", pname=" + pname + ", quantity=" + quantity + ", price2="
-			+ price2 + ", result=" + result + "]";
+			+ price + ", result=" + result + "]";
 }  
   
 }

@@ -9,7 +9,7 @@ public class CartVO {
 	private String mname; // 구매자 이름
 	private String pname; // 상품명
 	private int quantity; // 수량
-	private int price2;   // 판매가
+	private int price;   // 판매가
 	private Timestamp indate;  // 날짜
 	
 	public int getCseq() {
@@ -48,11 +48,11 @@ public class CartVO {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public int getPrice2() {
-		return price2;
+	public int getPrice() {
+		return price;
 	}
-	public void setPrice2(int price2) {
-		this.price2 = price2;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 	public Timestamp getIndate() {
 		return indate;

@@ -4,8 +4,30 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ include file="../header.jsp" %> --%>
 
-<%@ include file="sub_img.jsp"%>
-<%@ include file="sub_menu.jsp"%>
+<%-- <%@ include file="sub_img.jsp"%>
+<%@ include file="sub_menu.jsp"%> --%>
+
+<%-- css는 shopping.css로 나중에 옮길것! --%>
+
+<style>
+table#cartList {
+    border-collapse:collapse;    /* border 사이의 간격 없앰 */
+    border-top: 2px solid  #333;    
+    border-bottom: 1px solid  #333; 
+    width:100%;                  /* 전체 테이블 길이 설정 */
+    margin-bottom: 20px;
+}
+
+table#cartList th, td{	
+    border-bottom: 1px dotted  #333; 
+	text-align: center;
+}
+
+
+
+</style>>
+
+
 <article>
 	<h2>Cart List</h2>
 	<form name="formm" method="post">
@@ -25,12 +47,12 @@
 
 					<c:forEach items="${cartList}" var="cartVO">
 						<tr>
-							<td><a href="productDetail.do?pseq=${cartVO.pseq}">
+							<td><a href="productDetail.ne?pseq=${cartVO.pseq}">
 									<h3>${cartVO.pname}</h3>
 							</a></td>
 							<td>${cartVO.quantity}</td>
 							<td><fmt:formatNumber
-									value="${cartVO.price2*cartVO.quantity}" type="currency" /></td>
+									value="${cartVO.price*cartVO.quantity}" type="currency" /></td>
 							<td><fmt:formatDate value="${cartVO.indate}" type="date" /></td>
 							<td><input type="checkbox" name="cseq"
 								value="${cartVO.cseq}"></td>
@@ -51,7 +73,7 @@
 
 		<div id="buttons" style="float: right">
 			<input type="button" value="쇼핑 계속하기" class="cancel"
-				onclick="location.href='index.do'">
+				onclick="location.href='index.ne'">
 			<c:if test="${cartList.size() != 0}">
 				<input type="button" value="주문하기" class="submit"
 					onclick="go_order_insert()">

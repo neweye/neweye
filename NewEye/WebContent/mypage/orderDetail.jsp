@@ -39,7 +39,7 @@
 					<td>${orderVO.odseq}</td>
 					<td>${orderVO.quantity}</td>
 					<td><fmt:formatNumber type="currency"
-							value="${orderVO.price2*orderVO.quantity}" /></td>
+							value="${orderVO.price*orderVO.quantity}" /></td>
 					<td><c:choose>
 							<c:when test='${orderVO.result=="1"}'> 진행중 </c:when>
 							<c:otherwise>
@@ -53,7 +53,7 @@
 		<div class="clear"></div>
 		<div id="buttons" style="float: right">
 			<input type="button" value="쇼핑 계속하기" class="cancel"
-				onclick="location.href='index.do'">
+				onclick="location.href='index.ne'">
 		</div>
 	</form>
 </article>
