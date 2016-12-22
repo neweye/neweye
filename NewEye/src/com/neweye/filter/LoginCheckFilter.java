@@ -62,7 +62,7 @@ public class LoginCheckFilter implements Filter {
 		boolean result = false;
 		
 		for (int i = 0; i < uri.length; i++) {	
-			System.out.println(uri[i]);
+			//System.out.println(uri[i]);
 			if (requestUri.contains((uri[i]))) {
 				return true;
 			}
