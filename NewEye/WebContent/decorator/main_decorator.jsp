@@ -182,6 +182,7 @@
 	<!-- Custom Theme JavaScript -->
 	<script src="<%=request.getContextPath()%>/js/custom.js"></script>
 	<script src="<%=request.getContextPath()%>/contactform/contactform.js"></script>
+	<script src="<%=request.getContextPath()%>/product/products.js"></script>
 
 </body>
 
