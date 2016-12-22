@@ -33,7 +33,7 @@ public class IndexAction implements Action {
 		//베스트
 		SearchVO searchBest = new SearchVO();
 		searchBest.setOrderby("desc");
-		searchBest.setColumn("indate");
+		searchBest.setColumn("read_count");
 		
 		ArrayList<ProductVO> newProductList=null;
 		ArrayList<ProductVO> bestProductList =null;
@@ -43,7 +43,7 @@ public class IndexAction implements Action {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
+		
 		request.setAttribute("newProductList", newProductList);
 		request.setAttribute("bestProductList", bestProductList);
 		
