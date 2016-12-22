@@ -94,9 +94,11 @@
 	<!-- /Section: intro -->
 
 	<br/>
+	<br/>
 	<div class="slogan">
 		<a href="<%=request.getContextPath()%>/index.jsp"><img
 			src="<%=request.getContextPath()%>/img/logo.png" alt="NewEye" /></a>
+			<a href="<%=request.getContextPath() %>/index.jsp"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
 			<a href="<%=request.getContextPath() %>/index.jsp"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
 	</div>
 	<div class="page-scroll">
@@ -137,6 +139,8 @@
 								</c:choose>
 								
 
+								<li><a href="contract.ne">JOIN</a></li>
+								<li><a href="loginForm.ne">LOGIN</a></li>
 							</ul>
 						</div>
 						<!-- /.Navbar-collapse -->
