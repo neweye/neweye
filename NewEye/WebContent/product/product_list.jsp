@@ -19,12 +19,20 @@ article.product_list_jsp{
 	
 }
 
+span.div_areasize{
+	width: 650px;
+	/* border: 1px solid red; */
+	text-align: left;
+	vertical-align: top;
+	
+}
+
 div.div_all {
  folat:left;
  padding: 5px auto; 
  width: 300px;
  height: 360px;
- border: 1px solid blue;
+ /* border: 1px solid blue; */
  text-align: left;
 	vertical-align: top;
 	display: table-cell;
@@ -34,6 +42,7 @@ div.div_all {
 
 div#product_list {
  margin:10px;
+ padding:0 20px 10px ;
  width: 280px;
  height: 340px;
  border: 1px dashed #999999;
@@ -98,7 +107,7 @@ li#product_list_price {
 	<%-- <c:forEach var="i" items="" begin="0" varStatus="status" end="20"> --%>
 	<c:forEach items="${productKindList}" var="productVO">	
 	
-	
+	<span class="div_areasize">
   <div class="div_all">
 <c:if test="${productVO.useyn=='Y'}">  
    <div id="product_list">
@@ -136,7 +145,7 @@ li#product_list_price {
    </c:if>
    
   </div>
-
+</span>
 
   </c:forEach>
   <div class="bottom"></div>
