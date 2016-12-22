@@ -73,7 +73,7 @@
 								<li>
 									|&nbsp;&nbsp;&nbsp;
 									<div class="dropdown">
-									<a href="catagory.ne">PRODUCT</a>
+									<a href="product.ne">PRODUCT</a>
 									</div>&nbsp;&nbsp;&nbsp;
 								</li>
 								<li>

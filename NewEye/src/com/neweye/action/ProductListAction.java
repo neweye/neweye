@@ -21,6 +21,16 @@ public class ProductListAction implements Action {
 
 		String url = "product/product_list.jsp";
 		
+		if(request.getParameter("kind")==null){
+			all(request,response);
+		}else{
+			kind(request, response);
+		}
+		
+		return url;
+	}
+	
+	private void all(HttpServletRequest request, HttpServletResponse response){
 		SearchVO searchVO = new SearchVO();
 		searchVO.setOrderby("desc");
 		searchVO.setColumn("indate");
@@ -34,9 +44,21 @@ public class ProductListAction implements Action {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 		request.setAttribute("productKindList", productList);
+	}
+	private void kind(HttpServletRequest request, HttpServletResponse response){
+		String kind = request.getParameter("kind").trim();
 
-		return url;
+		/* ProductDAO productDAO = ProductDAO_JDBC.getInstance(); */
+		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
+		ArrayList<ProductVO> productKindList = null;
+		try {
+			productKindList = productDAO.listKindProduct(kind);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		request.setAttribute("productKindList", productKindList);
 	}
 }
