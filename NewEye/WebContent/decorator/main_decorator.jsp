@@ -73,7 +73,7 @@
 								<li>
 									|&nbsp;&nbsp;&nbsp;
 									<div class="dropdown">
-									<a href="catagory.ne">PRODUCT</a>
+									<a href="product.ne">PRODUCT</a>
 									</div>&nbsp;&nbsp;&nbsp;
 								</li>
 								<li>
@@ -188,6 +188,7 @@
 	<script src="<%=request.getContextPath()%>/js/custom.js"></script>
 	<script src="<%=request.getContextPath()%>/contactform/contactform.js"></script>
 	<script src="<%=request.getContextPath()%>/product/products.js"></script>
+	<script src="<%=request.getContextPath()%>/mypage/mypage01.js"></script>
 
 </body>
 

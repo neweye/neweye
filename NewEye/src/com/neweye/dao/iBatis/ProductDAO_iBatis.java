@@ -10,6 +10,7 @@ import com.neweye.dao.BoardDao;
 import com.neweye.dao.ProductDAO;
 import com.neweye.db.sqlconfig.IBatisDBConnector;
 import com.neweye.dto.ProductVO;
+import com.neweye.dto.SearchVO;
 
 public class ProductDAO_iBatis implements ProductDAO {
 		
@@ -21,6 +22,17 @@ public class ProductDAO_iBatis implements ProductDAO {
 
 	public static ProductDAO_iBatis getInstance() {
 		return instance;
+	}
+
+	@Override
+	public ArrayList<ProductVO> listSelProduct(SearchVO search) throws SQLException {
+		ArrayList<ProductVO> listNewProduct = null;
+		if(search.getOrderby().equals("asc")){
+		listNewProduct = (ArrayList<ProductVO>) client.queryForList("listAscProduct", search.getColumn());
+		}else{
+			listNewProduct = (ArrayList<ProductVO>) client.queryForList("listDescProduct", search.getColumn());
+		}
+		return listNewProduct;
 	}
 
 	@Override
