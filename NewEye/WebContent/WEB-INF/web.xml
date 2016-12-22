@@ -25,7 +25,7 @@
 		<filter-class>com.neweye.filter.LoginCheckFilter</filter-class>
 		<init-param>
 			<param-name>uri</param-name>
-			<param-value>cart,mypage,order</param-value>
+			<param-value>cart,mypage</param-value>
 		</init-param>
 	</filter>
 

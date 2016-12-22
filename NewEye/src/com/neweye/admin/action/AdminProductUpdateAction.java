@@ -39,19 +39,14 @@ public class AdminProductUpdateAction implements Action {
 		);
 		ProductVO productVO = new ProductVO();
 
-	    productVO.setPseq(Integer.parseInt(multi.getParameter("pseq")));
+	    productVO.setPseq(multi.getParameter("pseq"));
 	    productVO.setFirst_level(multi.getParameter("first_level"));
 	    productVO.setSecond_level(multi.getParameter("second_level"));
 	    productVO.setKind(multi.getParameter("kind"));
 	    productVO.setName(multi.getParameter("name"));
-	    productVO.setPrice(Integer.parseInt(multi.getParameter("price")));
-	    productVO.setWeight(Integer.parseInt(multi.getParameter("weight")));
-	    
-	    /////////////////////출시일///////////////////////////////
-	    multi.getParameter("indate");
-	    Timestamp tm = new Timestamp(sizeLimit);
-	    productVO.setIndate(tm);
-	    
+	    productVO.setPrice(multi.getParameter("price"));
+	    productVO.setWeight(multi.getParameter("weight"));
+	    productVO.setIndate(multi.getParameter("indate"));
 	    productVO.setRead_count(Integer.parseInt(multi.getParameter("Read_count")));
 	    productVO.setQuantity(Integer.parseInt(multi.getParameter("Quantity")));
 	    productVO.setUseyn(multi.getParameter("useyn"));

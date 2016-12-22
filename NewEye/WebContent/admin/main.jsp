@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <%@ include file="header.jsp"%>
   <div id="wrap">
     <header>      
@@ -14,18 +15,18 @@
       <form name="frm" method="post" action="adminLogin.ne">
       <table>
         <tr>
-          <td> 아 이 디 </td>
+          <td> ID </td>
           <td> <input type="text" name="workerId" size="10" value="admin"></td>
         </tr>
         <tr>
-          <td> 비밀번호 </td>
+          <td> Password </td>
           <td> 
             <input type="password" name="workerPassword" size="10" value="admin">
           </td>
         </tr>
         <tr align="center" >
           <td  colspan="2">          
-            <input class="btn" type="submit" value="업무 로그인" onclick="return worker_check()"><br><br>
+            <input class="btn" type="submit" value="admin login" onclick="return worker_check()"><br><br>
             <h4 style="color:red">${message}</h4>
           </td>
         </tr>

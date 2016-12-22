@@ -2,8 +2,6 @@
   pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
-<%-- <%@ include file="/admin/header.jsp"%> --%>
-<%-- <%@ include file="/admin/sub_menu.jsp"%> --%>
 
 <article>
 <h1>상품리스트</h1>	
@@ -21,7 +19,12 @@
 </table>
 <table id="productList">
     <tr>
-        <th>번호</th><th>상품명</th><th>원가</th><th>판매가</th><th>등록일</th><th>사용유무</th>
+        <th>번호</th>
+        <th>상품명</th>
+        <th>원가</th>
+        <th>판매가</th>
+        <th>등록일</th>
+        <th>사용유무</th>
     </tr>
      <c:choose>
     <c:when test="${productListSize<=0}">
@@ -56,6 +59,6 @@
 </table>
 </form> 
 </article>
-<%-- <%@ include file="/admin/footer.jsp"%> --%>
 </body>
+
 </html>

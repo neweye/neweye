@@ -6,7 +6,7 @@
 
 <!DOCTYPE html>
 <html>
-
+<meta charset="utf-8">
 
 
 
@@ -180,7 +180,7 @@
                         <div class="validation"></div>
                     </div>
                     
-                    <div class="text-center"><button type="submit" class="btn btn-skin btn-block" id="btnContactUs">Send Message</button></div>
+                    <div class="te xt-center"><button type="submit" class="btn btn-skin btn-block" id="btnContactUs">Send Message</button></div>
                 </form>
             </div>
 			<div class="text-center">
