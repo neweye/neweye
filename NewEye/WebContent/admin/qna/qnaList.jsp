@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ include file="/admin/header.jsp"%> --%>
-<%@ include file="/admin/sub_menu.jsp"%>
+<%-- <%@ include file="/admin/sub_menu.jsp"%> --%>
 <script type="text/javascript">
 	function go_view(qseq) {
 		var theForm = document.frm;

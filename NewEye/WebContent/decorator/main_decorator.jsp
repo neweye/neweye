@@ -34,18 +34,12 @@
 <link href="<%=request.getContextPath()%>/css/nivo-lightbox.css"
 	rel="stylesheet" />
 <link
-	href="<%=request.getContextPath()%>/css/nivo-lightbox-theme/default/default.css"
-	rel="stylesheet" type="text/css" />
-<link href="<%=request.getContextPath()%>/css/owl.carousel.css"
-	rel="stylesheet" media="screen" />
-<link href="<%=request.getContextPath()%>/css/owl.theme.css"
-	rel="stylesheet" media="screen" />
-<link href="<%=request.getContextPath()%>/css/animate.css"
-	rel="stylesheet" />
-<link href="<%=request.getContextPath()%>/css/style.css"
-	rel="stylesheet">
-<link href="<%=request.getContextPath()%>/color/default.css"
-	rel="stylesheet">
+	href="<%=request.getContextPath()%>/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/owl.carousel.css" rel="stylesheet" media="screen" />
+<link href="<%=request.getContextPath()%>/css/owl.theme.css" rel="stylesheet" media="screen" />
+<link href="<%=request.getContextPath()%>/css/animate.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/color/default.css" rel="stylesheet">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -68,13 +62,11 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="<%=request.getContextPath()%>/img/carousel06.png"
-						alt="dlsr01">
+					<img src="<%=request.getContextPath()%>/img/carousel06.png" alt="dlsr01">
 				</div>
 
 				<div class="item">
-					<img src="<%=request.getContextPath()%>/img/carousel04.png"
-						alt="dlsr02">
+					<img src="<%=request.getContextPath()%>/img/carousel04.png" alt="dlsr02">
 				</div>
 
 				<div class="item">
@@ -101,9 +93,11 @@
 	</section>
 	<!-- /Section: intro -->
 
+	<br/>
 	<div class="slogan">
 		<a href="<%=request.getContextPath()%>/index.jsp"><img
 			src="<%=request.getContextPath()%>/img/logo.png" alt="NewEye" /></a>
+			<a href="<%=request.getContextPath() %>/index.jsp"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
 	</div>
 	<div class="page-scroll">
 		<!-- <a href="#about"> <i class="fa fa-angle-down fa-5x animated"></i></a> -->
@@ -127,11 +121,8 @@
 						<div class="collapse navbar-collapse" id="menu">
 							<ul class="nav navbar-nav">
 								<li class="active"><a href="#intro">Home</a></li>
-								<li><a href="#about">About Me</a></li>
-								<li><a href="#gallery">My gallery</a></li>
-								<li><a href="#contact">Talk to me</a></li>
-								<li><a href="admin/adminLoginForm.ne">ADMIN</a></li>
 								<li><a href="catagory.ne">PRODUCT</a></li>
+								<li><a href="admin/adminLoginForm.ne">ADMIN</a></li>
 								<li><a href="#">MYPAGE</a></li>
 								<c:choose>
 									<c:when test="${empty sessionScope.loginUser}">
