@@ -111,7 +111,7 @@ img.img-responsive {
 
 .nav.navbar-nav {
 	background : #ffe600;
-    background-color: rgba(000,051,051,.6);
+    background-color: #fff;
 }
 
 #menu .nav.navbar-bar {
@@ -266,8 +266,7 @@ hr {
 ============================ */
 
 .home-section {
-    padding-top: 120px;
-    padding-bottom: 110px;
+    padding: 20px;
 	display:block;
     position:relative;
     z-index:120;
@@ -380,9 +379,9 @@ hr {
 --- Gallery
 ============================= */
 
-
-.item {
-    margin: 10px;
+#myCarousel {
+	background: #f9f9f9;
+	padding: 10px;
 }
 
 .item img {
