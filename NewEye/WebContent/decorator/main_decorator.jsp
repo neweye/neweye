@@ -50,7 +50,7 @@
 
 	<!-- Section: intro -->
 	<section id="intro" class="intro" style="height:200px;">
-	
+
 		<!-- ///////////Carousel 시작/////////// -->
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
@@ -70,9 +70,10 @@
 				</div>
 
 				<div class="item">
-					<img src="<%=request.getContextPath()%>/img/carousel05.png" alt="dlsr03">
+					<img src="<%=request.getContextPath()%>/img/carousel05.png"
+						alt="dlsr03">
 				</div>
-				
+
 			</div>
 
 			<!-- Left and right controls -->
@@ -88,15 +89,20 @@
 		</div>
 
 		<!-- ///////////Carousel 끝/////////// -->
-		
+
 	</section>
 	<!-- /Section: intro -->
+
+	<br/>
 	<br/>
 	<div class="slogan">
+		<a href="<%=request.getContextPath()%>/index.jsp"><img
+			src="<%=request.getContextPath()%>/img/logo.png" alt="NewEye" /></a>
+			<a href="<%=request.getContextPath() %>/index.jsp"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
 			<a href="<%=request.getContextPath() %>/index.jsp"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
 	</div>
 	<div class="page-scroll">
-	<!-- <a href="#about"> <i class="fa fa-angle-down fa-5x animated"></i></a> -->
+		<!-- <a href="#about"> <i class="fa fa-angle-down fa-5x animated"></i></a> -->
 	</div>
 
 	<!-- Navigation -->
@@ -119,6 +125,20 @@
 								<li class="active"><a href="#intro">Home</a></li>
 								<li><a href="catagory.ne">PRODUCT</a></li>
 								<li><a href="admin/adminLoginForm.ne">ADMIN</a></li>
+								<li><a href="#">MYPAGE</a></li>
+								<c:choose>
+									<c:when test="${empty sessionScope.loginUser}">
+										<li><a href="loginForm.ne" style="width: 110px;">LOGIN</li>
+										<li><a href="contract.ne">JOIN</a></li>
+									</c:when>
+									<c:otherwise>
+										<li style="color: orange">
+											${sessionScope.loginUser.name}(${sessionScope.loginUser.id})</li>
+										<li><a href="logout.ne">LOGOUT</a></li>
+									</c:otherwise>
+								</c:choose>
+								
+
 								<li><a href="contract.ne">JOIN</a></li>
 								<li><a href="loginForm.ne">LOGIN</a></li>
 							</ul>
