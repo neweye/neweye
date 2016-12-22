@@ -19,10 +19,13 @@ public interface ProductDAO {
 
 	// 상품번호로 상품정보 한개 가져오기
 	public ProductVO getProduct(String pseq) throws SQLException;
-
+	
 	// 상품종류별 상품 리스트 얻어오기
-	public ArrayList<ProductVO> listKindProduct(String kind)
-			throws SQLException;
+	public ArrayList<ProductVO> listCategoryProduct(String kind) throws SQLException;
+	
+	// 상품종류별 상품 리스트 얻어오기
+	public ArrayList<ProductVO> listKindProduct(String kind) throws SQLException;
+	
 	/*
 	 * 관리자페이지에서 사용되는 메서드
 	 */

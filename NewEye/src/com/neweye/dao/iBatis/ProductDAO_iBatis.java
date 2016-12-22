@@ -68,6 +68,14 @@ public class ProductDAO_iBatis implements ProductDAO {
 		listKindProduct = (ArrayList<ProductVO>) client.queryForList("listKindProduct", kind);
 		return listKindProduct;
 	}
+	
+	@Override
+	public ArrayList<ProductVO> listCategoryProduct(String Category)
+			throws SQLException {
+		ArrayList<ProductVO> listKindProduct = null;
+		listKindProduct = (ArrayList<ProductVO>) client.queryForList("listCategoryProduct", Category);
+		return listKindProduct;
+	}
 
 	@Override
 	public int totalRecord(String product_name) throws SQLException {
@@ -171,4 +179,5 @@ public class ProductDAO_iBatis implements ProductDAO {
 		return 0;
 	}
 
+	
 }
