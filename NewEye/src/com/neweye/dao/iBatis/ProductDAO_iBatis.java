@@ -1,14 +1,18 @@
 package com.neweye.dao.iBatis;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
+import com.neweye.dao.BoardDao;
 import com.neweye.dao.ProductDAO;
 import com.neweye.db.sqlconfig.IBatisDBConnector;
 import com.neweye.dto.ProductVO;
 
 public class ProductDAO_iBatis implements ProductDAO {
+		
 	private SqlMapClient client = IBatisDBConnector.getSqlMapInstance();
 	private static ProductDAO_iBatis instance = new ProductDAO_iBatis();
 
@@ -147,5 +151,7 @@ public class ProductDAO_iBatis implements ProductDAO {
 		int result = (Integer)client.update("updateProduct",product);
 		return result;
 	}
+
+
 
 }

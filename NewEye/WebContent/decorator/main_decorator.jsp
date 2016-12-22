@@ -55,7 +55,7 @@
 	</div>
 
 	<!-- Section: intro -->
-	<section id="intro" class="intro" style="height: 200px;">
+	<section id="intro" class="intro" style="height:200px;">
 
 		<!-- ///////////Carousel 시작/////////// -->
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">

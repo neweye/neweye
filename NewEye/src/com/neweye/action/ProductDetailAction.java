@@ -18,7 +18,7 @@ public class ProductDetailAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url="product/product_detailjsp.jsp";
+		String url="product/product_detail.jsp";
 		
 		String pseq=request.getParameter("pseq").trim();
 		

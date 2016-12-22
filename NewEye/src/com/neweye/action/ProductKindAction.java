@@ -1,6 +1,7 @@
 package com.neweye.action;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -14,7 +15,9 @@ import com.neweye.dao.iBatis.ProductDAO_iBatis;
 import com.neweye.dto.ProductVO;
 
 public class ProductKindAction implements Action {
-
+	
+	
+	
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -23,14 +26,15 @@ public class ProductKindAction implements Action {
 
 		//String kind = request.getParameter("kind").trim();
 
-		String kind="0";
+		String kind="1";
 		
 		/*ProductDAO productDAO = ProductDAO_JDBC.getInstance();*/
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		ArrayList<ProductVO> productKindList=null;
 		try {
 			productKindList = productDAO.listKindProduct(kind);
-		} catch (SQLException e) {			
+		
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
@@ -39,6 +43,8 @@ public class ProductKindAction implements Action {
 		return url;
 
 	}
-
+	
+	
+	
 }
 

@@ -13,15 +13,23 @@
  margin: 0;
  padding: 0;
 }
-
+article.product_list_jsp{
+	padding : 0px 10%;
+		/* width: 1000px; */
+	
+}
 
 div.div_all {
+ folat:left;
  padding: 5px auto; 
  width: 300px;
  height: 360px;
- border: 1px solid blue;
- disply:inline; /* 여기 왜 적용이 안되는가 */
- /* folat:left; */
+ /* border: 1px solid blue; */
+ text-align: left;
+	vertical-align: top;
+	display: table-cell;
+ /* disply:inline; */ /* 여기 왜 적용이 안되는가 */
+  /* text-align:center; */
 }
 
 div#product_list {
@@ -29,6 +37,7 @@ div#product_list {
  width: 280px;
  height: 340px;
  border: 1px dashed #999999;
+ display: inline-block;
  /* overflow: hidden; */
 }
 
@@ -74,13 +83,30 @@ li#product_list_price {
 <body>
  <!-- <body id="page-top" data-spy="scroll" data-target=".navbar-custom"> -->
  <article>
+  상세검색: 넌버튼<br/>
+ 
+ 
+ 상품비교 : 여기 대분류 선택하게 할거임 <input type="textfield" name="" value=""/>&nbsp;<input type="textfield" name="" value=""/> 
+ 드롭다운식으로 바꿀거임
+ <input type="button" name="" value="비교하기"/>
+ 
+ </article>
+ 
+ 
+ <article class="product_list_jsp">
   <%-- <c:forEach items="${productKindList}" var="productVO">  --%>
-
+	<%-- <c:forEach var="i" items="" begin="0" varStatus="status" end="20"> --%>
+	<c:forEach items="${productKindList}" var="productVO">	
+	
+	
   <div class="div_all">
+<c:if test="${productVO.useyn=='Y'}">  
    <div id="product_list">
     <ul class="plist">
      <li><a href="productDetail.ne?pseq=${productVO.pseq}">
-            <img src="<%=request.getContextPath() %>/productimg/${productVO.img_List}"/></a></li>
+            <img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}"/>
+            
+            </a></li>
      
      <%-- <li><a href="product_detailjsp.jsp"> <img
        src="<%=request.getContextPath()%>/productimg/D500.png" /></a></li> --%>
@@ -101,90 +127,19 @@ li#product_list_price {
      </li>
     </ul>
     <ul>
-     <li id="product_list_name">AF-P DX NIKKOR 70-300mm f/4.5-6.3G
-      ED VR</li>
-     <li id="product_list_price">￦3,340,000</li>
-
+     <li id="product_list_name">${productVO.name}</li>
+     <li id="product_list_price">${productVO.price}</li>
+	<li id="product_list_price">${productVO.read_count}</li>
     </ul>
    </div>
+   
+   </c:if>
+   
   </div>
 
 
-
-
-
-  <div class="div_all">
-   <div id="product_list">
-    <ul class="plist">
-     <li><a href="productDetail.ne?pseq=${productVO.pseq}">
-            <img src="<%=request.getContextPath() %>/productimg/${productVO.img_List}"/></a></li>
-     
-     <%-- <li><a href="product_detailjsp.jsp"> <img
-       src="<%=request.getContextPath()%>/productimg/D500.png" /></a></li> --%>
-       
-       
-    </ul>
-    <ul>
-     <li id="product_list_icon">&nbsp;new&nbsp; &nbsp;best&nbsp;
-      &nbsp;sold out&nbsp; <%-- <c:if test="${productVO.indate > 0}">
-            &nbsp;new&nbsp;
-            </c:if>
-            <c:if test="${productVO.read_count > 10}">
-            &nbsp;best&nbsp;
-            </c:if>
-            <c:if test="${productVO.quantity == 0}">
-            &nbsp;sold out&nbsp;
-            </c:if> --%>
-     </li>
-    </ul>
-    <ul>
-     <li id="product_list_name">AF-P DX NIKKOR 70-300mm f/4.5-6.3G
-      ED VR</li>
-     <li id="product_list_price">￦3,340,000</li>
-
-    </ul>
-   </div>
-  </div>
-
-
-
-
-  <div class="div_all">
-   <div id="product_list">
-    <ul class="plist">
-     <li><a href="productDetail.ne?pseq=${productVO.pseq}">
-            <img src="<%=request.getContextPath() %>/productimg/${productVO.img_List}"/></a></li>
-     
-     <%-- <li><a href="product_detailjsp.jsp"> <img
-       src="<%=request.getContextPath()%>/productimg/D500.png" /></a></li> --%>
-       
-       
-    </ul>
-    <ul>
-     <li id="product_list_icon">&nbsp;new&nbsp; &nbsp;best&nbsp;
-      &nbsp;sold out&nbsp; <%-- <c:if test="${productVO.indate > 0}">
-            &nbsp;new&nbsp;
-            </c:if>
-            <c:if test="${productVO.read_count > 10}">
-            &nbsp;best&nbsp;
-            </c:if>
-            <c:if test="${productVO.quantity == 0}">
-            &nbsp;sold out&nbsp;
-            </c:if> --%>
-     </li>
-    </ul>
-    <ul>
-     <li id="product_list_name">AF-P DX NIKKOR 70-300mm f/4.5-6.3G
-      ED VR</li>
-     <li id="product_list_price">￦3,340,000</li>
-
-    </ul>
-   </div>
-  </div>
-
-
+  </c:forEach>
   <div class="bottom"></div>
-  <%-- </c:forEach> --%>
  </article>
 </body>
 </html>

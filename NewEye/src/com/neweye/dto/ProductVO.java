@@ -14,7 +14,7 @@ public class ProductVO {
 	private String quantity; // 수량	
 	private String useyn; // 상품삭제여부	
 	private String content; // 상품설명	
-	private String img_List; // 이미지명	
+	private String img_list; // 이미지명	
 	private String img_detail; // 상세이미지명	
 	private String sizee; // 크기	
 	private String weight; // 무게	
@@ -101,11 +101,11 @@ public class ProductVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getImg_List() {
-		return img_List;
+	public String getImg_list() {
+		return img_list;
 	}
-	public void setImg_List(String img_List) {
-		this.img_List = img_List;
+	public void setImg_list(String img_list) {
+		this.img_list = img_list;
 	}
 	public String getImg_detail() {
 		return img_detail;
