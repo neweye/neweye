@@ -31,7 +31,7 @@
 
 	<select id="listProduct" parameterClass="str" resultClass="product">
 		select pseq, first_level, second_level, kind, name, price, 
-			indate, read_count, quantity, useyn, content, img_List, img_detail, 
+			indate, read_count, quantity, useyn, content, img_list, img_detail, 
 			sizee, weight, ratio, pixel, speed, seqpictures, screen, iso, 
 			movframe, format, filter, functions,  zoomyn, minfocus, maxfocus, 
 			minaperture, maxaperture, distance, types
@@ -42,14 +42,14 @@
 	<update id="insertProduct" parameterClass="product">
 		insert into product
 		(pseq, first_level, second_level, kind, name, price, 
-			indate, read_count, quantity, useyn, content, img_List, img_detail, 
+			indate, read_count, quantity, useyn, content, img_list, img_detail, 
 			sizee, weight, ratio, pixel, speed, seqpictures, screen, iso, 
 			movframe, format, filter, functions, zoomyn, minfocus, maxfocus, 
 			minaperture, maxaperture, distance, types
 		)
 		values(product_seq.nextval, #first_level#, #second_level#, #kind#, 
 			#name#, #price#, #indate#, #read_count#, #quantity#, #useyn#, 
-			#content#, #img_List#, #img_detail#, #sizee#, #weight#, #ratio#, 
+			#content#, #img_list#, #img_detail#, #sizee#, #weight#, #ratio#, 
 			#pixel#, #speed#, #seqpictures#, #screen#, #iso#, #movframe#, #format#, 
 			#filter#, #functions#, #zoomyn#, #minfocus#, #maxfocus#, #minaperture#, 
 			#maxaperture#, #distance#, #types#
@@ -60,7 +60,7 @@
 		update product set
 			first_level=#first_level#, second_level=#second_level#, kind=#kind#, 
 			name=#name#, price=#price#, indate=#indate#, read_count=#read_count#, 
-			quantity=#quantity#, useyn=#useyn#, content=#content#, img_List=#img_List#, 
+			quantity=#quantity#, useyn=#useyn#, content=#content#, img_list=#img_list#, 
 			img_detail=#img_detail#, sizee=#sizee#, weight=#weight#, ratio=#ratio#, 
 			pixel=#pixel#, speed=#speed#, seqpictures=#seqpictures#, screen=#screen#, 
 			iso=#iso#, movframe=#movframe#, format=#format#, filter=#filter#, 
@@ -68,5 +68,8 @@
 			minaperture=#minaperture#, maxaperture=#maxaperture#, distance=#distance#, types=#types# 
 		where pseq=#pseq#
 	</update>
+
+
+
 
 </sqlMap>

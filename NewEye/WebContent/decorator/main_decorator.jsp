@@ -118,12 +118,12 @@
 							<ul class="nav navbar-nav">
 								<li class="active"><a href="#intro">Home</a></li>
 								<li><a href="#about">About Me</a></li>
+								<li><a href="catagory.ne">PRODUCT</a></li>
 								<li><a href="#gallery">My gallery</a></li>
 								<li><a href="#contact">Talk to me</a></li>
 								<li><a href="admin/adminLoginForm.ne">ADMIN</a></li>
 								<li><a href="contract.ne">JOIN</a></li>
 								<li><a href="loginForm.ne">LOGIN</a></li>
-								<li><a href="catagory.ne">PRODUCT</a></li>
 							</ul>
 						</div>
 						<!-- /.Navbar-collapse -->

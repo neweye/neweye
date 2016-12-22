@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,18 +96,18 @@ input.btn_product_detail:active {
   <table class="product_detail" border="1px">
    <tr>
     <td rowspan="3" id="td_img_detail">
-    <img class="product_img_detail" src="product_images/${productVO.img_list}" />
-    <%-- <img src="<%=request.getContextPath()%>/productimg/D500.png" id="img_detail"/> --%>
+    <img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}"/>
     </td>
-    <td colspan="2">${productVO.name}상품명올거임</td>
+    <td colspan="2">${productVO.name}</td>
    </tr>
    <tr>
     <td>가격 :</td>
-    <td>${productVO.price}가격와야함</td>
+    <td>${productVO.price}</td>
    </tr>
    <tr>
     <td>수랑 :</td>
-    <td>${productVO.quantity}수량와야함</td>
+    <td><input type="text" name="" style="width:30px"/> &nbsp;
+    (잔여수량 : ${productVO.quantity})</td>
    </tr>
    <tr>
     <td colspan="3">
@@ -123,16 +125,20 @@ input.btn_product_detail:active {
  <!-- 상품상세 테이블 시작 -->
  <article>
   <table class="product_img_detail"><tr><td>
-  <img class="product_img_detail" src="product_images/${productVO.img_detail}" />
+  <img src="<%=request.getContextPath() %>/productimg/${productVO.img_detail}"/>
   <%-- <img src="<%=request.getContextPath()%>/productimg/D500_2.jpg"/> --%>
   </td></tr></table>
   
   <table class="table_detail_content" border="1" solid="black">
    <th colspan="2">상품 상세 정보</th>
+   
+   
+   <c:if test="${!empty productVO.pseq}">
    <tr>
     <td class="content_td">상품번호 Verdana</td>
     <td>| ${productVO.pseq}</td>
    </tr>
+   </c:if>
    <tr>
     <td>대분류</td>
     <td>| ${productVO.first_level}</td>
@@ -158,10 +164,7 @@ input.btn_product_detail:active {
     <td>${productVO.indate}</td>
    </tr>
    <tr>
-    <td>조회수</td>
-    <td>${productVO.read_count}</td>
-   </tr>
-   <tr>
+    <tr>
     <td>수량</td>
     <td>${productVO.quantity}</td>
    </tr>
@@ -175,7 +178,7 @@ input.btn_product_detail:active {
    </tr>
    <tr>
     <td>이미지명</td>
-    <td>${productVO.img_List}</td>
+    <td>${productVO.img_list}</td>
    </tr>
    <tr>
     <td>상세이미지명</td>
@@ -253,11 +256,12 @@ input.btn_product_detail:active {
     <td>최소촬영거리</td>
     <td>${productVO.distance}</td>
    </tr>
+   <c:if test="${!empty productVO.types}">
    <tr>
     <td>액세서리 분류</td>
     <td>${productVO.types}</td>
    </tr>
-
+	</c:if>
 
 
   </table>
