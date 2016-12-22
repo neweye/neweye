@@ -29,6 +29,10 @@
 	<select id="getProduct" parameterClass="str" resultClass="product">
 		select * from product where pseq=#pseq#
 	</select>
+	
+	<select id="listCategoryProduct" parameterClass="str" resultClass="product">
+		select * from product where first_level=#first_level#
+	</select>
 
 	<select id="listKindProduct" parameterClass="str" resultClass="product">
 		select * from product where kind=#kind#

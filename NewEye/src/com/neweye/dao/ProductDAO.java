@@ -40,6 +40,8 @@ public interface ProductDAO {
    // 상품 조회수 증가/////////////////////////////////////////////////////
    public int increaseReadCount(ProductVO product) throws SQLException;
 
+   ArrayList<ProductVO> listCategoryProduct(String Category) throws SQLException;
+
    
    
 }

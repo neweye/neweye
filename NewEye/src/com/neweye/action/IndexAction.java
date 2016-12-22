@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.neweye.dao.ProductDAO;
 import com.neweye.dao.iBatis.ProductDAO_iBatis;
 import com.neweye.dto.ProductVO;
+import com.neweye.dto.SearchVO;
 
 public class IndexAction implements Action {
 
@@ -24,11 +25,21 @@ public class IndexAction implements Action {
 		/* 데이터베이스에서 상품 정보를 얻어오는 비지니스로직 */
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		
+		//신상품
+		SearchVO searchNew = new SearchVO();
+		searchNew.setOrderby("desc");
+		searchNew.setColumn("indate");
+		
+		//베스트
+		SearchVO searchBest = new SearchVO();
+		searchBest.setOrderby("desc");
+		searchBest.setColumn("indate");
+		
 		ArrayList<ProductVO> newProductList=null;
 		ArrayList<ProductVO> bestProductList =null;
 		try {
-			newProductList = productDAO.listNewProduct();
-			bestProductList = productDAO.listBestProduct();
+			newProductList = productDAO.listSelProduct(searchNew);
+			bestProductList = productDAO.listSelProduct(searchBest);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

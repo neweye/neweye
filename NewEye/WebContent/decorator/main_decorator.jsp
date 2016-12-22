@@ -78,28 +78,31 @@
 								</li>
 								<li>
 									<div class="dropdown">
-									<a href="catagory.ne"><span>DLSR</span></a>
+									<a href="product.ne?category=DSLR"><span>DSLR</span></a>
 									<div class="dropdown-content">
-										    <p>FX</p>
-										    <p>DX</p>
+										    <p><a href="product.ne?kind=1">FX</a></p>
+										    <p><a href="product.ne?kind=2">DX</a></p>
 										</div>
 									</div>&nbsp;&nbsp;&nbsp;
 								</li>
 								<li>
 									<div class="dropdown">
-									<a href="catagory.ne"><span>LENS</span></a>
+									<a href="product.ne?category=LENDS"><span>LENDS</span></a>
 									<div class="dropdown-content">
-										    <p>FX</p>
-										    <p>DX</p>
+										    <p><a href="product.ne?kind=3">DX 단렌즈</a></p>
+										    <p><a href="product.ne?kind=4">DX 줌렌즈</a></p>
+										    <p><a href="product.ne?kind=5">FX 단렌즈</a></p>
+										    <p><a href="product.ne?kind=6">FX 줌렌즈</a></p>
 										</div>
 									</div>&nbsp;&nbsp;&nbsp;
 								</li>
 								<li>
 									<div class="dropdown">
-									<a href="catagory.ne"><span>ACC</span></a>
+									<a href="product.ne?category=ACCESSORY"><span>ACCESSORY</span></a>
 									<div class="dropdown-content">
-										    <p>FX</p>
-										    <p>DX</p>
+										    <p><a href="product.ne?kind=7">DSLR</a></p>
+										    <p><a href="product.ne?kind=8">ETC</a></p>
+										    <p><a href="product.ne?kind=9">LENDS</a></p>
 										</div>
 									</div>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 								</li>
@@ -188,7 +191,6 @@
 	<script src="<%=request.getContextPath()%>/js/custom.js"></script>
 	<script src="<%=request.getContextPath()%>/contactform/contactform.js"></script>
 	<script src="<%=request.getContextPath()%>/product/products.js"></script>
-	<script src="<%=request.getContextPath()%>/mypage/mypage01.js"></script>
 
 </body>
 
