@@ -47,7 +47,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 	<!-- Preloader -->
 	<div class="slogan">
-			<a href="<%=request.getContextPath() %>/index.ne"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
+			<a href="<%=request.getContextPath() %>/index.ne"><img src="<%=request.getContextPath()%>/img/logo.png" alt="NewEye" /></a>
 	</div>
 
 	<!-- Navigation -->

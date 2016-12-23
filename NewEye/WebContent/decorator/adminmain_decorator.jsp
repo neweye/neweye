@@ -98,7 +98,7 @@
    <!-- /Section: intro -->
    <br/>
    <div class="slogan">
-         <a href="<%=request.getContextPath() %>/index.ne"><img src="<%=request.getContextPath()%>/img/logo2.jpg" alt="NewEye" /></a>
+         <a href="<%=request.getContextPath() %>/index.ne"><img src="<%=request.getContextPath()%>/img/logo.png" alt="NewEye" /></a>
    </div>
    <div class="page-scroll">
    <!-- <a href="#about"> <i class="fa fa-angle-down fa-5x animated"></i></a> -->
