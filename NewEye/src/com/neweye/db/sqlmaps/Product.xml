@@ -69,7 +69,7 @@
 			minaperture, maxaperture, distance, types
 		)
 		values(product_seq.nextval, #first_level#, #second_level#, #kind#, 
-			#name#, #price#, #indate#, #read_count#, #quantity#, #useyn#, 
+			#name#, #price#, TO_DATE(#indate#, 'YYYY-MM-DD'), #read_count#, #quantity#, #useyn#, 
 			#content#, #img_list#, #img_detail#, #sizee#, #weight#, #ratio#, 
 			#pixel#, #speed#, #seqpictures#, #screen#, #iso#, #movframe#, #format#, 
 			#filter#, #functions#, #zoomyn#, #minfocus#, #maxfocus#, #minaperture#, 
@@ -80,7 +80,7 @@
 	<update id="updateProduct" parameterClass="product">
 		update product set
 			first_level=#first_level#, second_level=#second_level#, kind=#kind#, 
-			name=#name#, price=#price#, indate=#indate#, read_count=#read_count#, 
+			name=#name#, price=#price#, indate=TO_DATE(#indate#, 'YYYY-MM-DD'), read_count=#read_count#, 
 			quantity=#quantity#, useyn=#useyn#, content=#content#, img_list=#img_list#, 
 			img_detail=#img_detail#, sizee=#sizee#, weight=#weight#, ratio=#ratio#, 
 			pixel=#pixel#, speed=#speed#, seqpictures=#seqpictures#, screen=#screen#, 

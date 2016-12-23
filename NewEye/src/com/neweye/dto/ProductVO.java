@@ -3,38 +3,40 @@ package com.neweye.dto;
 import java.sql.Timestamp;
 
 public class ProductVO {
-	private String pseq; // 상품번호	
-	private String first_level; // 대분류	
-	private String second_level; // 중분류	
-	private String kind; // 상품분류번호	
-	private String name; // 상품명	
-	private String price; // 가격	
-	private String indate; // 출시일	
-	private String read_count; // 조회수	
-	private String quantity; // 수량	
-	private String useyn; // 상품삭제여부	
-	private String content; // 상품설명	
-	private String img_list; // 이미지명	
-	private String img_detail; // 상세이미지명	
-	private String sizee; // 크기	
-	private String weight; // 무게	
-	private String ratio; // 센서크기	
-	private String pixel; // 화소	
-	private String speed; // 최소셔터스피드	
-	private String seqpictures; // 최대연속촬영속도	
-	private String screen; // 화면크기	
-	private String iso; // 최대ISO감도	
-	private String movframe; // 동영상프레임	
-	private String format; // 렌즈포맷	
-	private String filter; // 필터구경	
-	private String functions; // 렌즈기능	
-	private String zoomyn; // 줌여부	
-	private String minfocus; // 최소초점거리	
-	private String maxfocus; // 최대초첨거리	
-	private String minaperture; // 최소조리개	
-	private String maxaperture; // 최대조리개	
-	private String distance; // 최소촬영거리	
+	private String pseq; // 상품번호
+	private String first_level; // 대분류
+	private String second_level; // 중분류
+	private String kind; // 상품분류번호
+	private String name; // 상품명
+	private String price; // 가격
+	private String indate; // 출시일
+	private String read_count; // 조회수
+	private String quantity; // 수량
+	private String useyn; // 상품삭제여부
+	private String content; // 상품설명
+	private String img_list; // 이미지명
+	private String img_detail; // 상세이미지명
+	private String sizee; // 크기
+	private String weight; // 무게
+	private String ratio; // 센서크기
+	private String pixel; // 화소
+	private String speed; // 최소셔터스피드
+	private String seqpictures; // 최대연속촬영속도
+	private String screen; // 화면크기
+	private String iso; // 최대ISO감도
+	private String movframe; // 동영상프레임
+	private String format; // 렌즈포맷
+	private String filter; // 필터구경
+	private String functions; // 렌즈기능
+	private String zoomyn; // 줌여부
+	private String minfocus; // 최소초점거리
+	private String maxfocus; // 최대초첨거리
+	private String minaperture; // 최소조리개
+	private String maxaperture; // 최대조리개
+	private String distance; // 최소촬영거리
 	private String types; // 액세서리 분류
+	
+	
 	public String getPseq() {
 		return pseq;
 	}
@@ -228,4 +230,6 @@ public class ProductVO {
 		this.types = types;
 	}
 	
+	
+
 }
