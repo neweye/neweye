@@ -38,8 +38,8 @@ public class IndexAction implements Action {
 		ArrayList<ProductVO> newProductList=null;
 		ArrayList<ProductVO> bestProductList =null;
 		try {
-			newProductList = productDAO.listSelProduct(searchNew);
-			bestProductList = productDAO.listSelProduct(searchBest);
+			newProductList = productDAO.listSelProduct(1,searchNew);
+			bestProductList = productDAO.listSelProduct(1,searchBest);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

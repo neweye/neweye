@@ -158,10 +158,9 @@ li#product_list_price {
 
 				</div>
 			</span>
-
 					</c:if>
 		</c:forEach>
-		<div class="bottom"></div>
+		<div class="bottom">${paging}</div>
 	</article>
 </body>
 </html>

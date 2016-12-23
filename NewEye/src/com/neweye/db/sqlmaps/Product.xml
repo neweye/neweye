@@ -10,6 +10,14 @@
 	<typeAlias alias="product" type="com.neweye.dto.ProductVO" />
 	<typeAlias alias="orderby" type="com.neweye.dto.SearchVO" />
 	
+	<select id="getProduct" parameterClass="str" resultClass="product">
+		select * from product where pseq=#pseq#
+	</select>
+	
+	<select id="totalRecord" parameterClass="str" resultClass="int">
+		select count(*) from product where name like '%'||#name#||'%'
+	</select>
+	
 	<select id="listDescProduct" parameterClass="str" resultClass="product">
 		select * from product order by #column# desc
 	</select>
@@ -18,28 +26,20 @@
 		select * from product order by #column# asc
 	</select>
 	
-	<select id="listNewProduct" resultClass="product">
-		select * from product order by indate desc
-	</select>
-
-	<select id="listBestProduct" resultClass="product">
-		select * from product order by read_count desc
-	</select>
-
-	<select id="getProduct" parameterClass="str" resultClass="product">
-		select * from product where pseq=#pseq#
+	<select id="countlistCategoryProduct" parameterClass="str" resultClass="int">
+		select count(*) from product where first_level=#first_level#
 	</select>
 	
 	<select id="listCategoryProduct" parameterClass="str" resultClass="product">
 		select * from product where first_level=#first_level#
 	</select>
-
+	
+	<select id="countlistKindProduct" parameterClass="str" resultClass="int">
+		select count(*) from product where kind=#kind#
+	</select>
+	
 	<select id="listKindProduct" parameterClass="str" resultClass="product">
 		select * from product where kind=#kind#
-	</select>
-
-	<select id="totalRecord" parameterClass="str" resultClass="int">
-		select count(*) from product where name like '%'||#name#||'%'
 	</select>
 
 	<select id="listProduct" parameterClass="str" resultClass="product">
@@ -50,6 +50,14 @@
 			minaperture, maxaperture, distance, types
 		from product
 		where name like '%'||#name#||'%' order by pseq desc
+	</select>
+	
+	<select id="listNewProduct" resultClass="product">
+		select * from product order by indate desc
+	</select>
+
+	<select id="listBestProduct" resultClass="product">
+		select * from product order by read_count desc
 	</select>
 
 	<update id="insertProduct" parameterClass="product">
