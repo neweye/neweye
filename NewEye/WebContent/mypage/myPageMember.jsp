@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
@@ -7,8 +6,8 @@
 <article>
    <br> <br>
    <div id="contract">
-      <h2>회원가입</h2>
-      <h4>Join Us</h4>
+      <h2>회원정보수정</h2>
+      <h4>Modyfy</h4>
    </div>
    <div class="row">
       <div class="col-lg-8 col-md-offset-2">
@@ -99,7 +98,7 @@
 
                <div id="buttons">
                   <input type="button" value="수정" class="submit" onclick="go_update(this.form)">
-                  <input type="button" value="탈퇴" class="cancel" onclick="location='joinForm.ne'"> 
+                  <input type="button" value="탈퇴" class="cancel" onclick="go_delete(this.form)"> 
                   <input type="button" value="뒤로가기" class="submit" onclick="location='findIdForm.ne'">
                </div>
             </form>
@@ -113,5 +112,11 @@ function go_update(form){
    form.action="mypageMemberUpdate.ne";
    form.method="post";
    form.submit();
+}
+
+function go_delete(form){
+	form.action="mypageMemberDelete.ne";
+	form.method="post";
+	form.submit();
 }
 </script>
