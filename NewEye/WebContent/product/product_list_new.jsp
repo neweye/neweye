@@ -2,7 +2,7 @@
 	pageEncoding="utf-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 
-<article class="product_list_jsp">
+<article class="product_list_new">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-md-12 col-lg-12">
@@ -14,17 +14,17 @@
 								<span class="div_areasize">
 									<div class="div_all">
 										<div id="product_list">
+											<a href="productDetail.ne?pseq=${productVO.pseq}">
 											<ul class="plist">
-												<li><a href="productDetail.ne?pseq=${productVO.pseq}">
-														<img
-														src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" />
-												</a></li>
+												<li>
+													<img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" />
+												</li>
 											</ul>
 											<ul>
 												<li id="product_list_name">${productVO.name}</li>
 												<li id="product_list_price">${productVO.price}</li>
-												<li id="product_list_price">${productVO.read_count}</li>
 											</ul>
+											</a>
 										</div>
 									</div>
 								</span>

@@ -51,13 +51,13 @@
 	
 	<!-- ///////////최근 상품 시작/////////// -->
 	<section id="newGoods" class="home-section parallax text-center">
-		<div><%@ include file="/product/product_list_new.jsp" %></div>
+		<%@include file="/product/product_list_new.jsp" %>
 	</section>
 	<!-- ///////////최근 상품 끝/////////// -->
 	
 	<!-- ///////////베스트 상품 시작/////////// -->
 	<section id="bestGoods" class="home-section parallax text-center">
-		<div><%@ include file="/product/product_list_best.jsp" %></div>
+		<%@include file="/product/product_list_best.jsp" %>
 	</section>
 	<!-- ///////////베스트 상품 끝/////////// -->
 	
@@ -107,7 +107,7 @@
 	<section id="blanck" class="home-section parallax text-center">
 		<div></div>
 	</section>
-	<!-- ///////////베스트 상품 끝/////////// -->
+	<!-- ///////////여백 끝/////////// -->
 	
 </body>
 

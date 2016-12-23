@@ -15,16 +15,29 @@
  padding: 0;
  
 }
+div#detail_table_outline{
+	margin:30px auto;
+	width: 604px;
+	border : 1px dashed #888888;
+}
 table.product_detail{
  margin:50px auto;
  width: 800px;
  height: 600px;
+ border: 1px solid #999999;
 }
 
 table.table_detail_content{
  margin: 20px auto;
- width: 800px;
+ width: 600px;
 }
+th#th_detail_table{
+	height:40px;
+	text-align:center;
+	vatical-align: top;
+	font-size: 18px;
+}
+
 td#td_img_detail{
  width:600px;  /* 여기 왜 적용이 안되는가... */
  text-align:center;
@@ -32,8 +45,9 @@ td#td_img_detail{
 
 td{text-indent: 1em;}
 td.content_td{
+text-indent: 2em;
  font-family: 'Rockwe', Monospace ;
- width: 180px;
+ width: 160px;
  height: 30px;
  font-size:15px;
  
@@ -94,16 +108,18 @@ input.btn_product_detail:active {
  <!-- 상품 상세 상단 영역 시작 -->
  <article>
  <form method="post" name="formm">
-  <table class="product_detail" border="1px">
+  <table class="product_detail">
+  	<tr><td colspan="3"></td></tr>
    <tr>
     <td rowspan="3" id="td_img_detail">
     <img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}"/>
     </td>
+    <td style="background:#cccccc; width:2px;" rowspan="3" ></td>
     <td colspan="2">${productVO.name}</td>
    </tr>
    <tr>
     <td>가격 :</td>
-    <td>${productVO.price}</td>
+    <td>| ${productVO.price}</td>
    </tr>
    <tr>
     <td>수랑 :</td>
@@ -111,7 +127,7 @@ input.btn_product_detail:active {
     (잔여수량 : ${productVO.quantity})</td>
    </tr>
    <tr>
-    <td colspan="3">
+    <td colspan="3" style="text-align:center;">
      <input type="hidden" name="pseq" value="${productVO.pseq}"/>
      <input type="button" class="btn_product_detail" value="ADD TO CART" class="submit" onclick="go_addcart()"/>&nbsp;&nbsp;
      <input type="button" class="btn_product_detail" value="BUY NOW" class="submit" onclick="go_buynow()" />&nbsp;&nbsp;
@@ -132,142 +148,168 @@ input.btn_product_detail:active {
   <%-- <img src="<%=request.getContextPath()%>/productimg/D500_2.jpg"/> --%>
   </td></tr></table>
   
-  <table class="table_detail_content" border="1" solid="black">
-   <th colspan="2">상품 상세 정보</th>
+  <div id="detail_table_outline">
+  <table class="table_detail_content" >
+   <tr><th id="th_detail_table" colspan="2">상품 상세 정보</th></tr>
    
+   <tr style="background:#999999; height:5px;"><td colspan="6"></td></tr>
    
    <c:if test="${!empty productVO.pseq}">
    <tr>
-    <td class="content_td">상품번호 Verdana</td>
+    <td class="content_td">상품번호</td>
     <td>| ${productVO.pseq}</td>
    </tr>
    </c:if>
    <tr>
-    <td>대분류</td>
+    <td  class="content_td">대분류</td>
     <td>| ${productVO.first_level}</td>
    </tr>
    <tr>
-    <td>중분류</td>
+    <td  class="content_td">중분류</td>
     <td>| ${productVO.second_level}</td>
    </tr>
    <tr>
-    <td>상품분류번호</td>
-    <td>${productVO.kind}</td>
+    <td  class="content_td">상품명</td>
+    <td>| ${productVO.name}</td>
    </tr>
    <tr>
-    <td>상품명</td>
-    <td>${productVO.name}</td>
+    <td  class="content_td">가격</td>
+    <td>| ${productVO.price}원</td>
    </tr>
    <tr>
-    <td>가격</td>
-    <td>${productVO.price}</td>
+    <td  class="content_td">출시일</td>
+    <td>| ${productVO.indate}</td>
    </tr>
    <tr>
-    <td>출시일</td>
-    <td>${productVO.indate}</td>
-   </tr>
+   
+   <c:if test="${!empty productVO.sizee}">
    <tr>
-    <tr>
-    <td>수량</td>
-    <td>${productVO.quantity}</td>
+    <td  class="content_td">크기</td>
+    <td>| ${productVO.sizee}</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.weight}">
    <tr>
-    <td>상품삭제여부</td>
-    <td>${productVO.useyn}</td>
+    <td  class="content_td">무게</td>
+    <td>| ${productVO.weight}g</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.ratio}">
    <tr>
-    <td>상품설명</td>
-    <td>${productVO.content}</td>
+    <td  class="content_td">센서크기</td>
+    <td>| ${productVO.ratio}</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.pixel}">
    <tr>
-    <td>이미지명</td>
-    <td>${productVO.img_list}</td>
+    <td  class="content_td">화소</td>
+    <td>| ${productVO.pixel}만 화소</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.speed}">
    <tr>
-    <td>상세이미지명</td>
-    <td>${productVO.img_detail}</td>
+    <td  class="content_td">최소셔터스피드</td>
+    <td>| 1/${productVO.speed}</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.seqpictures}">
    <tr>
-    <td>크기</td>
-    <td>${productVO.sizee}</td>
+    <td  class="content_td">연속촬영</td>
+    <td>| ${productVO.seqpictures}매</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.screen}">
    <tr>
-    <td>무게</td>
-    <td>${productVO.weight}</td>
+    <td  class="content_td">화면크기</td>
+    <td>| ${productVO.screen}cm</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.iso}">
    <tr>
-    <td>센서크기</td>
-    <td>${productVO.ratio}</td>
+    <td  class="content_td">ISO</td>
+    <td>| ${productVO.iso}</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.movframe}">
    <tr>
-    <td>화소</td>
-    <td>${productVO.pixel}</td>
+    <td  class="content_td">동영상프레임</td>
+    <td>| ${productVO.movframe}장</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.format}">
    <tr>
-    <td>최소셔터스피드</td>
-    <td>${productVO.speed}</td>
+    <td  class="content_td">렌즈호환</td>
+    <td>| ${productVO.format}</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.filter}">
    <tr>
-    <td>최대연속촬영속도</td>
-    <td>${productVO.seqpictures}</td>
+    <td  class="content_td">필터구경</td>
+    <td>| ${productVO.filter}mm</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.functions}">
    <tr>
-    <td>화면크기</td>
-    <td>${productVO.screen}</td>
+    <td  class="content_td">렌즈기능</td>
+    <td>| ${productVO.functions}</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.zoomyn}">
    <tr>
-    <td>최대ISO감도</td>
-    <td>${productVO.iso}</td>
+    <td  class="content_td">줌</td>
+    <td>| 
+    <c:if test="${productVO.zoomyn=='Y'||'y'}">
+    가능
+    </c:if>
+    <c:if test="${productVO.zoomyn=='N'||'n'}">
+    불가능
+    </c:if>
+    </td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.minfocus}">
    <tr>
-    <td>동영상프레임</td>
-    <td>${productVO.movframe}</td>
+    <td class="content_td">최소초점거리</td>
+    <td>| ${productVO.minfocus}mm</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.maxfocus}">
    <tr>
-    <td>렌즈호환</td>
-    <td>${productVO.format}</td>
+    <td class="content_td">최대초첨거리</td>
+    <td>| ${productVO.maxfocus}mm</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.minaperture}">
    <tr>
-    <td>필터구경</td>
-    <td>${productVO.filter}</td>
+    <td class="content_td">최소조리개</td>
+    <td>| f/${productVO.minaperture}</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.maxaperture}">
    <tr>
-    <td>렌즈기능</td>
-    <td>${productVO.functions}</td>
+    <td class="content_td">최대조리개</td>
+    <td>| f/${productVO.maxaperture}</td>
    </tr>
+   </c:if>
+   <c:if test="${!empty productVO.distance}">
    <tr>
-    <td>줌여부</td>
-    <td>${productVO. zoomyn}</td>
+    <td class="content_td">최소촬영거리</td>
+    <td>| ${productVO.distance}cm</td>
    </tr>
-   <tr>
-    <td>최소초점거리</td>
-    <td>${productVO.minfocus}</td>
-   </tr>
-   <tr>
-    <td>최대초첨거리</td>
-    <td>${productVO.maxfocus}</td>
-   </tr>
-   <tr>
-    <td>최소조리개</td>
-    <td>${productVO.minaperture}</td>
-   </tr>
-   <tr>
-    <td>최대조리개</td>
-    <td>${productVO.maxaperture}</td>
-   </tr>
-   <tr>
-    <td>최소촬영거리</td>
-    <td>${productVO.distance}</td>
-   </tr>
+   </c:if>
    <c:if test="${!empty productVO.types}">
    <tr>
-    <td>액세서리 분류</td>
-    <td>${productVO.types}</td>
+    <td class="content_td">액세서리 분류</td>
+    <td>| ${productVO.types}</td>
    </tr>
 	</c:if>
-
+	 <tr>
+    <td class="content_td">상품설명</td>
+    <td>| ${productVO.content}</td>
+   </tr>
 
   </table>
+  </div>
  </article>
  <!-- 상품상세 테이블 끝 -->
  
