@@ -90,20 +90,6 @@
 							data-msg="Please enter at least 8 chars of subject" />
 						<div class="validation"></div>
 					</div>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-
-
-
-
-
 					<div class="text-center">
 						<button type="submit" class="btn btn-skin btn-block"
 							id="btnContactUs">회원가입</button>
