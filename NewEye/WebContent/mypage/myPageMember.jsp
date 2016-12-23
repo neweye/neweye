@@ -99,7 +99,7 @@
                <div id="buttons">
                   <input type="button" value="수정" class="submit" onclick="go_update(this.form)">
                   <input type="button" value="탈퇴" class="cancel" onclick="go_delete(this.form)"> 
-                  <input type="button" value="뒤로가기" class="submit" onclick="location='findIdForm.ne'">
+                  <input type="button" value="뒤로가기" class="submit" onclick="history.go(-1);">
                </div>
             </form>
          </div>

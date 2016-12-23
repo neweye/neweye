@@ -35,6 +35,8 @@ public class ProductVO {
 	private String maxaperture; // 최대조리개	
 	private String distance; // 최소촬영거리	
 	private String types; // 액세서리 분류
+	
+	
 	public String getPseq() {
 		return pseq;
 	}
