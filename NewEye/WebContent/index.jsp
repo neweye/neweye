@@ -56,9 +56,9 @@
 	<!-- ///////////최근 상품 끝/////////// -->
 	
 	<!-- ///////////베스트 상품 시작/////////// -->
-	<section id="bestGoods" class="home-section parallax text-center">
+	<%-- <section id="bestGoods" class="home-section parallax text-center">
 		<%@include file="/product/product_list_best.jsp" %>
-	</section>
+	</section> --%>
 	<!-- ///////////베스트 상품 끝/////////// -->
 	
 	<!-- Section: separator -->

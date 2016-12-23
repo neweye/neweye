@@ -158,42 +158,44 @@
 
 	<decorator:body />
 
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<p>&copy; Lonely Theme. All Rights Reserved</p>
-					<div class="credits">
-						<!-- 
+   <footer>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 col-lg-12">
+               <p>&copy; Neweye.All Rights Reserved</p>
+               <div class="credits">
+                  <!-- 
                             All the links in the footer should remain intact. 
                             You can delete the links only if you purchased the pro version.
                             Licensing information: https://bootstrapmade.com/license/
                             Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Lonely
                         -->
-						<a href="https://bootstrapmade.com/">Free Bootstrap Themes</a> by
-						<a href="https://bootstrapmade.com/">BootstrapMade</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+                  상호명 : 주식회사 뉴아이코리아 / 대표이사 : JSP / TEL : 080-000-0000 / FAX : 042-0000-0000<br>
+주소 : 대전광역시 중구 중앙로 76 영민빌딩 2층
 
-	<!-- Core JavaScript Files -->
-	<script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
-	<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
-	<script src="<%=request.getContextPath()%>/js/jquery.easing.min.js"></script>
-	<script src="<%=request.getContextPath()%>/js/jquery.sticky.js"></script>
-	<script src="<%=request.getContextPath()%>/js/jquery.scrollTo.js"></script>
-	<script src="<%=request.getContextPath()%>/js/stellar.js"></script>
-	<script src="<%=request.getContextPath()%>/js/wow.min.js"></script>
-	<script src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
-	<script src="<%=request.getContextPath()%>/js/nivo-lightbox.min.js"></script>
-	<!-- Custom Theme JavaScript -->
-	<script src="<%=request.getContextPath()%>/js/custom.js"></script>
-	<script src="<%=request.getContextPath()%>/contactform/contactform.js"></script>
-	<script src="<%=request.getContextPath()%>/product/products.js"></script>
-	<script src="<%=request.getContextPath()%>/mypage/mypage01.js"></script>
-	
+사업자등록번호 : 000-00-12345 / 통신판매업신고 : 중구 제12345호 / 콜센터 운영시간 : 평일 09:00 ~ 18:00 (토·일·공휴일 휴무)
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- Core JavaScript Files -->
+   <script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
+   <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+   <script src="<%=request.getContextPath()%>/js/jquery.easing.min.js"></script>
+   <script src="<%=request.getContextPath()%>/js/jquery.sticky.js"></script>
+   <script src="<%=request.getContextPath()%>/js/jquery.scrollTo.js"></script>
+   <script src="<%=request.getContextPath()%>/js/stellar.js"></script>
+   <script src="<%=request.getContextPath()%>/js/wow.min.js"></script>
+   <script src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
+   <script src="<%=request.getContextPath()%>/js/nivo-lightbox.min.js"></script>
+   <!-- Custom Theme JavaScript -->
+   <script src="<%=request.getContextPath()%>/js/custom.js"></script>
+   <script src="<%=request.getContextPath()%>/contactform/contactform.js"></script>
+   <script src="<%=request.getContextPath()%>/product/products.js"></script>
+   <script src="<%=request.getContextPath()%>/mypage/mypage01.js"></script>
+   
 
 </body>
 
