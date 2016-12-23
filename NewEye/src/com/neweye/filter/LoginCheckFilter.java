@@ -46,7 +46,6 @@ public class LoginCheckFilter implements Filter {
 			if (login) {
 				chain.doFilter(request, response);
 			} else {
-				System.out.println("-----다른곳으로-----");
 				RequestDispatcher dispatcher = request.getRequestDispatcher("member/login.jsp");
 				dispatcher.forward(request, response);
 			}
