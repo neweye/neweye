@@ -30,7 +30,7 @@ public class ProductKindAction implements Action {
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		ArrayList<ProductVO> productKindList = null;
 		try {
-			productKindList = productDAO.listKindProduct(kind);
+			productKindList = productDAO.listKindProduct(1,kind);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
