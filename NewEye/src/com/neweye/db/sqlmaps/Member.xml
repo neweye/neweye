@@ -42,9 +42,11 @@
       select * from member where name=#name# and phone=#phone#
    </select>
    
-   <!-- <update id="updateMember" parameterClass="member" >
-      update member set password=#password#, name=#name#, email=#email#, zipnum="zipNum", adress=#adress#, phone=#phone# where id=#id#      
-   </update> -->
+   <delete id="deleteMember" parameterClass="str">
+   delete from member where id=#id#
+   </delete>
+   
+
    
     
      

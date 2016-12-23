@@ -12,6 +12,7 @@ public interface MemberDAO {
    public ArrayList<MemberVO> listMember(String member_name) throws SQLException;
    public MemberVO searchId(String name,String phone) throws SQLException;
    public void updateMember(MemberVO memberVO) throws SQLException;
+   public int deleteMember(String userid) throws SQLException;
    
    
 }
