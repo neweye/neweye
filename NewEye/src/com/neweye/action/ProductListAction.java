@@ -45,7 +45,7 @@ public class ProductListAction implements Action {
 		}
 		request.setAttribute("key", key);
 		request.setAttribute("tpage", tpage);
-
+		
 		SearchVO searchVO = new SearchVO();
 		searchVO.setOrderby("desc");
 		searchVO.setColumn("indate");
@@ -57,8 +57,8 @@ public class ProductListAction implements Action {
 		String paging = null;
 
 		try {
-			productList = productDAO.listSelProduct(searchVO);
-			paging = productDAO.pageNumber(Integer.parseInt(tpage), key);
+			productList = productDAO.listSelProduct(Integer.parseInt(tpage),searchVO);
+			paging = productDAO.pageNumber2(Integer.parseInt(tpage), key,"all");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -71,31 +71,65 @@ public class ProductListAction implements Action {
 	private void kind(HttpServletRequest request, HttpServletResponse response) {
 		String kind = request.getParameter("kind").trim();
 
+		String key = request.getParameter("key");
+		String tpage = request.getParameter("tpage");
+		if (key == null) {
+			key = "";
+		}
+		if (tpage == null) {
+			tpage = "1"; // 현재 페이지 (default 1)
+		} else if (tpage.equals("")) {
+			tpage = "1";
+		}
+		request.setAttribute("key", key);
+		request.setAttribute("tpage", tpage);
+		
 		/* ProductDAO productDAO = ProductDAO_JDBC.getInstance(); */
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		ArrayList<ProductVO> productKindList = null;
+		String paging = null;
 		try {
-			productKindList = productDAO.listKindProduct(kind);
-
+			productKindList = productDAO.listKindProduct(Integer.parseInt(tpage),kind);
+			paging = productDAO.pageNumber2(Integer.parseInt(tpage), kind,"kind");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		request.setAttribute("productKindList", productKindList);
-
+		int n = productKindList.size();
+		request.setAttribute("productListSize", n);
+		request.setAttribute("paging", paging);
 	}
 
 	private void category(HttpServletRequest request,
 			HttpServletResponse response) {
 		String category = request.getParameter("category").trim().toUpperCase();
+		
+		String key = request.getParameter("key");
+		String tpage = request.getParameter("tpage");
+		if (key == null) {
+			key = "";
+		}
+		if (tpage == null) {
+			tpage = "1"; // 현재 페이지 (default 1)
+		} else if (tpage.equals("")) {
+			tpage = "1";
+		}
+		request.setAttribute("key", key);
+		request.setAttribute("tpage", tpage);
+		
 		/* ProductDAO productDAO = ProductDAO_JDBC.getInstance(); */
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		ArrayList<ProductVO> productKindList = null;
+		String paging = null;
 		try {
-			productKindList = productDAO.listCategoryProduct(category);
-
+			productKindList = productDAO.listCategoryProduct(Integer.parseInt(tpage),category);
+			paging = productDAO.pageNumber2(Integer.parseInt(tpage), category,"category");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		request.setAttribute("productKindList", productKindList);
+		int n = productKindList.size();
+		request.setAttribute("productListSize", n);
+		request.setAttribute("paging", paging);
 	}
 }
