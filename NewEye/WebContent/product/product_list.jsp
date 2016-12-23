@@ -147,7 +147,7 @@ div.top_search_tb{
             &nbsp;best&nbsp;
             </c:if>
             <c:if test="${productVO.quantity==0||productVO.useyn=='N'}">
-            &nbsp;sold out&nbsp;
+            &nbsp;<font color="red">sold out</font>&nbsp;
             </c:if>
 								</li>
 							</ul>
