@@ -6,7 +6,7 @@
 <article>
 <h1>상품리스트</h1>   
 <form name="frm" method="post">
-<table>
+<table class="table">
   <tr>
   <td width="642">
       상품명 
@@ -17,7 +17,7 @@
   </td>
   </tr>
 </table>
-<table id="productList">
+<table id="productList" class="table">
     <tr>
         <th>번호</th>
         <th>상품명</th>
