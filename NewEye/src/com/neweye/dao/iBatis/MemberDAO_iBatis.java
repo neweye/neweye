@@ -74,4 +74,11 @@ public class MemberDAO_iBatis implements MemberDAO {
       System.out.println(client.update("updateMember", memberVO));
    }
 
+@Override
+public int deleteMember(String userid) throws SQLException {
+	
+	int result = client.delete("deleteMember", userid);
+	return result;
+}
+
 }

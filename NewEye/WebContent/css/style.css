@@ -408,6 +408,7 @@ hr {
 #myCarousel {
 	background: #f9f9f9;
 	padding: 10px;
+	height:500px;
 }
 
 .item img {
@@ -415,7 +416,9 @@ hr {
     width: 100%;
     height: auto;
 }	
-
+.productlistset{
+	height : 500px;
+}
 
 /* ===========================
 --- Contact
