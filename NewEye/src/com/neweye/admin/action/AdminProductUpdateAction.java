@@ -37,6 +37,44 @@ public class AdminProductUpdateAction implements Action {
 				"UTF-8",
 				new DefaultFileRenamePolicy()
 		);
+		
+		ProductVO productVO = new ProductVO();
+	    productVO.setPseq(multi.getParameter("pseq"));
+	    productVO.setFirst_level(multi.getParameter("first_level"));
+	    productVO.setSecond_level(multi.getParameter("second_level"));
+	    productVO.setKind(multi.getParameter("kind"));
+	    productVO.setName(multi.getParameter("name"));
+	    productVO.setPrice(multi.getParameter("price"));
+	    productVO.setWeight(multi.getParameter("weight"));
+	    //productVO.setIndate(multi.getParameter("indate"));//////////////////////////////////////////
+	    productVO.setIndate("2006-10-11");
+	    productVO.setRead_count(multi.getParameter("read_count"));////////////////////////////////////////////
+	    productVO.setQuantity(multi.getParameter("Quantity"));
+	    productVO.setUseyn(multi.getParameter("useyn"));
+	    productVO.setContent(multi.getParameter("content"));
+	    productVO.setImg_list(multi.getParameter("img_List"));
+	    productVO.setImg_detail(multi.getParameter("img_detail"));
+	    productVO.setSizee(multi.getParameter("sizee"));
+	    productVO.setWeight(multi.getParameter("weight"));
+	    productVO.setRatio(multi.getParameter("ratio"));
+	    productVO.setPixel(multi.getParameter("pixel"));
+	    productVO.setSpeed(multi.getParameter("speed"));
+	    productVO.setSeqpictures(multi.getParameter("seqpictures"));
+	    productVO.setScreen(multi.getParameter("screen"));
+	    productVO.setIso(multi.getParameter("iso"));
+	    productVO.setMovframe(multi.getParameter("movframe"));
+	    productVO.setFormat(multi.getParameter("format"));
+	    productVO.setFilter(multi.getParameter("filter"));
+	    productVO.setFunctions(multi.getParameter("functions"));
+	    productVO.setZoomyn(multi.getParameter("zoomyn"));
+	    productVO.setMinfocus(multi.getParameter("minfocus"));
+	    productVO.setMaxfocus(multi.getParameter("maxfocus"));
+	    productVO.setMinaperture(multi.getParameter("minaperture"));
+	    productVO.setMaxaperture(multi.getParameter("maxaperture"));
+	    productVO.setDistance(multi.getParameter("distance"));
+	    productVO.setTypes(multi.getParameter("types"));
+	    
+		/*
 		ProductVO productVO = new ProductVO();
 
 	    productVO.setPseq(multi.getParameter("pseq"));
@@ -72,6 +110,7 @@ public class AdminProductUpdateAction implements Action {
 	    productVO.setMaxaperture(Float.parseFloat(multi.getParameter("maxaperture")));
 	    productVO.setDistance(Integer.parseInt(multi.getParameter("distance")));
 	    productVO.setTypes(multi.getParameter("types"));
+	    */
 	    
 		/* ProductDAO productDAO = ProductDAO_JDBC.getInstance(); */
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();

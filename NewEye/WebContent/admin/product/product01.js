@@ -118,7 +118,7 @@ function go_mod(tpage, pseq) {
 
 function go_mod_save(tpage, pseq) {
 	var theForm = document.frm;
-
+	/*
 	if (theForm.kind.value == '') {
 		alert('상품분류를 선택하세요');
 		theForm.kind.focus();
@@ -152,13 +152,13 @@ function go_mod_save(tpage, pseq) {
 			// theForm.seq.value=seq;
 			theForm.price1.value = removeComma(theForm.price1);
 			theForm.price2.value = removeComma(theForm.price2);
-			theForm.price3.value = removeComma(theForm.price3);
+			theForm.price3.value = removeComma(theForm.price3);*/
 			// [2] products 테이블의 상품 정보를 수정하는 처리를 하는 product_modsave.jsp 페이지로
 			// 이동하되 상품 코드를 전달해준다. 상품코드로 폴더를 생성해서 그곳에 이미지 파일을 업로드하기 때문이다.			
 			theForm.action = "adminProductUpdate.ne";
 			theForm.submit();
-		}
-	}
+		/*}
+	}*/
 }
 
 function go_mod_mov(tpage, pseq) {
