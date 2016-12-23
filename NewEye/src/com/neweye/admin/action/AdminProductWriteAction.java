@@ -49,12 +49,16 @@ public class AdminProductWriteAction implements Action {
     productVO.setWeight(multi.getParameter("weight"));
     
     /////////////////////출시일///////////////////////////////
-    multi.getParameter("indate");
+    /*multi.getParameter("indate");
     Timestamp tm = new Timestamp(sizeLimit);
-    productVO.setIndate(tm+"");
+    productVO.setIndate(tm+"");*/
     
-    productVO.setRead_count(multi.getParameter("Read_count"));
-    productVO.setQuantity(multi.getParameter("Quantity"));
+    productVO.setIndate("2001-01-11");
+    
+    productVO.setRead_count("0");
+    productVO.setQuantity(multi.getParameter("Quantity"));//////////////////////////////////////////
+    productVO.setQuantity("0");
+    
     productVO.setUseyn(multi.getParameter("useyn"));
     productVO.setContent(multi.getParameter("content"));
     productVO.setImg_list(multi.getParameter("img_List"));

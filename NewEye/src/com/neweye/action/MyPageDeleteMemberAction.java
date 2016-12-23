@@ -21,12 +21,14 @@ public class MyPageDeleteMemberAction implements Action{
 		
 		String id = request.getParameter("id");
 		System.out.println(id);
+		HttpSession session = request.getSession();
 		
 		MemberDAO memberDAO = MemberDAO_iBatis.getInstance();
 		int memberVO=1;
 		
 		try {
 			memberVO = memberDAO.deleteMember(id);
+			session.invalidate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

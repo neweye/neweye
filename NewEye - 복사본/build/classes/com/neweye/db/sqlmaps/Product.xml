@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Product">
+
+	<typeAlias alias="str" type="java.lang.String" />
+	<typeAlias alias="int" type="java.lang.Integer" />
+	<typeAlias alias="product" type="com.neweye.dto.ProductVO" />
+
+	<select id="listNewProduct" resultClass="product">
+		select * from product order by indate desc
+	</select>
+
+	<select id="listBestProduct" resultClass="product">
+		select * from product order by read_count desc
+	</select>
+
+	<select id="getProduct" parameterClass="str" resultClass="product">
+		select * from product where pseq=#pseq#
+	</select>
+
+	<select id="listKindProduct" parameterClass="str" resultClass="product">
+		select * from product where kind=#kind#
+	</select>
+
+	<select id="totalRecord" parameterClass="str" resultClass="int">
+		select count(*) from product where name like '%'||#name#||'%'
+	</select>
+
+	<select id="listProduct" parameterClass="str" resultClass="product">
+		select pseq, first_level, second_level, kind, name, price, 
+			indate, read_count, quantity, useyn, content, img_list, img_detail, 
+			sizee, weight, ratio, pixel, speed, seqpictures, screen, iso, 
+			movframe, format, filter, functions,  zoomyn, minfocus, maxfocus, 
+			minaperture, maxaperture, distance, types
+		from product
+		where name like '%'||#name#||'%' order by pseq desc
+	</select>
+
+	<update id="insertProduct" parameterClass="product">
+		insert into product
+		(pseq, first_level, second_level, kind, name, price, 
+			indate, read_count, quantity, useyn, content, img_list, img_detail, 
+			sizee, weight, ratio, pixel, speed, seqpictures, screen, iso, 
+			movframe, format, filter, functions, zoomyn, minfocus, maxfocus, 
+			minaperture, maxaperture, distance, types
+		)
+		values(product_seq.nextval, #first_level#, #second_level#, #kind#, 
+			#name#, #price#, #indate#, #read_count#, #quantity#, #useyn#, 
+			#content#, #img_list#, #img_detail#, #sizee#, #weight#, #ratio#, 
+			#pixel#, #speed#, #seqpictures#, #screen#, #iso#, #movframe#, #format#, 
+			#filter#, #functions#, #zoomyn#, #minfocus#, #maxfocus#, #minaperture#, 
+			#maxaperture#, #distance#, #types#
+		)
+	</update>
+
+	<update id="updateProduct" parameterClass="product">
+		update product set
+			first_level=#first_level#, second_level=#second_level#, kind=#kind#, 
+			name=#name#, price=#price#, indate=#indate#, read_count=#read_count#, 
+			quantity=#quantity#, useyn=#useyn#, content=#content#, img_list=#img_list#, 
+			img_detail=#img_detail#, sizee=#sizee#, weight=#weight#, ratio=#ratio#, 
+			pixel=#pixel#, speed=#speed#, seqpictures=#seqpictures#, screen=#screen#, 
+			iso=#iso#, movframe=#movframe#, format=#format#, filter=#filter#, 
+			functions=#functions#, zoomyn=#zoomyn#, minfocus=#minfocus#, maxfocus=#maxfocus#, 
+			minaperture=#minaperture#, maxaperture=#maxaperture#, distance=#distance#, types=#types# 
+		where pseq=#pseq#
+	</update>
+
+
+
+
+</sqlMap>
