@@ -83,3 +83,7 @@ function go_order() {
 	document.formm.action = "mypage.ne";
 	document.formm.submit();
 }
+function go_mypage(){
+	   document.formm.action = "mypageMember.ne";
+	   document.formm.submit();
+	}

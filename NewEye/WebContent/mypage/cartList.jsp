@@ -51,11 +51,9 @@ table#cartList th, td{
 									<h3>${cartVO.pname}</h3>
 							</a></td>
 							<td>${cartVO.quantity}</td>
-							<td><fmt:formatNumber
-									value="${cartVO.price*cartVO.quantity}" type="currency" /></td>
+							<td><fmt:formatNumber value="${cartVO.price*cartVO.quantity}" type="currency" /></td>
 							<td><fmt:formatDate value="${cartVO.indate}" type="date" /></td>
-							<td><input type="checkbox" name="cseq"
-								value="${cartVO.cseq}"></td>
+							<td><input type="checkbox" name="cseq" value="${cartVO.cseq}"></td>
 						</tr>
 					</c:forEach>
 

@@ -25,7 +25,7 @@ function go_ab() // 판매가-원가=순매출을 replace해서 계산해 준다
 function go_save() 
 {
 	var theForm = document.frm;
-	
+	/*
 	if (theForm.kind.value == '') {
 		alert('상품분류를 선택하세요.');
 		theForm.kind.focus();
@@ -49,14 +49,14 @@ function go_save()
 		theForm.price1.value = removeComma(theForm.price1);
 		theForm.price2.value = removeComma(theForm.price2);
 		theForm.price3.value = removeComma(theForm.price3);
-
+*/
 		// productWrite.jsp 폼 페이지에서 입력받은 값을
 		// 디비에 추가하기 위한 페이지인 product_save.jsp로 이동하되
 		// 입력받은 상품 코드를 쿼리 스트링 형태로 전달한다.
 		// 상품 코드로 폴더를 만들어 거기에 이미지 파일을 업로드한다.
 		theForm.action = "adminProductWrite.ne";
 		theForm.submit();
-	}
+	/*}*/
 }
 
 function removeComma(input) // ,을 빼고 값을 다시 넣어준다.

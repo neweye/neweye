@@ -105,11 +105,12 @@ li#product_list_price {
 			</c:otherwise>
 		</c:choose> --%>
 
-
-		<input type="textfield" name="" value="" />&nbsp;<input
-			type="textfield" name="" value="" /> 드롭다운식으로 바꿀거임 <input
+<form name="frm" method="post">
+		<input type="text" name="key"/>
+		<input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">&nbsp;
+		<input type="text" name="" value="" /> 드롭다운식으로 바꿀거임 <input
 			type="button" name="" value="비교하기" />
-
+</form>
 	</article>
 
 
@@ -118,9 +119,9 @@ li#product_list_price {
 		<%-- <c:forEach var="i" items="" begin="0" varStatus="status" end="20"> --%>
 		<c:forEach items="${productKindList}" var="productVO">
 
+					<c:if test="${productVO.useyn=='Y'}">
 			<span class="div_areasize">
 				<div class="div_all">
-					<c:if test="${productVO.useyn=='Y'}">
 						<div id="product_list">
 							<ul class="plist">
 								<li><a href="productDetail.ne?pseq=${productVO.pseq}">
@@ -154,11 +155,11 @@ li#product_list_price {
 							</ul>
 						</div>
 
-					</c:if>
 
 				</div>
 			</span>
 
+					</c:if>
 		</c:forEach>
 		<div class="bottom"></div>
 	</article>

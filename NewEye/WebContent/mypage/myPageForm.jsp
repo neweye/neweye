@@ -5,18 +5,19 @@
 
  
  <article>
+ <form name="formm">
  <div id="contract">
   <br>
   <br>
  <h2>마이페이지</h2><h4>My page</h4>
   <table>
   <tr>
-  <td onclick="location.href='http://www.kpresort.com/'"><i class="fa fa-address-card-o" aria-hidden="true"></i>회원정보수정</td>
-  <td onclick="location.href='http://www.kpresort.com/'"><i class="fa fa-shopping-cart" aria-hidden="true"></i>장바구니내역</td>
+    <td onclick="go_mypage()"><i class="fa fa-child fa-5x"></i><br>회원정보수정</td>
+  <td><i class="fa fa-shopping-cart"></i><a href="cartList.ne">장바구니내역</a></td>
   </tr>
     <tr>
-  <td onclick="location.href='http://www.kpresort.com/'">주문내역</td>
-  <td onclick="location.href='http://www.kpresort.com/'">총주문내역</td>
+  <td><a href="mypage.ne">주문내역</a></td>
+  <td><a href="orderAll.ne">총주문내역</a></td>
   </tr>
   
   
@@ -24,4 +25,5 @@
   
   
   </div>
+  </form>
   </article>

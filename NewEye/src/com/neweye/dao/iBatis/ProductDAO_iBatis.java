@@ -10,6 +10,7 @@ import com.neweye.dao.BoardDao;
 import com.neweye.dao.ProductDAO;
 import com.neweye.db.sqlconfig.IBatisDBConnector;
 import com.neweye.dto.ProductVO;
+import com.neweye.dto.SearchVO;
 
 public class ProductDAO_iBatis implements ProductDAO {
 		
@@ -21,6 +22,17 @@ public class ProductDAO_iBatis implements ProductDAO {
 
 	public static ProductDAO_iBatis getInstance() {
 		return instance;
+	}
+
+	@Override
+	public ArrayList<ProductVO> listSelProduct(SearchVO search) throws SQLException {
+		ArrayList<ProductVO> listNewProduct = null;
+		if(search.getOrderby().equals("asc")){
+		listNewProduct = (ArrayList<ProductVO>) client.queryForList("listAscProduct", search.getColumn());
+		}else{
+			listNewProduct = (ArrayList<ProductVO>) client.queryForList("listDescProduct", search.getColumn());
+		}
+		return listNewProduct;
 	}
 
 	@Override
@@ -56,6 +68,14 @@ public class ProductDAO_iBatis implements ProductDAO {
 		listKindProduct = (ArrayList<ProductVO>) client.queryForList("listKindProduct", kind);
 		return listKindProduct;
 	}
+	
+	@Override
+	public ArrayList<ProductVO> listCategoryProduct(String Category)
+			throws SQLException {
+		ArrayList<ProductVO> listKindProduct = null;
+		listKindProduct = (ArrayList<ProductVO>) client.queryForList("listCategoryProduct", Category);
+		return listKindProduct;
+	}
 
 	@Override
 	public int totalRecord(String product_name) throws SQLException {
@@ -73,6 +93,7 @@ public class ProductDAO_iBatis implements ProductDAO {
 	@Override
 	public String pageNumber(int tpage, String name) throws SQLException {
 		String str = "";
+		String str2 = "";
 
 		int total_pages = totalRecord(name);
 		int page_count = total_pages / counts + 1;
@@ -96,6 +117,12 @@ public class ProductDAO_iBatis implements ProductDAO {
 			str += "<a href='adminProductList.ne?tpage="
 					+ (start_page - 1);
 			str += "&key=<%=product_name%>'>&lt;</a>&nbsp;&nbsp;";
+			
+			str2 += "<a href='ProductList.ne?tpage=1&key="
+					+ name + "'>&lt;&lt;</a>&nbsp;&nbsp;";
+			str2 += "<a href='ProductList.ne?tpage="
+					+ (start_page - 1);
+			str2 += "&key=<%=product_name%>'>&lt;</a>&nbsp;&nbsp;";
 		}
 
 		for (int i = start_page; i <= end_page; i++) {
@@ -103,6 +130,8 @@ public class ProductDAO_iBatis implements ProductDAO {
 				str += "<font color=red>[" + i + "]&nbsp;&nbsp;</font>";
 			} else {
 				str += "<a href='adminProductList.ne?tpage="
+						+ i + "&key=" + name + "'>[" + i + "]</a>&nbsp;&nbsp;";
+				str2 += "<a href='ProductList.ne?tpage="
 						+ i + "&key=" + name + "'>[" + i + "]</a>&nbsp;&nbsp;";
 			}
 		}
@@ -112,6 +141,12 @@ public class ProductDAO_iBatis implements ProductDAO {
 					+ (end_page + 1) + "&key=" + name
 					+ "'> &gt; </a>&nbsp;&nbsp;";
 			str += "<a href='adminProductList.ne?tpage="
+					+ page_count + "&key=" + name
+					+ "'> &gt; &gt; </a>&nbsp;&nbsp;";
+			str2 += "<a href='ProductList.ne?tpage="
+					+ (end_page + 1) + "&key=" + name
+					+ "'> &gt; </a>&nbsp;&nbsp;";
+			str2 += "<a href='ProductList.ne?tpage="
 					+ page_count + "&key=" + name
 					+ "'> &gt; &gt; </a>&nbsp;&nbsp;";
 		}
@@ -159,4 +194,5 @@ public class ProductDAO_iBatis implements ProductDAO {
 		return 0;
 	}
 
+	
 }

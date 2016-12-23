@@ -71,3 +71,9 @@ function go_order_delete() {
   document.formm.submit();
  }
 }
+function go_search() {
+	var theForm = document.frm;
+	var key=document.frm.key.value;
+	theForm.action = "ProductSearch.ne?key="+key;
+	theForm.submit();
+}

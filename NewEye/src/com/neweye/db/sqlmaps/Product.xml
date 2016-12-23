@@ -8,7 +8,16 @@
 	<typeAlias alias="str" type="java.lang.String" />
 	<typeAlias alias="int" type="java.lang.Integer" />
 	<typeAlias alias="product" type="com.neweye.dto.ProductVO" />
-
+	<typeAlias alias="orderby" type="com.neweye.dto.SearchVO" />
+	
+	<select id="listDescProduct" parameterClass="str" resultClass="product">
+		select * from product order by #column# desc
+	</select>
+	
+	<select id="listAscProduct" parameterClass="str" resultClass="product">
+		select * from product order by #column# asc
+	</select>
+	
 	<select id="listNewProduct" resultClass="product">
 		select * from product order by indate desc
 	</select>
@@ -19,6 +28,10 @@
 
 	<select id="getProduct" parameterClass="str" resultClass="product">
 		select * from product where pseq=#pseq#
+	</select>
+	
+	<select id="listCategoryProduct" parameterClass="str" resultClass="product">
+		select * from product where first_level=#first_level#
 	</select>
 
 	<select id="listKindProduct" parameterClass="str" resultClass="product">
