@@ -2,6 +2,17 @@
 	pageEncoding="utf-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 
+<style>
+article.product_list_new{
+	color: #555555;
+}
+
+
+li.product_list_new_li{
+list-style:none;
+}
+</style>
+
 <article class="product_list_new">
 	<div class="container">
 		<div class="row">
@@ -16,13 +27,13 @@
 										<div id="product_list">
 											<a href="productDetail.ne?pseq=${productVO.pseq}">
 											<ul class="plist">
-												<li>
-													<img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" />
+												<li class="product_list_new_li">
+													<img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
 												</li>
 											</ul>
 											<ul>
-												<li id="product_list_name">${productVO.name}</li>
-												<li id="product_list_price">${productVO.price}</li>
+												<li class="product_list_new_li" id="product_list_name">${productVO.name}</li>
+												<li class="product_list_new_li" id="product_list_price">${productVO.price}</li>
 											</ul>
 											</a>
 										</div>
