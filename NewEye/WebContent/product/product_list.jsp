@@ -87,10 +87,9 @@ li#product_list_price {
 div.top_search_tb{
 	margin:10px auto;
 	padding:10px;
-	width : 800px;
-	border:1px solid black;
-	
-	
+	width : 1000px;
+	text-align:right;
+	/* border:1px solid black; */
 }
 </style>
 </head>
@@ -103,21 +102,22 @@ div.top_search_tb{
 	<div class="top_search_tb">
 		<input type="text" name="key"/>
 		<input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">&nbsp;
-		<input type="button" value="상세검색" onclick="go_detailsearch(this.form)"><br /> 
+		<%-- <input type="button" value="상세검색" onclick="go_detailsearch(this.form)"><br /> 
 		상품비교 : <select name="cmb_first_level">
 			<option name="op_first_level" value="dslr">DSLR</option>
 			<option name="op_first_level" value="lends">렌즈</option>
 			<option name="op_first_level" value="acc">악세사리</option>
 		</select> &nbsp;
-		<%-- <c:choose>
+		<c:choose>
 			<c:when test="${productVO.first_level='DSLR'}">
 			</c:when>
 			<c:otherwise>
 			</c:otherwise>
-		</c:choose> --%>
+		</c:choose>
 		<input type="text" name="" value="" /> 드롭다운식으로 바꿀거임 <input
-			type="button" name="" value="비교하기" />
+			type="button" name="" value="비교하기" /> --%>
 </div>
+<br/>
 </form>
 	</article>
 
@@ -131,8 +131,7 @@ div.top_search_tb{
 						<div id="product_list">
 							<ul class="plist">
 								<li><a href="productDetail.ne?pseq=${productVO.pseq}">
-										<img
-										src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" />
+										<img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
 
 								</a></li>
 

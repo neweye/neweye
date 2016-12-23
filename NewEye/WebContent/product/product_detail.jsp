@@ -112,7 +112,7 @@ input.btn_product_detail:active {
   	<tr><td colspan="3"></td></tr>
    <tr>
     <td rowspan="3" id="td_img_detail">
-    <img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}"/>
+    <img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
     </td>
     <td style="background:#cccccc; width:2px;" rowspan="3" ></td>
     <td colspan="2">${productVO.name}</td>
@@ -144,7 +144,7 @@ input.btn_product_detail:active {
  <!-- 상품상세 테이블 시작 -->
  <article>
   <table class="product_img_detail"><tr><td>
-  <img src="<%=request.getContextPath() %>/productimg/${productVO.img_detail}"/>
+  <img src="<%=request.getContextPath() %>/productimg/${productVO.img_detail}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
   <%-- <img src="<%=request.getContextPath()%>/productimg/D500_2.jpg"/> --%>
   </td></tr></table>
   

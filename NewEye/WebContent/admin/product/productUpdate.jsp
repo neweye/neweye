@@ -127,7 +127,7 @@ td.td_product_add{
 <tr>
   <th class="th_product_add">이미지명</th>
   <td class="td_product_add" >
-       <input type="text" name="img_list" class="p_input_common"value="${productVO.img_list}">
+       <input type="text" name="img_list" class="p_input_common" value="${productVO.img_list}">
   </td>
   <th class="th_product_add">상세이미지명</th>
   <td class="td_product_add" colspan="3"><input type="text" name="img_detail" class="p_input_common" value="${productVO.img_detail}"></td>
@@ -314,7 +314,7 @@ td.td_product_add{
   <tr>
     <th class="th_product_add">상품이미지</th>
     <td class="td_product_add" colspan="5">
-<img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" width="200pt" />     
+<img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>    
       <br>
       <input type="file" name="img_list">
     </td>

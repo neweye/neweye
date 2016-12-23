@@ -81,7 +81,7 @@ td.td_product_add{
      <th class="th_product_add">상품이미지</th>
      <td class="td_product_add" colspan="5">
   <!--[7] 상품 이미지를 출력하기 -->     
-     <img src="<c:url value="/productimg"/>/${productVO.img_list}" width="200pt" />    
+     <img src="<c:url value="/productimg"/>/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'" width="200pt" />    
      </td>
     </tr>
   
