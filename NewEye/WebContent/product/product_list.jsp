@@ -161,7 +161,7 @@ div.top_search_tb{
 				</div>
 			</span>
 		</c:forEach>
-		<div class="bottom"></div>
+		<div class="bottom">${paging}</div>
 	</article>
 </body>
 <!-- <script type="text/javascript">
