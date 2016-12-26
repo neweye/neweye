@@ -15,8 +15,7 @@ public class AdminProductWriteFormAction implements Action {
       throws ServletException, IOException {
 
     String url = "product/productWrite.jsp";
-    String kindList[] = { "Heels", "Boots", "Sandals", "Slipers",
-        "Shcakers", "Sale" };    
+    String kindList[] = {"DSLR", "LENDS", "ACCESSORY"};    
     request.setAttribute("kindList", kindList);
     
     return url;

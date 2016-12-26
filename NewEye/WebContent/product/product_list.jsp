@@ -103,19 +103,20 @@ div.top_search_tb{
 		<input type="text" name="key"/>
 		<input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">&nbsp;
 		
-		<input type="button" value="상세검색" onclick="go_detailsearch(this.form)"><br />
+		<!-- <input type="button" value="상세검색" onclick="go_detailsearch(this.form)"><br />
 		
-		<!-- /////////////////////////////////////////////////////// -->
+		///////////////////////////////////////////////////////
 		
-		
+		상세검색 누르면 관리자의 상품등록과 거의 유사한 폼이 별도로 뜨고 상세하게 입력할 수 있도록 한다
+		혹은 아래 열리면서 상품등록과 유사한 폼 갖고오고 찾기 버튼 누르는 순간 그 내역은 도로 닫히고 찾게 한다
 			
 		
-		 <!-- /////////////////////////////////////////////////////// -->
+		 ///////////////////////////////////////////////////////
 		상품비교 : <select name="cmb_first_level">
 			<option name="op_first_level" value="dslr">DSLR</option>
 			<option name="op_first_level" value="lends">렌즈</option>
 			<option name="op_first_level" value="acc">악세사리</option>
-		</select> &nbsp;
+		</select> &nbsp; -->
 		
 		<%-- <c:choose>
 			<c:when test="${productVO.first_level='DSLR'}">
