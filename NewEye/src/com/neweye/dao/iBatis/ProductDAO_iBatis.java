@@ -342,5 +342,28 @@ public class ProductDAO_iBatis implements ProductDAO {
 		return str;
 	}
 
+	/////////////////////////////////////////////////
+	@Override
+	public ArrayList<ProductVO> listDetailProduct(int tpage, String product_name)
+			throws SQLException {
+		ArrayList<ProductVO> productList = new ArrayList<ProductVO>();
+		int startRow = -1;
+		int endRow = -1;
+
+		if (product_name.equals("")) {
+			product_name = "%";
+		}
+
+		int totalRecord = totalRecord(product_name);
+
+		startRow = (tpage - 1) * counts ;
+		endRow = startRow + counts - 1;
+		if (endRow > totalRecord)
+			endRow = totalRecord;
+		
+		productList=(ArrayList<ProductVO>)client.queryForList("listProduct",product_name,startRow,counts);
+		return productList;
+	}
+
 	
 }

@@ -16,15 +16,23 @@
  
 }
 div#detail_table_outline{
-	margin:30px auto;
-	width: 604px;
-	border : 1px dashed #888888;
+   margin:30px auto;
+   width: 604px;
+   border : 1px dashed #888888;
+}
+div.product_detail_div{
+margin: 30px auto;
+
+ width: 800px;
+ height: 550px;
+   border: 1px solid #999999;
 }
 table.product_detail{
- margin:50px auto;
+margin:50px auto;
  width: 800px;
- height: 600px;
- border: 1px solid #999999;
+ height: 500px;
+/* border: 1px solid #999999; */
+
 }
 
 table.table_detail_content{
@@ -32,10 +40,10 @@ table.table_detail_content{
  width: 600px;
 }
 th#th_detail_table{
-	height:40px;
-	text-align:center;
-	vatical-align: top;
-	font-size: 18px;
+   height:40px;
+   text-align:center;
+   vatical-align: top;
+   font-size: 18px;
 }
 
 td#td_img_detail{
@@ -108,8 +116,9 @@ input.btn_product_detail:active {
  <!-- 상품 상세 상단 영역 시작 -->
  <article>
  <form method="post" name="formm">
+ <div class="product_detail_div">
   <table class="product_detail">
-  	<tr><td colspan="3"></td></tr>
+     <!-- <tr><td colspan="4"></td></tr> -->
    <tr>
     <td rowspan="3" id="td_img_detail">
     <img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
@@ -118,16 +127,16 @@ input.btn_product_detail:active {
     <td colspan="2">${productVO.name}</td>
    </tr>
    <tr>
-    <td>가격 :</td>
-    <td>| ${productVO.price}</td>
+    <td>가격</td>
+    <td>| ${productVO.price}원</td>
    </tr>
    <tr>
-    <td>수랑 :</td>
-    <td><input type="text" name="quantity" style="width:30px"/> &nbsp;
-    (잔여수량 : ${productVO.quantity})</td>
+    <td>수랑</td>
+    <td>| <input type="text" name="quantity" style="width:30px"/> ea&nbsp;
+    </td>
    </tr>
-   <tr>
-    <td colspan="3" style="text-align:center;">
+     <tr>
+    <td colspan="4" style="text-align:center;">
      <input type="hidden" name="pseq" value="${productVO.pseq}"/>
      <input type="button" class="btn_product_detail" value="ADD TO CART" class="submit" onclick="go_addcart()"/>&nbsp;&nbsp;
      <input type="button" class="btn_product_detail" value="BUY NOW" class="submit" onclick="go_buynow()" />&nbsp;&nbsp;
@@ -136,6 +145,7 @@ input.btn_product_detail:active {
     
    </tr>
   </table>
+</div>
   </form>
  </article>
  <!-- 상품 상세 상단 영역 끝 -->
@@ -302,8 +312,8 @@ input.btn_product_detail:active {
     <td class="content_td">액세서리 분류</td>
     <td>| ${productVO.types}</td>
    </tr>
-	</c:if>
-	 <tr>
+   </c:if>
+    <tr>
     <td class="content_td">상품설명</td>
     <td>| ${productVO.content}</td>
    </tr>

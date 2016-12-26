@@ -39,6 +39,9 @@ public interface ProductDAO {
 
    public ArrayList<ProductVO> listProduct(int tpage, String product_name) throws SQLException;
    
+   ///////////////////////////////////
+   public ArrayList<ProductVO> listDetailProduct(int tpage, String product_name) throws SQLException;
+   
    public int insertProduct(ProductVO product) throws SQLException;
    
    public int updateProduct(ProductVO product) throws SQLException;
