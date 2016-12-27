@@ -3,44 +3,42 @@ package com.neweye.dto;
 import java.sql.Timestamp;
 
 public class ProductVO {
-	private String pseq; // 상품번호
+	private int pseq; // 상품번호
 	private String first_level; // 대분류
 	private String second_level; // 중분류
 	private String kind; // 상품분류번호
 	private String name; // 상품명
-	private String price; // 가격
-	private String indate; // 출시일
-	private String read_count; // 조회수
-	private String quantity; // 수량
+	private int price; // 가격
+	private Timestamp indate; // 출시일
+	private int read_count; // 조회수
+	private int quantity; // 수량
 	private String useyn; // 상품삭제여부
 	private String content; // 상품설명
 	private String img_list; // 이미지명
 	private String img_detail; // 상세이미지명
 	private String sizee; // 크기
-	private String weight; // 무게
-	private String ratio; // 센서크기
-	private String pixel; // 화소
-	private String speed; // 최소셔터스피드
-	private String seqpictures; // 최대연속촬영속도
-	private String screen; // 화면크기
-	private String iso; // 최대ISO감도
-	private String movframe; // 동영상프레임
+	private int weight; // 무게
+	private float ratio; // 센서크기
+	private int pixel; // 화소
+	private int speed; // 최소셔터스피드
+	private int seqpictures; // 최대연속촬영속도
+	private float screen; // 화면크기
+	private int iso; // 최대ISO감도
+	private int movframe; // 동영상프레임
 	private String format; // 렌즈포맷
-	private String filter; // 필터구경
+	private int filter; // 필터구경
 	private String functions; // 렌즈기능
 	private String zoomyn; // 줌여부
-	private String minfocus; // 최소초점거리
-	private String maxfocus; // 최대초첨거리
-	private String minaperture; // 최소조리개
-	private String maxaperture; // 최대조리개
-	private String distance; // 최소촬영거리
+	private float minfocus; // 최소초점거리
+	private float maxfocus; // 최대초첨거리
+	private float minaperture; // 최소조리개
+	private float maxaperture; // 최대조리개
+	private float distance; // 최소촬영거리
 	private String types; // 액세서리 분류
-	
-	
-	public String getPseq() {
+	public int getPseq() {
 		return pseq;
 	}
-	public void setPseq(String pseq) {
+	public void setPseq(int pseq) {
 		this.pseq = pseq;
 	}
 	public String getFirst_level() {
@@ -67,28 +65,28 @@ public class ProductVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getIndate() {
+	public Timestamp getIndate() {
 		return indate;
 	}
-	public void setIndate(String indate) {
+	public void setIndate(Timestamp indate) {
 		this.indate = indate;
 	}
-	public String getRead_count() {
+	public int getRead_count() {
 		return read_count;
 	}
-	public void setRead_count(String read_count) {
+	public void setRead_count(int read_count) {
 		this.read_count = read_count;
 	}
-	public String getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 	public String getUseyn() {
@@ -121,52 +119,52 @@ public class ProductVO {
 	public void setSizee(String sizee) {
 		this.sizee = sizee;
 	}
-	public String getWeight() {
+	public int getWeight() {
 		return weight;
 	}
-	public void setWeight(String weight) {
+	public void setWeight(int weight) {
 		this.weight = weight;
 	}
-	public String getRatio() {
+	public float getRatio() {
 		return ratio;
 	}
-	public void setRatio(String ratio) {
+	public void setRatio(float ratio) {
 		this.ratio = ratio;
 	}
-	public String getPixel() {
+	public int getPixel() {
 		return pixel;
 	}
-	public void setPixel(String pixel) {
+	public void setPixel(int pixel) {
 		this.pixel = pixel;
 	}
-	public String getSpeed() {
+	public int getSpeed() {
 		return speed;
 	}
-	public void setSpeed(String speed) {
+	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
-	public String getSeqpictures() {
+	public int getSeqpictures() {
 		return seqpictures;
 	}
-	public void setSeqpictures(String seqpictures) {
+	public void setSeqpictures(int seqpictures) {
 		this.seqpictures = seqpictures;
 	}
-	public String getScreen() {
+	public float getScreen() {
 		return screen;
 	}
-	public void setScreen(String screen) {
+	public void setScreen(float screen) {
 		this.screen = screen;
 	}
-	public String getIso() {
+	public int getIso() {
 		return iso;
 	}
-	public void setIso(String iso) {
+	public void setIso(int iso) {
 		this.iso = iso;
 	}
-	public String getMovframe() {
+	public int getMovframe() {
 		return movframe;
 	}
-	public void setMovframe(String movframe) {
+	public void setMovframe(int movframe) {
 		this.movframe = movframe;
 	}
 	public String getFormat() {
@@ -175,10 +173,10 @@ public class ProductVO {
 	public void setFormat(String format) {
 		this.format = format;
 	}
-	public String getFilter() {
+	public int getFilter() {
 		return filter;
 	}
-	public void setFilter(String filter) {
+	public void setFilter(int filter) {
 		this.filter = filter;
 	}
 	public String getFunctions() {
@@ -193,34 +191,34 @@ public class ProductVO {
 	public void setZoomyn(String zoomyn) {
 		this.zoomyn = zoomyn;
 	}
-	public String getMinfocus() {
+	public float getMinfocus() {
 		return minfocus;
 	}
-	public void setMinfocus(String minfocus) {
+	public void setMinfocus(float minfocus) {
 		this.minfocus = minfocus;
 	}
-	public String getMaxfocus() {
+	public float getMaxfocus() {
 		return maxfocus;
 	}
-	public void setMaxfocus(String maxfocus) {
+	public void setMaxfocus(float maxfocus) {
 		this.maxfocus = maxfocus;
 	}
-	public String getMinaperture() {
+	public float getMinaperture() {
 		return minaperture;
 	}
-	public void setMinaperture(String minaperture) {
+	public void setMinaperture(float minaperture) {
 		this.minaperture = minaperture;
 	}
-	public String getMaxaperture() {
+	public float getMaxaperture() {
 		return maxaperture;
 	}
-	public void setMaxaperture(String maxaperture) {
+	public void setMaxaperture(float maxaperture) {
 		this.maxaperture = maxaperture;
 	}
-	public String getDistance() {
+	public float getDistance() {
 		return distance;
 	}
-	public void setDistance(String distance) {
+	public void setDistance(float distance) {
 		this.distance = distance;
 	}
 	public String getTypes() {
@@ -229,7 +227,7 @@ public class ProductVO {
 	public void setTypes(String types) {
 		this.types = types;
 	}
-	
+
 	
 
 }
