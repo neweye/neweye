@@ -248,7 +248,13 @@ td.td_product_add{
     ${productVO.types}
   </td>
 </tr>
-  
+   <tr>
+     <th class="th_product_add">상세이미지</th>
+     <td class="td_product_add" colspan="5">
+  <!--[7] 상품 이미지를 출력하기 -->     
+     <img src="<c:url value="/productimg"/>/${productVO.img_detail}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'" width="200pt" />    
+     </td>
+    </tr> 
   
 <%-- </c:if>   --%>
 

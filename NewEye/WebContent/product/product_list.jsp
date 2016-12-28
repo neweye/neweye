@@ -103,8 +103,8 @@ div.top_search_tb{
 		<input type="text" name="key"/>
 		<input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">&nbsp;
 		
-		<!-- <input type="button" value="상세검색" onclick="go_detailsearch(this.form)"><br />
-		
+		<input type="button" value="상세검색" onclick="go_detailsearch(this.form)"><br />
+		<!-- 
 		///////////////////////////////////////////////////////
 		
 		상세검색 누르면 관리자의 상품등록과 거의 유사한 폼이 별도로 뜨고 상세하게 입력할 수 있도록 한다
@@ -177,8 +177,7 @@ div.top_search_tb{
 
 <script type="text/javascript">
 function go_detailsearch(form){
-   form.action="mypageMemberUpdate.ne";
-   form.method="post";
+   form.action="product_search_detail.jsp";
    form.submit();
 }
 </script>

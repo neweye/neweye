@@ -128,15 +128,6 @@ td.td_product_add{
   </td>   
 </tr>
 
-<tr>
-  <th class="th_product_add">이미지명</th>
-  <td class="td_product_add">
-       <input type="text" name="img_list" class="p_input_common">
-  </td>
-  <th class="th_product_add">상세이미지명</th>
-  <td class="td_product_add" colspan="3"><input type="text" name="img_detail" class="p_input_common"></td>
-</tr>
-
 
 <%-- dslr 부분////////////////////////////////////////////////////////
 <c:if test="${status.count=='1'}"> --%>
@@ -302,6 +293,13 @@ td.td_product_add{
     <td class="td_product_add" colspan="5">
 <!--  [2] 파일 업로드를 하기 위한 input 태그는 타입 속성 값을 file로 지정해야 한다.  -->
       <input type="file" name="img_list">
+    </td>
+  </tr>
+    <tr>
+    <th class="th_product_add">상세이미지</th>
+    <td class="td_product_add" colspan="5">
+<!--  [2] 파일 업로드를 하기 위한 input 태그는 타입 속성 값을 file로 지정해야 한다.  -->
+      <input type="file" name="img_detail">
     </td>
   </tr>
   <tr>

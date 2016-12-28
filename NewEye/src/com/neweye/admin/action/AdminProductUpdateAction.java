@@ -54,7 +54,7 @@ public class AdminProductUpdateAction implements Action {
        productVO.setQuantity(Integer.parseInt(multi.getParameter("Quantity")));
        productVO.setUseyn(multi.getParameter("useyn"));
        productVO.setContent(multi.getParameter("content"));
-       productVO.setImg_list(multi.getParameter("img_List"));
+       productVO.setImg_list(multi.getParameter("img_list"));
        productVO.setImg_detail(multi.getParameter("img_detail"));
        productVO.setSizee(multi.getParameter("sizee"));
        productVO.setWeight(Integer.parseInt(multi.getParameter("weight")));

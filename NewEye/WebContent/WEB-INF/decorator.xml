@@ -11,6 +11,7 @@
 	
 	<excludes>	
 		<pattern>/admin/adminLoginForm.ne</pattern>	
+		 <pattern>/popupDetailSearch.jsp</pattern>
 	</excludes>
 	
 </decorators>

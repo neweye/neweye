@@ -93,7 +93,7 @@ public class AdminProductWriteAction implements Action {
     productVO.setZoomyn(multi.getParameter("zoomyn"));
     productVO.setTypes(multi.getParameter("types"));
     productVO.setImg_list(multi.getFilesystemName("img_list"));
-    productVO.setImg_detail(multi.getParameter("img_detail"));
+    productVO.setImg_detail(multi.getFilesystemName("img_detail"));
     
     
     /*ProductDAO productDAO = ProductDAO_JDBC.getInstance();*/
