@@ -155,8 +155,8 @@ td.td_product_add{
   </td>
   <th class="th_product_add">센서크기</th>
     <td class="td_product_add">
-      <input type="radio" value="1:1"  name="ratio" > 1:1
-     <input type="radio" value="1:1.5"  name="ratio" checked="checked"> 1:1.5
+      <input type="radio" value="1"  name="ratio" > 1:1
+     <input type="radio" value="1.5"  name="ratio" checked="checked"> 1:1.5
     </td>
   </tr>
   

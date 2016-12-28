@@ -40,56 +40,52 @@ public class AdminProductWriteAction implements Action {
     
     ProductVO productVO = new ProductVO();
     
-    //productVO.setPseq(multi.getParameter("pseq"));
-    productVO.setFirst_level(multi.getParameter("first_level"));
-    productVO.setSecond_level(multi.getParameter("second_level"));
-    productVO.setKind(multi.getParameter("kind"));
-    productVO.setName(multi.getParameter("name"));
-    productVO.setPrice(multi.getParameter("price"));
-    productVO.setWeight(multi.getParameter("weight"));
+    //productVO.setPseq(multi.getParameter("pseq")); //--------------------------
+    productVO.setFirst_level(multi.getParameter("first_level")); //--------------------------
+    productVO.setSecond_level(multi.getParameter("second_level")); //--------------------------
+    productVO.setKind(multi.getParameter("kind")); //--------------------------
+    productVO.setName(multi.getParameter("name")); //--------------------------
+    String indate="2009-03-20 10:20:30.0";
+    productVO.setIndate(java.sql.Timestamp.valueOf(indate)); //--------------------------
     
-    /////////////////////출시일///////////////////////////////
-    /*multi.getParameter("indate");
-    Timestamp tm = new Timestamp(sizeLimit);
-    productVO.setIndate(tm+"");*/
+    productVO.setRead_count(0);
+    productVO.setPrice(Integer.parseInt(multi.getParameter("price")));
+    productVO.setWeight(Integer.parseInt(multi.getParameter("weight")));
+    productVO.setQuantity(Integer.parseInt(multi.getParameter("quantity")));
+    productVO.setWeight(Integer.parseInt(multi.getParameter("weight")));
+    productVO.setPixel(Integer.parseInt(multi.getParameter("pixel")));
+    productVO.setSpeed(Integer.parseInt(multi.getParameter("speed")));
+    productVO.setSeqpictures(Integer.parseInt(multi.getParameter("seqpictures")));
+    productVO.setIso(Integer.parseInt(multi.getParameter("iso")));
+    productVO.setMovframe(Integer.parseInt(multi.getParameter("movframe")));
+    productVO.setFilter(Integer.parseInt(multi.getParameter("filter")));
     
-    productVO.setIndate("2001-01-11");
-    
-    productVO.setRead_count("0");
-    productVO.setQuantity(multi.getParameter("Quantity"));//////////////////////////////////////////
-    productVO.setQuantity("0");
+    productVO.setRatio(Float.parseFloat(multi.getParameter("ratio")));
+    productVO.setScreen(Float.parseFloat(multi.getParameter("screen")));
+    productVO.setMinfocus(Float.parseFloat(multi.getParameter("minfocus")));
+    productVO.setMaxfocus(Float.parseFloat(multi.getParameter("maxfocus")));
+    productVO.setMinaperture(Float.parseFloat(multi.getParameter("minaperture")));
+    productVO.setMaxaperture(Float.parseFloat(multi.getParameter("maxaperture")));
+    productVO.setDistance(Float.parseFloat(multi.getParameter("distance")));
     
     productVO.setUseyn(multi.getParameter("useyn"));
     productVO.setContent(multi.getParameter("content"));
     productVO.setImg_list(multi.getParameter("img_List"));
     productVO.setImg_detail(multi.getParameter("img_detail"));
     productVO.setSizee(multi.getParameter("sizee"));
-    productVO.setWeight(multi.getParameter("weight"));
-    productVO.setRatio(multi.getParameter("ratio"));
-    productVO.setPixel(multi.getParameter("pixel"));
-    productVO.setSpeed(multi.getParameter("speed"));
-    productVO.setSeqpictures(multi.getParameter("seqpictures"));
-    productVO.setScreen(multi.getParameter("screen"));
-    productVO.setIso(multi.getParameter("iso"));
-    productVO.setMovframe(multi.getParameter("movframe"));
     productVO.setFormat(multi.getParameter("format"));
-    productVO.setFilter(multi.getParameter("filter"));
     productVO.setFunctions(multi.getParameter("functions"));
     productVO.setZoomyn(multi.getParameter("zoomyn"));
-    productVO.setMinfocus(multi.getParameter("minfocus"));
-    productVO.setMaxfocus(multi.getParameter("maxfocus"));
-    productVO.setMinaperture(multi.getParameter("minaperture"));
-    productVO.setMaxaperture(multi.getParameter("maxaperture"));
-    productVO.setDistance(multi.getParameter("distance"));
     productVO.setTypes(multi.getParameter("types"));
+    
     
     /*ProductDAO productDAO = ProductDAO_JDBC.getInstance();*/
     ProductDAO productDAO = ProductDAO_iBatis.getInstance();
     try {
-		productDAO.insertProduct(productVO);
-	} catch (SQLException e) {
-		e.printStackTrace();
-	}
+      productDAO.insertProduct(productVO);
+   } catch (SQLException e) {
+      e.printStackTrace();
+   }
     
     return url;
   }
