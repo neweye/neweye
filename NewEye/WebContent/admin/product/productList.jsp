@@ -21,10 +21,10 @@
     <tr>
         <th>번호</th>
         <th>상품명</th>
-        <th>원가</th>
         <th>판매가</th>
+        <th>수량</th>
+        <th>판매여부</th>
         <th>등록일</th>
-        <th>사용유무</th>
     </tr>
      <c:choose>
     <c:when test="${productListSize<=0}">
@@ -44,13 +44,14 @@
          </a>
         </td>
       <td><fmt:formatNumber value="${productVO.price}"/></td>
-      <td>${productVO.indate}</td>
+      <td>${productVO.quantity}</td>
       <td>
          <c:choose>
-             <c:when test='${productVO.useyn=="y"}'>사용</c:when>
-             <c:otherwise>미사용</c:otherwise>             
+             <c:when test='${productVO.useyn=="y"}'>판매</c:when>
+             <c:otherwise>판매중단</c:otherwise>             
           </c:choose>     
         </td> 
+      <td>${productVO.indate}</td>
     </tr>
     </c:forEach>
     <tr><td colspan="6" style="text-align: center;"> ${paging} </td></tr>
