@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.neweye.dao.MemberDAO;
 import com.neweye.dao.iBatis.MemberDAO_iBatis;
@@ -17,7 +18,9 @@ public class MyPageUpdateMemberAction implements Action {
          HttpServletResponse response) throws ServletException, IOException {
       String url = "/mypage/myPageForm.jsp";
       String message = "fail";
+      HttpSession session = request.getSession();
       MemberVO member = new MemberVO();
+      MemberVO updatemember = new MemberVO();
       member.setId(request.getParameter("id").trim());
       member.setPassword(request.getParameter("password"));
       member.setEmail(request.getParameter("email"));
@@ -32,6 +35,8 @@ public class MyPageUpdateMemberAction implements Action {
       try {
          memberDAO.updateMember(member);
          message="succes";
+         updatemember = memberDAO.getMember(request.getParameter("id").trim());
+         session.setAttribute("loginUser", updatemember);
       } catch (SQLException e) {
          e.printStackTrace();
       }

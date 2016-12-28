@@ -18,6 +18,8 @@ public class FindZipNumAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		
 		String url = "member/findZipNum.jsp";
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
