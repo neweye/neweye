@@ -66,7 +66,7 @@ td.td_product_add{
 <input type="hidden" name="read_count" value="${productVO.read_count}">
 <input type="hidden" name="code" >
 <input type="hidden" name="nonmakeImg" value="${productVO.img_list}">
-<h1 style="margin:20px 0">상품등록</h1>  
+<h1 style="margin:20px 0">상품수정</h1>  
 <!-- [1] 파일을 업로드 하기 위해서는 폼태그를 post 방식으로 전송하고,
 인코딩 타입을 multipart/form-data 로 지정해야 한다. -->
 <table class="admin_product_write" id="list">
@@ -147,17 +147,17 @@ td.td_product_add{
   </td>
   <th class="th_product_add">무게</th>
   <td class="td_product_add">
-     <input type="text" class="p_input_common" name="weight" onBlur="go_ab()" onKeyUp='NumFormat(this)' value="${productVO.weight}">
+     <input type="text" class="p_input_common" name="weight" onKeyUp='NumFormat(this)' value="${productVO.weight}">
   </td>
   <th class="th_product_add">센서크기</th>
     <td class="td_product_add">
-    <c:if test="${productVO.ratio=='1:1'}">
-     <input type="radio" name="ratio" value="1:1" checked="checked"> 1:1
-     <input type="radio" name="ratio" value="1:1.5"> 1:1.5
+    <c:if test="${productVO.ratio=='1'}">
+     <input type="radio" name="ratio" value="1" checked="checked"> 1:1
+     <input type="radio" name="ratio" value="1.5"> 1:1.5
     </c:if>
-    <c:if test="${productVO.ratio=='1:1.5'}">
-     <input type="radio" name="ratio" value="1:1"> 1:1
-     <input type="radio" name="ratio" value="1:1.5" checked="checked"> 1:1.5
+    <c:if test="${productVO.ratio=='1.5'}">
+     <input type="radio" name="ratio" value="1"> 1:1
+     <input type="radio" name="ratio" value="1.5" checked="checked"> 1:1.5
     </c:if>
     </td>
   </tr>
@@ -208,7 +208,7 @@ td.td_product_add{
   <tr>
   <th class="th_product_add">무게</th>
   <td class="td_product_add">
-     <input type="text" class="p_input_common" name="weight" onBlur="go_ab()" onKeyUp='NumFormat(this)' value="${productVO.weight}">
+     <input type="text" class="p_input_common" name="weight" onKeyUp='NumFormat(this)' value="${productVO.weight}">
   </td>
   <th class="th_product_add">포맷형태</th>
     <td class="td_product_add" colspan="3">
@@ -230,7 +230,7 @@ td.td_product_add{
   </td>
   <th class="th_product_add">렌즈 기능</th>
   <td class="td_product_add">
-     <input type="text" class="p_input_common" name="functions" onBlur="go_ab()" value="${productVO.functions}">
+     <input type="text" class="p_input_common" name="functions" value="${productVO.functions}">
   </td>
   <th class="th_product_add">줌 여부</th>
     <td class="td_product_add">
