@@ -9,14 +9,13 @@
 <link href="CSS/subpage.css" rel="stylesheet">
 <style type="text/css">
 body{   
-   background-color:#B96DB5;
+   background-color:#ffffff;
    font-family: Verdana;
 }
 #popup{   
    padding: 0 10px;
 }
 #popup h1 {
-   font-family: "Times New Roman", Times, serif;
    font-size: 45px;
    color: #CCC;
    font-weight: normal;
@@ -32,7 +31,7 @@ table#zipcode {
 table#zipcode th, table#zipcode td{   
    text-align: center;
    border-bottom: 1px dotted  #fff;  
-   color:#FFF;   
+   color:#474747;   
 }
 table th, td{
   padding: 10px;
@@ -41,7 +40,7 @@ table#zipcode  a{
    display:block; 
     height:20px;
     text-decoration:none;
-    color:#fff;
+    color:#474747;
     padding: 10px;
 }
 table#zipcode a:hover{

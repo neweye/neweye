@@ -6,7 +6,7 @@
 <link href="CSS/subpage.css" rel="stylesheet">
 <style type="text/css">
 body {
-	background-color: #B96DB5;
+	background-color: #ffffff;
 	font-family: Verdana;
 }
 
@@ -15,9 +15,9 @@ body {
 }
 
 h1 {
-	font-family: "Times New Roman", Times, serif;
-	font-size: 45px;
-	color: #CCC;
+	
+	font-size: 38px;
+	color: #848484;
 	font-weight: normal;
 }
 

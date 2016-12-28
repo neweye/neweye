@@ -29,7 +29,6 @@
    
    <update id="updateMember" parameterClass="member">
       update member set 
-      id=#id#,
       password=#password#,
       name=#name#,
       email=#email#,
