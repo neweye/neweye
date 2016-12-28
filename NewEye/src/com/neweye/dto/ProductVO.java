@@ -35,6 +35,7 @@ public class ProductVO {
 	private float maxaperture; // 최대조리개
 	private float distance; // 최소촬영거리
 	private String types; // 액세서리 분류
+	
 	public int getPseq() {
 		return pseq;
 	}
@@ -227,7 +228,5 @@ public class ProductVO {
 	public void setTypes(String types) {
 		this.types = types;
 	}
-
-	
 
 }
