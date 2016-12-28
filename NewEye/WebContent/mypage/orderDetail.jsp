@@ -41,7 +41,10 @@
 					<td><fmt:formatNumber type="currency"
 							value="${orderVO.price*orderVO.quantity}" /></td>
 					<td><c:choose>
-							<c:when test='${orderVO.result=="1"}'> 진행중 </c:when>
+							<c:when test='${orderVO.result=="1"}'> 입금대기 </c:when>
+							<c:when test='${orderVO.result=="2"}'> 입금확인 </c:when>
+							<c:when test='${orderVO.result=="3"}'> 배송중 </c:when>
+							<c:when test='${orderVO.result=="0"}'> 주문취소 </c:when>
 							<c:otherwise>
 								<span style="color: red"> 처리완료 </span>
 							</c:otherwise>
