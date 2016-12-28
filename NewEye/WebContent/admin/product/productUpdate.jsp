@@ -97,7 +97,9 @@ td.td_product_add{
        <input type="text" name="name" class="p_input_common" value="${productVO.name }">
   </td>
   <th class="th_product_add">분류코드</th>
-  <td class="td_product_add" colspan="3"><input type="text" name="kind" class="p_input_common" onKeyUp='NumFormat(this)' value="${productVO.kind }"></td>
+  <td class="td_product_add"><input type="text" name="kind" class="p_input_common" onKeyUp='NumFormat(this)' value="${productVO.kind }"></td>
+  <th class="th_product_add">발매일</th>
+  <td class="td_product_add"><input type="text" name="indate" class="p_input_common" ></td>
 </tr>
 
 <tr>
@@ -122,15 +124,6 @@ td.td_product_add{
     </c:if>
   
   </td>   
-</tr>
-
-<tr>
-  <th class="th_product_add">이미지명</th>
-  <td class="td_product_add" >
-       <input type="text" name="img_list" class="p_input_common" value="${productVO.img_list}">
-  </td>
-  <th class="th_product_add">상세이미지명</th>
-  <td class="td_product_add" colspan="3"><input type="text" name="img_detail" class="p_input_common" value="${productVO.img_detail}"></td>
 </tr>
 
 
@@ -318,6 +311,15 @@ td.td_product_add{
       <br>
       <input type="file" name="img_list">
     </td>
+</tr>    
+<tr>    
+    <th class="th_product_add">상세이미지</th>
+    <td class="td_product_add" colspan="5">
+<img src="<%=request.getContextPath() %>/productimg/${productVO.img_detail}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>    
+      <br>
+      <input type="file" name="img_list">
+    </td>
+    
   </tr>
   <tr>
   <th class="th_product_add" id="product_add_kind" colspan="6" style="height:5px"></th>

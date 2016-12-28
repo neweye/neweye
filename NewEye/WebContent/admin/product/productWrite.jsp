@@ -99,7 +99,9 @@ td.td_product_add{
        <input type="text" name="name" class="p_input_common">
   </td>
   <th class="th_product_add">분류코드</th>
-  <td class="td_product_add" colspan="3"><input type="text" name="kind" class="p_input_common" onKeyUp='NumFormat(this)' ></td>
+  <td class="td_product_add"><input type="text" name="kind" class="p_input_common" onKeyUp='NumFormat(this)' ></td>
+  <th class="th_product_add">발매일</th>
+  <td class="td_product_add"><input type="text" name="indate" class="p_input_common" ></td>
 </tr>
 
 <tr>
