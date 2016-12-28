@@ -92,7 +92,7 @@ public class AdminProductWriteAction implements Action {
     productVO.setFunctions(multi.getParameter("functions"));
     productVO.setZoomyn(multi.getParameter("zoomyn"));
     productVO.setTypes(multi.getParameter("types"));
-    productVO.setImg_list(multi.getParameter("img_List"));
+    productVO.setImg_list(multi.getFilesystemName("img_list"));
     productVO.setImg_detail(multi.getParameter("img_detail"));
     
     
