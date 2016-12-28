@@ -3,12 +3,14 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title></title>
-<!-- /////////////////////////////////////////// -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(function(){
 	$('#btn_search_detail').click(function(){
@@ -21,8 +23,6 @@ $(function(){
 	
 })
 </script>
-<!-- /////////////////////////////////////////// -->
-
 <style>
 * {
 	margin: 0;
@@ -118,7 +118,7 @@ div.top_search_tb{
 		<input type="text" name="key"/>
 		<input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">&nbsp;
 		
-		<input type="button" value="상세검색" onclick="go_detailsearch(this.form)"><br />
+		<input type="button" value="상세검색" id="btn_search_detail" /><br />
 		<!-- 
 		///////////////////////////////////////////////////////
 		
@@ -190,12 +190,15 @@ div.top_search_tb{
 	</article>
 </body>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 function go_detailsearch(form){
-   form.action="product_search_detail.jsp";
+   form.action="mypageMemberUpdate.ne";
+   form.method="post";
    form.submit();
 }
-</script>
+
+</script> -->
+
 
 
 </html>
