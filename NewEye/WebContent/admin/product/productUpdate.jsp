@@ -7,12 +7,13 @@
 
 
 <style>
-article.productWrite_jsp{
+article.productUpdate_jsp{
    margin: auto;
    padding : 10px;
    text-align:center;
    
 }
+
 table.admin_product_write{
    margin: 10px  auto;
    /* border: 1px dashed #999999; */
@@ -60,7 +61,7 @@ td.td_product_add{
 
 
 
-<article>
+<article class="productUpdate_jsp">
 <form name="frm" method="post" enctype="multipart/form-data">
 <input type="hidden" name="pseq" value="${productVO.pseq}">
 <input type="hidden" name="read_count" value="${productVO.read_count}">
@@ -324,10 +325,8 @@ td.td_product_add{
   <tr>
   <th class="th_product_add" id="product_add_kind" colspan="6" style="height:5px"></th>
 </tr>
-   
+   <tr><td colspan="6" style="height:10px;"></td></tr>
    <tr><td style="height:10px"></td></tr>
-
-  
   
 </table>
 <input class="btn" type="button" value="수정" onClick="go_mod_save('${tpage}','${productVO.pseq}')">           
