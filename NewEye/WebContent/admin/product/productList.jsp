@@ -25,6 +25,7 @@
         <th>수량</th>
         <th>판매여부</th>
         <th>등록일</th>
+        <th>구분</th>
     </tr>
      <c:choose>
     <c:when test="${productListSize<=0}">
@@ -52,6 +53,7 @@
           </c:choose>     
         </td> 
       <td>${productVO.indate}</td>
+      <th><a href="#">수정</a>/<a href="#">삭제</a></th>
     </tr>
     </c:forEach>
     <tr><td colspan="6" style="text-align: center;"> ${paging} </td></tr>
