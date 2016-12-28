@@ -49,7 +49,9 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th>주문자이름 <input type="text" name="key"><button type="submit" class="btn btn-skin btn-block" onclick="go_order_search()">검색</th>
+						<th>주문자이름 <input type="text" name="key">
+						<button type="submit" class="btn btn-skin btn-block"
+								onclick="go_order_search()">검색</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -66,16 +68,30 @@
 				</tbody>
 				<c:forEach items="${orderList}" var="orderVO">
 					<tr>
-						<td><c:choose>
+						<td>
+                  		   ${orderVO.odseq} &nbsp;
+							<c:choose>
 								<c:when test='${orderVO.result=="1"}'>
-									<span style="font-weight: bold; color: blue">${orderVO.odseq}</span>
-        (<input type="checkbox" name="result" value="${orderVO.odseq}"> 미처리)
-        </c:when>
+									<span style="font-weight: bold; color: red"> 입금대기 </span>
+								</c:when>
+								<c:when test='${orderVO.result=="2"}'>
+									<span style="font-weight: bold; color: blue"> 입금확인 </span>
+								</c:when>
+								<c:when test='${orderVO.result=="3"}'>
+									<span style="font-weight: bold; color: green"> 배송중 </span>
+								</c:when>
+								<c:when test='${orderVO.result=="4"}'>
+									<span style="font-weight: bold; color: purple"> 배송완료 </span>
+								</c:when>
+								<c:when test='${orderVO.result=="0"}'>
+									<span style="font-weight: bold; color: grey"> 주문취소 </span>
+								</c:when>
 								<c:otherwise>
-									<span style="font-weight: bold; color: red">${orderVO.odseq}</span>
-          (<input type="checkbox" checked="checked" disabled="disabled">처리완료)
-        </c:otherwise>
-							</c:choose></td>
+									<span style="font-weight: bold; color: red"> 오류 </span>
+								</c:otherwise>
+							</c:choose>
+							<%-- <input type="checkbox" name="result" value="${orderVO.odseq}"> --%>
+						</td>
 						<td>${orderVO.mname}</td>
 						<td>${orderVO.pname}</td>
 						<td>${orderVO.quantity}</td>
@@ -87,7 +103,7 @@
 				</c:forEach>
 			</table>
 			<input type="button" class="btn" style="width: 200px"
-      		value="주문처리(입금확인)" onClick="go_order_save()">
+				value="주문처리(입금확인)" onClick="go_order_save()">
 		</div>
 	</form>
 </body>
