@@ -10,7 +10,7 @@
 	</decorator>
 	
 	<excludes>	
-		<pattern>/admin/adminLoginForm.ne</pattern>	
+		<pattern>/admin/adminLoginForm.ne</pattern>
 		 <pattern>/popupDetailSearch.jsp</pattern>
 		 <pattern>/idCheckForm.ne*</pattern>
 		 <pattern>/findZipNum.ne*</pattern>

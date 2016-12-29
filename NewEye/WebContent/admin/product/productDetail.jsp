@@ -100,7 +100,9 @@ td.td_product_add{
        ${productVO.name}
   </td>
   <th class="th_product_add">분류코드</th>
-  <td class="td_product_add" colspan="3">${productVO.kind}</td>
+  <td class="td_product_add">${productVO.kind}</td>
+  <th class="th_product_add">발매일</th>
+  <td class="td_product_add">${productVO.kind}</td>
 </tr>
 
 <tr>
