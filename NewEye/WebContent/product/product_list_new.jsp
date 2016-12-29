@@ -19,6 +19,7 @@ list-style:none;
 			<div class="col-sm-12 col-md-12 col-lg-12">
 				<div class="wow bounceInUp" data-wow-delay="0.4s">
 				<h2 class="wow bounceInUp" data-wow-delay="0.3s">NEW PRODUCT</h2>
+				<!-- ////////////////////////////////////////////////////////////////// -->
 					<div id="owl-works" class="owl-carousel">
 						<c:forEach items="${newProductList}" begin="0" end="11" step="1" var="productVO">
 							<div class="item">
@@ -42,6 +43,7 @@ list-style:none;
 							</div>
 						</c:forEach>
 					</div>
+					<!-- ////////////////////////////////////////////////////////////////// -->
 				</div>
 			</div>
 		</div>

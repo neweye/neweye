@@ -627,7 +627,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 @-webkit-keyframes bounceInUp {
-  0% {
+  /* 0% {
     opacity: 0;
     -webkit-transform: translateY(2000px);
     transform: translateY(2000px);
@@ -647,11 +647,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
-  }
+  } */
 }
 
 @keyframes bounceInUp {
-  0% {
+  /* 0% {
     opacity: 0;
     -webkit-transform: translateY(2000px);
     -ms-transform: translateY(2000px);
@@ -675,12 +675,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     -webkit-transform: translateY(0);
     -ms-transform: translateY(0);
     transform: translateY(0);
-  }
+  } */
 }
 
 .bounceInUp {
-  -webkit-animation-name: bounceInUp;
-  animation-name: bounceInUp;
+ /*  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp; */
 }
 
 @-webkit-keyframes bounceOut {
