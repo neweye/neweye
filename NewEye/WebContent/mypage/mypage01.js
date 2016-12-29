@@ -57,26 +57,8 @@ function go_order_insert() {
 }
 
 function go_order_delete() {
-	var count = 0;
-
-	if (document.formm.oseq.length == undefined) {
-		if (document.formm.oseq.checked == true) {
-			count++;
-		}
-	}
-
-	for (var i = 0; i < document.formm.oseq.length; i++) {
-		if (document.formm.oseq[i].checked == true) {
-			count++;
-		}
-	}
-	if (count == 0) {
-		alert("삭제할 항목을 선택해 주세요.");
-
-	} else {
-		document.formm.action = "orderDelete.ne";
-		document.formm.submit();
-	}
+	document.formm.action = "orderDelete.ne";
+	document.formm.submit();
 }
 
 function go_order() {
@@ -84,6 +66,6 @@ function go_order() {
 	document.formm.submit();
 }
 function go_mypage(){
-	   document.formm.action = "mypageMember.ne";
-	   document.formm.submit();
-	}
+	document.formm.action = "mypageMember.ne";
+	document.formm.submit();
+}

@@ -8,7 +8,7 @@
 <article>
 	<h2>Order List</h2>
 	<form name="formm" method="post">
-		<table id="cartList">
+		<table id="cartList" class="table">
 			<tr>
 				<th>상품명</th>
 				<th>수 량</th>
