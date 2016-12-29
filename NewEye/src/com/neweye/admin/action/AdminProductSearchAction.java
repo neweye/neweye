@@ -19,7 +19,6 @@ public class AdminProductSearchAction implements Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "product/productList.jsp";
-
 		String key = request.getParameter("key");
 		String tpage = request.getParameter("tpage");
 		if (key == null) {

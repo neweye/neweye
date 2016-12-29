@@ -54,7 +54,7 @@
           </c:choose>     
         </td> 
       <td><fmt:formatDate value="${productVO.indate }" pattern="yyyy-MM-dd" /></td>
-      <th><a href="adminProductUpdateForm.ne?pseq=${productVO.pseq}">수정</a>/<a href="#">삭제</a></th>
+      <th><a href="adminProductUpdateForm.ne?pseq=${productVO.pseq}">수정</a>/<a href="adminDelete.ne?pseq=${productVO.pseq}">삭제</a></th>
     </tr>
     </c:forEach>
     <tr><td colspan="6" style="text-align: center;"> ${paging} </td></tr>
