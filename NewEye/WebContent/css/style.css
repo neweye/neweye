@@ -292,6 +292,10 @@ hr {
     display: block;
 }
 
+.deliveryBackProduct{
+    display: none;
+}
+
 /* ===========================
 --- General sections
 ============================ */
