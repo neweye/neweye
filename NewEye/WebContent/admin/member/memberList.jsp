@@ -9,6 +9,10 @@
 		document.frm.action = "admin/MemberList.ne";
 		document.frm.submit();
 	}
+	function go_goaway(){
+		document.frm.action = "adminUpdate.ne"
+		document.frm.submit();
+	}
 </script>
 
 <h2>MemberList</h2>
@@ -23,9 +27,10 @@
 	</thead>
 	<tbody>
 		<tr class="active">
-			<th>아디디(탈퇴여부)</th>
+			<th>탈퇴여부</th>
+			<th>아이디</th>
 			<th>이름</th>
-			<th>이메일</th>
+			<th>비밀번호</th>
 			<th>우편번호</th>
 			<th>주소</th>
 			<th>전화</th>
@@ -35,24 +40,33 @@
 	<c:forEach items="${memberList}" var="memberVO">
 		<tr>
 			<td><c:choose>
-					<c:when test='{memberVO.useyn=="y"}'>
-						<input type="checkbox" name="useyn" disabled="disabled">
+					<c:when test='${memberVO.useyn=="y"}'>
+						<select name="result" size="1">
+							<option value="y" selected> 회원 </option>
+							<option value="n"> 탈퇴회원 </option>
+						</select>
 					</c:when>
 					<c:otherwise>
-						<input type="checkbox" name="useyn" checked="checked"
-							disabled="disabled">
+					<select name="result" size="1">
+						<option value="y"> 회원 </option>
+						<option value="n" selected> 탈퇴회원 </option>
+					</select>
 					</c:otherwise>
 				</c:choose></td>
-			<td>${memberVO.name}</td>
-			<td>${memberVO.email}</td>
-			<td>${memberVO.zipNum}</td>
-			<td>${memberVO.address}</td>
-			<td>${memberVO.phone}</td>
-			<td><fmt:formatDate value="${memberVO.indate}" /></td>
+			<td><input type="text" name="id" value="${memberVO.id}" /></td>
+			<td><input type="text" name="name" value="${memberVO.name}" /></td>
+			<td><input type="text" name="password" value="${memberVO.password}" /></td>
+			<td><input type="text" name="zipNum" value="${memberVO.zipNum}" /></td>
+			<td><input type="text" name="email" value="${memberVO.email}" /></td>
+			<td><input type="text" name="address" value="${memberVO.address}" /></td>
+			<td><input type="text" name="phone" value="${memberVO.phone}" /></td>
+			<td><input type="text" name="indate" class="p_input_common" onKeyUp='NumFormat(this)' value="<fmt:formatDate value="${memberVO.indate }" pattern="yyyy-MM-dd" />"></td>
+			<td><button type="submit" class="btn btn-skin btn-block"
+					onclick="go_goaway()">수정</button></td>
 		</tr>
 	</c:forEach>
 </table>
-<input type="button" class="btn" style="width: 200px" value="주문처리(입금확인)"
+<input type="button" class="btn" style="width: 200px" value="회원정보수정"
 	onClick="go_order_save()">
 </div>
 </form>

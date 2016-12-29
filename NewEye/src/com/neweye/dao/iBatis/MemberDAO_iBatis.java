@@ -81,4 +81,10 @@ public int deleteMember(String userid) throws SQLException {
 	return result;
 }
 
+@Override
+public void adminupdateMember(MemberVO memberVo) throws SQLException {
+	client.update("adminUpdateMember", memberVo);
+	
+}
+
 }

@@ -13,6 +13,7 @@ public interface MemberDAO {
    public MemberVO searchId(String name,String phone) throws SQLException;
    public void updateMember(MemberVO memberVO) throws SQLException;
    public int deleteMember(String userid) throws SQLException;
+   public void adminupdateMember(MemberVO memberVO) throws SQLException;
    
    
 }

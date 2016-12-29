@@ -45,6 +45,15 @@
    delete from member where id=#id#
    </delete>
    
+   <update id="adminUpdateMember" parameterClass="member">
+   	update member set
+   	password=#password#,
+   	name=#name#,
+   	email=#email#,
+   	address=#address#,
+   	phone=#phone# where id=#id#
+   </update>
+   
 
    
     
