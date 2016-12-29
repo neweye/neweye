@@ -12,7 +12,7 @@
 	<decorator-mappers>
 		<mapper class="com.opensymphony.module.sitemesh.mapper.ConfigDecoratorMapper">
 			<param name="config" value="${decorator-file}" />
-			<pattern>/popupDetailSearch.jsp</pattern> 
+			<pattern>/product_search_detail.jsp</pattern> 
 		</mapper>
 	</decorator-mappers>
 </sitemesh>

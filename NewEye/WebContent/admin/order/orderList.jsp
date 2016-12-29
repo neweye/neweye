@@ -136,7 +136,8 @@
 					</tr>
 				</c:forEach>
 			</table>
-			<input type="button" class="btn" style="width: 200px" value="주문처리" onClick="go_order_save(this.form)">
+			<input type="button" class="btn" style="width: 200px"
+				value="주문처리" onClick="go_order_save(this.form)">
 		</div>
 	</form>
 </body>

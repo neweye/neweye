@@ -10,10 +10,10 @@
 	</decorator>
 	
 	<excludes>	
-		<pattern>/admin/adminLoginForm.ne</pattern>
-		 <pattern>/popupDetailSearch.jsp</pattern>
-		 <pattern>/idCheckForm.ne*</pattern>
-		 <pattern>/findZipNum.ne*</pattern>
+		<pattern>/admin/adminLoginForm.ne</pattern>	
+		<pattern>/product/product_search_detail.jsp</pattern> 
+		<pattern>/idCheckForm.ne*</pattern>
+		<pattern>/findZipNum.ne*</pattern>
 	</excludes>
 	
 </decorators>
