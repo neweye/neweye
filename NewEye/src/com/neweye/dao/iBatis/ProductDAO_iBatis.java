@@ -365,5 +365,11 @@ public class ProductDAO_iBatis implements ProductDAO {
 		return productList;
 	}
 
+	@Override
+	public int deleteProduct(ProductVO product) throws SQLException {
+		int result = (Integer)client.update("deleteProduct",product);
+		return result;
+	}
+
 	
 }

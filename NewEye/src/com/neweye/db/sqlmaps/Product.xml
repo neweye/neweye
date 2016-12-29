@@ -120,6 +120,10 @@
 		set read_count = #read_count# + 1 
 		where pseq=#pseq#
 	</update>
+	
+	<update id="deleteProduct" parameterClass="product">
+		update product set kind=#kind# where pseq = #pseq#
+	</update>
 
 
 </sqlMap>
