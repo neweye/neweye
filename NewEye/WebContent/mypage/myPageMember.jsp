@@ -18,34 +18,34 @@
                class="contactForm" name="formm">
 
                <div class="form-group">
-                  <input type="text" name="id" class="form-control" id="id"
+                  아이디: <input type="text" name="id" class="form-control" id="id"
                      data-rule="minlen:4" readonly="readonly"
                      data-msg="Please enter at least 4 chars" value="${loginUser.id}"/>
                   <div class="validation"></div>
                </div>
                <div class="form-group">
-                  <input type="password" class="form-control" name="password"
+                  패스워드: <input type="text" class="form-control" name="password"
                      id="password" placeholder="Your Password" data-rule="email"
                      data-msg="Please enter a valid email" value="${loginUser.password}"/>
                   <div class="validation"></div>
                </div>
 
-               <div class="form-group">
+          <!--<div class="form-group">
                   <input type="password" class="form-control" name="Retypepassword"
                      id="password" placeholder="Retype Password" data-rule="minlen:4"
                      data-msg="Please enter at least 8 chars of subject"  "/>
                   <div class="validation"></div>
-               </div>
+               </div> -->
 
                <div class="form-group">
-                  <input type="text" class="form-control" name="name"
+                  이름: <input type="text" class="form-control" name="name"
                      id="name" placeholder="Your Name" data-rule="minlen:4"
                      data-msg="Please enter at least 8 chars of subject" value="${loginUser.name}"  />
                   <div class="validation"></div>
                </div>
 
                <div class="form-group">
-                  <input type="text" class="form-control" name="email"
+                 이메일: <input type="text" class="form-control" name="email"
                      id="email" placeholder="Your Email" data-rule="minlen:4"
                      data-msg="Please enter at least 8 chars of subject" value="${loginUser.email}" />
                   <div class="validation"></div>
@@ -56,14 +56,14 @@
                
                
                <div class="form-group">
-                  <input type="text" class="form-control" name="zipNum"
+                  우편번호: <input type="text" class="form-control" name="zipNum"
                      id="zipNum" placeholder="Your zipNum" data-rule="minlen:4"
                      data-msg="Please enter at least 8 chars of subject" value="${loginUser.zipNum}"/>
                   <div class="validation"></div>
                </div>
                
                <div class="form-group">
-                  <input type="text" class="form-control" name="address"
+                  주소: <input type="text" class="form-control" name="address"
                      id="addr1" placeholder="Your addr1" data-rule="minlen:4"
                      data-msg="Please enter at least 8 chars of subject" value="${loginUser.address}"/>
                   <div class="validation"></div>
@@ -77,7 +77,7 @@
                </div> --%>
                
                <div class="form-group">
-                  <input type="text" class="form-control" name="phone"
+                  핸드폰번호: <input type="text" class="form-control" name="phone"
                      id="phone" placeholder="Your phone" data-rule="minlen:4"
                      data-msg="Please enter at least 8 chars of subject" value="${loginUser.phone}"/>
                   <div class="validation"></div>

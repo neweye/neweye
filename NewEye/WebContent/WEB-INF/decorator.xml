@@ -11,7 +11,9 @@
 	
 	<excludes>	
 		<pattern>/admin/adminLoginForm.ne</pattern>	
-		 <pattern>/product/product_search_detail.jsp</pattern> 
+		<pattern>/product/product_search_detail.jsp</pattern> 
+		<pattern>/idCheckForm.ne*</pattern>
+		<pattern>/findZipNum.ne*</pattern>
 	</excludes>
 	
 </decorators>

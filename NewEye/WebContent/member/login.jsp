@@ -1,18 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%-- <%@ include file="../header.jsp" %> --%>
-<%-- <%@ include file="sub_img.jsp"%> 
-<%@ include file="sub_menu.jsp" %>   --%>
-
 
 <article>
 	<br> <br>
 	<div id="contract">
-	
-	<h2>로그인</h2>
-		<h4>Login</h4>
+	<br>
+	 <img src="img/memberimage.png"/>
+	<br>
+	<!-- <h2>로그인</h2>
+		<h4>Login</h4> -->
+	  
 		
 	</div>
+	
+	
 
 	<div class="row">
 		<div class="col-lg-8 col-md-offset-2">
