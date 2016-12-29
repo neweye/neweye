@@ -11,7 +11,7 @@
 	<typeAlias alias="orderby" type="com.neweye.dto.SearchVO" />
 	
 	<select id="getProduct" parameterClass="str" resultClass="product">
-		select * from product where pseq=#pseq#
+		select * from product where pseq=#pseq# where kind>0
 	</select>
 	
 	<select id="totalRecord" parameterClass="str" resultClass="int">
@@ -31,7 +31,7 @@
 	</select>
 	
 	<select id="listCategoryProduct" parameterClass="str" resultClass="product">
-		select * from product where first_level=#first_level#
+		select * from product where first_level=#first_level# and kind>0
 	</select>
 	
 	<select id="countlistKindProduct" parameterClass="str" resultClass="int">
@@ -82,11 +82,11 @@
 	</select>
 	
 	<select id="listNewProduct" resultClass="product">
-		select * from product order by indate desc
+		select * from product where kind>0 order by indate desc
 	</select>
 
 	<select id="listBestProduct" resultClass="product">
-		select * from product order by read_count desc
+		select * from product where kind>0 order by read_count desc
 	</select>
 
 	<update id="insertProduct" parameterClass="product">
