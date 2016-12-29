@@ -35,6 +35,10 @@ public class OrderDelAction implements Action {
 		}else if(Integer.parseInt(request.getParameter("result"))<5){
 			//반품중
 			orderVO.setResult("6");
+			
+			request.getParameter("deliveryBack");//택배사
+			request.getParameter("deliveryBackNum");//운송장번호
+			
 			//url=""; //반품 운송장 번호와 반품 택배사 받아야 함
 		}
 		OrderDAO orderDAO = OrderDAO_iBatis.getInstance();

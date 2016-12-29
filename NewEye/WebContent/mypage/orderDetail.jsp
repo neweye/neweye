@@ -65,11 +65,26 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<div class="clear"></div>
+		<div class="clear">
+		</div>
 		<div id="buttons" style="float: right">
-			<c:if test='${orderDetail.result<5}'>
+			<span id="delBack" class="deliveryBackProduct">
+			<select name="deliveryBack">
+				<option value="dae">대한통운</option>
+				<option value="hyu">현대택배</option>
+			</select>
+			<input type="text" name="deliveryBackNum" placeholder="운송장번호를 입력하세요."/>
+			<input type="button" value="반품신청" onclick="go_order_back()"/>
+			&nbsp;&nbsp;&nbsp;
+			</span>
+			<c:choose>
+			<c:when test='${orderDetail.result<3}'>
 				<input type="button" value="취소하기" class="cancel" onclick="go_order_delete()"/>
-			</c:if>
+			</c:when>
+			<c:when test='${orderDetail.result<5}'>
+				<input type="button" value="반품하기" class="cancel" onclick="go_order_back()"/>
+			</c:when>
+			</c:choose>
 			<input type="button" value="목록으로" class="cancel" onclick="location.href='orderAll.ne'"/>
 			<input type="button" value="쇼핑 계속하기" class="cancel" onclick="location.href='index.ne'">
 		</div>
