@@ -11,7 +11,7 @@
 	<typeAlias alias="orderby" type="com.neweye.dto.SearchVO" />
 	
 	<select id="getProduct" parameterClass="str" resultClass="product">
-		select * from product where pseq=#pseq# where kind>0
+		select * from product where pseq=#pseq# and kind>0
 	</select>
 	
 	<select id="totalRecord" parameterClass="str" resultClass="int">
