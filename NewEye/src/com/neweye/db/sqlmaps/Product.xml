@@ -53,23 +53,31 @@
 	</select>
 	
 	<select id="listDetailProduct" parameterClass="str" resultClass="product">
-		select pseq, first_level, second_level, kind, name, price, 
-			indate, read_count, quantity, useyn, content, img_list, img_detail, 
-			sizee, weight, ratio, pixel, speed, seqpictures, screen, iso, 
+		select name, price, useyn, weight, ratio, pixel, speed, seqpictures, screen, iso, 
 			movframe, format, filter, functions, zoomyn, minfocus, maxfocus, 
 			minaperture, maxaperture, distance, types
 		from product 
-		where pseq like '%'||#pseq#||'%' and first_level like '%'||#first_level#||'%' 
-		and second_level like '%'||#second_level#||'%' and kind like '%'||#kind#||'%' 
-		and name like '%'||#name#||'%' and useyn like '%'||#useyn#||'%' and content like '%'||#content#||'%' 
-		and img_List like '%'||#img_List#||'%' and img_detail like '%'||#img_detail#||'%' 
-		and sizee like '%'||#sizee#||'%' and weight like '%'||#weight#||'%' and ratio like '%'||#ratio#||'%' 
-		and pixel like '%'||#pixel#||'%' and speed like '%'||#speed#||'%' and seqpictures like '%'||#seqpictures#||'%' 
-		and screen like '%'||#screen#||'%' and iso like '%'||#iso#||'%' and movframe like '%'||#movframe#||'%' 
-		and format like '%'||#format#||'%' and filter like '%'||#filter#||'%' and functions like '%'||#functions#||'%' 
-		and zoomyn like '%'||#zoomyn#||'%' and minfocus like '%'||#minfocus#||'%' and maxfocus like '%'||#maxfocus#||'%' 
-		and minaperture like '%'||#minaperture#||'%' and maxaperture like '%'||#maxaperture#||'%' 
-		and distance like '%'||#distance#||'%' and types like '%'||#types#||'%'
+		where name like '%'||#name#||'%' 
+		and price between #min# and #max# 
+		and useyn=#useyn#
+		and weight between #min# and #max# 
+		and ratio=#ratio# 
+		and pixel between #min# and #max# 
+		and iso between #min# and #max#
+		and speed between #min# and #max# 
+		and screen between #min# and #max#
+		and movframe between #min# and #max#
+		and seqpictures between #min# and #max# 
+		and format=#format#
+		and filter between #min# and #max#
+		and functions like '%'||#functions#||'%' 
+		and zoomyn=#zoomyn#
+		and minfocus between #min# and #max#
+		and maxfocus between #min# and #max#
+		and minaperture between #min# and #max#
+		and maxaperture between #min# and #max#
+		and distance between #min# and #max#
+		and types like '%'||#types#||'%'
 		order by pseq desc
 	</select>
 	
