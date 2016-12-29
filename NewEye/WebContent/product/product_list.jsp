@@ -10,14 +10,16 @@
 <head>
 <meta charset="utf-8">
 <title></title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
 <script>
 
 function go_search_detail(){
-	   var url ="/NewEye/product/product_search_detail.jsp"; 
-	   var options = "toolbar=yes,scrollbars=yes,resizable=no,top=200,left=300,width=900,height=800";
-	   
-	   window.open(url, "상세검색", options);
+	var theForm = document.frm;
+	var url ="/NewEye/product/product_search_detail.jsp";
+	var options = "toolbar=yes,scrollbars=yes,resizable=no,top=200,left=300,width=900,height=800";
+	//theForm.action="product/product_search_detail.jsp";
+	window.open(url, "상세검색", options);
+	theForm.submit();
 }
 
 

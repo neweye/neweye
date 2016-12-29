@@ -6,7 +6,7 @@
 <article>
 	<h2>My Page(${title})</h2>
 	<form name="formm" method="post">
-		<table id="cartList">
+		<table id="cartList" class="table">
 			<tr>
 				<th>주문일자</th>
 				<th>주문번호</th>
@@ -21,7 +21,18 @@
 					<td>${orderVO.pname}</td>
 					<td><fmt:formatNumber value="${orderVO.price}"
 							type="currency" /></td>
-					<td><a href="orderDetail.ne?oseq=${orderVO.oseq}"> 조회 </a></td>
+					<td><c:choose>
+							<c:when test='${orderVO.result=="1"}'> 입금대기 </c:when>
+							<c:when test='${orderVO.result=="2"}'> 입금확인 </c:when>
+							<c:when test='${orderVO.result=="3"}'> 배송중 </c:when>
+							<c:when test='${orderVO.result=="4"}'> 배송완료 </c:when>
+							<c:when test='${orderVO.result=="5"}'> 주문취소 </c:when>
+							<c:when test='${orderVO.result=="6"}'> 반품중 </c:when>
+							<c:when test='${orderVO.result=="7"}'> 환불완료 </c:when>
+							<c:otherwise>
+								<span style="color: red"> 처리완료 </span>
+							</c:otherwise>
+						</c:choose><a href="orderDetail.ne?oseq=${orderVO.oseq}"> [조회] </a></td>
 				</tr>
 			</c:forEach>
 		</table>
