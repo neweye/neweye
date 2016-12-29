@@ -20,7 +20,7 @@ public class ProductDetailSearchAction implements Action {
 			throws ServletException, IOException {
 		String url = "product/product_list.jsp";
 
-		String key = request.getParameter("key");
+		String key = request.getParameter("name");
 		String tpage = request.getParameter("tpage");
 		if (key == null) {
 			key = "";
@@ -30,7 +30,7 @@ public class ProductDetailSearchAction implements Action {
 		} else if (tpage.equals("")) {
 			tpage = "1";
 		}
-		request.setAttribute("key", key);
+		request.setAttribute("name", key);
 		request.setAttribute("tpage", tpage);
 
 		/* ProductDAO productDAO = ProductDAO_JDBC.getInstance(); */
@@ -39,15 +39,19 @@ public class ProductDetailSearchAction implements Action {
 		ArrayList<ProductVO> productList = null;
 		String paging = null;
 		try {
-			productList = productDAO.listDetailProduct(Integer.parseInt(tpage), key);
+			productList = productDAO.listProduct(Integer.parseInt(tpage), key);
 			paging = productDAO.pageNumber(Integer.parseInt(tpage), key);
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
-		request.setAttribute("productList", productList);
+		
+		for(ProductVO vo : productList){
+			System.out.println(vo.getName());
+		}
+		
+		request.setAttribute("productKindList", productList);
 		int n = productList.size();
 		request.setAttribute("productListSize", n);
 		request.setAttribute("paging", paging);

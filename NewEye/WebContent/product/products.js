@@ -77,3 +77,5 @@ function go_search() {
 	theForm.action = "ProductSearch.ne?key="+key;
 	theForm.submit();
 }
+
+
