@@ -46,8 +46,12 @@ public class ProductSearchAction implements Action {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
-		request.setAttribute("productList", productList);
+		
+		for(ProductVO vo : productList){
+			System.out.println(vo.getName());
+		}
+		
+		request.setAttribute("productKindList", productList);
 		int n = productList.size();
 		request.setAttribute("productListSize", n);
 		request.setAttribute("paging", paging);

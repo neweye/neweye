@@ -12,27 +12,7 @@
 <title></title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
-/* $(function(){
-	$('#btn_search_detail').click(function(){
-		   var url ="/NewEye/product/product_search_detail.jsp"; 
-		   var options = "toolbar=yes,scrollbars=yes,resizable=no,top=200,left=300,width=900,height=800";
-		   
-		   window.open(url, "상세검색", options);
-	   })
-	/////////////////////////////
-	   
-	   $('#btn_submit_dsearch').click(function(){
-		   var theForm = document.frm;
-			var key=document.frm.key.value;
-			theForm.action = "ProductSearch.ne?key="+key;
-			theForm.submit();
-	   })
-	/////////////////////////////   
-	    $('#btn_cancel_dsearch').click(function(){
-	    	self.close();
-	   })
-	
-}) */
+
 function go_search_detail(){
 	   var url ="/NewEye/product/product_search_detail.jsp"; 
 	   var options = "toolbar=yes,scrollbars=yes,resizable=no,top=200,left=300,width=900,height=800";
@@ -138,7 +118,7 @@ div.top_search_tb{
 		<input type="text" name="key"/>
 		<input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">&nbsp;
 		
-		<input type="button" value="상세검색" onClick="go_search_detail()" id="btn_search_detail" /><br /> 
+		<input type="button" value="상세검색" onClick="go_search_detail()"/><br /> 
 		<!-- 
 		///////////////////////////////////////////////////////
 		

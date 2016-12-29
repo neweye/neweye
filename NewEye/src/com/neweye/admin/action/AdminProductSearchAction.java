@@ -19,7 +19,6 @@ public class AdminProductSearchAction implements Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "product/productList.jsp";
-
 		String key = request.getParameter("key");
 		String tpage = request.getParameter("tpage");
 		if (key == null) {
@@ -33,7 +32,6 @@ public class AdminProductSearchAction implements Action {
 		request.setAttribute("key", key);
 		request.setAttribute("tpage", tpage);
 
-		/* ProductDAO productDAO = ProductDAO_JDBC.getInstance(); */
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 
 		ArrayList<ProductVO> productList = null;
