@@ -25,18 +25,11 @@
 
 <title>Lonely - Free bootstrap 3 one page template</title>
 
-<script type="text/javascript" src="member/member01.js"></script>
-
 <!-- CSS -->
-<link href="<%=request.getContextPath()%>/css/bootstrap.min.css"
-	rel="stylesheet" type="text/css">
-<link
-	href="<%=request.getContextPath()%>/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<link href="<%=request.getContextPath()%>/css/nivo-lightbox.css"
-	rel="stylesheet" />
-<link
-	href="<%=request.getContextPath()%>/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/css/nivo-lightbox.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath()%>/css/owl.carousel.css" rel="stylesheet" media="screen" />
 <link href="<%=request.getContextPath()%>/css/owl.theme.css" rel="stylesheet" media="screen" />
 <link href="<%=request.getContextPath()%>/css/animate.css" rel="stylesheet" />
@@ -195,8 +188,8 @@
    <script src="<%=request.getContextPath()%>/contactform/contactform.js"></script>
    <script src="<%=request.getContextPath()%>/product/products.js"></script>
    <script src="<%=request.getContextPath()%>/mypage/mypage01.js"></script>
+   <script src="<%=request.getContextPath()%>/member/member01.js"></script>
    
-
 </body>
 
 </html>

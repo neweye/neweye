@@ -39,10 +39,10 @@
 	</select>
 	
 	<select id="listOrder" parameterClass="str" resultClass="order">
-		select * from order_view where mname like '%'||#mname#||'%' order by result, oseq desc
+		select * from order_view where mname like '%'||#mname#||'%' order by oseq desc
 	</select>
 	
-	<update id="updateOrderResult" parameterClass="str">
-		update order_detail set result='2' where odseq=#oseq#
+	<update id="updateOrderResult" parameterClass="order">
+		update order_detail set result=#result# where odseq=#odseq#
 	</update>
 </sqlMap>

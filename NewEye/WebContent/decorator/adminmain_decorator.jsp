@@ -18,9 +18,6 @@
 
 <head>
 
-
-
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
@@ -28,18 +25,11 @@
 
 <title>Lonely - Free bootstrap 3 one page template</title>
 
-<script type="text/javascript" src="member/member01.js"></script>
-
 <!-- CSS -->
-<link href="<%=request.getContextPath()%>/css/bootstrap.min.css"
-   rel="stylesheet" type="text/css">
-<link
-   href="<%=request.getContextPath()%>/font-awesome/css/font-awesome.min.css"
-   rel="stylesheet" type="text/css">
-<link href="<%=request.getContextPath()%>/css/nivo-lightbox.css"
-   rel="stylesheet" />
-<link
-   href="<%=request.getContextPath()%>/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/css/nivo-lightbox.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath()%>/css/owl.carousel.css" rel="stylesheet" media="screen" />
 <link href="<%=request.getContextPath()%>/css/owl.theme.css" rel="stylesheet" media="screen" />
 <link href="<%=request.getContextPath()%>/css/animate.css" rel="stylesheet" />
@@ -53,48 +43,6 @@
       <div id="load"></div>
    </div>
 
-   <!-- Section: intro -->
-   <section id="intro" class="intro" style="height:200px;">
-   
-      <!-- ///////////Carousel 시작/////////// -->
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-         <!-- Indicators -->
-         <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-         </ol>
-         <!-- Wrapper for slides -->
-         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-               <img src="<%=request.getContextPath()%>/img/carousel06.png" alt="dlsr01">
-            </div>
-
-            <div class="item">
-               <img src="<%=request.getContextPath()%>/img/carousel04.png" alt="dlsr02">
-            </div>
-
-            <div class="item">
-               <img src="<%=request.getContextPath()%>/img/carousel05.png" alt="dlsr03">
-            </div>
-            
-         </div>
-
-         <!-- Left and right controls -->
-         <a class="left carousel-control" href="#myCarousel" role="button"
-            data-slide="prev"> <span
-            class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-         </a> <a class="right carousel-control" href="#myCarousel" role="button"
-            data-slide="next"> <span
-            class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-         </a>
-      </div>
-
-      <!-- ///////////Carousel 끝/////////// -->
-      
-   </section>
    <!-- /Section: intro -->
    <br/>
    <div class="slogan">
@@ -162,6 +110,7 @@
       </div>
    </footer>
 
+
    <!-- Core JavaScript Files -->
    <script src="<%=request.getContextPath()%>/js/jquery.min.js"></script>
    <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
@@ -175,7 +124,10 @@
    <!-- Custom Theme JavaScript -->
    <script src="<%=request.getContextPath()%>/js/custom.js"></script>
    <script src="<%=request.getContextPath()%>/contactform/contactform.js"></script>
-   <script src="<%=request.getContextPath()%>/admin/product/product01.js"></script>
+   <script src="<%=request.getContextPath()%>/product/products.js"></script>
+   <script src="<%=request.getContextPath()%>/mypage/mypage01.js"></script>
+   <script src="<%=request.getContextPath()%>/member/member01.js"></script>
+   <script src="<%=request.getContextPath()%>/js/order.js"></script>
 
 </body>
 
