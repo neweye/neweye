@@ -102,7 +102,7 @@ td.td_product_add{
   <th class="th_product_add">분류코드</th>
   <td class="td_product_add">${productVO.kind}</td>
   <th class="th_product_add">발매일</th>
-  <td class="td_product_add"><input type="text" name="indate" class="p_input_common" >${productVO.kind}</td>
+  <td class="td_product_add">${productVO.kind}</td>
 </tr>
 
 <tr>
