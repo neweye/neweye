@@ -53,30 +53,30 @@
 	</select>
 	
 	<select id="listDetailProduct" parameterClass="str" resultClass="product">
-		select name, price, useyn, weight, ratio, pixel, speed, seqpictures, screen, iso, 
-			movframe, format, filter, functions, zoomyn, minfocus, maxfocus, 
+		select name, price, useyn, weight, ratio, pixel, iso, speed, screen, movframe, 
+		seqpictures, format, filter, functions, zoomyn, minfocus, maxfocus, 
 			minaperture, maxaperture, distance, types
 		from product 
 		where name like '%'||#name#||'%' 
-		and price between #min# and #max# 
+		and price between #min_price# and #max_price# 
 		and useyn=#useyn#
-		and weight between #min# and #max# 
+		and weight between #min_weight# and #max_weight# 
 		and ratio=#ratio# 
-		and pixel between #min# and #max# 
-		and iso between #min# and #max#
-		and speed between #min# and #max# 
-		and screen between #min# and #max#
-		and movframe between #min# and #max#
-		and seqpictures between #min# and #max# 
+		and pixel between #min_pixel# and #max_pixel# 
+		and iso between #min_iso# and #max_iso#
+		and speed between #min_speed# and #max_speed# 
+		and screen between #min_screen# and #max_screen#
+		and movframe between #min_movframe# and #max_movframe#
+		and seqpictures between #min_seqpictures# and #max_seqpictures# 
 		and format=#format#
-		and filter between #min# and #max#
+		and filter between #min_filter# and #max_filter#
 		and functions like '%'||#functions#||'%' 
 		and zoomyn=#zoomyn#
-		and minfocus between #min# and #max#
-		and maxfocus between #min# and #max#
-		and minaperture between #min# and #max#
-		and maxaperture between #min# and #max#
-		and distance between #min# and #max#
+		and minfocus between #min_minfocus# and #max_minfocus#
+		and maxfocus between #min_maxfocus# and #max_maxfocus#
+		and minaperture between #min_minaperture# and #max_minaperture#
+		and maxaperture between #min_maxaperture# and #max_maxaperture#
+		and distance between #min_distance# and #max_distance#
 		and types like '%'||#types#||'%'
 		order by pseq desc
 	</select>
