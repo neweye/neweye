@@ -45,9 +45,8 @@ public class AdminProductWriteAction implements Action {
     productVO.setSecond_level(multi.getParameter("second_level")); //--------------------------
     productVO.setKind(multi.getParameter("kind")); //--------------------------
     productVO.setName(multi.getParameter("name")); //--------------------------
-    String indate=multi.getParameter("indate")+" 10:20:30.0";
-    productVO.setIndate(java.sql.Timestamp.valueOf(indate)); //--------------------------
-    
+    if(multi.getParameter("indate") == null || multi.getParameter("indate").equals("")){ productVO.setIndate(new Timestamp(System.currentTimeMillis()));
+    }else{ String indate=multi.getParameter("indate")+" 10:20:30.0"; productVO.setIndate(java.sql.Timestamp.valueOf(indate)); }    
     productVO.setRead_count(0);
     if(multi.getParameter("price")==null||multi.getParameter("price").equals("")) { productVO.setPrice(0);
     }else{ productVO.setPrice(Integer.parseInt(multi.getParameter("price"))); }
