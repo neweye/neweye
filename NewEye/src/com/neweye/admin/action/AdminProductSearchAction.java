@@ -18,8 +18,7 @@ public class AdminProductSearchAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "product/product_list.jsp";
-
+		String url = "product/productList.jsp";
 		String key = request.getParameter("key");
 		String tpage = request.getParameter("tpage");
 		if (key == null) {
@@ -46,7 +45,7 @@ public class AdminProductSearchAction implements Action {
 			e.printStackTrace();
 		}
 
-		request.setAttribute("product_list", product_list);
+		request.setAttribute("productList", productList);
 		int n = productList.size();
 		request.setAttribute("productListSize", n);
 		request.setAttribute("paging", paging);
