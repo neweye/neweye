@@ -294,8 +294,8 @@ td.td_product_add{
 <th class="th_product_add" id="product_add_kind" colspan="6" style="height:5px"></th>
 </tr>
 </table>
-<input class="btn" type="button" value="검색" onClick="do_submit_dsearch()" id="btn_submit_dsearch"> &nbsp;&nbsp;          
-<input class="btn" type="button" value="취소" onClick="do_close_dsearch()" id="btn_cancel_dsearch">
+<input class="btn" type="button" value="검색" onClick="do_submit_dsearch()" /> &nbsp;&nbsp;          
+<input class="btn" type="button" value="취소" onClick="do_close_dsearch()" />
 </form> 
 </article>
 <%-- <%@ include file="/admin/footer.jsp"%> --%>
