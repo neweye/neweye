@@ -1,3 +1,4 @@
+<%@page import="com.neweye.dto.ProductVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -52,7 +53,7 @@
              <c:otherwise>판매중단</c:otherwise>             
           </c:choose>     
         </td> 
-      <td>${productVO.indate}</td>
+      <td><fmt:formatDate value="${productVO.indate }" pattern="yyyy-MM-dd" /></td>
       <th><a href="adminProductUpdateForm.ne?pseq=${productVO.pseq}">수정</a>/<a href="#">삭제</a></th>
     </tr>
     </c:forEach>

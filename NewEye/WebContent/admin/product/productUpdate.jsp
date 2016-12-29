@@ -1,6 +1,8 @@
+<%@page import="com.neweye.dto.ProductVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
-  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%-- <%@ include file="/admin/header.jsp"%> --%>
 <%-- <%@ include file="/admin/sub_menu.jsp"%> --%>
@@ -100,7 +102,7 @@ td.td_product_add{
   <th class="th_product_add">분류코드</th>
   <td class="td_product_add"><input type="text" name="kind" class="p_input_common" onKeyUp='NumFormat(this)' value="${productVO.kind }"></td>
   <th class="th_product_add">발매일</th>
-  <td class="td_product_add"><input type="text" name="indate" class="p_input_common" ></td>
+  <td class="td_product_add"><input type="text" name="indate" class="p_input_common" onKeyUp='NumFormat(this)' value="<fmt:formatDate value="${productVO.indate }" pattern="yyyy-MM-dd" />"></td>
 </tr>
 
 <tr>
