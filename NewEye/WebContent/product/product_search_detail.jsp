@@ -5,6 +5,20 @@
 <%-- <%@ include file="/admin/header.jsp"%> --%>
 <%-- <%@ include file="/admin/sub_menu.jsp"%> --%>
 
+<script>
+function do_submit_dsearch(){
+		   var theForm = document.frm;
+			var key=document.frm.key.value;
+			theForm.action = "ProductSearch.ne?key="+key;
+			theForm.submit();
+	   }
+function do_close_dsearch(){
+	    	self.close();
+	   }
+
+</script>
+
+
 <style>
 article.productWrite_jsp{
    margin: auto;
@@ -13,7 +27,7 @@ article.productWrite_jsp{
    
 }
 table.admin_product_write{
-   margin: 10px  auto;
+   margin: auto;
    /* border: 1px dashed #999999; */
    width:800px;
    
@@ -66,12 +80,8 @@ td.td_product_add{
 <article class="productWrite_jsp">
 
 <h1 style="margin:20px 0">상품상세검색</h1>  
-<!-- [1] 파일을 업로드 하기 위해서는 폼태그를 post 방식으로 전송하고,
-인코딩 타입을 multipart/form-data 로 지정해야 한다. -->
+
 <form name="frm" method="post" enctype="multipart/form-data">
-
-
-
 
 <table class="admin_product_write" id="list">
 <tr><td colspan="6" style="text-align:right;">
@@ -283,12 +293,9 @@ td.td_product_add{
    <tr>
 <th class="th_product_add" id="product_add_kind" colspan="6" style="height:5px"></th>
 </tr>
-   
-      
 </table>
-<input class="btn" type="button" value="등록" onClick="go_save()"> &nbsp;&nbsp;          
-<input class="btn" type="button" value="취소" onClick="go_mov()">
-<br/><br/>
+<input class="btn" type="button" value="검색" onClick="do_submit_dsearch()" id="btn_submit_dsearch"> &nbsp;&nbsp;          
+<input class="btn" type="button" value="취소" onClick="do_close_dsearch()" id="btn_cancel_dsearch">
 </form> 
 </article>
 <%-- <%@ include file="/admin/footer.jsp"%> --%>
