@@ -45,7 +45,9 @@
 							<c:when test='${orderVO.result=="2"}'> 입금확인 </c:when>
 							<c:when test='${orderVO.result=="3"}'> 배송중 </c:when>
 							<c:when test='${orderVO.result=="4"}'> 배송완료 </c:when>
-							<c:when test='${orderVO.result=="0"}'> 주문취소 </c:when>
+							<c:when test='${orderVO.result=="5"}'> 주문취소 </c:when>
+							<c:when test='${orderVO.result=="5"}'> 반품중 </c:when>
+							<c:when test='${orderVO.result=="5"}'> 환불완료 </c:when>
 							<c:otherwise>
 								<span style="color: red"> 처리완료 </span>
 							</c:otherwise>
