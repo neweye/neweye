@@ -127,6 +127,7 @@
    <script src="<%=request.getContextPath()%>/product/products.js"></script>
    <script src="<%=request.getContextPath()%>/mypage/mypage01.js"></script>
    <script src="<%=request.getContextPath()%>/member/member01.js"></script>
+   <script src="<%=request.getContextPath()%>/admin/product/product01.js"></script>
    <script src="<%=request.getContextPath()%>/js/order.js"></script>
 
 </body>
