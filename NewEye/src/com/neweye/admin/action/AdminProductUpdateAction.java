@@ -48,7 +48,8 @@ public class AdminProductUpdateAction implements Action {
        productVO.setWeight(Integer.parseInt(multi.getParameter("weight")));
        //productVO.setIndate(multi.getParameter("indate"));//////////////////////////////////////////
        
-       String now = "2000-01-01 01:00:00.0";
+       String now = multi.getParameter("indate")+" 01:00:00.0";
+       System.out.println(now);
        productVO.setIndate(java.sql.Timestamp.valueOf(now));
        productVO.setRead_count(0);
        productVO.setQuantity(Integer.parseInt(multi.getParameter("Quantity")));
