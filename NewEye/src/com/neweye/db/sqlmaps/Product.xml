@@ -19,11 +19,11 @@
 	</select>
 	
 	<select id="listDescProduct" parameterClass="str" resultClass="product">
-		select * from product order by #column# desc
+		select * from product where kind>0 order by #column# desc
 	</select>
 	
 	<select id="listAscProduct" parameterClass="str" resultClass="product">
-		select * from product order by #column# asc
+		select * from product where kind>0 order by #column# asc
 	</select>
 	
 	<select id="countlistCategoryProduct" parameterClass="str" resultClass="int">
@@ -35,11 +35,11 @@
 	</select>
 	
 	<select id="countlistKindProduct" parameterClass="str" resultClass="int">
-		select count(*) from product where kind=#kind#
+		select count(*) from product
 	</select>
 	
 	<select id="listKindProduct" parameterClass="str" resultClass="product">
-		select * from product where kind=#kind#
+		select * from product where kind>0
 	</select>
 
 	<select id="listProduct" parameterClass="str" resultClass="product">
@@ -72,9 +72,6 @@
 		and distance like '%'||#distance#||'%' and types like '%'||#types#||'%'
 		order by pseq desc
 	</select>
-	
-	
-	
 	
 	<select id="listNewProduct" resultClass="product">
 		select * from product order by indate desc

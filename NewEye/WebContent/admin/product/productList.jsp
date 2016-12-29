@@ -51,7 +51,8 @@
          <c:choose>
              <c:when test='${productVO.useyn=="y"}'>판매</c:when>
              <c:otherwise>판매중단</c:otherwise>             
-          </c:choose>     
+          </c:choose>
+          <c:if test='${productVO.kind=="0"}'>(삭제)</c:if>
         </td> 
       <td><fmt:formatDate value="${productVO.indate }" pattern="yyyy-MM-dd" /></td>
       <th><a href="adminProductUpdateForm.ne?pseq=${productVO.pseq}">수정</a>/<a href="adminDelete.ne?pseq=${productVO.pseq}">삭제</a></th>
