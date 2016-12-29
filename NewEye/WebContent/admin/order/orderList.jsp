@@ -4,35 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ include file="/admin/header.jsp"%> --%>
 <%-- <%@ include file="/admin/sub_menu.jsp"%> --%>
-<script type="text/javascript">
-	function go_order_save() {
-		var count = 0;
-		if (document.frm.result.length == undefined) {
-			if (document.frm.result.checked == true) {
-				count++;
-			}
-		} else {
-			for (var i = 0; i < document.frm.result.length; i++) {
-				if (document.frm.result[i].checked == true) {
-					count++;
-				}
-			}
-		}
-		if (count == 0) {
-			alert("주문처리할 항목을 선택해 주세요.");
-		} else {
-			document.frm.action = "adminOrderSave.ne";
-			document.frm.submit();
-		}
-	}
-
-	function go_order_search() {
-		var theForm = document.frm;
-		var key = document.frm.key.value;
-		theForm.action = "adminOrderSearch.ne?key=" + key;
-		theForm.submit();
-	}
-</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -70,24 +41,87 @@
 					<tr>
 						<td>
                   		   ${orderVO.odseq} &nbsp;
+                  		   <input type="hidden" name="code" value="${orderVO.odseq}"/>
 							<c:choose>
 								<c:when test='${orderVO.result=="1"}'>
-									<span style="font-weight: bold; color: red"> 입금대기 </span>
+									<select name="result" size="1">
+										<option value="1" selected> 입금대기 </option>
+										<option value="2"> 입금확인 </option>
+										<option value="3"> 배송중 </option>
+										<option value="4"> 배송완료 </option>
+										<option value="5"> 주문취소 </option>
+										<option value="6"> 반품중 </option>
+										<option value="7"> 환불완료 </option>
+									</select>
 								</c:when>
 								<c:when test='${orderVO.result=="2"}'>
-									<span style="font-weight: bold; color: blue"> 입금확인 </span>
+									<select name="result" size="1">
+										<option value="1"> 입금대기 </option>
+										<option value="2" selected> 입금확인 </option>
+										<option value="3"> 배송중 </option>
+										<option value="4"> 배송완료 </option>
+										<option value="5"> 주문취소 </option>
+										<option value="6"> 반품중 </option>
+										<option value="7"> 환불완료 </option>
+									</select>
 								</c:when>
 								<c:when test='${orderVO.result=="3"}'>
-									<span style="font-weight: bold; color: green"> 배송중 </span>
+									<select name="result" size="1">
+										<option value="1"> 입금대기 </option>
+										<option value="2"> 입금확인 </option>
+										<option value="3" selected> 배송중 </option>
+										<option value="4"> 배송완료 </option>
+										<option value="5"> 주문취소 </option>
+										<option value="6"> 반품중 </option>
+										<option value="7"> 환불완료 </option>
+									</select>
 								</c:when>
 								<c:when test='${orderVO.result=="4"}'>
-									<span style="font-weight: bold; color: purple"> 배송완료 </span>
+									<select name="result" size="1">
+										<option value="1"> 입금대기 </option>
+										<option value="2"> 입금확인 </option>
+										<option value="3"> 배송중 </option>
+										<option value="4" selected> 배송완료 </option>
+										<option value="5"> 주문취소 </option>
+										<option value="6"> 반품중 </option>
+										<option value="7"> 환불완료 </option>
+									</select>
 								</c:when>
-								<c:when test='${orderVO.result=="0"}'>
-									<span style="font-weight: bold; color: grey"> 주문취소 </span>
+								<c:when test='${orderVO.result=="5"}'>
+									<select name="result" size="1">
+										<option value="1"> 입금대기 </option>
+										<option value="2"> 입금확인 </option>
+										<option value="3"> 배송중 </option>
+										<option value="4"> 배송완료 </option>
+										<option value="5" selected> 주문취소 </option>
+										<option value="6"> 반품중 </option>
+										<option value="7"> 환불완료 </option>
+									</select>
+								</c:when>
+								<c:when test='${orderVO.result=="6"}'>
+									<select name="result" size="1">
+										<option value="1"> 입금대기 </option>
+										<option value="2"> 입금확인 </option>
+										<option value="3"> 배송중 </option>
+										<option value="4"> 배송완료 </option>
+										<option value="5"> 주문취소 </option>
+										<option value="6" selected> 반품중 </option>
+										<option value="7"> 환불완료 </option>
+									</select>
+								</c:when>
+								<c:when test='${orderVO.result=="7"}'>
+									<select name="result" size="1">
+										<option value="1"> 입금대기 </option>
+										<option value="2"> 입금확인 </option>
+										<option value="3"> 배송중 </option>
+										<option value="4"> 배송완료 </option>
+										<option value="5"> 주문취소 </option>
+										<option value="6"> 반품중 </option>
+										<option value="7" selected> 환불완료 </option>
+									</select>
 								</c:when>
 								<c:otherwise>
-									<span style="font-weight: bold; color: red"> 오류 </span>
+									<span style="font-weight: bold; color: redd"> 오류 </span>
 								</c:otherwise>
 							</c:choose>
 							<%-- <input type="checkbox" name="result" value="${orderVO.odseq}"> --%>
@@ -103,7 +137,7 @@
 				</c:forEach>
 			</table>
 			<input type="button" class="btn" style="width: 200px"
-				value="주문처리(입금확인)" onClick="go_order_save()">
+				value="주문처리" onClick="go_order_save(this.form)">
 		</div>
 	</form>
 </body>
