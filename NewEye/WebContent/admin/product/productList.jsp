@@ -53,7 +53,7 @@
           </c:choose>     
         </td> 
       <td>${productVO.indate}</td>
-      <th><a href="#">수정</a>/<a href="#">삭제</a></th>
+      <th><a href="adminProductUpdateForm.ne?pseq=${productVO.pseq}">수정</a>/<a href="#">삭제</a></th>
     </tr>
     </c:forEach>
     <tr><td colspan="6" style="text-align: center;"> ${paging} </td></tr>
