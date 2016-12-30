@@ -120,7 +120,7 @@ div.top_search_tb{
 		<input type="text" name="key"/>
 		<input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">&nbsp;
 		
-		<input type="button" value="상세검색" onClick="go_search_detail()"/><br /> 
+		<input class="btn" type="button" value="상세검색" onClick="go_search_detail()"/><br /> 
 		<!-- 
 		///////////////////////////////////////////////////////
 		
@@ -142,8 +142,8 @@ div.top_search_tb{
 			</c:otherwise>
 		</c:choose> --%>
 		
-		<input type="text" name="" value="" /> 드롭다운식으로 바꿀거임 <input
-			type="button" name="" value="비교하기" />
+		<!-- <input type="text" name="" value="" /> 드롭다운식으로 바꿀거임 <input
+			type="button" name="" value="비교하기" /> -->
 </div>
 <br/>
 </form>
