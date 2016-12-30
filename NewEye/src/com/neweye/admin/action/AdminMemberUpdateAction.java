@@ -25,7 +25,6 @@ public class AdminMemberUpdateAction implements Action {
 		
 		MemberVO member = new MemberVO();
 	      MemberVO updatemember = new MemberVO();
-	      member.setUseyn(request.getParameter("result"));
 	      member.setId(request.getParameter("id").trim());
 	      member.setPassword(request.getParameter("password"));
 	      member.setEmail(request.getParameter("email"));
@@ -33,8 +32,6 @@ public class AdminMemberUpdateAction implements Action {
 	      member.setName(request.getParameter("name"));
 	      member.setPhone(request.getParameter("phone"));
 	      member.setZipNum(request.getParameter("zipNum"));
-	      String indate=request.getParameter("indate")+" 10:20:30.0";
-	      member.setIndate(java.sql.Timestamp.valueOf(indate));
 	      
 	      
 	      //String id = request.getParameter("id").trim();
@@ -44,7 +41,6 @@ public class AdminMemberUpdateAction implements Action {
 	         memberDAO.updateMember(member);
 	         message="succes";
 	         updatemember = memberDAO.getMember(request.getParameter("id").trim());
-	         session.setAttribute("loginUser", updatemember);
 	      } catch (SQLException e) {
 	         e.printStackTrace();
 	      }
