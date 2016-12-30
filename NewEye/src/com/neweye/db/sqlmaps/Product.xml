@@ -27,7 +27,7 @@
 	</select>
 	
 	<select id="countlistCategoryProduct" parameterClass="str" resultClass="int">
-		select count(*) from product where first_level=#first_level#
+		select count(*) from product where first_level=#first_level# and kind>0
 	</select>
 	
 	<select id="listCategoryProduct" parameterClass="str" resultClass="product">
@@ -35,11 +35,11 @@
 	</select>
 	
 	<select id="countlistKindProduct" parameterClass="str" resultClass="int">
-		select count(*) from product
+		select count(*) from product where kind=#kind# and kind>0
 	</select>
 	
 	<select id="listKindProduct" parameterClass="str" resultClass="product">
-		select * from product where kind=#kind#
+		select * from product where kind=#kind# and kind>0
 	</select>
 
 	<select id="listProduct" parameterClass="str" resultClass="product">
