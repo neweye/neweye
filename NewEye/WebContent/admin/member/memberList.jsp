@@ -9,10 +9,6 @@
 		document.frm.action = "admin/MemberList.ne";
 		document.frm.submit();
 	}
-	function go_goaway(){
-		document.frm.action = "adminUpdate.ne"
-		document.frm.submit();
-	}
 </script>
 
 <h2>MemberList</h2>
@@ -53,21 +49,18 @@
 					</select>
 					</c:otherwise>
 				</c:choose></td>
-			<td><input type="text" name="id" value="${memberVO.id}" /></td>
-			<td><input type="text" name="name" value="${memberVO.name}" /></td>
-			<td><input type="text" name="password" value="${memberVO.password}" /></td>
-			<td><input type="text" name="zipNum" value="${memberVO.zipNum}" /></td>
-			<td><input type="text" name="email" value="${memberVO.email}" /></td>
-			<td><input type="text" name="address" value="${memberVO.address}" /></td>
-			<td><input type="text" name="phone" value="${memberVO.phone}" /></td>
-			<td><input type="text" name="indate" class="p_input_common" onKeyUp='NumFormat(this)' value="<fmt:formatDate value="${memberVO.indate }" pattern="yyyy-MM-dd" />"></td>
-			<td><button type="submit" class="btn btn-skin btn-block"
-					onclick="go_goaway()">수정</button></td>
+			<td>${memberVO.id}</td>
+			<td>${memberVO.name}</td>
+			<td>${memberVO.password}</td>
+			<td>${memberVO.zipNum}</td>
+			<td>${memberVO.email}</td>
+			<td>${memberVO.address}</td>
+			<td>${memberVO.phone}</td>
+			<td><fmt:formatDate value="${memberVO.indate }" pattern="yyyy-MM-dd" /></td>
+			<td><a href="adminUpdateForm.ne?id=${memberVO.id}">수정</a>/<a href="admindeleteuseMember.ne?id=${memberVO.id }">삭제</a></td>
 		</tr>
 	</c:forEach>
 </table>
-<input type="button" class="btn" style="width: 200px" value="회원정보수정"
-	onClick="go_order_save()">
 </div>
 </form>
 </body>

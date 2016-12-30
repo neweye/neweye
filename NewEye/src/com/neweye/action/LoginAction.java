@@ -15,30 +15,39 @@ import com.neweye.dto.MemberVO;
 public class LoginAction implements Action {
 
 	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public String execute(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		String url = "member/login_fail.jsp";
 		HttpSession session = request.getSession();
 
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
-		
-		//MemberDAO memberDAO = MemberDAO_JDBC.getInstance();
+
+		// MemberDAO memberDAO = MemberDAO_JDBC.getInstance();
 		MemberDAO memberDAO = MemberDAO_iBatis.getInstance();
-		MemberVO memberVO=null;
+		MemberVO memberVO = null;
+
+		String useyn = "y";
 		try {
 			memberVO = memberDAO.getMember(id);
+			if (memberVO != null) {
+				useyn = memberVO.getUseyn();
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
 		if (memberVO != null) {
-			if (memberVO.getPassword().equals(password)) {
-				session.removeAttribute("id");
-				session.setAttribute("loginUser", memberVO);
-				url = "index.ne?login=1";
-			}
-		}
+		    if(useyn.equals("y")){
+		         if (memberVO.getPassword().equals(password)) {
+		            session.removeAttribute("id");
+		            session.setAttribute("loginUser", memberVO);
+		            url = "index.ne?login=1";
+		         }
+		   }else{
+		       url = "index.ne";   
+		   }
+		      }
 		return url;
 	}
 

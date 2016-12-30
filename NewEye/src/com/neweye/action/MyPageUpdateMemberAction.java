@@ -16,6 +16,7 @@ public class MyPageUpdateMemberAction implements Action {
    @Override
    public String execute(HttpServletRequest request,
          HttpServletResponse response) throws ServletException, IOException {
+	   request.setCharacterEncoding("utf-8");
       String url = "/mypage/myPageForm.jsp";
       String message = "fail";
       HttpSession session = request.getSession();
@@ -36,7 +37,6 @@ public class MyPageUpdateMemberAction implements Action {
          memberDAO.updateMember(member);
          message="succes";
          updatemember = memberDAO.getMember(request.getParameter("id").trim());
-         session.setAttribute("loginUser", updatemember);
       } catch (SQLException e) {
          e.printStackTrace();
       }
