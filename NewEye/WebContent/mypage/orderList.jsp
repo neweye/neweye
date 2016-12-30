@@ -3,8 +3,33 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ include file="../header.jsp" %> --%>
-<%@ include file="sub_img.jsp"%>
-<%@ include file="sub_menu.jsp"%>
+
+
+<style>
+table#cartList {
+	border-collapse: collapse; /* border 사이의 간격 없앰 */
+	border-top: 2px solid #8c8c8c;
+	border-bottom: 1px solid #8c8c8c;
+	width: 1500px; /* 전체 테이블 길이 설정 */
+	margin-bottom: 20px;
+}
+
+table#cartList th, td {
+	border-bottom: 1px solid #d8d8d8;
+	text-align: center;
+}
+
+div#ceeeee {
+	border: 1px solid white;
+	margin: auto;
+	text-align: center;
+}
+</style>
+
+
+
+
+<div style="height: 500px;" id="ceeeee">
 <article>
 	<h2>Order List</h2>
 	<form name="formm" method="post">
@@ -43,4 +68,5 @@
 		</div>
 	</form>
 </article>
+</div>
 <%-- <%@ include file="../footer.jsp"%> --%>

@@ -36,26 +36,14 @@
       address=#address#,
       phone=#phone# where id=#id#
      </update>
+
+   <update id="deleteuseMember" parameterClass="member">
+   update member set useyn=#useyn# where id=#id#
+   </update>
    
    <select id="serchId" parameterClass="member" resultClass="member">
       select * from member where name=#name# and phone=#phone#
    </select>
-   
-   <delete id="deleteMember" parameterClass="str">
-   delete from member where id=#id#
-   </delete>
-   
-   <update id="adminUpdateMember" parameterClass="member">
-   	update member set
-   	password=#password#,
-   	name=#name#,
-   	email=#email#,
-   	address=#address#,
-   	phone=#phone# where id=#id#
-   </update>
-   
-
-   
-    
+  
      
 </sqlMap>

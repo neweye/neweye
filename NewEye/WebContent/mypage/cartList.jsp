@@ -12,32 +12,45 @@
 <style>
 table#cartList {
     border-collapse:collapse;    /* border 사이의 간격 없앰 */
-    border-top: 2px solid  #333;    
-    border-bottom: 1px solid  #333; 
-    width:100%;                  /* 전체 테이블 길이 설정 */
+    border-top: 2px solid  #8c8c8c;    
+    border-bottom: 1px solid  #8c8c8c; 
+     width:1500px;                  /* 전체 테이블 길이 설정 */ 
     margin-bottom: 20px;
 }
 
-table#cartList th, td{	
-    border-bottom: 1px dotted  #333; 
+ table#cartList th, td{	
+    border-bottom: 1px solid  #d8d8d8; 
 	text-align: center;
+} 
+
+div#ceeeee{
+border: 1px solid white; 
+margin: auto; 
+text-align: center;
 }
 
 
 
-</style>>
+
+</style>
 
 
+<div style="height: 500px;" id="ceeeee">
 <article>
-	<h2>Cart List</h2>
+   <br> <br>
+   <div id="contract">
+      <h2>장바구니</h2>
+      <h4>Cart List</h4>
+   </div>
+
 	<form name="formm" method="post">
 		<c:choose>
 			<c:when test="${cartList.size() == 0}">
 				<h3 style="color: red; text-align: center;">장바구니가 비었습니다.</h3>
 			</c:when>
 			<c:otherwise>
-				<table id="cartList">
-					<tr>
+				<table  style="margin: auto; text-align: center;" id="cartList">
+					<tr style="background-color: #e0e0e0">
 						<th>상품명</th>
 						<th>수 량</th>
 						<th>가 격</th>
@@ -47,8 +60,8 @@ table#cartList th, td{
 
 					<c:forEach items="${cartList}" var="cartVO">
 						<tr>
-							<td><a href="productDetail.ne?pseq=${cartVO.pseq}">
-									<h3>${cartVO.pname}</h3>
+							<td style="font-size: 20px"><a href="productDetail.ne?pseq=${cartVO.pseq}">
+									${cartVO.pname}
 							</a></td>
 							<td>${cartVO.quantity}</td>
 							<td><fmt:formatNumber value="${cartVO.price*cartVO.quantity}" type="currency" /></td>
@@ -61,15 +74,15 @@ table#cartList th, td{
 						<th colspan="2">총 액</th>
 						<th colspan="2"><fmt:formatNumber value="${totalPrice}"
 								type="currency" /><br></th>
-						<th><a href="#" onclick="go_cart_delete()"><h3>삭제하기</h3></a></th>
+						<th><a href="#" onclick="go_cart_delete()" >삭제하기</a></th>
 					</tr>
 				</table>
 			</c:otherwise>
 		</c:choose>
 
 		<div class="clear"></div>
-
-		<div id="buttons" style="float: right">
+		<br><br><br>
+		<div id="buttons">
 			<input type="button" value="쇼핑 계속하기" class="cancel"
 				onclick="location.href='index.ne'">
 			<c:if test="${cartList.size() != 0}">
@@ -79,4 +92,5 @@ table#cartList th, td{
 		</div>
 	</form>
 </article>
+</div>
 <%-- <%@ include file="../footer.jsp"%> --%>
