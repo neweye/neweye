@@ -39,7 +39,7 @@
 	</select>
 	
 	<select id="listKindProduct" parameterClass="str" resultClass="product">
-		select * from product where kind>0
+		select * from product where kind=#kind#
 	</select>
 
 	<select id="listProduct" parameterClass="str" resultClass="product">
