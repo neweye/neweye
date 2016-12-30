@@ -18,14 +18,13 @@ public class AdminMemberUpdateAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String url = "member/memberList.jsp";
+		String url = "adminMemberList.ne";
 		String message = "fail";
 		HttpSession session = request.getSession();
 
 		
 		MemberVO member = new MemberVO();
 	      MemberVO updatemember = new MemberVO();
-	      member.setUseyn(request.getParameter("result"));
 	      member.setId(request.getParameter("id").trim());
 	      member.setPassword(request.getParameter("password"));
 	      member.setEmail(request.getParameter("email"));
@@ -33,8 +32,6 @@ public class AdminMemberUpdateAction implements Action {
 	      member.setName(request.getParameter("name"));
 	      member.setPhone(request.getParameter("phone"));
 	      member.setZipNum(request.getParameter("zipNum"));
-	      String indate=request.getParameter("indate")+" 10:20:30.0";
-	      member.setIndate(java.sql.Timestamp.valueOf(indate));
 	      
 	      
 	      //String id = request.getParameter("id").trim();
@@ -51,7 +48,7 @@ public class AdminMemberUpdateAction implements Action {
 	      request.setAttribute("message", message);   
 
 
-		return null;
+		return url;
 	}
 
 }
