@@ -115,7 +115,7 @@ function go_update(form){
 }
 
 function go_delete(form){
-   form.action="mypageMemberDelete.ne";
+   form.action="deleteuseMember.ne";
    form.method="post";
    form.submit();
 }

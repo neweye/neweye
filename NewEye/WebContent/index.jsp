@@ -60,7 +60,7 @@
 		<%@include file="/product/product_list_best.jsp" %>
 	</section>
 	<!-- ///////////베스트 상품 끝/////////// -->
-	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/>
 	<!-- Section: separator -->
     <!-- <section id="separator" class="home-section parallax text-center" data-stellar-background-ratio="0.5">
 		
