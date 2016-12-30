@@ -33,13 +33,11 @@ function go_search_detail(){
 
 article.product_list_jsp {
 	padding: 0px 10%;
-	/* width: 1000px; */
 }
 
 span.div_areasize {
 	width: 650px;
-	/* border: 1px solid red; */
-	text-align: left;
+	text-align: center;
 	vertical-align: top;
 }
 
@@ -48,12 +46,9 @@ div.div_all {
 	padding: 5px auto;
 	width: 300px;
 	height: 360px;
-	/* border: 1px solid blue; */
-	text-align: left;
+	text-align: center;
 	vertical-align: top;
 	display: table-cell;
-	/* disply:inline; */ /* 여기 왜 적용이 안되는가 */
-	/* text-align:center; */
 }
 
 div#product_list {
@@ -63,7 +58,6 @@ div#product_list {
 	height: 340px;
 	border: 1px dashed #999999;
 	display: inline-block;
-	/* overflow: hidden; */
 }
 
 img {
