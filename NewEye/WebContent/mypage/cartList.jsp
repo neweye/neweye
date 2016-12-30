@@ -32,6 +32,54 @@ text-align: center;
 
 
 
+
+
+.classname {
+	-moz-box-shadow:inset 0px 1px 8px 0px #fed897;
+	-webkit-box-shadow:inset 0px 1px 8px 0px #fed897;
+	box-shadow:inset 0px 1px 8px 0px #fed897;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e69215), color-stop(1, #e09626) );
+	background:-moz-linear-gradient( center top, #e69215 5%, #e09626 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e69215', endColorstr='#e09626');
+	background-color:#e69215;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	font-style:normal;
+	height:26px;
+	line-height:26px;
+	width:112px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 0px 0px #cd8a15;
+}
+.classname:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e09626), color-stop(1, #e69215) );
+	background:-moz-linear-gradient( center top, #e09626 5%, #e69215 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e09626', endColorstr='#e69215');
+	background-color:#e09626;
+}.classname:active {
+	position:relative;
+	top:1px;
+}
+
+
+
 </style>
 
 
@@ -81,16 +129,23 @@ text-align: center;
 		</c:choose>
 
 		<div class="clear"></div>
+		
 		<br><br><br>
 		<div id="buttons">
-			<input type="button" value="쇼핑 계속하기" class="cancel"
-				onclick="location.href='index.ne'">
+			<!-- <input value="쇼핑 계속하기" class="classname"
+				onclick="location.href='index.ne'"> -->
+				
+				<a href="index.ne" class="classname">쇼핑계속하기</a>
 			<c:if test="${cartList.size() != 0}">
-				<input type="button" value="주문하기" class="submit"
-					onclick="go_order_insert()">
+			
+			<a class="classname" onclick="go_order_insert()">주문하기</a>
+				 <!-- <input type="button" value="주문하기" class="submit"
+					onclick="go_order_insert()">  -->
 			</c:if>
 		</div>
 	</form>
 </article>
 </div>
+<br>
+<br>
 <%-- <%@ include file="../footer.jsp"%> --%>

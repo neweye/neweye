@@ -7,7 +7,7 @@
    <br> <br>
    <div id="contract">
       <h2>회원정보수정</h2>
-      <h4>Modyfy</h4>
+      <h4>Modify</h4>
    </div>
    <div class="row">
       <div class="col-lg-8 col-md-offset-2">
