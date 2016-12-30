@@ -62,12 +62,10 @@
 			<td><input type="text" name="phone" value="${memberVO.phone}" /></td>
 			<td><input type="text" name="indate" class="p_input_common" onKeyUp='NumFormat(this)' value="<fmt:formatDate value="${memberVO.indate }" pattern="yyyy-MM-dd" />"></td>
 			<td><button type="submit" class="btn btn-skin btn-block"
-					onclick="go_goaway()">수정</button></td>
+					onclick="go_goaway(this.form)">수정</button></td>
 		</tr>
 	</c:forEach>
 </table>
-<input type="button" class="btn" style="width: 200px" value="회원정보수정"
-	onClick="go_order_save()">
 </div>
 </form>
 </body>
