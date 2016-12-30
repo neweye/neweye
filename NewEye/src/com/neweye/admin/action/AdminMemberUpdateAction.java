@@ -18,7 +18,7 @@ public class AdminMemberUpdateAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String url = "member/memberList.jsp";
+		String url = "adminMemberList.ne";
 		String message = "fail";
 		HttpSession session = request.getSession();
 
@@ -44,6 +44,7 @@ public class AdminMemberUpdateAction implements Action {
 	         memberDAO.updateMember(member);
 	         message="succes";
 	         updatemember = memberDAO.getMember(request.getParameter("id").trim());
+	         session.setAttribute("loginUser", updatemember);
 	      } catch (SQLException e) {
 	         e.printStackTrace();
 	      }
@@ -51,7 +52,7 @@ public class AdminMemberUpdateAction implements Action {
 	      request.setAttribute("message", message);   
 
 
-		return null;
+		return url;
 	}
 
 }
