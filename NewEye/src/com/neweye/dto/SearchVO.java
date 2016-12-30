@@ -3,6 +3,17 @@ package com.neweye.dto;
 public class SearchVO {
 	private String column;
 	private String orderby;
+	private String tpage;
+	
+	private String kind;
+	private String category;
+	private String name;
+	private String useyn;
+	private String ratio;
+	private String format;
+	private String zoomyn;
+	private String functions;
+	private String types;
 	
 	private int min_price; 
 	private int max_price;
@@ -33,6 +44,12 @@ public class SearchVO {
 	private float min_distance; 
 	private float max_distance;
 	
+	public String getTpage() {
+		return tpage;
+	}
+	public void setTpage(String tpage) {
+		this.tpage = tpage;
+	}
 	public String getColumn() {
 		return column;
 	}
@@ -44,6 +61,72 @@ public class SearchVO {
 	}
 	public void setOrderby(String orderby) {
 		this.orderby = orderby;
+	}
+	public String getKind() {
+		return kind;
+	}
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getUseyn() {
+		return useyn;
+	}
+	public void setUseyn(String useyn) {
+		this.useyn = useyn;
+	}
+	public String getRatio() {
+		return ratio;
+	}
+	public void setRatio(String ratio) {
+		this.ratio = ratio;
+	}
+	public String getFormat() {
+		return format;
+	}
+	public void setFormat(String format) {
+		this.format = format;
+	}
+	public String getZoomyn() {
+		return zoomyn;
+	}
+	public void setZoomyn(String zoomyn) {
+		this.zoomyn = zoomyn;
+	}
+	public String getFunctions() {
+		return functions;
+	}
+	public void setFunctions(String functions) {
+		this.functions = functions;
+	}
+	public String getTypes() {
+		return types;
+	}
+	public void setTypes(String types) {
+		this.types = types;
+	}
+	public int getMin_price() {
+		return min_price;
+	}
+	public void setMin_price(int min_price) {
+		this.min_price = min_price;
+	}
+	public int getMax_price() {
+		return max_price;
+	}
+	public void setMax_price(int max_price) {
+		this.max_price = max_price;
 	}
 	public int getMin_weight() {
 		return min_weight;
@@ -201,26 +284,4 @@ public class SearchVO {
 	public void setMax_distance(float max_distance) {
 		this.max_distance = max_distance;
 	}
-	@Override
-	public String toString() {
-		return "SearchVO [column=" + column + ", orderby=" + orderby
-				+ ", min_weight=" + min_weight + ", max_weight=" + max_weight
-				+ ", min_pixel=" + min_pixel + ", max_pixel=" + max_pixel
-				+ ", min_iso=" + min_iso + ", max_iso=" + max_iso
-				+ ", min_speed=" + min_speed + ", max_speed=" + max_speed
-				+ ", min_screen=" + min_screen + ", max_screen=" + max_screen
-				+ ", min_movframe=" + min_movframe + ", max_movframe="
-				+ max_movframe + ", min_seqpictures=" + min_seqpictures
-				+ ", max_seqpictures=" + max_seqpictures + ", min_filter="
-				+ min_filter + ", max_filter=" + max_filter + ", min_minfocus="
-				+ min_minfocus + ", max_minfocus=" + max_minfocus
-				+ ", min_maxfocus=" + min_maxfocus + ", max_maxfocus="
-				+ max_maxfocus + ", min_minaperture=" + min_minaperture
-				+ ", max_minaperture=" + max_minaperture + ", min_maxaperture="
-				+ min_maxaperture + ", max_maxaperture=" + max_maxaperture
-				+ ", min_distance=" + min_distance + ", max_distance="
-				+ max_distance + "]";
-	}
-	
-	
 }
