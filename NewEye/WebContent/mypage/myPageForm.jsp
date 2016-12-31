@@ -17,7 +17,7 @@
   </tr>
     <tr>
   <td><a href="mypage.ne"><i class="fa fa-camera fa-5x"></i><br>주문내역</a></td>
-  <td><a href="orderAll.ne"><i class="fa fa-star fa-5x"></i><br>총주문내역</a></td>
+  <td><a href="qnaList.ne"><i class="fa fa-star fa-5x"></i><br>QnA</a></td>
   </tr>
   
   
