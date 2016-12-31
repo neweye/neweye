@@ -61,7 +61,7 @@
 						<div class="collapse navbar-collapse" id="menu">
 							<ul class="nav navbar-nav">
 								<li class="active">
-										<a href="#intro">Home</a>
+										<a href="<%=request.getContextPath() %>/index.ne">Home</a>
 								</li>
 								<li>
 									|&nbsp;&nbsp;&nbsp;
