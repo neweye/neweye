@@ -13,6 +13,7 @@
 
 	<!-- ///////////Carousel 시작/////////// -->
 	<section id="picCarousel" class="home-section">
+		<div style="width:1200px;margin:auto;"><!-- 크기 조절 -->
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
@@ -45,6 +46,7 @@
 				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 				<span class="sr-only">Next</span>
 			</a>
+		</div>
 		</div>
 	</section>
 	<!-- ///////////Carousel 끝/////////// -->
