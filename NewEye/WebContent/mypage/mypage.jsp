@@ -73,16 +73,7 @@ text-align: center;
 	top:1px;
 }
 
-
-
-
 </style>
-
-
-
-
-
-
 
 <div style="height: 700px;" id="ceeeee">
 	<br>
@@ -126,6 +117,8 @@ text-align: center;
 		<br><br><br>
 		<div id="buttons">
 		<a href="index.ne" class="classname">쇼핑계속하기</a>
+		<a href="mypage.ne" class="classname">진행중인 주문</a>
+		<a href="orderAll.ne" class="classname">총 주문내역</a>
 			<!-- <input type="button" value="쇼핑 계속하기" class="cancel"
 				onclick="location.href='index.ne'"> -->
 		</div>
