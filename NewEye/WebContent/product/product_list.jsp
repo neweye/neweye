@@ -104,9 +104,8 @@ div.top_search_tb{
 
 <form name="frm" method="post">
    <div class="top_search_tb">
-      <input type="text" name="key"/>
-      <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">&nbsp;
-      
+      <input type="text" name="key" onkeydown="javascipt:if(event.keyCode == 13)go_search(this.form);"/>
+      <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search(this.form)">&nbsp;
       <input class="btn" type="button" value="상세검색" onClick="go_search_detail()"/><br /> 
       <!-- 
       ///////////////////////////////////////////////////////
