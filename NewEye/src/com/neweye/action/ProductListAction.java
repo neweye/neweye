@@ -46,7 +46,7 @@ public class ProductListAction implements Action {
 	protected SearchVO insertSearch() {
 		SearchVO search = new SearchVO();
 
-		search.setColumn("odseq");
+		search.setColumn("pseq");
 		search.setOrderby("desc");
 		search.setTpage("1");
 

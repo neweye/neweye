@@ -43,15 +43,7 @@ public class IndexAction implements Action {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		for(ProductVO v : newProductList){
-			System.out.print(v.getName()+" : ");
-		}
-		System.out.println("");
-		for(ProductVO v : bestProductList){
-			System.out.print(v.getName()+" : ");
-		}
-		
+
 		request.setAttribute("newProductList", newProductList);
 		request.setAttribute("bestProductList", bestProductList);
 		

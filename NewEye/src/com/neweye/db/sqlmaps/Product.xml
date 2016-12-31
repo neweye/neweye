@@ -39,7 +39,7 @@
 		and minaperture between #min_minaperture# and #max_minaperture#
 		and maxaperture between #min_maxaperture# and #max_maxaperture#
 		and distance between #min_distance# and #max_distance#
-		order by #column# desc
+		order by $column$ desc
 	</select>
 	
 	<select id="listForProductCount" parameterClass="search" resultClass="int">
@@ -67,7 +67,7 @@
 		and minaperture between #min_minaperture# and #max_minaperture#
 		and maxaperture between #min_maxaperture# and #max_maxaperture#
 		and distance between #min_distance# and #max_distance#
-		order by #column# desc
+		order by $column$ desc
 	</select>
 	
 	<select id="totalRecord" parameterClass="str" resultClass="int">
