@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -188,7 +189,7 @@ input.btn_product_detail:active {
    </tr>
    <tr>
     <td  class="content_td">출시일</td>
-    <td>| ${productVO.indate}</td>
+    <td>| <fmt:formatDate value="${productVO.indate}" pattern="yyyy-MM-dd" /></td>
    </tr>
    <tr>
    
