@@ -3,8 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ include file="../header.jsp" %> --%>
-<%@ include file="sub_img.jsp"%>
-<%@ include file="sub_menu.jsp"%>
 <article>
 	<h2>1:1 고객 게시판</h2>
 	<h3>고객님의 질문에 대해서 운영자가 1:1 답변을 드립니다.</h3>
