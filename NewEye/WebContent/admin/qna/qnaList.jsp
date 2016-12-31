@@ -14,10 +14,11 @@
 </script>
 
 <article>
+<div id="board_outside">
 	<h1>Q&amp;A 게시글 리스트</h1>
 	<form name="frm" method="post">
 		<input type="hidden" name="qseq">
-		<table id="orderList">
+		<table class="table" id="table_board">
 			<tr>
 				<th>번호(답변여부)</th>
 				<th>제목</th>
@@ -39,6 +40,7 @@
 			</c:forEach>
 		</table>
 	</form>
+	</div>
 </article>
 <%-- <%@ include file="/admin/footer.jsp"%> --%>
 </body>

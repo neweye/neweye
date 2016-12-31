@@ -8,9 +8,9 @@
 <div id="board_outside">
 <h1>상품리스트</h1>   
 <form name="frm" method="post">
-<table class="table">
+<table class="table" id="table_board">
   <tr>
-  <td width="642">
+  <td id="td_table_board" colspan="7">
       상품명 
      <input type="text" name="key">
      <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">
@@ -18,8 +18,6 @@
      <input class="btn" type="button" name="btn_write" value="상품등록" onClick="go_wrt()">
   </td>
   </tr>
-</table>
-<table id="productList" class="table">
     <tr>
         <th>번호</th>
         <th>상품명</th>

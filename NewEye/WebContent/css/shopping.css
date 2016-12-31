@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-
+/* 게시판 공용 */
 table#table_board {
     border-collapse:collapse;    /* border 사이의 간격 없앰 */
     border-top: 2px solid  #8c8c8c;    
@@ -64,3 +64,6 @@ text-align: center;
 }
 
 
+td#td_table_board{
+	text-align:right;
+}

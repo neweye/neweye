@@ -21,9 +21,9 @@
 			<table class="table" id="table_board">
 				<thead>
 					<tr>
-						<th>주문자이름 <input type="text" name="key">
+						<td id="td_table_board" colspan="7">주문자이름 <input type="text" name="key">
 						<button type="submit" class="btn btn-skin btn-block"
-								onclick="go_order_search()">검색</th>
+								onclick="go_order_search()">검색</td>
 					</tr>
 				</thead>
 				<tbody>
@@ -32,7 +32,6 @@
 						<th>주문자</th>
 						<th>상품명</th>
 						<th>수량</th>
-						<th>우편번호</th>
 						<th>배송지</th>
 						<th>전화</th>
 						<th>주문일</th>
@@ -130,7 +129,6 @@
 						<td>${orderVO.mname}</td>
 						<td>${orderVO.pname}</td>
 						<td>${orderVO.quantity}</td>
-						<td>${orderVO.zipNum}</td>
 						<td>${orderVO.address}</td>
 						<td>${orderVO.phone}</td>
 						<td><fmt:formatDate value="${productVO.indate }" pattern="yyyy-MM-dd" /></td>
