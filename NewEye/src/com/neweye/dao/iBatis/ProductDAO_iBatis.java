@@ -1,12 +1,9 @@
 package com.neweye.dao.iBatis;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
-import com.neweye.dao.BoardDao;
 import com.neweye.dao.ProductDAO;
 import com.neweye.db.sqlconfig.IBatisDBConnector;
 import com.neweye.dto.ProductVO;
@@ -17,20 +14,22 @@ public class ProductDAO_iBatis implements ProductDAO {
 	private SqlMapClient client = IBatisDBConnector.getSqlMapInstance();
 	private static ProductDAO_iBatis instance = new ProductDAO_iBatis();
 
-	private ProductDAO_iBatis() {
-	}
-
+	private ProductDAO_iBatis() {}
 	public static ProductDAO_iBatis getInstance() {
 		return instance;
 	}
-
+	
+	static int view_rows = 5; // 페이지의 개수
+	static int counts = 6; // 한 페이지에 나타낼 상품의 개수
+	
 	@Override
-	public ArrayList<ProductVO> listSelProduct(int tpage, SearchVO search) throws SQLException {
+	public ArrayList<ProductVO> listSelProduct(SearchVO search) throws SQLException {
 		ArrayList<ProductVO> listNewProduct = null;
 		
 		int startRow = -1;
 		int endRow = -1;
-
+		int tpage = Integer.parseInt(search.getTpage());
+		
 		int totalRecord = totalRecord("");
 
 		startRow = (tpage - 1) * counts ;
@@ -39,51 +38,65 @@ public class ProductDAO_iBatis implements ProductDAO {
 			endRow = totalRecord;
 		
 		if(search.getOrderby().equals("asc")){
-			listNewProduct = (ArrayList<ProductVO>) client.queryForList("listAscProduct", search.getColumn(),startRow,counts);
+			listNewProduct = (ArrayList<ProductVO>) client.queryForList("listForProduct", search,startRow,counts);
 		}else{
-			listNewProduct = (ArrayList<ProductVO>) client.queryForList("listDescProduct", search.getColumn(),startRow,counts);
+			listNewProduct = (ArrayList<ProductVO>) client.queryForList("listForProduct", search,startRow,counts);
 		}
 		return listNewProduct;
 	}
-
+	
 	@Override
-	public ArrayList<ProductVO> listNewProduct(int tpage) throws SQLException {
-		ArrayList<ProductVO> listNewProduct = null;
-
-		int startRow = -1;
-		int endRow = -1;
-
-		int totalRecord = totalRecord("");
-
-		startRow = (tpage - 1) * counts ;
-		endRow = startRow + counts - 1;
-		if (endRow > totalRecord)
-			endRow = totalRecord;
+	public String pageNum(SearchVO search) throws SQLException {
 		
-		listNewProduct = (ArrayList<ProductVO>) client.queryForList(
-				"listNewProduct", null);
-		return listNewProduct;
-	}
-
-	@Override
-	public ArrayList<ProductVO> listBestProduct(int tpage) throws SQLException {
-		ArrayList<ProductVO> listBestProduct = null;
-
-		int startRow = -1;
-		int endRow = -1;
-
-		int totalRecord = totalRecord("");
-
-		startRow = (tpage - 1) * counts ;
-		endRow = startRow + counts - 1;
-		if (endRow > totalRecord)
-			endRow = totalRecord;
+		int tpage = Integer.parseInt(search.getTpage());
 		
-		listBestProduct = (ArrayList<ProductVO>) client.queryForList(
-				"listBestProduct", null);
-		return listBestProduct;
-	}
+		int total_pages = (Integer) client.queryForObject("listForProductCount",search);
+		int page_count = total_pages / counts;
+		
+		if (total_pages % counts != 0) page_count++;
 
+		int page=tpage;
+		if(tpage%view_rows==0) page--;
+		
+		int start_page= page - (page % view_rows) +1;
+		int end_page = start_page + (view_rows - 1);
+		
+		if (end_page > page_count) end_page = page_count;
+		
+		String str = "";
+		String key = "";
+		
+		if(!search.getKind().equals("")){
+			key = "&kind="+search.getKind();
+		}else if(!search.getCategory().equals("")){
+			key = "category="+search.getCategory();
+		}
+		
+		if(!search.getName().equals("")){
+			key += "&key="+ search.getName();
+		}
+		
+		////////////////////////////////////////////////////////////////////
+		
+		if (start_page > view_rows) {
+			str += "<a href='product.ne?tpage=1" + key + "'>&lt;&lt;</a>&nbsp;&nbsp;";
+			str += "<a href='product.ne?tpage=" + (start_page - 1);
+			str += "&key=<%=product_name%>'>&lt;</a>&nbsp;&nbsp;";
+		}
+		for (int i = start_page; i <= end_page; i++) {
+			if (i == tpage) {
+				str += "<font color=red>[" + i + "]&nbsp;&nbsp;</font>";
+			} else {
+				str += "<a href='product.ne?tpage=" + i + key + "'>[" + i + "]</a>&nbsp;&nbsp;";
+			}
+		}
+		if (page_count > end_page) {
+			str += "<a href='product.ne?tpage=" + (end_page + 1) + key + "'> &gt; </a>&nbsp;&nbsp;";
+			str += "<a href='product.ne?tpage=" + page_count + key + "'> &gt; &gt; </a>&nbsp;&nbsp;";
+		}
+		return str;
+	}
+	
 	@Override
 	public ProductVO getProduct(String pseq) throws SQLException {
 		ProductVO product = new ProductVO();
@@ -91,56 +104,6 @@ public class ProductDAO_iBatis implements ProductDAO {
 		increaseReadCount(product);
 		product.setRead_count((product.getRead_count()+1));
 		return product;
-	}
-
-	@Override
-	public int countlistKindProduct(String kind) throws SQLException {
-		int total_pages = 0;
-		total_pages = (Integer) client.queryForObject("countlistKindProduct",kind);
-		return total_pages;
-	}
-	@Override
-	public ArrayList<ProductVO> listKindProduct(int tpage, String kind)
-			throws SQLException {
-		ArrayList<ProductVO> listKindProduct = null;
-
-		int startRow = -1;
-		int endRow = -1;
-
-		int totalRecord = totalRecord("");
-
-		startRow = (tpage - 1) * counts ;
-		endRow = startRow + counts - 1;
-		if (endRow > totalRecord)
-			endRow = totalRecord;
-		
-		listKindProduct = (ArrayList<ProductVO>) client.queryForList("listKindProduct", kind,startRow,counts);
-		return listKindProduct;
-	}
-
-	@Override
-	public int countlistCategoryProduct(String first_level) throws SQLException {
-		int total_pages = 0;
-		total_pages = (Integer) client.queryForObject("countlistCategoryProduct",first_level);
-		return total_pages;
-	}
-	@Override
-	public ArrayList<ProductVO> listCategoryProduct(int tpage, String Category)
-			throws SQLException {
-		ArrayList<ProductVO> listKindProduct = null;
-
-		int startRow = -1;
-		int endRow = -1;
-
-		int totalRecord = totalRecord("");
-
-		startRow = (tpage - 1) * counts ;
-		endRow = startRow + counts - 1;
-		if (endRow > totalRecord)
-			endRow = totalRecord;
-		
-		listKindProduct = (ArrayList<ProductVO>) client.queryForList("listCategoryProduct", Category,startRow,counts);
-		return listKindProduct;
 	}
 
 	@Override
@@ -152,8 +115,6 @@ public class ProductDAO_iBatis implements ProductDAO {
 		total_pages = (Integer) client.queryForObject("totalRecord",product_name);
 		return total_pages;
 	}
-	static int view_rows = 5; // 페이지의 개수
-	static int counts = 5; // 한 페이지에 나타낼 상품의 개수
 	
 	@Override
 	public String pageNumber(int tpage, String name) throws SQLException {
@@ -168,8 +129,11 @@ public class ProductDAO_iBatis implements ProductDAO {
 		if (tpage < 1) {
 			tpage = 1;
 		}
-
-		int start_page = tpage - (tpage % view_rows) + 1;
+		
+		int page=tpage;
+		if(tpage%view_rows==0) page--;
+		
+		int start_page = page - (page % view_rows) + 1;
 		int end_page = start_page + (counts - 1);
 
 		if (end_page > page_count) {
@@ -204,9 +168,6 @@ public class ProductDAO_iBatis implements ProductDAO {
 		return str;
 	}
 	
-	
-	
-
 	@Override
 	public ArrayList<ProductVO> listProduct(int tpage, String product_name)
 			throws SQLException {
@@ -249,101 +210,6 @@ public class ProductDAO_iBatis implements ProductDAO {
 	}
 
 	@Override
-	public String pageNumber2(int tpage, String name, String type) throws SQLException {
-		String str = "";
-
-		int total_pages = 0;
-		
-		if(type.equals("all")){
-			total_pages=totalRecord(name);
-		}else if(type.equals("category")){
-			total_pages=countlistCategoryProduct(name);
-		}else if(type.equals("kind")){
-			total_pages=countlistKindProduct(name);
-		}
-		
-		int page_count = total_pages / counts + 1;
-
-		if (total_pages % counts == 0) {
-			page_count--;
-		}
-		if (tpage < 1) {
-			tpage = 1;
-		}
-
-		int start_page = tpage - (tpage % view_rows) + 1;
-		int end_page = start_page + (counts - 1);
-
-		if (end_page > page_count) {
-			end_page = page_count;
-		}
-		
-		if(type.equals("all")){
-			if (start_page > view_rows) {
-				str += "<a href='product.ne?tpage=1&key=" + name + "'>&lt;&lt;</a>&nbsp;&nbsp;";
-				str += "<a href='product.ne?tpage=" + (start_page - 1);
-				str += "&key=<%=product_name%>'>&lt;</a>&nbsp;&nbsp;";
-				
-			}
-	
-			for (int i = start_page; i <= end_page; i++) {
-				if (i == tpage) {
-					str += "<font color=red>[" + i + "]&nbsp;&nbsp;</font>";
-				} else {
-					str += "<a href='product.ne?tpage=" + i + "&key=" + name + "'>[" + i + "]</a>&nbsp;&nbsp;";
-				}
-			}
-	
-			if (page_count > end_page) {
-				str += "<a href='product.ne?tpage=" + (end_page + 1) + "&key=" + name + "'> &gt; </a>&nbsp;&nbsp;";
-				str += "<a href='product.ne?tpage=" + page_count + "&key=" + name + "'> &gt; &gt; </a>&nbsp;&nbsp;";
-			}
-		}else if(type.equals("category")){
-			if (start_page > view_rows) {
-				str += "<a href='product.ne?category="+name+"&tpage=1'>&lt;&lt;</a>&nbsp;&nbsp;";
-				str += "<a href='product.ne?category="+name+"&tpage=" + (start_page - 1);
-				str += "&key=<%=product_name%>'>&lt;</a>&nbsp;&nbsp;";
-				
-			}
-	
-			for (int i = start_page; i <= end_page; i++) {
-				if (i == tpage) {
-					str += "<font color=red>[" + i + "]&nbsp;&nbsp;</font>";
-				} else {
-					str += "<a href='product.ne?category="+name+"&tpage=" + i + "'>[" + i + "]</a>&nbsp;&nbsp;";
-				}
-			}
-	
-			if (page_count > end_page) {
-				str += "<a href='product.ne?category="+name+"&tpage=" + (end_page + 1) + "'> &gt; </a>&nbsp;&nbsp;";
-				str += "<a href='product.ne?category="+name+"&tpage=" + page_count + "'> &gt; &gt; </a>&nbsp;&nbsp;";
-			}
-		}else if(type.equals("kind")){
-			if (start_page > view_rows) {
-				str += "<a href='product.ne?kind="+name+"&tpage=1'>&lt;&lt;</a>&nbsp;&nbsp;";
-				str += "<a href='product.ne?kind="+name+"&tpage=" + (start_page - 1);
-				str += "&key=<%=product_name%>'>&lt;</a>&nbsp;&nbsp;";
-				
-			}
-	
-			for (int i = start_page; i <= end_page; i++) {
-				if (i == tpage) {
-					str += "<font color=red>[" + i + "]&nbsp;&nbsp;</font>";
-				} else {
-					str += "<a href='product.ne?kind="+name+"&tpage=" + i + "'>[" + i + "]</a>&nbsp;&nbsp;";
-				}
-			}
-	
-			if (page_count > end_page) {
-				str += "<a href='product.ne?kind="+name+"&tpage=" + (end_page + 1) + "'> &gt; </a>&nbsp;&nbsp;";
-				str += "<a href='product.ne?kind="+name+"&tpage=" + page_count + "'> &gt; &gt; </a>&nbsp;&nbsp;";
-			}
-		}
-		return str;
-	}
-
-	/////////////////////////////////////////////////
-	@Override
 	public ArrayList<ProductVO> listDetailProduct(int tpage, String product_name)
 			throws SQLException {
 		ArrayList<ProductVO> productList = new ArrayList<ProductVO>();
@@ -371,5 +237,4 @@ public class ProductDAO_iBatis implements ProductDAO {
 		return result;
 	}
 
-	
 }

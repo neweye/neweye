@@ -131,8 +131,8 @@ input.btn_product_detail:active {
     <td>| ${productVO.price}원</td>
    </tr>
    <tr>
-    <td>수랑</td>
-    <td>| <input type="text" name="quantity" style="width:30px"/> ea&nbsp;
+    <td>수량</td>
+    <td>| <input type="text" name="quantity" value="1" style="width:30px"/> ea&nbsp;
     </td>
    </tr>
      <tr>

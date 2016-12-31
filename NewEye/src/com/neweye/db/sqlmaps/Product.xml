@@ -14,44 +14,6 @@
 		select * from product where pseq=#pseq#
 	</select>
 	
-	<select id="totalRecord" parameterClass="str" resultClass="int">
-		select count(*) from product where name like '%'||#name#||'%'
-	</select>
-	
-	<select id="listDescProduct" parameterClass="str" resultClass="product">
-		select * from product where kind>0 order by #column# desc
-	</select>
-	
-	<select id="listAscProduct" parameterClass="str" resultClass="product">
-		select * from product where kind>0 order by #column# asc
-	</select>
-	
-	<select id="countlistCategoryProduct" parameterClass="str" resultClass="int">
-		select count(*) from product where first_level=#first_level# and kind>0
-	</select>
-	
-	<select id="listCategoryProduct" parameterClass="str" resultClass="product">
-		select * from product where first_level=#first_level# and kind>0
-	</select>
-	
-	<select id="countlistKindProduct" parameterClass="str" resultClass="int">
-		select count(*) from product where kind=#kind# and kind>0
-	</select>
-	
-	<select id="listKindProduct" parameterClass="str" resultClass="product">
-		select * from product where kind=#kind# and kind>0
-	</select>
-
-	<select id="listProduct" parameterClass="str" resultClass="product">
-		select pseq, first_level, second_level, kind, name, price, 
-			indate, read_count, quantity, useyn, content, img_list, img_detail, 
-			sizee, weight, ratio, pixel, speed, seqpictures, screen, iso, 
-			movframe, format, filter, functions,  zoomyn, minfocus, maxfocus, 
-			minaperture, maxaperture, distance, types
-		from product
-		where name like '%'||#name#||'%' order by pseq desc
-	</select>
-	
 	<select id="listForProduct" parameterClass="search" resultClass="product">
 		select * from product
 		where upper(kind) like '%'||upper(#kind#)||'%'
@@ -77,15 +39,44 @@
 		and minaperture between #min_minaperture# and #max_minaperture#
 		and maxaperture between #min_maxaperture# and #max_maxaperture#
 		and distance between #min_distance# and #max_distance#
-		order by #column# desc
+		order by $column$ desc
 	</select>
 	
-	<select id="listNewProduct" resultClass="product">
-		select * from product where kind>0 order by indate desc
+	<select id="listForProductCount" parameterClass="search" resultClass="int">
+		select count(*) from product
+		where upper(kind) like '%'||upper(#kind#)||'%'
+		and upper(first_level) like '%'||upper(#category#)||'%'
+		and upper(name) like '%'||upper(#name#)||'%'
+		and upper(useyn) like '%'||upper(#useyn#)||'%'
+		and upper(ratio) like '%'||upper(#ratio#)||'%'
+		and upper(format) like '%'||upper(#format#)||'%'
+		and upper(zoomyn) like '%'||upper(#zoomyn#)||'%'
+		and upper(functions) like '%'||upper(#functions#)||'%' 
+		and upper(types) like '%'||upper(#types#)||'%'
+		and price between #min_price# and #max_price# 
+		and weight between #min_weight# and #max_weight# 
+		and pixel between #min_pixel# and #max_pixel# 
+		and iso between #min_iso# and #max_iso#
+		and speed between #min_speed# and #max_speed# 
+		and screen between #min_screen# and #max_screen#
+		and movframe between #min_movframe# and #max_movframe#
+		and seqpictures between #min_seqpictures# and #max_seqpictures# 
+		and filter between #min_filter# and #max_filter#
+		and minfocus between #min_minfocus# and #max_minfocus#
+		and maxfocus between #min_maxfocus# and #max_maxfocus#
+		and minaperture between #min_minaperture# and #max_minaperture#
+		and maxaperture between #min_maxaperture# and #max_maxaperture#
+		and distance between #min_distance# and #max_distance#
+		order by $column$ desc
 	</select>
-
-	<select id="listBestProduct" resultClass="product">
-		select * from product where kind>0 order by read_count desc
+	
+	<select id="totalRecord" parameterClass="str" resultClass="int">
+		select count(*) from product where name like '%'||#name#||'%'
+	</select>
+	
+	<select id="listProduct" parameterClass="str" resultClass="product">
+		select * from product
+		where name like '%'||#name#||'%' order by pseq desc
 	</select>
 
 	<update id="insertProduct" parameterClass="product">
@@ -118,16 +109,14 @@
 		where pseq=#pseq#
 	</update>
 
-			<!-- //////////////////////////////////////////////////////////////////// -->
+	<update id="deleteProduct" parameterClass="product">
+		update product set kind=#kind# where pseq = #pseq#
+	</update>
+	
 	<update id="increaseReadCount" parameterClass="product">
 		update product 
 		set read_count = #read_count# + 1 
 		where pseq=#pseq#
 	</update>
 	
-	<update id="deleteProduct" parameterClass="product">
-		update product set kind=#kind# where pseq = #pseq#
-	</update>
-
-
 </sqlMap>

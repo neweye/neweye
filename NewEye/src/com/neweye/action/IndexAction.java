@@ -25,25 +25,25 @@ public class IndexAction implements Action {
 		/* 데이터베이스에서 상품 정보를 얻어오는 비지니스로직 */
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		
+		ProductListAction list = new ProductListAction();
+		
 		//신상품
-		SearchVO searchNew = new SearchVO();
+		SearchVO searchNew = list.insertSearch();
 		searchNew.setOrderby("desc");
-		searchNew.setColumn("indate");
 		
 		//베스트
-		SearchVO searchBest = new SearchVO();
-		searchBest.setOrderby("desc");
+		SearchVO searchBest = list.insertSearch();
 		searchBest.setColumn("read_count");
 		
 		ArrayList<ProductVO> newProductList=null;
 		ArrayList<ProductVO> bestProductList =null;
 		try {
-			newProductList = productDAO.listSelProduct(1,searchNew);
-			bestProductList = productDAO.listSelProduct(1,searchBest);
+			newProductList = productDAO.listSelProduct(searchNew);
+			bestProductList = productDAO.listSelProduct(searchBest);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		request.setAttribute("newProductList", newProductList);
 		request.setAttribute("bestProductList", bestProductList);
 		
@@ -51,6 +51,3 @@ public class IndexAction implements Action {
 	}
 
 }
-
-
-

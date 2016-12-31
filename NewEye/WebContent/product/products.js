@@ -71,11 +71,34 @@ function go_order_delete() {
   document.formm.submit();
  }
 }
-function go_search() {
+function go_search(form) {
 	var theForm = document.frm;
-	var key=document.frm.key.value;
-	theForm.action = "ProductSearch.ne?key="+key;
+	var lo = window.location;
+	var param = "";
+	var key = "";
+	
+	if(lo.search!=null) {
+		param = lo.search.substring(1);
+		key = "&"
+	}else{
+		param = lo.search;
+	}
+	
+	var start = param.indexOf("name=");
+	if(start!=-1) param = param.substring(0,start-1);
+	
+	key += "name="+document.frm.key.value;
+	key = param+key;
+	
+	theForm.action = lo.pathname+"?"+key;
 	theForm.submit();
 }
-
-
+function go_search_detail(form){
+	document.frm.action = "product.ne";
+	document.frm.submit();
+}
+function go_detail(){
+	$('.invisibleClass').toggle();
+	$('#detailBtn').toggle(
+			);
+}

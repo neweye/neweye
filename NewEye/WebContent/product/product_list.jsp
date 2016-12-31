@@ -3,16 +3,12 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title></title>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
 <script>
-
 function go_search_detail(){
    var theForm = document.frm;
    var url ="/NewEye/product/product_search_detail.jsp";
@@ -21,9 +17,6 @@ function go_search_detail(){
    window.open(url, "상세검색", options);
    theForm.submit();
 }
-
-
-
 </script>
 <style>
 * {
@@ -102,6 +95,9 @@ div.top_search_tb{
    text-align:right;
    /* border:1px solid black; */
 }
+div.invisibleClass{
+	display : none;
+}
 </style>
 </head>
 
@@ -111,16 +107,19 @@ div.top_search_tb{
 
 <form name="frm" method="post">
    <div class="top_search_tb">
-      <input type="text" name="key"/>
-      <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">&nbsp;
+      <input type="text" name="key" onkeydown="javascipt:if(event.keyCode == 13)go_search(this.form);"/>
+      <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search(this.form)">&nbsp;
+      <input class="btn" type="button" id="detailBtn" value="▼" onClick="go_detail()"/><br />
       
-      <input class="btn" type="button" value="상세검색" onClick="go_search_detail()"/><br /> 
+      <div id="searchDetailBtn" class="invisibleClass">
+      <jsp:include page="/product/product_search_detail.jsp" />
+      </div>
+      
       <!-- 
       ///////////////////////////////////////////////////////
       
       상세검색 누르면 관리자의 상품등록과 거의 유사한 폼이 별도로 뜨고 상세하게 입력할 수 있도록 한다
       혹은 아래 열리면서 상품등록과 유사한 폼 갖고오고 찾기 버튼 누르는 순간 그 내역은 도로 닫히고 찾게 한다
-         
       
        ///////////////////////////////////////////////////////
       상품비교 : <select name="cmb_first_level">
@@ -146,25 +145,17 @@ div.top_search_tb{
    <article class="product_list_jsp">
       <%-- <c:forEach items="${productKindList}" var="productVO">  --%>
       <%-- <c:forEach var="i" items="" begin="0" varStatus="status" end="20"> --%>
-      <c:forEach items="${productKindList}" var="productVO">
-
+      <c:forEach items="${productList}" var="productVO">
          <span class="div_areasize">
             <div class="div_all">
                   <div id="product_list">
                      <ul class="plist">
                         <li><a href="productDetail.ne?pseq=${productVO.pseq}">
                               <img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
-
                         </a></li>
-
                      </ul>
                      <ul>
-                        <li id="product_list_icon"><!-- &nbsp;new&nbsp; &nbsp;best&nbsp;
-                           &nbsp;sold out&nbsp;  -->
-                           
-         <%-- <c:if test="${productVO.indate}">
-            &nbsp;new&nbsp;
-            </c:if> --%>
+                        <li id="product_list_icon">
             <c:if test="${productVO.read_count > 5}">
             &nbsp;best&nbsp;
             </c:if>
@@ -185,16 +176,5 @@ div.top_search_tb{
       <div class="bottom">${paging}</div>
    </article>
 </body>
-
-<!-- <script type="text/javascript">
-function go_detailsearch(form){
-   form.action="mypageMemberUpdate.ne";
-   form.method="post";
-   form.submit();
-}
-
-</script> -->
-
-
 
 </html>
