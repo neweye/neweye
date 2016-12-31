@@ -10,8 +10,8 @@
 		<h2>회원가입</h2>
 		<h4>Join Us</h4>
 	</div>
-
 	<div class="row">
+	<div class="testtesttest">
 		<div class="col-lg-8 col-md-offset-2">
 			<div class="form-wrapper marginbot-50">
 				<form id="join" method="post" action="login.ne" class="contactForm"
@@ -69,7 +69,7 @@
 			</div>
 		</div>
 	</div>
-
+</div>
 
 	<!-- <form id="join"  method="post" name="formm">
 		
