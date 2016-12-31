@@ -24,8 +24,6 @@ public class ProductListAction implements Action {
 		SearchVO searchVO = insertSearch();
 		searchVO = updateSearch(searchVO, request);
 		
-		System.out.println(searchVO.getColumn());
-		
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		
 		ArrayList<ProductVO> productList = null;
@@ -95,90 +93,89 @@ public class ProductListAction implements Action {
 		return search;
 	}
 	private SearchVO updateSearch(SearchVO search, HttpServletRequest request) {
-		if (request.getParameter("column") != null)
+		if (request.getParameter("column") != null && !request.getParameter("column").isEmpty())
 		search.setColumn(request.getParameter("column"));
-		if (request.getParameter("orderby") != null)
+		if (request.getParameter("orderby") != null && !request.getParameter("orderby").isEmpty())
 		search.setOrderby(request.getParameter("orderby"));
-		if (request.getParameter("tpage") != null)
+		if (request.getParameter("tpage") != null && !request.getParameter("tpage").isEmpty())
 		search.setTpage(request.getParameter("tpage"));
 		
-		if (request.getParameter("kind") != null)
+		if (request.getParameter("kind") != null && !request.getParameter("kind").isEmpty())
 		search.setKind(request.getParameter("kind"));
-		if (request.getParameter("category") != null)
+		if (request.getParameter("category") != null && !request.getParameter("category").isEmpty())
 		search.setCategory(request.getParameter("category"));
-		if (request.getParameter("name") != null)
+		if (request.getParameter("name") != null && !request.getParameter("name").isEmpty())
 			search.setName(request.getParameter("name"));
-		if (request.getParameter("useyn") != null)
+		if (request.getParameter("useyn") != null && !request.getParameter("useyn").isEmpty())
 		search.setUseyn(request.getParameter("useyn"));
-		if (request.getParameter("ratio") != null)
+		if (request.getParameter("ratio") != null && !request.getParameter("ratio").isEmpty())
 		search.setRatio(request.getParameter("ratio"));
-		if (request.getParameter("format") != null)
+		if (request.getParameter("format") != null && !request.getParameter("format").isEmpty())
 		search.setFormat(request.getParameter("format"));
-		if (request.getParameter("zoomyn") != null)
+		if (request.getParameter("zoomyn") != null && !request.getParameter("zoomyn").isEmpty())
 		search.setZoomyn(request.getParameter("zoomyn"));
-		if (request.getParameter("functions") != null)
+		if (request.getParameter("functions") != null && !request.getParameter("functions").isEmpty())
 		search.setFunctions(request.getParameter("functions"));
-		if (request.getParameter("types") != null)
+		if (request.getParameter("types") != null && !request.getParameter("types").isEmpty())
 		search.setTypes(request.getParameter("types"));
 		
-		try{
-		if (request.getParameter("min_price") != null)
+		if (request.getParameter("min_price") != null && !request.getParameter("min_price").isEmpty())
 		search.setMin_price(Integer.parseInt(request.getParameter("min_price")));
-		if (request.getParameter("min_weight") != null)
+		if (request.getParameter("min_weight") != null && !request.getParameter("min_weight").isEmpty())
 		search.setMin_weight(Integer.parseInt(request.getParameter("min_weight")));
-		if (request.getParameter("min_pixel") != null)
+		if (request.getParameter("min_pixel") != null && !request.getParameter("min_pixel").isEmpty())
 		search.setMin_pixel(Integer.parseInt(request.getParameter("min_pixel")));
-		if (request.getParameter("min_iso") != null)
+		if (request.getParameter("min_iso") != null && !request.getParameter("min_iso").isEmpty())
 		search.setMin_iso(Integer.parseInt(request.getParameter("min_iso")));
-		if (request.getParameter("min_speed") != null)
+		if (request.getParameter("min_speed") != null && !request.getParameter("min_speed").isEmpty())
 		search.setMin_speed(Integer.parseInt(request.getParameter("min_speed")));
-		if (request.getParameter("min_movframe") != null)
+		if (request.getParameter("min_movframe") != null && !request.getParameter("min_movframe").isEmpty())
 		search.setMin_movframe(Integer.parseInt(request.getParameter("min_movframe")));
-		if (request.getParameter("min_seqpictures") != null)
+		if (request.getParameter("min_seqpictures") != null && !request.getParameter("min_seqpictures").isEmpty())
 		search.setMin_seqpictures(Integer.parseInt(request.getParameter("min_seqpictures")));
-		if (request.getParameter("min_filter") != null)
+		if (request.getParameter("min_filter") != null && !request.getParameter("min_filter").isEmpty())
 		search.setMin_filter(Integer.parseInt(request.getParameter("min_filter")));
-		if (request.getParameter("min_screen") != null)
+		if (request.getParameter("min_screen") != null && !request.getParameter("min_screen").isEmpty())
 		search.setMin_screen(Float.parseFloat(request.getParameter("min_screen")));
-		if (request.getParameter("min_minfocus") != null)
+		if (request.getParameter("min_minfocus") != null && !request.getParameter("min_minfocus").isEmpty())
 		search.setMin_minfocus(Float.parseFloat(request.getParameter("min_minfocus")));
-		if (request.getParameter("min_maxfocus") != null)
+		if (request.getParameter("min_maxfocus") != null && !request.getParameter("min_maxfocus").isEmpty())
 		search.setMin_maxfocus(Float.parseFloat(request.getParameter("min_maxfocus")));
-		if (request.getParameter("min_minaperture") != null)
+		if (request.getParameter("min_minaperture") != null && !request.getParameter("min_minaperture").isEmpty())
 		search.setMin_minaperture(Float.parseFloat(request.getParameter("min_minaperture")));
-		if (request.getParameter("min_maxaperture") != null)
+		if (request.getParameter("min_maxaperture") != null && !request.getParameter("min_maxaperture").isEmpty())
 		search.setMin_maxaperture(Float.parseFloat(request.getParameter("min_maxaperture")));
-		if (request.getParameter("min_distance") != null)
+		if (request.getParameter("min_distance") != null && !request.getParameter("min_distance").isEmpty())
 		search.setMin_distance(Float.parseFloat(request.getParameter("min_distance")));
-		if (request.getParameter("max_price") != null)
+		if (request.getParameter("max_price") != null && !request.getParameter("max_price").isEmpty())
 		search.setMax_price(Integer.parseInt(request.getParameter("max_price")));
-		if (request.getParameter("max_weight") != null)
+		if (request.getParameter("max_weight") != null && !request.getParameter("max_weight").isEmpty())
 		search.setMax_weight(Integer.parseInt(request.getParameter("max_weight")));
-		if (request.getParameter("max_pixel") != null)
+		if (request.getParameter("max_pixel") != null && !request.getParameter("max_pixel").isEmpty())
 		search.setMax_pixel(Integer.parseInt(request.getParameter("max_pixel")));
-		if (request.getParameter("max_iso") != null)
+		if (request.getParameter("max_iso") != null && !request.getParameter("max_iso").isEmpty())
 		search.setMax_iso(Integer.parseInt(request.getParameter("max_iso")));
-		if (request.getParameter("max_speed") != null)
+		if (request.getParameter("max_speed") != null && !request.getParameter("max_speed").isEmpty())
 		search.setMax_speed(Integer.parseInt(request.getParameter("max_speed")));
-		if (request.getParameter("max_movframe") != null)
+		if (request.getParameter("max_movframe") != null && !request.getParameter("max_movframe").isEmpty())
 		search.setMax_movframe(Integer.parseInt(request.getParameter("max_movframe")));
-		if (request.getParameter("max_seqpictures") != null)
+		if (request.getParameter("max_seqpictures") != null && !request.getParameter("max_seqpictures").isEmpty())
 		search.setMax_seqpictures(Integer.parseInt(request.getParameter("max_seqpictures")));
-		if (request.getParameter("max_filter") != null)
+		if (request.getParameter("max_filter") != null && !request.getParameter("max_filter").isEmpty())
 		search.setMax_filter(Integer.parseInt(request.getParameter("max_filter")));
-		if (request.getParameter("max_screen") != null)
+		if (request.getParameter("max_screen") != null && !request.getParameter("max_screen").isEmpty())
 		search.setMax_screen(Float.parseFloat(request.getParameter("max_screen")));
-		if (request.getParameter("max_minfocus") != null)
+		if (request.getParameter("max_minfocus") != null && !request.getParameter("max_minfocus").isEmpty())
 		search.setMax_minfocus(Float.parseFloat(request.getParameter("max_minfocus")));
-		if (request.getParameter("max_maxfocus") != null)
+		if (request.getParameter("max_maxfocus") != null && !request.getParameter("max_maxfocus").isEmpty())
 		search.setMax_maxfocus(Float.parseFloat(request.getParameter("max_maxfocus")));
-		if (request.getParameter("max_minaperture") != null)
+		if (request.getParameter("max_minaperture") != null && !request.getParameter("max_minaperture").isEmpty())
 		search.setMax_minaperture(Float.parseFloat(request.getParameter("max_minaperture")));
-		if (request.getParameter("max_maxaperture") != null)
+		if (request.getParameter("max_maxaperture") != null && !request.getParameter("max_maxaperture").isEmpty())
 		search.setMax_maxaperture(Float.parseFloat(request.getParameter("max_maxaperture")));
-		if (request.getParameter("max_distance") != null)
+		if (request.getParameter("max_distance") != null && !request.getParameter("max_distance").isEmpty())
 		search.setMax_distance(Float.parseFloat(request.getParameter("max_distance")));
-		}catch (NumberFormatException e){}
+		
 		return search;
 	}
 }
