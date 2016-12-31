@@ -2,6 +2,7 @@
    pageEncoding="utf-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -156,7 +157,7 @@ div.invisibleClass{
                      </ul>
                      <ul>
                         <li id="product_list_name">${productVO.name}</li>
-                        <li id="product_list_price">${productVO.price}</li>
+                        <li id="product_list_price"><fmt:formatNumber value="${productVO.price}" type="number"/> 원</li>
                         <%-- <li id="product_list_price">${productVO.read_count}</li> --%>
                      </ul>
                   </div>

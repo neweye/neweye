@@ -128,7 +128,7 @@ input.btn_product_detail:active {
    </tr>
    <tr>
     <td>가격</td>
-    <td>| ${productVO.price}원</td>
+    <td>| <fmt:formatNumber value="${productVO.price}" type="number"/> 원</td>
    </tr>
    <tr>
     <td>수량</td>
