@@ -78,7 +78,8 @@ td.td_product_add{
    
 <th  class="th_product_add">판매 여부</th>
   <td  class="td_product_add">
-     <input type="radio" name="useyn" value="Y" checked="checked"> 판매
+     <input type="radio" name="useyn" value="" checked="checked"> 전부
+     <input type="radio" name="useyn" value="Y"> 판매
      <input type="radio" value="N" name="useyn" > 품절
   </td>   
 </tr>
@@ -98,8 +99,9 @@ td.td_product_add{
   </td>
   <th class="th_product_add">센서크기</th>
     <td class="td_product_add">
-      <input type="radio" value="1"  name="ratio" > 1:1
-     <input type="radio" value="1.5"  name="ratio" checked="checked"> 1:1.5
+     <input type="radio" value="" name="ratio" checked="checked" > 전부
+     <input type="radio" value="1"  name="ratio" > 1:1
+     <input type="radio" value="1.5"  name="ratio"> 1:1.5
     </td>
   </tr>
   
@@ -160,8 +162,9 @@ td.td_product_add{
       </td>
   <th class="th_product_add">포맷형태</th>
     <td class="td_product_add" colspan="3">
+      <input type="radio" value="" name="format"  checked="checked"> 전부
       <input type="radio" value="FX" name="format" > FX
-     <input type="radio" value="DX" name="format" checked="checked"> DX
+     <input type="radio" value="DX" name="format"> DX
     </td>
   </tr>
   
@@ -177,7 +180,8 @@ td.td_product_add{
   </td>
   <th class="th_product_add">줌 여부</th>
     <td class="td_product_add">
-      <input type="radio" value="Y" name="zoomyn" checked="checked"> 가능
+      <input type="radio" value="" name="zoomyn" checked="checked"> 전부
+      <input type="radio" value="Y" name="zoomyn"> 가능
      <input type="radio" value="N" name="zoomyn" > 불가능
     </td>
   </tr>

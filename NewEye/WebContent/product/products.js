@@ -102,3 +102,12 @@ function go_detail(){
 	$('#detailBtn').toggle(
 			);
 }
+$(function(){
+	$('#orderToList').change(order);
+	function order(){
+		$('option:selected').each(function(i){
+			document.frm.action = "product.ne";
+			document.frm.submit();
+		})
+	}
+})

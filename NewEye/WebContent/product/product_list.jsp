@@ -107,6 +107,19 @@ div.invisibleClass{
 
 <form name="frm" method="post">
    <div class="top_search_tb">
+   
+   <c:if test="${order=='pseq'}">
+   	<select name="column" id="orderToList" size="1">
+   		<option value="pseq" selected>신상품 순</option>
+   		<option value="read_count">베스트 순</option>
+   	</select>
+   	</c:if>
+   	<c:if test="${order=='read_count'}">
+   	<select name="column" id="orderToList" size="1">
+   		<option value="pseq">신상품 순</option>
+   		<option value="read_count" selected>베스트 순</option>
+   	</select>
+   	</c:if>
       <input type="text" name="key" onkeydown="javascipt:if(event.keyCode == 13)go_search(this.form);"/>
       <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search(this.form)">&nbsp;
       <input class="btn" type="button" id="detailBtn" value="▼" onClick="go_detail()"/><br />
@@ -114,30 +127,7 @@ div.invisibleClass{
       <div id="searchDetailBtn" class="invisibleClass">
       <jsp:include page="/product/product_search_detail.jsp" />
       </div>
-      
-      <!-- 
-      ///////////////////////////////////////////////////////
-      
-      상세검색 누르면 관리자의 상품등록과 거의 유사한 폼이 별도로 뜨고 상세하게 입력할 수 있도록 한다
-      혹은 아래 열리면서 상품등록과 유사한 폼 갖고오고 찾기 버튼 누르는 순간 그 내역은 도로 닫히고 찾게 한다
-      
-       ///////////////////////////////////////////////////////
-      상품비교 : <select name="cmb_first_level">
-         <option name="op_first_level" value="dslr">DSLR</option>
-         <option name="op_first_level" value="lends">렌즈</option>
-         <option name="op_first_level" value="acc">악세사리</option>
-      </select> &nbsp; -->
-      
-      <%-- <c:choose>
-         <c:when test="${productVO.first_level='DSLR'}">
-         </c:when>
-         <c:otherwise>
-         </c:otherwise>
-      </c:choose> --%>
-      
-      <!-- <input type="text" name="" value="" /> 드롭다운식으로 바꿀거임 <input
-         type="button" name="" value="비교하기" /> -->
-</div>
+	</div>
 <br/>
 </form>
    </article>
@@ -167,7 +157,7 @@ div.invisibleClass{
                      <ul>
                         <li id="product_list_name">${productVO.name}</li>
                         <li id="product_list_price">${productVO.price}</li>
-                        <li id="product_list_price">${productVO.read_count}</li>
+                        <%-- <li id="product_list_price">${productVO.read_count}</li> --%>
                      </ul>
                   </div>
             </div>

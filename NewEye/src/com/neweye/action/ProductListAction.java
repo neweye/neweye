@@ -24,6 +24,8 @@ public class ProductListAction implements Action {
 		SearchVO searchVO = insertSearch();
 		searchVO = updateSearch(searchVO, request);
 		
+		System.out.println(searchVO.getColumn());
+		
 		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 		
 		ArrayList<ProductVO> productList = null;
@@ -39,6 +41,7 @@ public class ProductListAction implements Action {
 		int n = productList.size();
 		request.setAttribute("productListSize", n);
 		request.setAttribute("paging", paging);
+		request.setAttribute("order", searchVO.getColumn());
 		
 		return url;
 	}
