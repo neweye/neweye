@@ -5,7 +5,7 @@
       <h2> 1:1 고객 게시판 </h2>
       <h3> 고객님의 질문에 대해서 운영자가 1:1 답변을 드립니다.</h3>    
     <form name="formm" method="post">
-    <table id="notice">
+    <table id="notice" class="table">
       <tr>
               <th>제목</th>
               <td>${qnaVO.subject}</td> 
