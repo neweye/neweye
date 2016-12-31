@@ -16,7 +16,7 @@
 		<div class="clear"></div>
 		 <div id="buttons" style="float:right">
 			<input type="submit"  value="글쓰기"     class="submit"> 
-			<input type="reset"   value="취소"     class="cancel">
+			<input type="reset"   value="취소"     class="cancel" >
 			<input type="button"  value="쇼핑 계속하기"  class="submit"  onclick="location.href='index.ne'">	
 		  </div>
 		</form>

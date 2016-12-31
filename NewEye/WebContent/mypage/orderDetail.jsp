@@ -4,10 +4,18 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ include file="../header.jsp" %> --%>
 
+<style>
+div#board_outside{
+/* border: 1px solid black;  */
+margin: auto; 
+text-align: center;
+}
 
+</style>
 
-<div style="height: 500px;" id="ceeeee">
 	<article>
+<!-- <div style="height: 500px;" id="board_outside"> -->
+<div id="board_outside">
 		<br> <br>
 		<div id="contract">
 			<h2>My Page(주문 상세 정보)</h2>

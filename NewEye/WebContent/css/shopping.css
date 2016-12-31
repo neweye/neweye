@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+
+
+table#table_board {
+    border-collapse:collapse;    /* border 사이의 간격 없앰 */
+    border-top: 2px solid  #8c8c8c;    
+    border-bottom: 1px solid  #8c8c8c; 
+     /* width:1500px; */                  /* 전체 테이블 길이 설정 */ 
+    /* margin-bottom: 20px; */
+}
+
+ table#table_board th, td{	
+    border-bottom: 1px solid  #d8d8d8; 
+	text-align: center;
+} 
+
+div#board_outside{
+margin: 20px 0 30px auto; 
+text-align: center;
+}
+
+.btn_default_org {
+	-moz-box-shadow:inset 0px 1px 8px 0px #fed897;
+	-webkit-box-shadow:inset 0px 1px 8px 0px #fed897;
+	box-shadow:inset 0px 1px 8px 0px #fed897;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e69215), color-stop(1, #e09626) );
+	background:-moz-linear-gradient( center top, #e69215 5%, #e09626 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e69215', endColorstr='#e09626');
+	background-color:#e69215;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	font-style:normal;
+	height:26px;
+	line-height:26px;
+	width:112px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 0px 0px #cd8a15;
+}
+.btn_default_org:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e09626), color-stop(1, #e69215) );
+	background:-moz-linear-gradient( center top, #e09626 5%, #e69215 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e09626', endColorstr='#e69215');
+	background-color:#e09626;
+}.btn_default_org:active {
+	position:relative;
+	top:1px;
+}
+
+

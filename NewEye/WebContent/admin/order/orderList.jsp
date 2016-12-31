@@ -12,12 +12,13 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
+
+<article>
+<div id="board_outside">
+			<h2>주문리스트</h2>
 	<form name="frm" method="post">
 		<div class="container">
-			<h2>주문리스트</h2>
-			<table class="table">
+			<table class="table" id="table_board">
 				<thead>
 					<tr>
 						<th>주문자이름 <input type="text" name="key">
@@ -140,8 +141,8 @@
 				value="주문처리" onClick="go_order_save(this.form)">
 		</div>
 	</form>
-</body>
-</html>
+	</div>
+</article>
 <%-- <article>
 <h1>주문리스트</h1>
 <form name="frm" method="post">

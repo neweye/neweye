@@ -5,6 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 
 <article>
+<div id="board_outside">
 <h1>상품리스트</h1>   
 <form name="frm" method="post">
 <table class="table">
@@ -63,7 +64,5 @@
 </c:choose>  
 </table>
 </form> 
+</div>
 </article>
-</body>
-
-</html>

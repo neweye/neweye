@@ -106,6 +106,7 @@
 										    <p><a href="cartList.ne">장바구니</a></p>
 										    <p><a href="orderAll.ne">주문조회</a></p>
 										    <p><a href="mypageMember.ne">회원정보</a></p>
+										    <p><a href="qnaList.ne">Q&A</a></p>
 										</div>
 									</div>&nbsp;&nbsp;&nbsp;
 								</li>

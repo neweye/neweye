@@ -10,15 +10,16 @@
 		document.frm.submit();
 	}
 </script>
-
+<article>
+<div id="board_outside">
 <h2>MemberList</h2>
 <form name="frm" method="post">
-<table class="table">
+<table class="table" id="table_board">
 	<thead>
 		<tr>
 			<th>주문자이름 <input type="text" name="key">
 				<button type="submit" class="btn btn-skin btn-block"
-					onclick="go_order_search()">검색</th>
+					onclick="go_order_search()" >검색</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -61,10 +62,10 @@
 		</tr>
 	</c:forEach>
 </table>
-</div>
 </form>
-</body>
-</html>
+</div>
+</article>
+
 <%-- <h1>회원리스트</h1>  
 <form name="frm" method="post">
 <table style="float:right; ">
