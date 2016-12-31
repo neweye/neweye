@@ -66,6 +66,11 @@ table.product_img_detail{
  margin: auto;
 }
 
+.img_detail_list{
+width:500px;
+}
+
+
 input.btn_product_detail {
  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -122,7 +127,7 @@ input.btn_product_detail:active {
      <!-- <tr><td colspan="4"></td></tr> -->
    <tr>
     <td rowspan="3" id="td_img_detail">
-    <img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
+    <img class="img_detail_list" src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
     </td>
     <td style="background:#cccccc; width:2px;" rowspan="3" ></td>
     <td colspan="2">${productVO.name}</td>

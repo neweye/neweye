@@ -47,7 +47,7 @@ div.div_all {
 
 div#product_list {
 	margin: 10px;
-	padding: 0 20px 10px;
+	padding: 20px 20px 10px;
 	width: 280px;
 	height: 340px;
 	border: 1px dashed #999999;
