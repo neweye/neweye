@@ -185,7 +185,7 @@ input.btn_product_detail:active {
    </tr>
    <tr>
     <td  class="content_td">가격</td>
-    <td>| ${productVO.price}원</td>
+    <td>| <fmt:formatNumber value="${productVO.price}" type="number"/> 원</td>
    </tr>
    <tr>
     <td  class="content_td">출시일</td>
