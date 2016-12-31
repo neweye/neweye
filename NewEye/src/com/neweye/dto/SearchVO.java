@@ -284,4 +284,30 @@ public class SearchVO {
 	public void setMax_distance(float max_distance) {
 		this.max_distance = max_distance;
 	}
+	@Override
+	public String toString() {
+		return "SearchVO [column=" + column + ", orderby=" + orderby
+				+ ", tpage=" + tpage + ", kind=" + kind + ", category="
+				+ category + ", name=" + name + ", useyn=" + useyn + ", ratio="
+				+ ratio + ", format=" + format + ", zoomyn=" + zoomyn
+				+ ", functions=" + functions + ", types=" + types
+				+ ", min_price=" + min_price + ", max_price=" + max_price
+				+ ", min_weight=" + min_weight + ", max_weight=" + max_weight
+				+ ", min_pixel=" + min_pixel + ", max_pixel=" + max_pixel
+				+ ", min_iso=" + min_iso + ", max_iso=" + max_iso
+				+ ", min_speed=" + min_speed + ", max_speed=" + max_speed
+				+ ", min_screen=" + min_screen + ", max_screen=" + max_screen
+				+ ", min_movframe=" + min_movframe + ", max_movframe="
+				+ max_movframe + ", min_seqpictures=" + min_seqpictures
+				+ ", max_seqpictures=" + max_seqpictures + ", min_filter="
+				+ min_filter + ", max_filter=" + max_filter + ", min_minfocus="
+				+ min_minfocus + ", max_minfocus=" + max_minfocus
+				+ ", min_maxfocus=" + min_maxfocus + ", max_maxfocus="
+				+ max_maxfocus + ", min_minaperture=" + min_minaperture
+				+ ", max_minaperture=" + max_minaperture + ", min_maxaperture="
+				+ min_maxaperture + ", max_maxaperture=" + max_maxaperture
+				+ ", min_distance=" + min_distance + ", max_distance="
+				+ max_distance + "]";
+	}
+	
 }

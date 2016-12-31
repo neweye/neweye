@@ -228,5 +228,5 @@ public class ProductVO {
 	public void setTypes(String types) {
 		this.types = types;
 	}
-
+	
 }
