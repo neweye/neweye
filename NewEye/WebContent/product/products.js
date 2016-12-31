@@ -93,3 +93,12 @@ function go_search(form) {
 	theForm.action = lo.pathname+"?"+key;
 	theForm.submit();
 }
+function go_search_detail(form){
+	document.frm.action = "product.ne";
+	document.frm.submit();
+}
+function go_detail(){
+	$('.invisibleClass').toggle();
+	$('#detailBtn').toggle(
+			);
+}

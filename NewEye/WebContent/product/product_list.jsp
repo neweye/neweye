@@ -95,6 +95,9 @@ div.top_search_tb{
    text-align:right;
    /* border:1px solid black; */
 }
+div.invisibleClass{
+	display : none;
+}
 </style>
 </head>
 
@@ -106,7 +109,12 @@ div.top_search_tb{
    <div class="top_search_tb">
       <input type="text" name="key" onkeydown="javascipt:if(event.keyCode == 13)go_search(this.form);"/>
       <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search(this.form)">&nbsp;
-      <input class="btn" type="button" value="상세검색" onClick="go_search_detail()"/><br /> 
+      <input class="btn" type="button" id="detailBtn" value="▼" onClick="go_detail()"/><br />
+      
+      <div id="searchDetailBtn" class="invisibleClass">
+      <jsp:include page="/product/product_search_detail.jsp" />
+      </div>
+      
       <!-- 
       ///////////////////////////////////////////////////////
       

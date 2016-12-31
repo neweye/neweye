@@ -118,6 +118,7 @@ public class ProductListAction implements Action {
 		if (request.getParameter("types") != null)
 		search.setTypes(request.getParameter("types"));
 		
+		try{
 		if (request.getParameter("min_price") != null)
 		search.setMin_price(Integer.parseInt(request.getParameter("min_price")));
 		if (request.getParameter("min_weight") != null)
@@ -174,7 +175,7 @@ public class ProductListAction implements Action {
 		search.setMax_maxaperture(Float.parseFloat(request.getParameter("max_maxaperture")));
 		if (request.getParameter("max_distance") != null)
 		search.setMax_distance(Float.parseFloat(request.getParameter("max_distance")));
-		
+		}catch (NumberFormatException e){}
 		return search;
 	}
 }
