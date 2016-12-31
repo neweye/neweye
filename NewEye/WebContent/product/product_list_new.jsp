@@ -12,7 +12,9 @@ article.product_list_new {
 
 div.div_product_new {
 	margin: auto;
+	padding: 15px 0 0 0;
 	width: 1000px;
+	border: 1px dashed #999999;
 }
 
 li.product_list_new_li {

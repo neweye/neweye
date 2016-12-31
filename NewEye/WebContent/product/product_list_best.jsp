@@ -10,7 +10,9 @@ article.product_list_best {
 
 div.div_product_best {
 	margin: auto;
+	padding: 15px 0 0 0 ;
 	width: 1000px;
+	border: 1px dashed #999999;
 }
 
 li.product_list_best_li {
