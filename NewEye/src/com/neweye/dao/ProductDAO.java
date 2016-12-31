@@ -9,7 +9,7 @@ import com.neweye.dto.SearchVO;
 public interface ProductDAO {
    
    // 리스트 업어오기.
-   public ArrayList<ProductVO> listSelProduct(int tpage, SearchVO search) throws SQLException;
+   public ArrayList<ProductVO> listSelProduct(SearchVO search) throws SQLException;
    
    // 상품번호로 상품정보 한개 가져오기
    public ProductVO getProduct(String pseq) throws SQLException;

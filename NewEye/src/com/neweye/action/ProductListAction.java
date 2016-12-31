@@ -30,12 +30,12 @@ public class ProductListAction implements Action {
 		String paging = null;
 
 		try {
-			productList = productDAO.listSelProduct(Integer.parseInt(searchVO.getTpage()), searchVO);
+			productList = productDAO.listSelProduct(searchVO);
 			paging = productDAO.pageNum(searchVO);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		request.setAttribute("productKindList", productList);
+		request.setAttribute("productList", productList);
 		int n = productList.size();
 		request.setAttribute("productListSize", n);
 		request.setAttribute("paging", paging);
@@ -43,7 +43,7 @@ public class ProductListAction implements Action {
 		return url;
 	}
 
-	private SearchVO insertSearch() {
+	protected SearchVO insertSearch() {
 		SearchVO search = new SearchVO();
 
 		search.setColumn("odseq");

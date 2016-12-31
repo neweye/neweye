@@ -138,7 +138,7 @@ div.top_search_tb{
    <article class="product_list_jsp">
       <%-- <c:forEach items="${productKindList}" var="productVO">  --%>
       <%-- <c:forEach var="i" items="" begin="0" varStatus="status" end="20"> --%>
-      <c:forEach items="${productKindList}" var="productVO">
+      <c:forEach items="${productList}" var="productVO">
          <span class="div_areasize">
             <div class="div_all">
                   <div id="product_list">

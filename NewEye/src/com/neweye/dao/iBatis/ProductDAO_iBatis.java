@@ -20,15 +20,16 @@ public class ProductDAO_iBatis implements ProductDAO {
 	}
 	
 	static int view_rows = 5; // 페이지의 개수
-	static int counts = 5; // 한 페이지에 나타낼 상품의 개수
+	static int counts = 6; // 한 페이지에 나타낼 상품의 개수
 	
 	@Override
-	public ArrayList<ProductVO> listSelProduct(int tpage, SearchVO search) throws SQLException {
+	public ArrayList<ProductVO> listSelProduct(SearchVO search) throws SQLException {
 		ArrayList<ProductVO> listNewProduct = null;
 		
 		int startRow = -1;
 		int endRow = -1;
-
+		int tpage = Integer.parseInt(search.getTpage());
+		
 		int totalRecord = totalRecord("");
 
 		startRow = (tpage - 1) * counts ;
