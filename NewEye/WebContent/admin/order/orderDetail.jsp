@@ -105,9 +105,14 @@ text-align: center;
 						<c:choose>
 							<c:when test="${orderDetail.delivery=='대한통운'}">
 							<a href="javascript:void(window.open('https://www.doortodoor.co.kr/parcel/doortodoor.do?fsp_action=PARC_ACT_002&fsp_cmd=retrieveInvNoACT&invc_no=${orderDetail.deliverynum}','delivery','width=800,height=800'))">
+							${orderDetail.deliback} ${orderDetail.delibacknum}</a>
+							</c:when>
+							<c:when test="${orderDetail.delivery=='로젠택배'}">
+							<a href="javascript:void(window.open('http://www.ilogen.com/iLOGEN.Web.New/TRACE/TraceNoView.aspx?slipno=${orderDetail.deliverynum}&gubun=slipno','delivery','width=800,height=800'))">
+							${orderDetail.deliback} ${orderDetail.delibacknum}</a>
 							</c:when>
 							<c:otherwise>
-							<a href="javascript:void(window.open('http://www.ilogen.com/iLOGEN.Web.New/TRACE/TraceNoView.aspx?slipno=${orderDetail.deliverynum}&gubun=slipno','delivery','width=800,height=800'))">
+							배송준비중입니다.
 							</c:otherwise>
 						</c:choose>
 						${orderDetail.delivery} ${orderDetail.deliverynum}</a>
@@ -116,12 +121,16 @@ text-align: center;
 						<c:choose>
 							<c:when test="${orderDetail.deliback=='대한통운'}">
 							<a href="javascript:void(window.open('https://www.doortodoor.co.kr/parcel/doortodoor.do?fsp_action=PARC_ACT_002&fsp_cmd=retrieveInvNoACT&invc_no=${orderDetail.delibacknum}','delivery','width=800,height=800'))">
+							${orderDetail.deliback} ${orderDetail.delibacknum}</a>
+							</c:when>
+							<c:when test="${orderDetail.deliback=='로젠택배'}">
+							<a href="javascript:void(window.open('http://www.ilogen.com/iLOGEN.Web.New/TRACE/TraceNoView.aspx?slipno=${orderDetail.delibacknum}&gubun=slipno','delivery','width=800,height=800'))">
+							${orderDetail.deliback} ${orderDetail.delibacknum}></a>
 							</c:when>
 							<c:otherwise>
-							<a href="javascript:void(window.open('http://www.ilogen.com/iLOGEN.Web.New/TRACE/TraceNoView.aspx?slipno=${orderDetail.delibacknum}&gubun=slipno','delivery','width=800,height=800'))">
+							반송준비중입니다.
 							</c:otherwise>
 						</c:choose>
-						${orderDetail.deliback} ${orderDetail.delibacknum}</a>
 						</c:if>
 					</td>
 				</tr>
