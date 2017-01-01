@@ -15,7 +15,7 @@
  -->
 <article>
 <div id="board_outside">
-			<h2>주문리스트</h2>
+			<h2>주문 관리</h2>
 	<form name="frm" method="post">
 		<table class="table" id="table_board">
   <tr>
@@ -128,7 +128,8 @@
 						<td>${orderVO.quantity}</td>
 						<td>${orderVO.address}</td>
 						<td>${orderVO.phone}</td>
-						<td><fmt:formatDate value="${productVO.indate }" pattern="yyyy-MM-dd" /></td>
+						<%-- <td><fmt:formatDate value="${orderVO.indate }" type="date" /></td> --%>
+						<td><fmt:formatDate value="${orderVO.indate}" pattern="yyyy-MM-dd" /></td>
 					</tr>
 				</c:forEach>
 			</table>

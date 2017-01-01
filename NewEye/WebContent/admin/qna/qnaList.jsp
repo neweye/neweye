@@ -15,11 +15,11 @@
 
 <article>
 <div id="board_outside">
-	<h1>Q&amp;A 게시글 리스트</h1>
+	<h2>Q&amp;A 리스트</h2>
 	<form name="frm" method="post">
 		<input type="hidden" name="qseq">
 		<table class="table" id="table_board">
-			<tr>
+			<tr style="background-color: #e0e0e0">
 				<th>번호(답변여부)</th>
 				<th>제목</th>
 				<th>작성자</th>

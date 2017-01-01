@@ -21,7 +21,7 @@ public class OrderDelAction implements Action {
 		String url = "orderDetail.ne?oseq="+request.getParameter("oseq");
 		
 		OrderVO orderVO = new OrderVO();
-		orderVO.setOdseq(Integer.parseInt(request.getParameter("oseq")));
+		orderVO.setOseq(Integer.parseInt(request.getParameter("oseq")));
 		/*
 		1 : 입금대기
 		2 : 입금확인

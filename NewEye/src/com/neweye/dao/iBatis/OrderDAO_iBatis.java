@@ -26,10 +26,10 @@ public class OrderDAO_iBatis implements OrderDAO {
 			String id) throws SQLException {
 		int maxOseq = 0;
 		
+		client.update("insertOrder", id);
+		maxOseq=(Integer) client.queryForObject("selectMaxOseq", null);
+		
 		for (CartVO cartVO : cartList) {
-			client.update("insertOrder", id);
-			maxOseq=(Integer) client.queryForObject("selectMaxOseq", null);
-			
 			OrderVO vo = orderVO;
 			vo.setOseq(maxOseq);
 			vo.setPseq(cartVO.getPseq());
