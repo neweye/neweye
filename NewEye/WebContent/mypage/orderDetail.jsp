@@ -34,7 +34,7 @@ text-align: center;
 					<th>처리 상태</th>
 				</tr>
 				<tr>
-					<td><fmt:formatDate value="${orderDetail.indate}" type="date" /></td>
+					<td><fmt:formatDate value="${orderDetail.indate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 					<td>${orderDetail.oseq}<input type="hidden" name="oseq"
 						value="${orderDetail.oseq}" /></td>
 					<td>${orderDetail.mname}</td>
@@ -88,11 +88,11 @@ text-align: center;
 					<th>배송</th>
 					<td colspan="4">
 						<c:choose>
-							<c:when test="${orderDetail.delivery='대한통운'}">
-							<a href="https://www.doortodoor.co.kr/parcel/doortodoor.do?fsp_action=PARC_ACT_002&fsp_cmd=retrieveInvNoACT&invc_no=${orderDetail.deliverynum}">
+							<c:when test="${orderDetail.delivery=='대한통운'}">
+							<a href="javascript:void(window.open('https://www.doortodoor.co.kr/parcel/doortodoor.do?fsp_action=PARC_ACT_002&fsp_cmd=retrieveInvNoACT&invc_no=${orderDetail.deliverynum}','delivery','width=800,height=800'))">
 							</c:when>
 							<c:otherwise>
-							<a href="https://http://www.ilogen.com/iLOGEN.Web.New/TRACE/TraceNoView.aspx?slipno=${orderDetail.deliverynum}&gubun=slipno">
+							<a href="javascript:void(window.open('http://www.ilogen.com/iLOGEN.Web.New/TRACE/TraceNoView.aspx?slipno=${orderDetail.deliverynum}&gubun=slipno','delivery','width=800,height=800'))">
 							</c:otherwise>
 						</c:choose>
 						${orderDetail.delivery} ${orderDetail.deliverynum}</a>
