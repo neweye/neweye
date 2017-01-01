@@ -149,27 +149,29 @@ text-align: center;
 			</table>
 			<div class="clear"></div>
 			<div id="buttons" style="float: right">
-				<span id="delBack" class="deliveryBackProduct"> <select
-					name="deliveryBack">
-						<option value="dae">대한통운</option>
-						<option value="hyu">로젠택배</option>
-				</select> <input type="text" name="deliveryBackNum"
-					placeholder="운송장번호를 입력하세요." /> <input type="button" value="반품신청"
-					onclick="go_order_back()" /> &nbsp;&nbsp;&nbsp;
-				</span>
 				<c:choose>
 					<c:when test='${orderDetail.result<3}'>
 						<input type="button" value="취소하기" class="cancel"
 							onclick="go_order_delete()" />
 					</c:when>
 					<c:when test='${orderDetail.result<5}'>
-						<input type="button" value="반품하기" class="cancel"
-							onclick="go_order_back()" />
+						<input type="button" value="반품하기" class="cancel" onclick="go_order_back()" />
 					</c:when>
 				</c:choose>
-				<input type="button" value="목록으로" class="cancel"
-					onclick="location.href='orderAll.ne'" /> <input type="button"
-					value="쇼핑 계속하기" class="cancel" onclick="location.href='index.ne'">
+				<input type="button" value="목록으로" class="cancel" onclick="location.href='orderAll.ne'" /> 
+				<input type="button" value="쇼핑 계속하기" class="cancel" onclick="location.href='index.ne'">
+				<br/>
+			</div>
+			<br/>
+			<div id="delBack" class="deliveryBackProduct">
+				물품 반송 후 신청 바랍니다 <br/>
+				환불계좌 <input type="text" name="payback"/><br/>
+				<select name="deliveryBack">
+						<option value="대한통운">대한통운</option>
+						<option value="로젠택배">로젠택배</option>
+				</select> 
+				<input type="text" name="deliveryBackNum" placeholder="운송장번호를 입력하세요." /> <br/>
+				<input type="button" value="반품신청" onclick="go_order_back_fin()" /> &nbsp;&nbsp;&nbsp;
 			</div>
 		</form>
 	</article>
