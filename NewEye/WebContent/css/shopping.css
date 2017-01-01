@@ -68,3 +68,66 @@ text-align: center;
 td#td_table_board{
 	text-align:right;
 }
+
+/* QnA 관련 */
+.table_qna_form{
+margin: 10px 0 30px 0 auto;
+margin-left:25%;
+width:40%;
+}
+tr.cls_qna_form{
+width:38%;
+}
+td.cls_qna_form{
+	height:300px;
+}
+
+input.cls_qna_form{
+	width:90%;
+}
+
+textarea.cls_qna_form{
+	margin:auto;
+	width:90%;
+	height:90%;
+	/* white-space: pre-line; */
+}
+
+td.sm_qna_view{
+	/* border-bottom:none; */
+	width:100px;
+	height:30px;
+	padding:5px;
+	text-align:center;
+}
+
+td.md_qna_view{
+	/* border-bottom:none; */
+	width:;
+	height:30px;
+	padding:10px;
+	text-align:left;
+}
+
+td.lg_qna_view{
+	/* border-bottom:none; */
+	height:300px;
+	padding:10px;
+	text-align:left;
+	overflow:hidden;
+	resize:none;
+}
+
+.order_admin{
+	width:150px;
+	margin:0 0 0 10px;
+	 color: #fff;
+  background-color: #666;
+  border-color: #666;
+}
+
+
+/* div.td_qna_view{
+	border:1px solid #999999;
+	
+} */

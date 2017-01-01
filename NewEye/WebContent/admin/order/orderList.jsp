@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ include file="/admin/header.jsp"%> --%>
 <%-- <%@ include file="/admin/sub_menu.jsp"%> --%>
-
+<!-- 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,22 +12,20 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+ -->
 <article>
 <div id="board_outside">
 			<h2>주문리스트</h2>
 	<form name="frm" method="post">
-		<div class="container">
-			<table class="table" id="table_board">
-				<thead>
-					<tr>
-						<td id="td_table_board" colspan="7">주문자이름 <input type="text" name="key">
-						<button type="submit" class="btn btn-skin btn-block"
-								onclick="go_order_search()">검색</td>
+		<table class="table" id="table_board">
+  <tr>
+  <td><input type="button" class="btn order_admin" style="float:left;" value="주문처리" onClick="go_order_save(this.form)"></td>
+  <td id="td_table_board">주문자이름 <input type="text" name="key">&nbsp;&nbsp;&nbsp;
+						<button type="submit" class="btn" onclick="go_order_search()">검색</button></td>
 					</tr>
-				</thead>
-				<tbody>
-					<tr class="active">
+		  </table>
+<table class="table" id="table_board">
+    <tr class="active" style="background-color: #e0e0e0">			
 						<th>주문번호(처리여부)</th>
 						<th>주문자</th>
 						<th>상품명</th>
@@ -36,7 +34,6 @@
 						<th>전화</th>
 						<th>주문일</th>
 					</tr>
-				</tbody>
 				<c:forEach items="${orderList}" var="orderVO">
 					<tr>
 						<td>
@@ -135,9 +132,6 @@
 					</tr>
 				</c:forEach>
 			</table>
-			<input type="button" class="btn" style="width: 200px"
-				value="주문처리" onClick="go_order_save(this.form)">
-		</div>
 	</form>
 	</div>
 </article>

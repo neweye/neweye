@@ -15,15 +15,13 @@
 <h2>MemberList</h2>
 <form name="frm" method="post">
 <table class="table" id="table_board">
-	<thead>
 		<tr>
-			<td id="td_table_board" colspan="9">주문자이름 <input type="text" name="key">
-				<button type="submit" class="btn btn-skin btn-block"
-					onclick="go_order_search()" >검색</td>
+			<td id="td_table_board">주문자이름 <input type="text" name="key">&nbsp;&nbsp;&nbsp;
+				<button type="submit" class="btn"onclick="go_order_search()" >검색</button></td> <!-- class="btn btn-skin btn-block" -->
 		</tr>
-	</thead>
-	<tbody>
-		<tr class="active">
+ </table>
+<table class="table" id="table_board">
+    <tr class="active" style="background-color: #e0e0e0">
 			<th>탈퇴여부</th>
 			<th>아이디</th>
 			<th>이름</th>

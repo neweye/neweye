@@ -6,19 +6,21 @@
 
 <article>
 <div id="board_outside">
-<h1>상품리스트</h1>   
+<h2>상품리스트</h2>   
 <form name="frm" method="post">
 <table class="table" id="table_board">
   <tr>
-  <td id="td_table_board" colspan="7">
-      상품명 
-     <input type="text" name="key">
+  <td id="td_table_board">
+      상품명&nbsp;&nbsp;&nbsp;
+     <input type="text" name="key">&nbsp;&nbsp;&nbsp;
      <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">&nbsp;&nbsp;
      <input class="btn" type="button" name="btn_total" value="전체보기 " onClick="go_total()">&nbsp;&nbsp;
-     <input class="btn" type="button" name="btn_write" value="상품등록" onClick="go_wrt()">&nbsp;&nbsp;
+     <input class="btn btn-skin" type="button" name="btn_write" value="상품등록" onClick="go_wrt()">&nbsp;&nbsp;
   </td>
   </tr>
-    <tr>
+  </table>
+<table class="table" id="table_board">
+    <tr style="background-color: #e0e0e0">
         <th>번호</th>
         <th>상품명</th>
         <th>판매가</th>
