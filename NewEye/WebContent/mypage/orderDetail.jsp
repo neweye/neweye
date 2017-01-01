@@ -99,41 +99,6 @@ text-align: center;
 					<th>주소</th>
 					<td colspan="4">${orderDetail.address}</td>
 				</tr>
-				<tr>
-					<th>배송</th>
-					<td colspan="4">
-						<c:choose>
-							<c:when test="${orderDetail.delivery=='대한통운'}">
-							<a href="javascript:void(window.open('https://www.doortodoor.co.kr/parcel/doortodoor.do?fsp_action=PARC_ACT_002&fsp_cmd=retrieveInvNoACT&invc_no=${orderDetail.deliverynum}','delivery','width=800,height=800'))">
-							${orderDetail.deliback} ${orderDetail.delibacknum}</a>
-							</c:when>
-							<c:when test="${orderDetail.delivery=='로젠택배'}">
-							<a href="javascript:void(window.open('http://www.ilogen.com/iLOGEN.Web.New/TRACE/TraceNoView.aspx?slipno=${orderDetail.deliverynum}&gubun=slipno','delivery','width=800,height=800'))">
-							${orderDetail.deliback} ${orderDetail.delibacknum}</a>
-							</c:when>
-							<c:otherwise>
-							배송준비중입니다.
-							</c:otherwise>
-						</c:choose>
-						${orderDetail.delivery} ${orderDetail.deliverynum}</a>
-						<c:if test="${!empty orderDetail.deliback}">
-						<br/> 반송 : 
-						<c:choose>
-							<c:when test="${orderDetail.deliback=='대한통운'}">
-							<a href="javascript:void(window.open('https://www.doortodoor.co.kr/parcel/doortodoor.do?fsp_action=PARC_ACT_002&fsp_cmd=retrieveInvNoACT&invc_no=${orderDetail.delibacknum}','delivery','width=800,height=800'))">
-							${orderDetail.deliback} ${orderDetail.delibacknum}</a>
-							</c:when>
-							<c:when test="${orderDetail.deliback=='로젠택배'}">
-							<a href="javascript:void(window.open('http://www.ilogen.com/iLOGEN.Web.New/TRACE/TraceNoView.aspx?slipno=${orderDetail.delibacknum}&gubun=slipno','delivery','width=800,height=800'))">
-							${orderDetail.deliback} ${orderDetail.delibacknum}></a>
-							</c:when>
-							<c:otherwise>
-							반송준비중입니다.
-							</c:otherwise>
-						</c:choose>
-						</c:if>
-					</td>
-				</tr>
 			</table>
 			
 			<div id="contract">
@@ -141,21 +106,22 @@ text-align: center;
 			</div>
 			<table id="cartList" class="table">
 				<tr>
+					<th>상품별<br/>주문번호</th>
 					<th>상품명</th>
-					<th>상품별주문번호</th>
 					<th>수량</th>
 					<th>가격</th>
 					<th>처리 상태</th>
+					<th>배송</th>
 				</tr>
 				<c:forEach items="${orderList}" var="orderVO">
 					<tr>
+						<td>${orderVO.odseq}<input type="hidden" name="odseqVO" value="${orderVO.odseq}" /></td>
 						<td>${orderVO.pname}</td>
-						<td>${orderVO.odseq}<input type="hidden" name="odseqVO"
-							value="${orderVO.odseq}" /></td>
 						<td>${orderVO.quantity}</td>
 						<td><fmt:formatNumber type="currency"
 								value="${orderVO.price*orderVO.quantity}" /></td>
-						<td><c:choose>
+						<td>
+							<c:choose>
 								<c:when test='${orderVO.result=="1"}'> 입금대기<input
 										type="hidden" name="resultVO" value="${orderVO.result}" />
 								</c:when>
@@ -179,7 +145,39 @@ text-align: center;
 								</c:when>
 								<c:otherwise>
 								</c:otherwise>
-							</c:choose></td>
+							</c:choose>
+						</td>
+						<td>
+							<c:choose>
+								<c:when test="${orderVO.delivery=='대한통운'}">
+								<a href="javascript:void(window.open('https://www.doortodoor.co.kr/parcel/doortodoor.do?fsp_action=PARC_ACT_002&fsp_cmd=retrieveInvNoACT&invc_no=${orderVO.deliverynum}','delivery','width=800,height=800'))">
+								${orderVO.delivery} ${orderVO.deliverynum}</a>
+								</c:when>
+								<c:when test="${orderVO.delivery=='로젠택배'}">
+								<a href="javascript:void(window.open('http://www.ilogen.com/iLOGEN.Web.New/TRACE/TraceNoView.aspx?slipno=${orderVO.deliverynum}&gubun=slipno','delivery','width=800,height=800'))">
+								${orderVO.delivery} ${orderVO.deliverynum}</a>
+								</c:when>
+								<c:otherwise>
+								배송준비중입니다.
+								</c:otherwise>
+							</c:choose>
+							<c:if test="${!empty orderVO.deliback}">
+							<br/> 반송 : 
+							<c:choose>
+								<c:when test="${orderVO.deliback=='대한통운'}">
+								<a href="javascript:void(window.open('https://www.doortodoor.co.kr/parcel/doortodoor.do?fsp_action=PARC_ACT_002&fsp_cmd=retrieveInvNoACT&invc_no=${orderVO.delibacknum}','delivery','width=800,height=800'))">
+								${orderVO.deliback} ${orderVO.delibacknum}</a>
+								</c:when>
+								<c:when test="${orderDetail.deliback=='로젠택배'}">
+								<a href="javascript:void(window.open('http://www.ilogen.com/iLOGEN.Web.New/TRACE/TraceNoView.aspx?slipno=${orderVO.delibacknum}&gubun=slipno','delivery','width=800,height=800'))">
+								${orderVO.deliback} ${orderVO.delibacknum}></a>
+								</c:when>
+								<c:otherwise>
+								반송준비중입니다.
+								</c:otherwise>
+							</c:choose>
+							</c:if>
+						</td>
 					</tr>
 				</c:forEach>
 			</table>
