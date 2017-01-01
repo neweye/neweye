@@ -13,9 +13,9 @@
   <td id="td_table_board" colspan="7">
       상품명 
      <input type="text" name="key">
-     <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">
-     <input class="btn" type="button" name="btn_total" value="전체보기 " onClick="go_total()">
-     <input class="btn" type="button" name="btn_write" value="상품등록" onClick="go_wrt()">
+     <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">&nbsp;&nbsp;
+     <input class="btn" type="button" name="btn_total" value="전체보기 " onClick="go_total()">&nbsp;&nbsp;
+     <input class="btn" type="button" name="btn_write" value="상품등록" onClick="go_wrt()">&nbsp;&nbsp;
   </td>
   </tr>
     <tr>
