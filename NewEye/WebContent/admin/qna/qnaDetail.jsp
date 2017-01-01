@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <%@ include file="/admin/header.jsp"%> --%>
-<%@ include file="/admin/sub_menu.jsp"%>
+<%-- <%@ include file="/admin/sub_menu.jsp"%> --%>
 <script type="text/javascript">
 	function go_list() {
 		var theForm = document.frm;
@@ -19,50 +19,46 @@
 	}
 </script>
 <article>
-	<h1>Q%amp;A 게시판</h1>
+  <div id="board_outside">
+	<h2>Q&amp;A 게시판</h2>
 	<form name="frm" method="post">
 		<input type="hidden" name="qseq">
-		<table id="orderList">
+		<table id="notice" class="table_qna_form">
 			<tr>
-				<th width="20%">제목</th>
-				<td>${qnaVO.subject} ${qnaVO.rep}</td>
+				<td class="sm_qna_view"><label>제목</label></td>
+				<td class="md_qna_view">${qnaVO.subject} ${qnaVO.rep}</td>
 			</tr>
 			<tr>
-				<th>등록일</th>
-				<td><fmt:formatDate value="${qnaVO.indate}" /></td>
+				<td class="sm_qna_view"><label>등록일</label></td>
+				<td class="md_qna_view"><fmt:formatDate value="${qnaVO.indate}" /></td>
 			</tr>
 			<tr>
-				<th>내용</th>
-				<td>${qnaVO.content}</td>
+				<td class="lg_qna_view"><label>내용</label></td>
+				<td class="md_qna_view">${qnaVO.content}</td>
 			</tr>
-		</table>
 		<c:choose>
 			<c:when test='${qnaVO.rep=="1"}'>
-				<table id="orderList">
 					<tr>
-						<td colspan="2"><img src="admin/images/opinionimg01.gif">
-						</td>
-					</tr>
-					<tr>
+					<td style="border-bottom:0;"><label>답변</label></td>
 						<td colspan="2"><textarea name="reply" rows="3" cols="50"></textarea>
-							<input type="button" class="btn" value="저장"
-							onClick="go_rep('${qnaVO.qseq}')"></td>
+						</td></tr>
+							<tr><td colspan="2"><input type="button" class="btn" value="저장"
+							onClick="go_rep('${qnaVO.qseq}')"> <input type="button" class="btn" value="목록" onClick="go_list()">
+							</td>
 					</tr>
-				</table>
 				<br>
 			</c:when>
 			<c:otherwise>
-				<table id="orderList">
 					<tr>
-						<th>댓글</th>
-						<td>${qnaVO.reply}</td>
+						<td class="sm_qna_view">댓글</th>
+						<td class="md_qna_view">${qnaVO.reply}</td>
 					</tr>
-				</table>
+					<tr><td colspan="2"><input type="button" class="btn" value="목록" onClick="go_list()"></td></tr>
 			</c:otherwise>
 		</c:choose>
-		<input type="button" class="btn" value="목록" onClick="go_list()">
+				</table>
+		<!-- <input type="button" class="btn" value="목록" onClick="go_list()"> -->
 	</form>
+	</div>
 </article>
 <%-- <%@ include file="/admin/footer.jsp"%> --%>
-</body>
-</html>

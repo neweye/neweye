@@ -1,5 +1,5 @@
 function go_list() { 
- document.formm.action = "catagory.ne";
+ document.formm.action = "product.ne";
  document.formm.submit();
 }
 
