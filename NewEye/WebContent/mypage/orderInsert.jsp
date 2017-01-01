@@ -14,38 +14,50 @@
 	<form name="formm" method="post">
 		<!-- <table  style="margin: auto; text-align: center;" id="table_board"> -->
 		<table class="table" id="table_board">
-			<tr style="background-color: #e0e0e0">
-				<th>상품명</th>
-				<th>수 량</th>
-				<th>가 격</th>
-				<th>주문일</th>
-				<th>진행 상태</th>
-			</tr>
-			<c:forEach items="${orderList}" var="orderVO">
-				<tr>
-					<td style="font-size: 20px"><a href="productDetail.ne?pseq=${cartVO.pseq}">
-							${orderVO.pname}
-					</a></td>
-					<td>${orderVO.quantity}</td>
-					<td><fmt:formatNumber
-							value="${orderVO.price*orderVO.quantity}" type="currency" /></td>
-					<td><fmt:formatDate value="${orderVO.indate}" type="date" /></td>
-					<td>처리 진행 중</td>
-				</tr>
-			</c:forEach>
-			<tr>
-				<th colspan="2">총 액</th>
-				<th colspan="2"><fmt:formatNumber value="${totalPrice}"
-						type="currency" /><br></th>
-				<th>주문 처리가 완료되었습니다.</th>
-			</tr>
-		</table>
+					<tr style="background-color: #e0e0e0">
+						<th>상품명</th>
+						<th>수 량</th>
+						<th>가 격</th>
+						<th>주문일</th>
+					</tr>
 
+					<c:forEach items="${cartList}" var="cartVO">
+						<tr>
+							<td style="font-size: 20px"><a href="productDetail.ne?pseq=${cartVO.pseq}">
+									${cartVO.pname}<input type="hidden" name="cseq" value="${cartVO.cseq}">
+							</a></td>
+							<td>${cartVO.quantity}</td>
+							<td><fmt:formatNumber value="${cartVO.price*cartVO.quantity}" type="currency" /></td>
+							<td><fmt:formatDate value="${cartVO.indate}" type="date" /></td>
+						</tr>
+					</c:forEach>
+
+					<tr>
+						<th colspan="2">총 액</th>
+						<th colspan="2"><fmt:formatNumber value="${totalPrice}"
+								type="currency" /><br></th>
+					</tr>
+				</table>
+		<div id="orderInfo">
+			보낸 사람 : <input type="text" name="sname" value="${loginUser.name}"/><br/>
+			연락처 : <input type="text" name="sphone" value="${loginUser.phone}"/><br/>
+			
+			받는 사람 : <input type="text" name="mname" value="${loginUser.name}"/><br/>
+			연락처 : <input type="text" name="phone" value="${loginUser.phone}"/><br/>
+			우편번호: <input name="zipNum" type="text" value="${loginUser.zipNum}" readonly/><input type="button" value="주소 찾기" onclick="post_zip()"><br>
+			주소 : <input name="addr1" type="text" value="${loginUser.address}" readonly/> <input name="addr2" type="text"><br>
+			결제방법 : 
+			<select name="pay" size="1">
+				<option value="우체국">우체국 0123456789</option>
+				<option value="농협">농협 9876543210</option>
+			</select>
+		</div>
 		<div class="clear"></div>
 		<br><br><br>
 		<div id="buttons">
 		
 		<a href="index.ne" class="btn_default_org">쇼핑계속하기</a>
+		<a class="btn_default_org" onclick="go_order_perfect()">주문하기</a>
 			<!-- <input type="button" value="쇼핑 계속하기" class="cancel"
 				onclick="location.href='index.ne'"> -->
 		</div>

@@ -75,3 +75,7 @@ function go_mypage(){
 	document.formm.action = "mypageMember.ne";
 	document.formm.submit();
 }
+function go_order_perfect(){
+	document.formm.action = "orderList.ne";
+	document.formm.submit();
+}

@@ -10,9 +10,9 @@ public interface OrderDAO {
 
 
 	// 사용자가 주문
-	public int insertOrder(ArrayList<CartVO> cartList, String id) throws SQLException;
+	public int insertOrder(OrderVO orderVO, ArrayList<CartVO> cartList, String id) throws SQLException;
 
-	public void insertOrderDetail(CartVO cartVO, int maxOseq) throws SQLException;
+	public void insertOrderDetail(OrderVO orderVO, CartVO cartVO, int maxOseq) throws SQLException;
 	
 	// 사용자가 주문 내역 검색
 	public ArrayList<OrderVO> listOrderById(String id, String result, int oseq) throws SQLException;
