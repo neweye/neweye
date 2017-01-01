@@ -15,6 +15,11 @@ table#table_board {
 	text-align: center;
 } 
 
+ table#table_board_left th, td{	
+    border-bottom: 1px solid  #d8d8d8; 
+	text-align: left;
+} 
+
 div#board_outside{
 margin: 20px 0 30px auto; 
 text-align: center;
@@ -103,7 +108,6 @@ td.sm_qna_view{
 
 td.md_qna_view{
 	/* border-bottom:none; */
-	width:;
 	height:30px;
 	padding:10px;
 	text-align:left;
@@ -111,6 +115,7 @@ td.md_qna_view{
 
 td.lg_qna_view{
 	/* border-bottom:none; */
+	width:100px;
 	height:300px;
 	padding:10px;
 	text-align:left;

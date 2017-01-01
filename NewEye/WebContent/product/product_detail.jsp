@@ -109,7 +109,7 @@ table.product_img_detail{
 }
 
 .img_detail_list{
-width:500px;
+width:400px;
 }
 
 
@@ -207,7 +207,7 @@ input.btn_product_detail:active {
   </td></tr></table>
   
   <div id="detail_table_outline">
-  <table class="table_detail_content" >
+  <table class="table_detail_content" style="text-align:left;" >
    <tr><th id="th_detail_table" colspan="2">상품 상세 정보</th></tr>
    
    <tr style="background:#999999; height:5px;"><td colspan="6"></td></tr>
