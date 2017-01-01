@@ -17,23 +17,51 @@ public class AdminOrderUpdateAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "adminOrderDetail.ne";
-		String key = request.getParameter("key");
-		if (request.getParameter("key") != null) {
-			key = request.getParameter("key");
-		}
+		String url = "adminOrderDetail.ne?oseq="+request.getParameter("oseq");
+		
+		OrderVO orderVO = new OrderVO();
+		orderVO.setOseq(Integer.parseInt(request.getParameter("oseq")));
+		
 
-		/*OrderDAO orderDAO = OrderDAO_JDBC.getInstance();*/
+		if(request.getParameter("quantity")!=null && !request.getParameter("quantity").isEmpty()) 
+			orderVO.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+		if(request.getParameter("result")!=null && !request.getParameter("result").isEmpty()) 
+			orderVO.setResult(request.getParameter("result"));
+		if(request.getParameter("pay")!=null && !request.getParameter("pay").isEmpty()) 
+			orderVO.setPay(request.getParameter("pay"));
+		if(request.getParameter("payyn")!=null && !request.getParameter("payyn").isEmpty()) 
+			orderVO.setPayyn(request.getParameter("payyn"));
+		if(request.getParameter("delivery")!=null && !request.getParameter("delivery").isEmpty()) 
+			orderVO.setDelivery(request.getParameter("delivery"));
+		if(request.getParameter("deliverynum")!=null && !request.getParameter("deliverynum").isEmpty()) 
+			orderVO.setDeliverynum(request.getParameter("deliverynum"));
+		if(request.getParameter("deliback")!=null && !request.getParameter("deliback").isEmpty()) 
+			orderVO.setDeliback(request.getParameter("deliback"));
+		if(request.getParameter("delibacknum")!=null && !request.getParameter("delibacknum").isEmpty()) 
+			orderVO.setDelibacknum(request.getParameter("delibacknum"));
+		if(request.getParameter("payback")!=null && !request.getParameter("payback").isEmpty()) 
+			orderVO.setPayback(request.getParameter("payback"));
+		if(request.getParameter("mname")!=null && !request.getParameter("mname").isEmpty()) 
+			orderVO.setMname(request.getParameter("mname"));
+		if(request.getParameter("zipnum")!=null && !request.getParameter("zipnum").isEmpty()) 
+			orderVO.setZipNum(request.getParameter("zipnum"));
+		if(request.getParameter("address")!=null && !request.getParameter("address").isEmpty()) 
+			orderVO.setAddress(request.getParameter("address"));
+		if(request.getParameter("phone")!=null && !request.getParameter("phone").isEmpty()) 
+			orderVO.setPhone(request.getParameter("phone"));
+		if(request.getParameter("sname")!=null && !request.getParameter("sname").isEmpty()) 
+			orderVO.setSname(request.getParameter("sname"));
+		if(request.getParameter("sphone")!=null && !request.getParameter("sphone").isEmpty()) 
+			orderVO.setSphone(request.getParameter("sphone"));
+
+		
 		OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
-		ArrayList<OrderVO> orderList=null;
 		try {
-			orderList = orderDAO.listOrder(key);
-		} catch (SQLException e) {		
+			orderDAO.updateOrderResult(orderVO);
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
-		request.setAttribute("orderList", orderList);
-
+		
 		return url;
 	}
 
