@@ -2,6 +2,7 @@ package com.neweye.action;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -11,10 +12,13 @@ import javax.servlet.http.HttpSession;
 
 import com.neweye.dao.CartDAO;
 import com.neweye.dao.OrderDAO;
+import com.neweye.dao.ProductDAO;
 import com.neweye.dao.iBatis.CartDAO_iBatis;
 import com.neweye.dao.iBatis.OrderDAO_iBatis;
+import com.neweye.dao.iBatis.ProductDAO_iBatis;
 import com.neweye.dto.CartVO;
 import com.neweye.dto.MemberVO;
+import com.neweye.dto.ProductVO;
 
 public class OrderDirectInsertAction implements Action {
 
@@ -23,14 +27,23 @@ public class OrderDirectInsertAction implements Action {
 			HttpServletResponse response) throws ServletException, IOException {
 		String url = "mypage/orderInsert.jsp";
 		
-		HttpSession session = request.getSession();
-		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-
 		ArrayList<CartVO> cartList = new ArrayList<CartVO>();
+		
+		ProductDAO productDAO=ProductDAO_iBatis.getInstance();
+		ProductVO productVO=null;
 		CartVO cartVO = new CartVO();
-		cartVO.setId(loginUser.getId());
-		cartVO.setPseq(Integer.parseInt(request.getParameter("pseq")));
+		
+		try {
+			productVO= productDAO.getProduct(request.getParameter("pseq"));
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}
+		
 		cartVO.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+		cartVO.setPseq(productVO.getPseq());
+		cartVO.setPname(productVO.getName());
+		cartVO.setPrice(productVO.getPrice());
+		cartVO.setIndate(new Timestamp(System.currentTimeMillis()));
 		cartList.add(cartVO);
 		
 		request.setAttribute("totalPrice", cartVO.getPrice());
