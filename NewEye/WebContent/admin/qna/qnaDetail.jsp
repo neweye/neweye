@@ -5,11 +5,16 @@
 <%-- <%@ include file="/admin/header.jsp"%> --%>
 <%-- <%@ include file="/admin/sub_menu.jsp"%> --%>
 <script type="text/javascript">
-	function go_list() {
+	/* function go_QnAlist() {
 		var theForm = document.frm;
 		theForm.action = "adminQnaList.ne";
 		theForm.submit();
-	}
+	} */
+	
+	function go_QnAlist() { 
+		 document.frm.action = "adminQnaList.ne";
+		 document.frm.submit();
+		}
 
 	function go_rep(qseq) {
 		var theForm = document.frm;
@@ -34,13 +39,15 @@
 			</tr>
 			<tr>
 				<td class="lg_qna_view"><label>내용</label></td>
-				<td class="md_qna_view">${qnaVO.content}</td>
+				<td class="md_qna_view"><textarea class="cls_qna_form" readonly >${qnaVO.content}</textarea></td>
 			</tr>
 		<c:choose>
 			<c:when test='${qnaVO.rep=="1"}'>
 					<tr>
-					<td style="border-bottom:0;"><label>답변 작성</label></td>
-						<td colspan="2"><textarea name="reply" rows="3" cols="50"></textarea>
+					<td style="border-bottom:0;"><label>작성</label></td>
+						<td colspan="2"><!-- <textarea name="reply" rows="3" cols="50"> -->
+						<textarea class="cls_qna_form" >
+						</textarea>
 						</td></tr>
 						</table>
 							<input type="button" class="btn" value="저장"
@@ -53,7 +60,7 @@
 						<td class="md_qna_view">${qnaVO.reply}</td>
 					</tr>
 				</table>
-					<input type="button" class="btn" value="목록" onClick="go_list()">
+					<input type="button" class="btn" value="목록" onClick="go_QnAlist()">
 			</c:otherwise>
 		</c:choose>
 		<!-- <input type="button" class="btn" value="목록" onClick="go_list()"> -->
