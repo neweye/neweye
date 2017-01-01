@@ -90,7 +90,7 @@ text-align: center;
 								환불대기
 							</c:when>
 							<c:otherwise>
-								입금완료
+								입금대기
 							</c:otherwise>
 						</c:choose>
 					</td>

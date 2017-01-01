@@ -13,7 +13,7 @@ text-align: center;
 
 </style>
 
-	<article>
+<article>
 <!-- <div style="height: 500px;" id="board_outside"> -->
 <div id="board_outside">
 		<br> <br>
@@ -35,36 +35,97 @@ text-align: center;
 				</tr>
 				<tr>
 					<td><fmt:formatDate value="${orderDetail.indate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
-					<td>${orderDetail.oseq}<input type="hidden" name="oseq"
-						value="${orderDetail.oseq}" /></td>
+					<td>
+						${orderDetail.oseq}
+						<input type="hidden" name="oseq" value="${orderDetail.oseq}" />
+					</td>
 					<td>${orderDetail.mname}</td>
 					<td><fmt:formatNumber type="currency" value="${totalPrice}" />
 					</td>
-					<td><c:choose>
-							<c:when test='${orderDetail.result=="1"}'> 입금대기<input
-									type="hidden" name="result" value="${orderDetail.result}" />
-							</c:when>
-							<c:when test='${orderDetail.result=="2"}'> 입금확인<input
-									type="hidden" name="result" value="${orderDetail.result}" />
-							</c:when>
-							<c:when test='${orderDetail.result=="3"}'> 배송중<input
-									type="hidden" name="result" value="${orderDetail.result}" />
-							</c:when>
-							<c:when test='${orderDetail.result=="4"}'> 배송완료<input
-									type="hidden" name="result" value="${orderDetail.result}" />
-							</c:when>
-							<c:when test='${orderDetail.result=="5"}'> 주문취소<input
-									type="hidden" name="result" value="${orderDetail.result}" />
-							</c:when>
-							<c:when test='${orderDetail.result=="6"}'> 반품중<input
-									type="hidden" name="result" value="${orderDetail.result}" />
-							</c:when>
-							<c:when test='${orderDetail.result=="7"}'> 환불완료<input
-									type="hidden" name="result" value="${orderDetail.result}" />
-							</c:when>
-							<c:otherwise>
-							</c:otherwise>
-						</c:choose></td>
+					<td>
+						<c:choose>
+								<c:when test='${orderDetail.result=="1"}'>
+									<select name="result" size="1">
+										<option value="1" selected> 입금대기 </option>
+										<option value="2"> 입금확인 </option>
+										<option value="3"> 배송중 </option>
+										<option value="4"> 배송완료 </option>
+										<option value="5"> 주문취소 </option>
+										<option value="6"> 반품중 </option>
+										<option value="7"> 환불완료 </option>
+									</select>
+								</c:when>
+								<c:when test='${orderDetail.result=="2"}'>
+									<select name="result" size="1">
+										<option value="1"> 입금대기 </option>
+										<option value="2" selected> 입금확인 </option>
+										<option value="3"> 배송중 </option>
+										<option value="4"> 배송완료 </option>
+										<option value="5"> 주문취소 </option>
+										<option value="6"> 반품중 </option>
+										<option value="7"> 환불완료 </option>
+									</select>
+								</c:when>
+								<c:when test='${orderDetail.result=="3"}'>
+									<select name="result" size="1">
+										<option value="1"> 입금대기 </option>
+										<option value="2"> 입금확인 </option>
+										<option value="3" selected> 배송중 </option>
+										<option value="4"> 배송완료 </option>
+										<option value="5"> 주문취소 </option>
+										<option value="6"> 반품중 </option>
+										<option value="7"> 환불완료 </option>
+									</select>
+								</c:when>
+								<c:when test='${orderDetail.result=="4"}'>
+									<select name="result" size="1">
+										<option value="1"> 입금대기 </option>
+										<option value="2"> 입금확인 </option>
+										<option value="3"> 배송중 </option>
+										<option value="4" selected> 배송완료 </option>
+										<option value="5"> 주문취소 </option>
+										<option value="6"> 반품중 </option>
+										<option value="7"> 환불완료 </option>
+									</select>
+								</c:when>
+								<c:when test='${orderDetail.result=="5"}'>
+									<select name="result" size="1">
+										<option value="1"> 입금대기 </option>
+										<option value="2"> 입금확인 </option>
+										<option value="3"> 배송중 </option>
+										<option value="4"> 배송완료 </option>
+										<option value="5" selected> 주문취소 </option>
+										<option value="6"> 반품중 </option>
+										<option value="7"> 환불완료 </option>
+									</select>
+								</c:when>
+								<c:when test='${orderDetail.result=="6"}'>
+									<select name="result" size="1">
+										<option value="1"> 입금대기 </option>
+										<option value="2"> 입금확인 </option>
+										<option value="3"> 배송중 </option>
+										<option value="4"> 배송완료 </option>
+										<option value="5"> 주문취소 </option>
+										<option value="6" selected> 반품중 </option>
+										<option value="7"> 환불완료 </option>
+									</select>
+								</c:when>
+								<c:when test='${orderDetail.result=="7"}'>
+									<select name="result" size="1">
+										<option value="1"> 입금대기 </option>
+										<option value="2"> 입금확인 </option>
+										<option value="3"> 배송중 </option>
+										<option value="4"> 배송완료 </option>
+										<option value="5"> 주문취소 </option>
+										<option value="6"> 반품중 </option>
+										<option value="7" selected> 환불완료 </option>
+									</select>
+								</c:when>
+								<c:otherwise>
+									<span style="font-weight: bold; color: redd"> 오류 </span>
+								</c:otherwise>
+							</c:choose>
+					</td>
 				</tr>
 				<tr>
 					<th>보낸 사람</th>
@@ -74,25 +135,17 @@ text-align: center;
 					<th>입금여부</th>
 				</tr>
 				<tr>
-					<td>${orderDetail.sname}</td>
-					<td>${orderDetail.sphone}</td>
-					<td>${orderDetail.name}</td>
-					<td>${orderDetail.phone}</td>
+					<td><input type="text" name="sname" value="${orderDetail.sname}"/></td>
+					<td><input type="text" name="sphone" value="${orderDetail.sphone}"/></td>
+					<td><input type="text" name="name" value="${orderDetail.name}"/></td>
+					<td><input type="text" name="phone" value="${orderDetail.phone}"/></td>
 					<td>
-						<c:choose>
-							<c:when test="${orderDetail.payyn=='y'}">
-								입금완료
-							</c:when>
-							<c:when test="${orderDetail.payyn=='b'}">
-								환불완료
-							</c:when>
-							<c:when test="${orderDetail.payyn=='r'}">
-								환불대기
-							</c:when>
-							<c:otherwise>
-								입금완료
-							</c:otherwise>
-						</c:choose>
+						<select name="payyn" id="payyn">
+							<option value="y">입금완료</option>
+							<option value="b">환불완료</option>
+							<option value="r">환불대기</option>
+							<option value="n">입금대기</option>
+						</select>
 					</td>
 				</tr>
 				<tr>
