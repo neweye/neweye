@@ -29,10 +29,10 @@
 					<div class="clear"></div>
 
 
-					<div style="margin:auto;">
-						<input type="submit" class="submit btn btn-skin" value="로그인" style="width:80px;margin:5px auto;">&nbsp;&nbsp;&nbsp;
-						<input type="button" class="cancel btn btn-skin" onclick="location='joinForm.ne'" value="회원가입" style="width:80px;"><br/>
-						<input type="button" class="submit btn btn-skin btn-block" onclick="location='findIdForm.ne'" value="아이디 비밀번호 찾기" style="width:150px;">
+					<div style="text-align:center;">
+						<input type="submit" class="submit btn btn-skin" value="로그인" style="width:80px;">&nbsp;&nbsp;&nbsp;
+						<input type="button" class="cancel btn btn-skin" onclick="location='joinForm.ne'" value="회원가입" style="width:90px;"><br/>
+						<input type="button" class="submit btn btn-skin btn-block" onclick="location='findIdForm.ne'" value="아이디 비밀번호 찾기" style="width:188px;margin:10px auto;">
 					</div>
 				</form>
 			</div>
