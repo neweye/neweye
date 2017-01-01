@@ -21,28 +21,21 @@ public class OrderDirectInsertAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String url = "orderList.ne";
-
+		String url = "mypage/orderInsert.jsp";
+		
 		HttpSession session = request.getSession();
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		if (loginUser == null) {
-			url = "loginForm.ne";
-		} else {
-			ArrayList<CartVO> cartList =new ArrayList<CartVO>();
-			CartVO cartVO = new CartVO();
-			cartVO.setId(loginUser.getId());
-			cartVO.setPseq(Integer.parseInt(request.getParameter("pseq")));
-			cartVO.setQuantity(Integer.parseInt(request
-					.getParameter("quantity")));
-			cartList.add(cartVO);
-			OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
-			try {				 
-				int maxOseq = orderDAO.insertOrder(cartList, loginUser.getId());
-				url = "orderList.ne?oseq=" + maxOseq;
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
+
+		ArrayList<CartVO> cartList = new ArrayList<CartVO>();
+		CartVO cartVO = new CartVO();
+		cartVO.setId(loginUser.getId());
+		cartVO.setPseq(Integer.parseInt(request.getParameter("pseq")));
+		cartVO.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+		cartList.add(cartVO);
+		
+		request.setAttribute("totalPrice", cartVO.getPrice());
+		request.setAttribute("cartList", cartList);
+		
 		return url;
 	}
 }
