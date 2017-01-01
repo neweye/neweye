@@ -39,24 +39,23 @@
 		<c:choose>
 			<c:when test='${qnaVO.rep=="1"}'>
 					<tr>
-					<td style="border-bottom:0;"><label>답변</label></td>
+					<td style="border-bottom:0;"><label>답변 작성</label></td>
 						<td colspan="2"><textarea name="reply" rows="3" cols="50"></textarea>
 						</td></tr>
-							<tr><td colspan="2"><input type="button" class="btn" value="저장"
-							onClick="go_rep('${qnaVO.qseq}')"> <input type="button" class="btn" value="목록" onClick="go_list()">
-							</td>
-					</tr>
-				<br>
+						</table>
+							<input type="button" class="btn" value="저장"
+							onClick="go_rep('${qnaVO.qseq}')">&nbsp;&nbsp;&nbsp;<input type="button" class="btn" value="목록" onClick="go_list()">
+
 			</c:when>
 			<c:otherwise>
 					<tr>
-						<td class="sm_qna_view">댓글</th>
+						<td class="sm_qna_view"><label>답변</label></th>
 						<td class="md_qna_view">${qnaVO.reply}</td>
 					</tr>
-					<tr><td colspan="2"><input type="button" class="btn" value="목록" onClick="go_list()"></td></tr>
+				</table>
+					<input type="button" class="btn" value="목록" onClick="go_list()">
 			</c:otherwise>
 		</c:choose>
-				</table>
 		<!-- <input type="button" class="btn" value="목록" onClick="go_list()"> -->
 	</form>
 	</div>
