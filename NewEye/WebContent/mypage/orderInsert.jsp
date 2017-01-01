@@ -41,30 +41,37 @@
 		<div id="orderInfo">
 		<table class="table" id="table_board_left" style="text-align: left;">
 		<tr>
-			<th>보낸 사람 : <input type="text" name="sname" value="${loginUser.name}"/></td>
+			<th width="100px"><label>보낸 사람:</label></th>
+			<td><input type="text" name="sname" value="${loginUser.name}"/></td>
 		</tr>
 		<tr>
-			<th>연락처 : <input type="text" name="sphone" value="${loginUser.phone}"/></th>
+			<th width="100px"><label>연  락  처 :</label></th>
+			<td style="text-align:left;"><input type="text" name="sphone" value="${loginUser.phone}"/></td>
 		</tr>
 		<tr>	
-			<th>받는 사람 : <input type="text" name="mname" value="${loginUser.name}"/></th>
+			<th><label>받는사람:</label></th>
+			<td><input type="text" name="mname" value="${loginUser.name}"/></td>
 		</tr>
 		<tr>
-			<th>연락처 : <input type="text" name="phone" value="${loginUser.phone}"/></th>
+			<th><label>연 락 처  :</label></th>
+			<td><input type="text" name="phone" value="${loginUser.phone}"/></td>
 		</tr>
 		<tr>
-			<th>우편번호: <input name="zipNum" type="text" value="${loginUser.zipNum}" readonly/>&nbsp;&nbsp;<input type="button" value="주소 찾기" onclick="post_zip()"></th>
+			<th><label>우편번호:</label></th>
+			<td><input name="zipNum" type="text" value="${loginUser.zipNum}" readonly/>&nbsp;&nbsp;<input type="button" value="주소 찾기" onclick="post_zip()"></td>
 		</tr>
 		<tr>
-			<th>주소 : <input name="addr1" type="text" value="${loginUser.address}" readonly/> <input name="addr2" type="text"></th>
+			<th><label>주  소 :</label></th> 
+			<td><input name="addr1" type="text" value="${loginUser.address}" readonly/> <input name="addr2" type="text"></td>
 		</tr>
 		<tr>
-			<th>결제방법 : 
+			<th><label>결제방법 :</label></th>
+			<td>
 			<select name="pay" size="1">
 				<option value="우체국">우체국 0123456789</option>
 				<option value="농협">농협 9876543210</option>
 			</select>
-			</th>
+			</td>
 		</tr>
 			</table>
 		</div>
