@@ -60,7 +60,7 @@
 }
 div#detail_table_outline{
    margin:30px auto;
-   width: 604px;
+   width: 800px;
    border : 1px dashed #888888;
 }
 div.product_detail_div{

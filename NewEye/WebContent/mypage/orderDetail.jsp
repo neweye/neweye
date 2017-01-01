@@ -26,7 +26,7 @@ text-align: center;
 			<h4>주문자 정보</h4>
 			</div>
 			<table id="cartList" class="table">
-				<tr>
+				<tr style="background-color: #e0e0e0">
 					<th>주문일자</th>
 					<th>주문번호</th>
 					<th>주문자</th>
@@ -66,7 +66,7 @@ text-align: center;
 							</c:otherwise>
 						</c:choose></td>
 				</tr>
-				<tr>
+				<tr style="background-color: #e0e0e0">
 					<th>보낸 사람</th>
 					<th>연락처</th>
 					<th>받는 사람</th>
@@ -105,7 +105,7 @@ text-align: center;
 			<h4>주문 상품 정보</h4>
 			</div>
 			<table id="cartList" class="table">
-				<tr>
+				<tr style="background-color: #e0e0e0">
 					<th>상품별<br/>주문번호</th>
 					<th>상품명</th>
 					<th>수량</th>
@@ -182,18 +182,18 @@ text-align: center;
 				</c:forEach>
 			</table>
 			<div class="clear"></div>
-			<div id="buttons" style="float: right">
+			<div id="buttons" style="float: center">
 				<c:choose>
 					<c:when test='${orderDetail.result<3}'>
-						<input type="button" value="취소하기" class="cancel"
+						<input type="button" class="btn_default_org" value="취소하기" class="cancel"
 							onclick="go_order_back_fin()" />
 					</c:when>
 					<c:when test='${orderDetail.result<5}'>
-						<input type="button" value="반품하기" class="cancel" onclick="go_order_back()" />
+						<input type="button" class="btn_default_org" value="반품하기" class="cancel" onclick="go_order_back()" />
 					</c:when>
 				</c:choose>
-				<input type="button" value="목록으로" class="cancel" onclick="location.href='orderAll.ne'" /> 
-				<input type="button" value="쇼핑 계속하기" class="cancel" onclick="location.href='index.ne'">
+				<input type="button" class="btn_default_org" value="목록으로" class="cancel" onclick="location.href='orderAll.ne'" /> 
+				<input type="button" class="btn_default_org" value="쇼핑 계속하기" class="cancel" onclick="location.href='index.ne'">
 				<br/>
 			</div>
 			<br/>

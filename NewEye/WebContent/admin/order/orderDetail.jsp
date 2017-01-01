@@ -26,7 +26,7 @@ text-align: center;
 			<h4>주문자 정보</h4>
 			</div>
 			<table id="cartList" class="table">
-				<tr>
+				<tr style="background-color: #e0e0e0">
 					<th>주문일자</th>
 					<th>주문번호</th>
 					<th>주문자</th>
@@ -127,7 +127,7 @@ text-align: center;
 							</c:choose>
 					</td>
 				</tr>
-				<tr>
+				<tr style="background-color: #e0e0e0">
 					<th>보낸 사람</th>
 					<th>연락처</th>
 					<th>받는 사람</th>
@@ -191,7 +191,7 @@ text-align: center;
 			<h4>주문 상품 정보</h4>
 			</div>
 			<table id="cartList" class="table">
-				<tr>
+				<tr style="background-color: #e0e0e0">
 					<th>상품별<br/>주문번호</th>
 					<th>상품명</th>
 					<th>수량</th>
@@ -279,9 +279,9 @@ text-align: center;
 				</c:forEach>
 			</table>
 			<div class="clear"></div>
-			<div id="buttons" style="float: right">
-				<input type="button" value="수정하기" class="cancel" onclick="go_order_admin()" />
-				<input type="button" value="목록으로" class="cancel" onclick="location.href='adminOrderList.ne'" />
+			<div id="buttons" style="float: center">
+				<input type="button" value="수정하기" class="btn_default_org" onclick="go_order_admin()" />
+				<input type="button" value="목록으로" class="btn_default_org" onclick="location.href='adminOrderList.ne'" />
 			</div>
 			<br/>
 		</form>
