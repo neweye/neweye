@@ -74,7 +74,7 @@
                         <a href="adminProductList.ne">상품리스트</a></li>
                         <li><a href="adminOrderList.ne">주문리스트</a></li>
                         <li><a href="adminMemberList.ne">회원리스트</a></li>
-                        <li><a href="adminQnaList.ne">QnA리스트</a></li>
+                        <li><a href="adminQnaList.ne">Q&amp;A리스트</a></li>
                         <!-- <li><a href="adminQnaList.ne">Q&amp;A리스트</a></li> -->
                         <li><a href="adminLogout.ne">LOGOUT</a></li>
                      </ul>
