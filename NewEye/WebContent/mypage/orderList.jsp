@@ -8,8 +8,8 @@
 	<article>
 <div id="board_outside">
    <div id="contract">
-      <h2>주문하기</h2>
-      <h4>Order List</h4>
+      <h2>Order List</h2>
+      <h4>구매 해주셔서 감사합니다.</h4>
    </div>
 	<form name="formm" method="post">
 		<!-- <table  style="margin: auto; text-align: center;" id="table_board"> -->

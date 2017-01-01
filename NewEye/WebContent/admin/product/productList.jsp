@@ -59,7 +59,7 @@
       <th><a href="adminProductUpdateForm.ne?pseq=${productVO.pseq}">수정</a>/<a href="adminDelete.ne?pseq=${productVO.pseq}">삭제</a></th>
     </tr>
     </c:forEach>
-    <tr><td colspan="6" style="text-align: center;"> ${paging} </td></tr>
+    <tr style="border-bottom:0;"><td colspan="7" style="border-bottom:0;text-align:center;"> ${paging}</td></tr>
    </c:otherwise>   
 </c:choose>  
 </table>

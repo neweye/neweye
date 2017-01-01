@@ -8,7 +8,7 @@
 <article>
 <!-- <div style="height: 500px;" id="board_outside"> -->
 <div id="board_outside">
-	<h2>1:1 고객 게시판</h2>
+	<h2>Q&amp;A List</h2>
 	<h4>고객님의 질문에 대해서 운영자가 1:1 답변을 드립니다.</h4>
 	<form name="formm" method="post">
 		<table class="table" id="table_board">
