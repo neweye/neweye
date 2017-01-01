@@ -187,7 +187,6 @@
    <script src="<%=request.getContextPath()%>/js/nivo-lightbox.min.js"></script>
    <!-- Custom Theme JavaScript -->
    <script src="<%=request.getContextPath()%>/js/custom.js"></script>
-   <script src="<%=request.getContextPath()%>/contactform/contactform.js"></script>
    <script src="<%=request.getContextPath()%>/product/products.js"></script>
    <script src="<%=request.getContextPath()%>/mypage/mypage01.js"></script>
    <script src="<%=request.getContextPath()%>/member/member01.js"></script>
