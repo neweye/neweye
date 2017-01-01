@@ -97,7 +97,7 @@ text-align: center;
 				</tr>
 				<tr>
 					<th>주소</th>
-					<td colspan="4">${orderDetail.address}</td>
+					<td colspan="4">${orderDetail.zipNum} ${orderDetail.address}</td>
 				</tr>
 			</table>
 			
@@ -198,14 +198,34 @@ text-align: center;
 			</div>
 			<br/>
 			<div id="delBack" class="deliveryBackProduct">
-				물품 반송 후 신청 바랍니다 <br/>
-				환불계좌 <input type="text" name="payback"/><br/>
-				<select name="deliveryBack">
-						<option value="대한통운">대한통운</option>
-						<option value="로젠택배">로젠택배</option>
-				</select> 
-				<input type="text" name="deliveryBackNum" placeholder="운송장번호를 입력하세요." /> <br/>
-				<input type="button" value="반품신청" onclick="go_order_back_fin()" /> &nbsp;&nbsp;&nbsp;
+				<br/><b>물품 반송 후 신청 바랍니다 </b><br/><br/>
+				<table class="table">
+					<tr style="background-color: #e0e0e0">
+						<th></th>
+						<th>환불계좌</th>
+						<th>택배사</th>
+						<th>운송장번호</th>						
+						<th></th>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="text" name="payback"/></td>
+						<td>
+							<select name="deliveryBack">
+									<option value="대한통운">대한통운</option>
+									<option value="로젠택배">로젠택배</option>
+							</select>
+						</td>
+						<td>
+							<input type="text" name="deliveryBackNum" placeholder="운송장번호를 입력하세요." /> <br/>
+						</td>
+						<td></td>
+					</tr>
+				</table>
+				<input type="button" class="btn_default_org" value="반품신청" onclick="go_order_back_fin()" /> &nbsp;&nbsp;&nbsp;
+				<br/>
+				<br/>
+				<br/>
 			</div>
 		</form>
 	</article>

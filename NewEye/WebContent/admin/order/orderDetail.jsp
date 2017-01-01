@@ -39,7 +39,7 @@ text-align: center;
 						${orderDetail.oseq}
 						<input type="hidden" name="oseq" value="${orderDetail.oseq}" />
 					</td>
-					<td>${orderDetail.mname}</td>
+					<td>${orderDetail.name}</td>
 					<td><fmt:formatNumber type="currency" value="${totalPrice}" />
 					</td>
 					<td>
@@ -137,7 +137,7 @@ text-align: center;
 				<tr>
 					<td><input type="text" name="sname" value="${orderDetail.sname}"/></td>
 					<td><input type="text" name="sphone" value="${orderDetail.sphone}"/></td>
-					<td><input type="text" name="name" value="${orderDetail.name}"/></td>
+					<td><input type="text" name="mname" value="${orderDetail.mname}"/></td>
 					<td><input type="text" name="phone" value="${orderDetail.phone}"/></td>
 					<td>
 					<c:choose>
@@ -145,32 +145,32 @@ text-align: center;
 							<select name="payyn" id="payyn">
 								<option value="n">입금대기</option>
 								<option value="y" selected>입금완료</option>
-								<option value="b">환불완료</option>
 								<option value="r">환불대기</option>
+								<option value="b">환불완료</option>
 							</select>
 						</c:when>
 						<c:when test="${orderDetail.payyn=='b'}">
 							<select name="payyn" id="payyn">
 								<option value="n">입금대기</option>
 								<option value="y">입금완료</option>
-								<option value="b" selected>환불완료</option>
 								<option value="r">환불대기</option>
+								<option value="b" selected>환불완료</option>
 							</select>
 						</c:when>
 						<c:when test="${orderDetail.payyn=='r'}">
 							<select name="payyn" id="payyn">
 								<option value="n">입금대기</option>
 								<option value="y">입금완료</option>
-								<option value="b">환불완료</option>
 								<option value="r" selected>환불대기</option>
+								<option value="b">환불완료</option>
 							</select>
 						</c:when>
 						<c:when test="${orderDetail.payyn=='n'}">
 							<select name="payyn" id="payyn">
 								<option value="n" selected>입금대기</option>
 								<option value="y">입금완료</option>
-								<option value="b">환불완료</option>
 								<option value="r">환불대기</option>
+								<option value="b">환불완료</option>
 							</select>
 						</c:when>
 						<c:otherwise>
@@ -181,7 +181,10 @@ text-align: center;
 				</tr>
 				<tr>
 					<th>주소</th>
-					<td colspan="2"><input type="text" name="address" value="${orderDetail.address}"></td>
+					<td colspan="2">
+						<input type="text" name="zipnum" value="${orderDetail.zipNum}">
+						<input type="text" name="address" value="${orderDetail.address}">
+					</td>
 					<th>환불계좌</th>
 					<td>${orderDetail.payback}</td>
 				</tr>

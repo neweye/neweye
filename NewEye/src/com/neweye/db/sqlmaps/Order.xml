@@ -60,22 +60,25 @@
 	<update id="updateOrder" parameterClass="order">
 		update order_detail 
 		set 
-			QUANTITY=#quantity#,
 			RESULT=#result#,
-			PAY=#pay#,
+			DELIBACK=#deliback#,
+			DELIBACKNUM=#delibacknum#,
+			PAYBACK=#payback#
+		where oseq=#oseq#
+	</update>
+	<update id="updateOrderAdmin" parameterClass="order">
+		update order_detail 
+		set 
+			RESULT=#result#,
 			PAYYN=#payyn#,
 			DELIVERY=#delivery#,
 			DELIVERYNUM=#deliverynum#,
-			DELIBACK=#deliback#,
-			DELIBACKNUM=#delibacknum#,
-			PAYBACK=#payback#,
 			MNAME=#mname#,
 			ZIPNUM=#zipNum#,
 			ADDRESS=#address#,
 			PHONE=#phone#,
 			SNAME=#sname#,
-			SPHONE=#sphone#,
+			SPHONE=#sphone#
 		where oseq=#oseq#
 	</update>
-	
 </sqlMap>
