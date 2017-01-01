@@ -1,33 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%-- <%@ include file="../header.jsp" %> --%>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
+<%-- <%@ include file="../header.jsp" %> --%>
+<!-- <script src="//code.jquery.com/jquery.min.js"></script>
+<script>
+$(function() {
+	  $("textarea.cls_qna_form").keyup(function () {
+	    $(this).css("height","30px").css("height",(20+$(this).prop("scrollHeight"))+"px");
+	  });
+	});
+
+</script> -->
+   
   <article>
+  <div id="board_outside">
       <h2> 1:1 고객 게시판 </h2>
-      <h3> 고객님의 질문에 대해서 운영자가 1:1 답변을 드립니다.</h3>    
     <form name="formm" method="post">
-    <table id="notice" class="table">
+    <table id="notice" class="table_qna_form">
       <tr>
-              <th>제목</th>
-              <td>${qnaVO.subject}</td> 
+              <td class="sm_qna_view"><label>제목</label></td>
+              <td class="md_qna_view">${qnaVO.subject}</td> 
       </tr>
       <tr>
-        <th>등록일</th>
-        <td> <fmt:formatDate value="${qnaVO.indate}" type="date"/></td>
+        <td class="sm_qna_view"><label>등록일</label></td>
+        <td class="md_qna_view"><fmt:formatDate value="${qnaVO.indate}" type="date" /></td>
       </tr>
       <tr>
-        <th>질문내용</th>
-        <td>${qnaVO.content} 
+        <td class="lg_qna_view"><label>질문내용</label></td>
+        <td class="md_qna_view"><textarea class="cls_qna_form" readonly >${qnaVO.content}</textarea></td>
+        <%-- <td class="md_qna_view"><textarea class="cls_qna_form" readonly onkeyup="resize(this)">${qnaVO.content}</textarea></td>  --%> 
       </tr>
       <tr>
-        <th>답변 내용</th>
-        <td>${qnaVO.reply}  
+        <td style="border-bottom:0;"><label>답변내용</label></td>
+        <td class="lg_qna_view" style="border-bottom:0;"><textarea class="cls_qna_form" readonly onkeyup="resize(this)">${qnaVO.reply}</textarea></td>
       </tr>
     </table>
     <div class="clear"></div>
-     <div id="buttons" style="float:right">
+     <div id="buttons">
       <input type="button"  value="목록보기"     class="submit"  onclick="location.href='qnaList.ne'"> 
       <input type="button"  value="쇼핑 계속하기"  class="cancel"  onclick="location.href='index.ne'">  
       </div>
     </form>
+    </div>
   </article>
 <%-- <%@ include file="../footer.jsp" %> --%>
