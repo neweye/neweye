@@ -31,7 +31,7 @@ text-align: center;
 					<th>주문번호</th>
 					<th>주문자</th>
 					<th>주문 총액</th>
-					<td>처리 상태</td>
+					<th>처리 상태</th>
 				</tr>
 				<tr>
 					<td><fmt:formatDate value="${orderDetail.indate}" type="date" /></td>
@@ -65,6 +65,38 @@ text-align: center;
 							<c:otherwise>
 							</c:otherwise>
 						</c:choose></td>
+				</tr>
+				<tr>
+					<th>보낸 사람</th>
+					<th>연락처</th>
+					<th>받는 사람</th>
+					<th>연락처</th>
+					<th>지불 방법</th>
+				</tr>
+				<tr>
+					<td>${orderDetail.sname}</td>
+					<td>${orderDetail.sphone}</td>
+					<td>${orderDetail.name}</td>
+					<td>${orderDetail.phone}</td>
+					<td>${orderDetail.pay}</td>
+				</tr>
+				<tr>
+					<th>주소</th>
+					<td colspan="4">${orderDetail.address}</td>
+				</tr>
+				<tr>
+					<th>배송</th>
+					<td colspan="4">
+						<c:choose>
+							<c:when test="${orderDetail.delivery='대한통운'}">
+							<a href="https://www.doortodoor.co.kr/parcel/doortodoor.do?fsp_action=PARC_ACT_002&fsp_cmd=retrieveInvNoACT&invc_no=${orderDetail.deliverynum}">
+							</c:when>
+							<c:otherwise>
+							<a href="https://http://www.ilogen.com/iLOGEN.Web.New/TRACE/TraceNoView.aspx?slipno=${orderDetail.deliverynum}&gubun=slipno">
+							</c:otherwise>
+						</c:choose>
+						${orderDetail.delivery} ${orderDetail.deliverynum}</a>
+					</td>
 				</tr>
 			</table>
 			
@@ -120,7 +152,7 @@ text-align: center;
 				<span id="delBack" class="deliveryBackProduct"> <select
 					name="deliveryBack">
 						<option value="dae">대한통운</option>
-						<option value="hyu">현대택배</option>
+						<option value="hyu">로젠택배</option>
 				</select> <input type="text" name="deliveryBackNum"
 					placeholder="운송장번호를 입력하세요." /> <input type="button" value="반품신청"
 					onclick="go_order_back()" /> &nbsp;&nbsp;&nbsp;

@@ -42,6 +42,9 @@ public class LoginCheckFilter implements Filter {
 				if (session.getAttribute("loginUser") != null) {
 					login = true;
 				}
+				if (session.getAttribute("workerId") != null) {
+					login = true;
+				}
 			}
 			if (login) {
 				chain.doFilter(request, response);
