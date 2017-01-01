@@ -36,6 +36,10 @@
 		select * from order_view where id=#id# and result like '%'||#result#||'%' and oseq=#oseq#
 	</select>
 	
+	<select id="listOrderByOseq" parameterClass="int" resultClass="order">
+		select * from order_view where oseq=#oseq#
+	</select>
+	
 	<select id="selectSeqOrderIng" parameterClass="str" resultClass="int">
 		select distinct oseq from order_view where id=#id# and result='1' order by oseq desc
 	</select>
@@ -53,4 +57,25 @@
 		set result=#result#, deliback=#deliback#, delibacknum=#delibacknum#, payback=#payback# 
 		where oseq=#oseq#
 	</update>
+	<update id="updateOrder" parameterClass="order">
+		update order_detail 
+		set 
+			QUANTITY=#quantity#,
+			RESULT=#result#,
+			PAY=#pay#,
+			PAYYN=#payyn#,
+			DELIVERY=#delivery#,
+			DELIVERYNUM=#deliverynum#,
+			DELIBACK=#deliback#,
+			DELIBACKNUM=#delibacknum#,
+			PAYBACK=#payback#,
+			MNAME=#mname#,
+			ZIPNUM=#zipNum#,
+			ADDRESS=#address#,
+			PHONE=#phone#,
+			SNAME=#sname#,
+			SPHONE=#sphone#,
+		where oseq=#oseq#
+	</update>
+	
 </sqlMap>

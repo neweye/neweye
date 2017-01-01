@@ -97,6 +97,16 @@ public class OrderDAO_iBatis implements OrderDAO {
 	}
 
 	@Override
+	public ArrayList<OrderVO> listOrderByOseq(int oseq)
+			throws SQLException {
+		
+		ArrayList<OrderVO> orderList = (ArrayList<OrderVO>) client
+				.queryForList("listOrderByOseq", oseq);
+
+		return orderList;
+	}
+
+	@Override
 	public ArrayList<Integer> selectSeqOrderIng(String id) throws SQLException {
 		ArrayList<Integer> oseqList = (ArrayList<Integer>) client.queryForList(
 				"selectSeqOrderIng", id);
