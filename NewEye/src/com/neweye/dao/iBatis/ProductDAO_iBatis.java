@@ -69,7 +69,7 @@ public class ProductDAO_iBatis implements ProductDAO {
 		if(!search.getKind().equals("")){
 			key = "&kind="+search.getKind();
 		}else if(!search.getCategory().equals("")){
-			key = "category="+search.getCategory();
+			key = "&category="+search.getCategory();
 		}
 		
 		if(!search.getName().equals("")){
