@@ -39,18 +39,34 @@
 					</tr>
 				</table>
 		<div id="orderInfo">
-			보낸 사람 : <input type="text" name="sname" value="${loginUser.name}"/><br/>
-			연락처 : <input type="text" name="sphone" value="${loginUser.phone}"/><br/>
-			
-			받는 사람 : <input type="text" name="mname" value="${loginUser.name}"/><br/>
-			연락처 : <input type="text" name="phone" value="${loginUser.phone}"/><br/>
-			우편번호: <input name="zipNum" type="text" value="${loginUser.zipNum}" readonly/><input type="button" value="주소 찾기" onclick="post_zip()"><br>
-			주소 : <input name="addr1" type="text" value="${loginUser.address}" readonly/> <input name="addr2" type="text"><br>
-			결제방법 : 
+		<table class="table" id="table_board_left" style="text-align: left;">
+		<tr>
+			<th>보낸 사람 : <input type="text" name="sname" value="${loginUser.name}"/></td>
+		</tr>
+		<tr>
+			<th>연락처 : <input type="text" name="sphone" value="${loginUser.phone}"/></th>
+		</tr>
+		<tr>	
+			<th>받는 사람 : <input type="text" name="mname" value="${loginUser.name}"/></th>
+		</tr>
+		<tr>
+			<th>연락처 : <input type="text" name="phone" value="${loginUser.phone}"/></th>
+		</tr>
+		<tr>
+			<th>우편번호: <input name="zipNum" type="text" value="${loginUser.zipNum}" readonly/>&nbsp;&nbsp;<input type="button" value="주소 찾기" onclick="post_zip()"></th>
+		</tr>
+		<tr>
+			<th>주소 : <input name="addr1" type="text" value="${loginUser.address}" readonly/> <input name="addr2" type="text"></th>
+		</tr>
+		<tr>
+			<th>결제방법 : 
 			<select name="pay" size="1">
 				<option value="우체국">우체국 0123456789</option>
 				<option value="농협">농협 9876543210</option>
 			</select>
+			</th>
+		</tr>
+			</table>
 		</div>
 		<div class="clear"></div>
 		<br><br><br>
