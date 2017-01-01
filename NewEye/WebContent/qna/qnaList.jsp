@@ -9,7 +9,7 @@
 <!-- <div style="height: 500px;" id="board_outside"> -->
 <div id="board_outside">
 	<h2>1:1 고객 게시판</h2>
-	<h3>고객님의 질문에 대해서 운영자가 1:1 답변을 드립니다.</h3>
+	<h4>고객님의 질문에 대해서 운영자가 1:1 답변을 드립니다.</h4>
 	<form name="formm" method="post">
 		<table class="table" id="table_board">
 			<tr style="background-color: #e0e0e0">
@@ -35,9 +35,9 @@
 		<br><br><br>
 		<div id="buttons">
 			<input type="button" value="1:1 질문하기" id="btn_default_org" class="submit"
-				onclick="location.href='qnaWriteForm.ne'"> <input
-				type="button" value="쇼핑 계속하기" id="btn_default_org" class="cancel"
-				onclick="location.href='index.ne'">
+				onclick="location.href='qnaWriteForm.ne'">&nbsp;&nbsp;&nbsp;
+				<input type="button" value="쇼핑 계속하기" id="btn_default_org" class="cancel" onclick="location.href='index.ne'">&nbsp;&nbsp;&nbsp;
+				<a href="mypageForm.ne" class="btn_default_org">마이페이지</a>
 		</div>
 	</form>
 	</div>

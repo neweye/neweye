@@ -9,6 +9,7 @@ table#table_board {
     /* margin-bottom: 20px; */
 }
 
+/*[발굴] 테이블 내의 셀 아래 줄 */
  table#table_board th, td{	
     border-bottom: 1px solid  #d8d8d8; 
 	text-align: center;
