@@ -23,6 +23,7 @@ public class AdminQnaResaveAction implements Action {
 
 		String qseq = request.getParameter("qseq").trim();
 		String reply = request.getParameter("reply").trim();
+		System.out.println(request.getParameter(reply));
 
 		QnaVO qnaVO = new QnaVO();
 		qnaVO.setQseq(Integer.parseInt(qseq));

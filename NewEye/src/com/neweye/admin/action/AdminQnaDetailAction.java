@@ -26,13 +26,13 @@ public class AdminQnaDetailAction implements Action {
     /*QnaDAO qnaDAO = QnaDAO_JDBC.getInstance();*/
     QnaDAO qnaDAO = QnaDAO_iBatis.getInstance();
     QnaVO qnaVO=null;
-	try {
-		qnaVO = qnaDAO.getQna(Integer.parseInt(qseq));
-	} catch (NumberFormatException e) {
-		e.printStackTrace();
-	} catch (SQLException e) {
-		e.printStackTrace();
-	}
+   try {
+      qnaVO = qnaDAO.getQna(Integer.parseInt(qseq));
+   } catch (NumberFormatException e) {
+      e.printStackTrace();
+   } catch (SQLException e) {
+      e.printStackTrace();
+   }
 
     request.setAttribute("qnaVO", qnaVO);
         

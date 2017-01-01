@@ -22,7 +22,6 @@ public class ProductDetailAction implements Action {
 		
 		String pseq=request.getParameter("pseq").trim();
 		
-		/*ProductDAO productDAO=ProductDAO_JDBC.getInstance();*/
 		ProductDAO productDAO=ProductDAO_iBatis.getInstance();
 		ProductVO productVO=null;
 		HttpSession session = request.getSession();

@@ -36,6 +36,7 @@
 <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/color/default.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/css/shopping.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/zzim.css" rel="stylesheet">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -185,6 +186,8 @@
    <script src="<%=request.getContextPath()%>/js/wow.min.js"></script>
    <script src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
    <script src="<%=request.getContextPath()%>/js/nivo-lightbox.min.js"></script>
+   <script src="<%=request.getContextPath()%>/js/zzim.js"></script>
+   <script src="<%=request.getContextPath()%>/js/zzimdetail.js" defer="defer"></script>
    <!-- Custom Theme JavaScript -->
    <script src="<%=request.getContextPath()%>/js/custom.js"></script>
    <script src="<%=request.getContextPath()%>/product/products.js"></script>
