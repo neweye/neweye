@@ -13,9 +13,9 @@ text-align: center;
 
 </style>
 
+<div id="board_outside">
 <article>
 <!-- <div style="height: 500px;" id="board_outside"> -->
-<div id="board_outside">
 		<br> <br>
 		<div id="contract">
 			<h2>My Page(주문 상세 정보)</h2>
@@ -181,7 +181,9 @@ text-align: center;
 				</tr>
 				<tr>
 					<th>주소</th>
-					<td colspan="4">${orderDetail.address}</td>
+					<td colspan="2"><input type="text" name="address" value="${orderDetail.address}"></td>
+					<th>환불계좌</th>
+					<td>${orderDetail.payback}</td>
 				</tr>
 			</table>
 			
@@ -258,29 +260,19 @@ text-align: center;
 						
 						<c:if test="${!empty orderVO.deliback}">
 						<br/> 반송 : 
-						<c:choose>
-							<c:when test="${orderVO.deliback=='대한통운'}">
-							<select name="delibck">
-								<option value="대한통운" selected>대한통운</option>
-								<option value="로젠택배">로젠택배</option>
-							</select>
-							<input type="text" name="delibacknum" value="${orderVO.delibacknum}"/>
-							</c:when>
-							<c:when test="${orderVO.deliback=='로젠택배'}">
-							<select name="delibck">
-								<option value="대한통운">대한통운</option>
-								<option value="로젠택배" selected>로젠택배</option>
-							</select>
-							<input type="text" name="delibacknum" value="${orderVO.delibacknum}"/>
-							</c:when>
-							<c:otherwise>
-							<select name="delibck">
-								<option value="대한통운">대한통운</option>
-								<option value="로젠택배">로젠택배</option>
-							</select>
-							<input type="text" name="delibacknum" value="${orderVO.delibacknum}"/>
-							</c:otherwise>
-						</c:choose>
+							<c:choose>
+								<c:when test="${orderVO.deliback=='대한통운'}">
+								<a href="javascript:void(window.open('https://www.doortodoor.co.kr/parcel/doortodoor.do?fsp_action=PARC_ACT_002&fsp_cmd=retrieveInvNoACT&invc_no=${orderVO.delibacknum}','delivery','width=800,height=800'))">
+								${orderVO.deliback} ${orderVO.delibacknum}</a>
+								</c:when>
+								<c:when test="${orderDetail.deliback=='로젠택배'}">
+								<a href="javascript:void(window.open('http://www.ilogen.com/iLOGEN.Web.New/TRACE/TraceNoView.aspx?slipno=${orderVO.delibacknum}&gubun=slipno','delivery','width=800,height=800'))">
+								${orderVO.deliback} ${orderVO.delibacknum}></a>
+								</c:when>
+								<c:otherwise>
+								반송준비중입니다.
+								</c:otherwise>
+							</c:choose>
 						</c:if>
 					</td>
 					</tr>
@@ -288,29 +280,10 @@ text-align: center;
 			</table>
 			<div class="clear"></div>
 			<div id="buttons" style="float: right">
-				<c:choose>
-					<c:when test='${orderDetail.result<3}'>
-						<input type="button" value="취소하기" class="cancel"
-							onclick="go_order_back_fin()" />
-					</c:when>
-					<c:when test='${orderDetail.result<5}'>
-						<input type="button" value="반품하기" class="cancel" onclick="go_order_back()" />
-					</c:when>
-				</c:choose>
-				<input type="button" value="목록으로" class="cancel" onclick="location.href='adminOrderList.ne'" /> 
-				<br/>
+				<input type="button" value="수정하기" class="cancel" onclick="go_order_admin()" />
+				<input type="button" value="목록으로" class="cancel" onclick="location.href='adminOrderList.ne'" />
 			</div>
 			<br/>
-			<div id="delBack" class="deliveryBackProduct">
-				물품 반송 후 신청 바랍니다 <br/>
-				환불계좌 <input type="text" name="payback"/><br/>
-				<select name="deliveryBack">
-						<option value="대한통운">대한통운</option>
-						<option value="로젠택배">로젠택배</option>
-				</select> 
-				<input type="text" name="deliveryBackNum" placeholder="운송장번호를 입력하세요." /> <br/>
-				<input type="button" value="반품신청" onclick="go_order_back_fin()" /> &nbsp;&nbsp;&nbsp;
-			</div>
 		</form>
 	</article>
 </div>

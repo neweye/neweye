@@ -13,9 +13,9 @@ text-align: center;
 
 </style>
 
+<div id="board_outside">
 	<article>
 <!-- <div style="height: 500px;" id="board_outside"> -->
-<div id="board_outside">
 		<br> <br>
 		<div id="contract">
 			<h2>My Page(주문 상세 정보)</h2>
