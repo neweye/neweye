@@ -5,11 +5,16 @@
 <%-- <%@ include file="/admin/header.jsp"%> --%>
 <%-- <%@ include file="/admin/sub_menu.jsp"%> --%>
 <script type="text/javascript">
-	function go_list() {
+	/* function go_QnAlist() {
 		var theForm = document.frm;
 		theForm.action = "adminQnaList.ne";
 		theForm.submit();
-	}
+	} */
+	
+	function go_QnAlist() { 
+		 document.frm.action = "adminQnaList.ne";
+		 document.frm.submit();
+		}
 
 	function go_rep(qseq) {
 		var theForm = document.frm;
@@ -55,7 +60,7 @@
 						<td class="md_qna_view">${qnaVO.reply}</td>
 					</tr>
 				</table>
-					<input type="button" class="btn" value="목록" onClick="go_list()">
+					<input type="button" class="btn" value="목록" onClick="go_QnAlist()">
 			</c:otherwise>
 		</c:choose>
 		<!-- <input type="button" class="btn" value="목록" onClick="go_list()"> -->
