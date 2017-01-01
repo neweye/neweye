@@ -17,30 +17,21 @@ public class AdminOrderUpdateAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		
 		String url = "adminOrderDetail.ne?oseq="+request.getParameter("oseq");
 		
 		OrderVO orderVO = new OrderVO();
 		orderVO.setOseq(Integer.parseInt(request.getParameter("oseq")));
 		
-
-		if(request.getParameter("quantity")!=null && !request.getParameter("quantity").isEmpty()) 
-			orderVO.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 		if(request.getParameter("result")!=null && !request.getParameter("result").isEmpty()) 
 			orderVO.setResult(request.getParameter("result"));
-		if(request.getParameter("pay")!=null && !request.getParameter("pay").isEmpty()) 
-			orderVO.setPay(request.getParameter("pay"));
 		if(request.getParameter("payyn")!=null && !request.getParameter("payyn").isEmpty()) 
 			orderVO.setPayyn(request.getParameter("payyn"));
 		if(request.getParameter("delivery")!=null && !request.getParameter("delivery").isEmpty()) 
 			orderVO.setDelivery(request.getParameter("delivery"));
 		if(request.getParameter("deliverynum")!=null && !request.getParameter("deliverynum").isEmpty()) 
 			orderVO.setDeliverynum(request.getParameter("deliverynum"));
-		if(request.getParameter("deliback")!=null && !request.getParameter("deliback").isEmpty()) 
-			orderVO.setDeliback(request.getParameter("deliback"));
-		if(request.getParameter("delibacknum")!=null && !request.getParameter("delibacknum").isEmpty()) 
-			orderVO.setDelibacknum(request.getParameter("delibacknum"));
-		if(request.getParameter("payback")!=null && !request.getParameter("payback").isEmpty()) 
-			orderVO.setPayback(request.getParameter("payback"));
 		if(request.getParameter("mname")!=null && !request.getParameter("mname").isEmpty()) 
 			orderVO.setMname(request.getParameter("mname"));
 		if(request.getParameter("zipnum")!=null && !request.getParameter("zipnum").isEmpty()) 
@@ -54,10 +45,9 @@ public class AdminOrderUpdateAction implements Action {
 		if(request.getParameter("sphone")!=null && !request.getParameter("sphone").isEmpty()) 
 			orderVO.setSphone(request.getParameter("sphone"));
 
-		
 		OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
 		try {
-			orderDAO.updateOrderResult(orderVO);
+			orderDAO.updateOrderAdmin(orderVO);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
