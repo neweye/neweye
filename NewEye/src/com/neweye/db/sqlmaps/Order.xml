@@ -51,6 +51,6 @@
 	<update id="updateOrderResult" parameterClass="order">
 		update order_detail 
 		set result=#result#, deliback=#deliback#, delibacknum=#delibacknum#, payback=#payback# 
-		where odseq=#odseq#
+		where oseq=#oseq#
 	</update>
 </sqlMap>
