@@ -46,7 +46,7 @@
 	<select id="listForProductCount" parameterClass="search" resultClass="int">
 		select count(*) from product
 		where kind>0
-		upper(kind) like '%'||upper(#kind#)||'%'
+		and upper(kind) like '%'||upper(#kind#)||'%'
 		and upper(first_level) like '%'||upper(#category#)||'%'
 		and upper(name) like '%'||upper(#name#)||'%'
 		and upper(useyn) like '%'||upper(#useyn#)||'%'
