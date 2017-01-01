@@ -52,11 +52,12 @@ text-align: center;
 	font-size:14px;
 	font-weight:bold;
 	font-style:normal;
-	height:26px;
-	line-height:26px;
+	height:30px; /* 26px였음 */
+	line-height:30px; /* 26px였음 */
 	width:112px;
 	text-decoration:none;
 	text-align:center;
+	vertical-align:middle; /* 이거 왜 안먹힐까 */
 	text-shadow:1px 0px 0px #cd8a15;
 }
 .btn_default_org:hover {
