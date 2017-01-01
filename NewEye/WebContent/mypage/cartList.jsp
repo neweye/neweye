@@ -11,8 +11,8 @@
 <article>
 <div id="board_outside">
    <div id="contract">
-      <h2>장바구니</h2>
-      <h4>Cart List</h4>
+      <h2>Cart List</h2>
+      <h4>장바구니</h4>
    </div>
 
 	<form name="formm" method="post">

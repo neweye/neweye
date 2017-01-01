@@ -7,7 +7,8 @@
 
 <article>
 <div id="board_outside">
-	<h2>My Page(${title})</h2>
+	<h2>Order List</h2>
+	<h4>${title}</h4>
 	<form name="formm" method="post">
 		<table class="table" id="table_board">
 			<tr style="background-color: #e0e0e0">
