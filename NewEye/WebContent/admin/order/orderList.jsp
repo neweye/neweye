@@ -129,6 +129,7 @@
 						<td>${orderVO.address}</td>
 						<td>${orderVO.phone}</td>
 						<td><fmt:formatDate value="${orderVO.indate }" type="date" /></td>
+						<%-- <td><fmt:formatDate value="${orderVO.indate}" pattern="yyyy-MM-dd" /></td> --%>
 					</tr>
 				</c:forEach>
 			</table>

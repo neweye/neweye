@@ -152,7 +152,7 @@ text-align: center;
 				<c:choose>
 					<c:when test='${orderDetail.result<3}'>
 						<input type="button" value="취소하기" class="cancel"
-							onclick="go_order_delete()" />
+							onclick="go_order_back_fin()" />
 					</c:when>
 					<c:when test='${orderDetail.result<5}'>
 						<input type="button" value="반품하기" class="cancel" onclick="go_order_back()" />
