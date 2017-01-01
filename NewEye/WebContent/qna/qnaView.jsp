@@ -16,7 +16,7 @@ $(function() {
   <div id="board_outside">
       <h2> 1:1 고객 게시판 </h2>
     <form name="formm" method="post">
-    <table id="notice" class="table_qna_form">
+    <table class="table_qna_form">
       <tr>
               <td class="sm_qna_view"><label>제목</label></td>
               <td class="md_qna_view">${qnaVO.subject}</td> 
@@ -37,8 +37,8 @@ $(function() {
     </table>
     <div class="clear"></div>
      <div id="buttons">
-      <input type="button"  value="목록보기"     class="submit"  onclick="location.href='qnaList.ne'"> 
-      <input type="button"  value="쇼핑 계속하기"  class="cancel"  onclick="location.href='index.ne'">  
+      <input type="button"  value="목록보기"     class="submit btn_default_org"  onclick="location.href='qnaList.ne'">&nbsp;&nbsp;&nbsp;
+      <input type="button"  value="쇼핑 계속하기"  class="cancel btn_default_org"  onclick="location.href='index.ne'">  
       </div>
     </form>
     </div>

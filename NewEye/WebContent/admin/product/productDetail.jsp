@@ -82,7 +82,7 @@ td.td_product_add{
      <th class="th_product_add">상품이미지</th>
      <td class="td_product_add" colspan="5">
   <!--[7] 상품 이미지를 출력하기 -->     
-     <img src="<c:url value="/productimg"/>/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'" width="200pt" />    
+     <img class="sm_img_admin_product"  src="<c:url value="/productimg"/>/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'" />    
      </td>
     </tr>
   
@@ -91,8 +91,8 @@ td.td_product_add{
    <th class="th_product_add">대분류</th>
    <td class="td_product_add">${productVO.first_level}</td>
    <th class="th_product_add">중분류</th>
-   <td class="td_product_add" colspan="3">${productVO.second_level}</td>
-   
+   <td class="td_product_add">${productVO.second_level}</td>
+   <th></th><th></th>
    
 </tr> 
 <tr>
@@ -114,18 +114,10 @@ td.td_product_add{
      ${productVO.quantity}
   </td>
    
-<th  class="th_product_add">판매 여부</th>
+<th class="th_product_add">판매 여부</th>
   <td  class="td_product_add">
      ${productVO.useyn}
-  
- <%--  이건 상품디테일에서<c:if test="${productVO.useyn=='Y'||'y'}">
-     <input type="radio" name="useyn" checked="checked"> 판매
-     <input type="radio" name="useyn" > 판매중단
-    </c:if>
-    <c:if test="${productVO.useyn=='N'||'n'}">
-     <input type="radio" name="useyn" > 판매
-     <input type="radio" name="useyn" checked="checked"> 판매중단
-    </c:if>  --%> 
+
   </td>   
 </tr>
 
@@ -189,7 +181,8 @@ td.td_product_add{
   <th class="th_product_add">무게</th>
   <td class="td_product_add">${productVO.weight}</td>
   <th class="th_product_add">포맷형태</th>
-    <td class="td_product_add" colspan="3">${productVO.format}</td>
+    <td class="td_product_add" >${productVO.format}</td>
+    <th></th><th></th>
   </tr>
   
     <tr>
@@ -255,10 +248,10 @@ td.td_product_add{
      <th class="th_product_add">상세이미지</th>
      <td class="td_product_add" colspan="5">
   <!--[7] 상품 이미지를 출력하기 -->     
-     <img src="<c:url value="/productimg"/>/${productVO.img_detail}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'" width="200pt" />    
+     <img class="sm_img_admin_product"  src="<c:url value="/productimg"/>/${productVO.img_detail}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'" />    
      </td>
     </tr> 
-  
+
 <%-- </c:if>   --%>
 
   
@@ -269,7 +262,7 @@ td.td_product_add{
  
 </table>
 <!--[8] 수정 버튼이 눌리면 상품 수정 페이지로 이동하되 현재 페이지와 상품 일련번호 값을 전달해 준다. --> 
-<input class="btn"  type="button" value="수정" onClick="go_mod('${tpage}','${productVO.pseq}')">
+<input class="btn"  type="button" value="수정" onClick="go_mod('${tpage}','${productVO.pseq}')">&nbsp;&nbsp;&nbsp;
 <!--[9] 목록 버튼이 눌리면 상품 리스트 페이지로 이동하되 현재 페이지를 전달해 준다. --> 
 <input class="btn"  type="button" value="목록" onClick="go_list('${tpage}')">           
 </form>

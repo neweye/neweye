@@ -727,6 +727,12 @@ a.btn:hover {
 #contract{
     text-align: center;
 }
+
+img.sm_img_admin_product{
+	width: 180px;
+	margin: 10px 0 10px 0;
+	
+}
 </style>
 <body>
 </body>
