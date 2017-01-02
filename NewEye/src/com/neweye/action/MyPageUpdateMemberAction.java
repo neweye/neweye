@@ -40,8 +40,8 @@ public class MyPageUpdateMemberAction implements Action {
       } catch (SQLException e) {
          e.printStackTrace();
       }
-      
-      request.setAttribute("loginUser", updatemember);
+            
+      session.setAttribute("loginUser", updatemember);
       request.setAttribute("message", message);   
 
       return url;
