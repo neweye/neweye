@@ -18,6 +18,9 @@ public class AdminMemberUpdateAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("utf-8");
+		
 		String url = "adminMemberList.ne";
 		String message = "fail";
 		HttpSession session = request.getSession();
