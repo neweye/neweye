@@ -18,7 +18,9 @@ public class AdminQnaDetailAction implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-
+	  
+	//request.setCharacterEncoding("utf-8");
+	  
     String url = "qna/qnaDetail.jsp";
 
     String qseq = request.getParameter("qseq").trim();
