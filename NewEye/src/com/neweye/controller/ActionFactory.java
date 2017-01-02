@@ -19,7 +19,6 @@ import com.neweye.action.OrderDetailAction;
 import com.neweye.action.OrderInsertAction;
 import com.neweye.action.OrderListAction;
 import com.neweye.action.ProductDetailAction;
-import com.neweye.action.ProductKindAction;
 import com.neweye.action.QnaListAction;
 import com.neweye.action.QnaViewAction;
 import com.neweye.action.QnaWriteAction;
@@ -58,8 +57,6 @@ public class ActionFactory {
 			action = new IndexAction();
 		} else if (command.equals("product_detail")) {
 			action = new ProductDetailAction();
-		} else if (command.equals("catagory")) {
-			action = new ProductKindAction();
 		} else if (command.equals("contract")) {
 			action = new ContractAction();
 		} else if (command.equals("join_form")) {

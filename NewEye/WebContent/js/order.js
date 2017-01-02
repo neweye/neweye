@@ -9,3 +9,7 @@ function go_order_search() {
 	theForm.action = "adminOrderSearch.ne?key=" + key;
 	theForm.submit();
 }
+function go_order_admin(){
+	document.formm.action = "adminOrderUpdate.ne";
+	document.formm.submit();
+}

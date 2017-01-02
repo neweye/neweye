@@ -62,9 +62,14 @@ function go_order_delete() {
 }
 
 function go_order_back() {
-	$('#delBack').removeClass('deliveryBackProduct');
-	/*document.formm.action = "orderDelete.ne";
-	document.formm.submit();*/
+	$('#delBack').toggle(
+			function(){$('#delBack').removeClass('deliveryBackProduct');}
+	);
+	/*removeClass('deliveryBackProduct');*/
+}
+function go_order_back_fin() {
+	document.formm.action = "orderDelete.ne";
+	document.formm.submit();
 }
 
 function go_order() {
@@ -73,5 +78,9 @@ function go_order() {
 }
 function go_mypage(){
 	document.formm.action = "mypageMember.ne";
+	document.formm.submit();
+}
+function go_order_perfect(){
+	document.formm.action = "orderList.ne";
 	document.formm.submit();
 }

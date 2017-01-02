@@ -5,92 +5,12 @@
 <%-- <%@ include file="../header.jsp" %> --%>
 
 
-
-<style>
-table#cartList {
-    border-collapse:collapse;    /* border 사이의 간격 없앰 */
-    border-top: 2px solid  #8c8c8c;    
-    border-bottom: 1px solid  #8c8c8c; 
-     width:1500px;                  /* 전체 테이블 길이 설정 */ 
-    margin-bottom: 20px;
-}
-
- table#cartList th, td{	
-    border-bottom: 1px solid  #d8d8d8; 
-	text-align: center;
-} 
-
-div#ceeeee{
-border: 1px solid white; 
-margin: auto; 
-text-align: center;
-}
-
-
-
-
-.classname {
-	-moz-box-shadow:inset 0px 1px 8px 0px #fed897;
-	-webkit-box-shadow:inset 0px 1px 8px 0px #fed897;
-	box-shadow:inset 0px 1px 8px 0px #fed897;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e69215), color-stop(1, #e09626) );
-	background:-moz-linear-gradient( center top, #e69215 5%, #e09626 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e69215', endColorstr='#e09626');
-	background-color:#e69215;
-	-webkit-border-top-left-radius:6px;
-	-moz-border-radius-topleft:6px;
-	border-top-left-radius:6px;
-	-webkit-border-top-right-radius:6px;
-	-moz-border-radius-topright:6px;
-	border-top-right-radius:6px;
-	-webkit-border-bottom-right-radius:6px;
-	-moz-border-radius-bottomright:6px;
-	border-bottom-right-radius:6px;
-	-webkit-border-bottom-left-radius:6px;
-	-moz-border-radius-bottomleft:6px;
-	border-bottom-left-radius:6px;
-	text-indent:0;
-	display:inline-block;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:14px;
-	font-weight:bold;
-	font-style:normal;
-	height:26px;
-	line-height:26px;
-	width:112px;
-	text-decoration:none;
-	text-align:center;
-	text-shadow:1px 0px 0px #cd8a15;
-}
-.classname:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e09626), color-stop(1, #e69215) );
-	background:-moz-linear-gradient( center top, #e09626 5%, #e69215 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e09626', endColorstr='#e69215');
-	background-color:#e09626;
-}.classname:active {
-	position:relative;
-	top:1px;
-}
-
-
-
-
-</style>
-
-
-
-
-
-
-
-<div style="height: 700px;" id="ceeeee">
-	<br>
-	<br>
 <article>
-	<h2>My Page(${title})</h2>
+<div id="board_outside">
+	<h2>Order List</h2>
+	<h4>${title}</h4>
 	<form name="formm" method="post">
-		<table  style="margin: auto; text-align: center;" id="cartList">
+		<table class="table" id="table_board">
 			<tr style="background-color: #e0e0e0">
 				<th>주문일자</th>
 				<th>주문번호</th>
@@ -125,13 +45,14 @@ text-align: center;
 		
 		<br><br><br>
 		<div id="buttons">
-		<a href="index.ne" class="classname">쇼핑계속하기</a>
+		<a href="index.ne" class="btn_default_org">쇼핑계속하기</a>&nbsp;&nbsp;&nbsp;
+		<a href="mypage.ne" class="btn_default_org">진행중인 주문</a>&nbsp;&nbsp;&nbsp;
+		<a href="orderAll.ne" class="btn_default_org">총 주문내역</a>&nbsp;&nbsp;&nbsp;
+		<a href="mypageForm.ne" class="btn_default_org">마이페이지</a>
 			<!-- <input type="button" value="쇼핑 계속하기" class="cancel"
 				onclick="location.href='index.ne'"> -->
 		</div>
 	</form>
-</article>
 </div>
-<br>
-<br>
+</article>
 <%-- <%@ include file="../footer.jsp"%> --%>

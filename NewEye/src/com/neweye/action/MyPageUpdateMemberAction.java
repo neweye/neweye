@@ -41,6 +41,7 @@ public class MyPageUpdateMemberAction implements Action {
          e.printStackTrace();
       }
       
+      request.setAttribute("loginUser", updatemember);
       request.setAttribute("message", message);   
 
       return url;

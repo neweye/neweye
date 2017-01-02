@@ -10,29 +10,27 @@
 		document.frm.submit();
 	}
 </script>
-
+<article>
+<div id="board_outside">
 <h2>MemberList</h2>
 <form name="frm" method="post">
-<table class="table">
-	<thead>
+<table class="table" id="table_board">
 		<tr>
-			<th>주문자이름 <input type="text" name="key">
-				<button type="submit" class="btn btn-skin btn-block"
-					onclick="go_order_search()">검색</th>
+			<td id="td_table_board">주문자이름 <input type="text" name="key">&nbsp;&nbsp;&nbsp;
+				<button type="submit" class="btn"onclick="go_order_search()" >검색</button></td> <!-- class="btn btn-skin btn-block" -->
 		</tr>
-	</thead>
-	<tbody>
-		<tr class="active">
+ </table>
+<table class="table" id="table_board">
+    <tr class="active" style="background-color: #e0e0e0">
 			<th>탈퇴여부</th>
 			<th>아이디</th>
 			<th>이름</th>
 			<th>비밀번호</th>
-			<th>우편번호</th>
 			<th>이메일</th>
 			<th>주소</th>
 			<th>전화</th>
 			<th>가입일</th>
-			<th>수정/탈퇴</th>
+			<th>구분</th>
 		</tr>
 	</tbody>
 	<c:forEach items="${memberList}" var="memberVO">
@@ -54,7 +52,6 @@
 			<td>${memberVO.id}</td>
 			<td>${memberVO.name}</td>
 			<td>${memberVO.password}</td>
-			<td>${memberVO.zipNum}</td>
 			<td>${memberVO.email}</td>
 			<td>${memberVO.address}</td>
 			<td>${memberVO.phone}</td>
@@ -63,10 +60,10 @@
 		</tr>
 	</c:forEach>
 </table>
-</div>
 </form>
-</body>
-</html>
+</div>
+</article>
+
 <%-- <h1>회원리스트</h1>  
 <form name="frm" method="post">
 <table style="float:right; ">

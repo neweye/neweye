@@ -5,21 +5,22 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 
 <article>
-<h1>상품리스트</h1>   
+<div id="board_outside">
+<h2>상품리스트</h2>   
 <form name="frm" method="post">
-<table class="table">
+<table class="table" id="table_board">
   <tr>
-  <td width="642">
-      상품명 
-     <input type="text" name="key">
-     <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">
-     <input class="btn" type="button" name="btn_total" value="전체보기 " onClick="go_total()">
-     <input class="btn" type="button" name="btn_write" value="상품등록" onClick="go_wrt()">
+  <td id="td_table_board">
+      상품명&nbsp;&nbsp;&nbsp;
+     <input type="text" name="key">&nbsp;&nbsp;&nbsp;
+     <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">&nbsp;&nbsp;
+     <input class="btn" type="button" name="btn_total" value="전체보기 " onClick="go_total()">&nbsp;&nbsp;
+     <input class="btn btn-skin" type="button" name="btn_write" value="상품등록" onClick="go_wrt()">&nbsp;&nbsp;
   </td>
   </tr>
-</table>
-<table id="productList" class="table">
-    <tr>
+  </table>
+<table class="table" id="table_board">
+    <tr style="background-color: #e0e0e0">
         <th>번호</th>
         <th>상품명</th>
         <th>판매가</th>
@@ -58,12 +59,10 @@
       <th><a href="adminProductUpdateForm.ne?pseq=${productVO.pseq}">수정</a>/<a href="adminDelete.ne?pseq=${productVO.pseq}">삭제</a></th>
     </tr>
     </c:forEach>
-    <tr><td colspan="6" style="text-align: center;"> ${paging} </td></tr>
+    <tr style="border-bottom:0;"><td colspan="7" style="border-bottom:0;text-align:center;"> ${paging}</td></tr>
    </c:otherwise>   
 </c:choose>  
 </table>
 </form> 
+</div>
 </article>
-</body>
-
-</html>

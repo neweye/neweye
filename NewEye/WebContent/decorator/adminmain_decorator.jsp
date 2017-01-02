@@ -35,6 +35,7 @@
 <link href="<%=request.getContextPath()%>/css/animate.css" rel="stylesheet" />
 <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/color/default.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/shopping.css" rel="stylesheet">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -72,8 +73,8 @@
                         <li class="active">
                         <a href="adminProductList.ne">상품리스트</a></li>
                         <li><a href="adminOrderList.ne">주문리스트</a></li>
-                        <li><a href="adminMemberList.ne">ADMIN</a></li>
                         <li><a href="adminMemberList.ne">회원리스트</a></li>
+                        <li><a href="adminQnaList.ne">Q&amp;A리스트</a></li>
                         <!-- <li><a href="adminQnaList.ne">Q&amp;A리스트</a></li> -->
                         <li><a href="adminLogout.ne">LOGOUT</a></li>
                      </ul>
@@ -123,12 +124,12 @@
    <script src="<%=request.getContextPath()%>/js/nivo-lightbox.min.js"></script>
    <!-- Custom Theme JavaScript -->
    <script src="<%=request.getContextPath()%>/js/custom.js"></script>
-   <script src="<%=request.getContextPath()%>/contactform/contactform.js"></script>
    <script src="<%=request.getContextPath()%>/product/products.js"></script>
    <script src="<%=request.getContextPath()%>/mypage/mypage01.js"></script>
    <script src="<%=request.getContextPath()%>/member/member01.js"></script>
    <script src="<%=request.getContextPath()%>/admin/product/product01.js"></script>
    <script src="<%=request.getContextPath()%>/js/order.js"></script>
+   <script src="<%=request.getContextPath()%>/js/qna.js"></script>
 
 </body>
 

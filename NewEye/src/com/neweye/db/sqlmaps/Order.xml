@@ -18,16 +18,26 @@
 	</select>	
 	
 	<insert id="insertOrderDetail" parameterClass="order" >
-		insert into order_detail(odseq, oseq,pseq, quantity)
-		 values(order_detail_seq.nextval,#oseq#, #pseq#, #quantity#)
+		insert into order_detail(ODSEQ,OSEQ,PSEQ,QUANTITY,RESULT,PAY,PAYYN,
+		MNAME,ZIPNUM,ADDRESS,PHONE,SNAME,SPHONE)
+		 values(order_detail_seq.nextval,#oseq#, #pseq#, #quantity#,'1',#pay#,'n',
+		 #mname#,#zipNum#,#address#,#phone#,#sname#,#sphone#)
 	</insert>
 	
 	<update id="updateCartResult" parameterClass="int">
 		update cart set result=2 where cseq=#cseq#
 	</update>
 	
+	<delete id="deleteCartResult" parameterClass="int">
+		delete from cart where cseq=#cseq#
+	</delete>
+	
 	<select id="listOrderById" parameterClass="order" resultClass="order">
 		select * from order_view where id=#id# and result like '%'||#result#||'%' and oseq=#oseq#
+	</select>
+	
+	<select id="listOrderByOseq" parameterClass="int" resultClass="order">
+		select * from order_view where oseq=#oseq#
 	</select>
 	
 	<select id="selectSeqOrderIng" parameterClass="str" resultClass="int">
@@ -43,6 +53,32 @@
 	</select>
 	
 	<update id="updateOrderResult" parameterClass="order">
-		update order_detail set result=#result# where odseq=#odseq#
+		update order_detail 
+		set result=#result#, deliback=#deliback#, delibacknum=#delibacknum#, payback=#payback# 
+		where oseq=#oseq#
+	</update>
+	<update id="updateOrder" parameterClass="order">
+		update order_detail 
+		set 
+			RESULT=#result#,
+			DELIBACK=#deliback#,
+			DELIBACKNUM=#delibacknum#,
+			PAYBACK=#payback#
+		where oseq=#oseq#
+	</update>
+	<update id="updateOrderAdmin" parameterClass="order">
+		update order_detail 
+		set 
+			RESULT=#result#,
+			PAYYN=#payyn#,
+			DELIVERY=#delivery#,
+			DELIVERYNUM=#deliverynum#,
+			MNAME=#mname#,
+			ZIPNUM=#zipNum#,
+			ADDRESS=#address#,
+			PHONE=#phone#,
+			SNAME=#sname#,
+			SPHONE=#sphone#
+		where oseq=#oseq#
 	</update>
 </sqlMap>

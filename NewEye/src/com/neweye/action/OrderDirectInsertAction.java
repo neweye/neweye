@@ -2,6 +2,7 @@ package com.neweye.action;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -11,38 +12,43 @@ import javax.servlet.http.HttpSession;
 
 import com.neweye.dao.CartDAO;
 import com.neweye.dao.OrderDAO;
+import com.neweye.dao.ProductDAO;
 import com.neweye.dao.iBatis.CartDAO_iBatis;
 import com.neweye.dao.iBatis.OrderDAO_iBatis;
+import com.neweye.dao.iBatis.ProductDAO_iBatis;
 import com.neweye.dto.CartVO;
 import com.neweye.dto.MemberVO;
+import com.neweye.dto.ProductVO;
 
 public class OrderDirectInsertAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		String url = "orderList.ne";
-
-		HttpSession session = request.getSession();
-		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
-		if (loginUser == null) {
-			url = "loginForm.ne";
-		} else {
-			ArrayList<CartVO> cartList =new ArrayList<CartVO>();
-			CartVO cartVO = new CartVO();
-			cartVO.setId(loginUser.getId());
-			cartVO.setPseq(Integer.parseInt(request.getParameter("pseq")));
-			cartVO.setQuantity(Integer.parseInt(request
-					.getParameter("quantity")));
-			cartList.add(cartVO);
-			OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
-			try {				 
-				int maxOseq = orderDAO.insertOrder(cartList, loginUser.getId());
-				url = "orderList.ne?oseq=" + maxOseq;
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+		String url = "mypage/orderInsert.jsp";
+		
+		ArrayList<CartVO> cartList = new ArrayList<CartVO>();
+		
+		ProductDAO productDAO=ProductDAO_iBatis.getInstance();
+		ProductVO productVO=null;
+		CartVO cartVO = new CartVO();
+		
+		try {
+			productVO= productDAO.getProduct(request.getParameter("pseq"));
+		} catch (SQLException e) {			
+			e.printStackTrace();
 		}
+		
+		cartVO.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+		cartVO.setPseq(productVO.getPseq());
+		cartVO.setPname(productVO.getName());
+		cartVO.setPrice(productVO.getPrice());
+		cartVO.setIndate(new Timestamp(System.currentTimeMillis()));
+		cartList.add(cartVO);
+		
+		request.setAttribute("totalPrice", cartVO.getPrice());
+		request.setAttribute("cartList", cartList);
+		
 		return url;
 	}
 }

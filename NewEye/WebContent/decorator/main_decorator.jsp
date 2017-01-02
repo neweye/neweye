@@ -35,6 +35,8 @@
 <link href="<%=request.getContextPath()%>/css/animate.css" rel="stylesheet" />
 <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/color/default.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/shopping.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/zzim.css" rel="stylesheet">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -61,7 +63,7 @@
 						<div class="collapse navbar-collapse" id="menu">
 							<ul class="nav navbar-nav">
 								<li class="active">
-										<a href="#intro">Home</a>
+										<a href="<%=request.getContextPath() %>/index.ne">Home</a>
 								</li>
 								<li>
 									|&nbsp;&nbsp;&nbsp;
@@ -106,6 +108,7 @@
 										    <p><a href="cartList.ne">장바구니</a></p>
 										    <p><a href="orderAll.ne">주문조회</a></p>
 										    <p><a href="mypageMember.ne">회원정보</a></p>
+										    <p><a href="qnaList.ne">Q&A</a></p>
 										</div>
 									</div>&nbsp;&nbsp;&nbsp;
 								</li>
@@ -183,12 +186,14 @@
    <script src="<%=request.getContextPath()%>/js/wow.min.js"></script>
    <script src="<%=request.getContextPath()%>/js/owl.carousel.min.js"></script>
    <script src="<%=request.getContextPath()%>/js/nivo-lightbox.min.js"></script>
+   <script src="<%=request.getContextPath()%>/js/zzim.js"></script>
+   <script src="<%=request.getContextPath()%>/js/zzimdetail.js" defer="defer"></script>
    <!-- Custom Theme JavaScript -->
    <script src="<%=request.getContextPath()%>/js/custom.js"></script>
-   <script src="<%=request.getContextPath()%>/contactform/contactform.js"></script>
    <script src="<%=request.getContextPath()%>/product/products.js"></script>
    <script src="<%=request.getContextPath()%>/mypage/mypage01.js"></script>
    <script src="<%=request.getContextPath()%>/member/member01.js"></script>
+   <script src="<%=request.getContextPath()%>/js/qna.js"></script>
    
 </body>
 

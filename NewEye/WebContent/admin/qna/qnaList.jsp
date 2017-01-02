@@ -14,11 +14,12 @@
 </script>
 
 <article>
-	<h1>Q&amp;A 게시글 리스트</h1>
+<div id="board_outside">
+	<h2>Q&amp;A 리스트</h2>
 	<form name="frm" method="post">
 		<input type="hidden" name="qseq">
-		<table id="orderList">
-			<tr>
+		<table class="table" id="table_board">
+			<tr style="background-color: #e0e0e0">
 				<th>번호(답변여부)</th>
 				<th>제목</th>
 				<th>작성자</th>
@@ -39,6 +40,7 @@
 			</c:forEach>
 		</table>
 	</form>
+	</div>
 </article>
 <%-- <%@ include file="/admin/footer.jsp"%> --%>
 </body>

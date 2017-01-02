@@ -2,6 +2,25 @@
   pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<%-- <%@ include file="/admin/header.jsp"%> --%>
+<%-- <%@ include file="/admin/sub_menu.jsp"%> --%>
+
+<script>
+function do_submit_dsearch(){
+	var theForm = document.frm;
+	theForm.action = "ProductDetailSearch.ne?name="+name;
+	theForm.target=name; //삽질
+	theForm.method="post";//삽질
+	theForm.submit();
+	self.close();
+	   }
+function do_close_dsearch(){
+	    	self.close();
+	   }
+
+</script>
+
+
 <style>
 article.productWrite_jsp{
    margin: auto;
@@ -57,9 +76,29 @@ td.td_product_add{
 
 
 </style>
+
+
+<!-- 
+<article class="productWrite_jsp">
+
+<h1 style="margin:20px 0">상품상세검색</h1>  
+
+<form name="frm" method="post" enctype="multipart/form-data">
+ -->
 <table class="admin_product_write" id="list">
+<%-- <tr><td colspan="6" style="text-align:right;">
+  <select name="kind">
+  <option value="">선택</option>
+    <c:forEach items="${kindList}" var="kind" varStatus="status">
+      <option value="${status.count}">${kind}</option>
+
+   </c:forEach>
+  </select>
+</td></tr> --%>
 <tr>
   <th class="th_product_add" id="product_add_kind" colspan="6">상품분류</th></tr>
+
+ 
 
   <!-- //////////////////////////////////////// -->     
 <tr>
@@ -70,16 +109,15 @@ td.td_product_add{
   
 <th class="th_product_add">가격</th>
   <td class="td_product_add">
-    <input type="text" class="p_input_common2" name="min_price" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_price" onKeyUp='NumFormat(this)'>
+    <input type="text" class="p_input_common2" name="min_price" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_price" value="99999999" onKeyUp='NumFormat(this)'>
     
   </td>
   
    
 <th  class="th_product_add">판매 여부</th>
   <td  class="td_product_add">
-     <input type="radio" name="useyn" value="" checked="checked"> 전부
-     <input type="radio" name="useyn" value="Y"> 판매
+     <input type="radio" name="useyn" value="Y" checked="checked"> 판매
      <input type="radio" value="N" name="useyn" > 품절
   </td>   
 </tr>
@@ -94,14 +132,13 @@ td.td_product_add{
 <tr>
    <th class="th_product_add">무게</th>
   <td class="td_product_add">
-     <input type="text" class="p_input_common2" name="min_weight" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_weight" onKeyUp='NumFormat(this)'>
+     <input type="text" class="p_input_common2" name="min_weight" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_weight" value="9999" onKeyUp='NumFormat(this)'>
   </td>
   <th class="th_product_add">센서크기</th>
     <td class="td_product_add">
-     <input type="radio" value="" name="ratio" checked="checked" > 전부
-     <input type="radio" value="1"  name="ratio" > 1:1
-     <input type="radio" value="1.5"  name="ratio"> 1:1.5
+      <input type="radio" value="1"  name="ratio" > 1:1
+     <input type="radio" value="1.5"  name="ratio" checked="checked"> 1:1.5
     </td>
   </tr>
   
@@ -109,36 +146,36 @@ td.td_product_add{
   <tr>
   <th class="th_product_add">화소</th>
   <td class="td_product_add">
-    <input type="text" class="p_input_common2" name="min_pixel" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_pixel" onKeyUp='NumFormat(this)'>
+    <input type="text" class="p_input_common2" name="min_pixel" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_pixel" value="9999" onKeyUp='NumFormat(this)'>
   </td>
   <th class="th_product_add">ISO</th>
   <td class="td_product_add">
-     <input type="text" class="p_input_common2" name="min_iso" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_iso" onKeyUp='NumFormat(this)'>
+     <input type="text" class="p_input_common2" name="min_iso" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_iso" value="99999" onKeyUp='NumFormat(this)'>
   </td>
   <th class="th_product_add">셔터스피드</th>
     <td class="td_product_add">
-      1/<input type="text" class="p_input_common2" name="min_speed" onKeyUp='NumFormat(this)'> ~ 
-    1/<input type="text" class="p_input_common2" name="max_speed" onKeyUp='NumFormat(this)'>
+      1/<input type="text" class="p_input_common2" name="min_speed" value="0" onKeyUp='NumFormat(this)'> ~ 
+    1/<input type="text" class="p_input_common2" name="max_speed" value="99999" onKeyUp='NumFormat(this)'>
     </td>
   </tr>
   
     <tr>
   <th class="th_product_add">화면크기</th>
   <td class="td_product_add">
-    <input type="text" class="p_input_common2" name="min_screen" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_screen" onKeyUp='NumFormat(this)'>
+    <input type="text" class="p_input_common2" name="min_screen" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_screen" value="99" onKeyUp='NumFormat(this)'>
   </td>
   <th class="th_product_add">동영상프레임</th>
   <td class="td_product_add">
-     <input type="text" class="p_input_common2" name="min_movframe" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_movframe" onKeyUp='NumFormat(this)'> 매
+     <input type="text" class="p_input_common2" name="min_movframe" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_movframe" value="999" onKeyUp='NumFormat(this)'> 매
   </td>
   <th class="th_product_add">연속촬영속도</th>
     <td class="td_product_add">
-      <input type="text" class="p_input_common2" name="min_seqpictures" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_seqpictures" onKeyUp='NumFormat(this)'> 매
+      <input type="text" class="p_input_common2" name="min_seqpictures" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_seqpictures" value="99" onKeyUp='NumFormat(this)'> 매
     </td>
   </tr>
   
@@ -157,22 +194,21 @@ td.td_product_add{
   <tr>
   <th class="th_product_add">무게</th>
   <td class="td_product_add">
-     <input type="text" class="p_input_common2" name="min_weight" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name=max_weight onKeyUp='NumFormat(this)'>g 
+     <input type="text" class="p_input_common2" name="min_weight" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name=max_weight value="9999" onKeyUp='NumFormat(this)'>g 
       </td>
   <th class="th_product_add">포맷형태</th>
     <td class="td_product_add" colspan="3">
-      <input type="radio" value="" name="format"  checked="checked"> 전부
       <input type="radio" value="FX" name="format" > FX
-     <input type="radio" value="DX" name="format"> DX
+     <input type="radio" value="DX" name="format" checked="checked"> DX
     </td>
   </tr>
   
     <tr>
   <th class="th_product_add">필터 구경</th>
   <td class="td_product_add">
-    <input type="text" class="p_input_common2" name="min_filter" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_filter" onKeyUp='NumFormat(this)'>mm
+    <input type="text" class="p_input_common2" name="min_filter" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_filter" value="999" onKeyUp='NumFormat(this)'>mm
   </td>
   <th class="th_product_add">렌즈 기능</th>
   <td class="td_product_add">
@@ -180,8 +216,7 @@ td.td_product_add{
   </td>
   <th class="th_product_add">줌 여부</th>
     <td class="td_product_add">
-      <input type="radio" value="" name="zoomyn" checked="checked"> 전부
-      <input type="radio" value="Y" name="zoomyn"> 가능
+      <input type="radio" value="Y" name="zoomyn" checked="checked"> 가능
      <input type="radio" value="N" name="zoomyn" > 불가능
     </td>
   </tr>
@@ -189,31 +224,31 @@ td.td_product_add{
       <tr>
   <th class="th_product_add">최소 초점거리</th>
   <td class="td_product_add">
-    <input type="text" class="p_input_common2" name="min_minfocus" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_minfocus" onKeyUp='NumFormat(this)'>
+    <input type="text" class="p_input_common2" name="min_minfocus" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_minfocus" value="999" onKeyUp='NumFormat(this)'>
   </td>
   <th class="th_product_add">최대 초점거리</th>
   <td class="td_product_add">
-     <input type="text" class="p_input_common2" name="min_maxfocus" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_maxfocus" onKeyUp='NumFormat(this)'>
+     <input type="text" class="p_input_common2" name="min_maxfocus" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_maxfocus" value="999" onKeyUp='NumFormat(this)'>
   </td>
   <th class="th_product_add">최소 촬영거리</th>
     <td class="td_product_add">
-    <input type="text" class="p_input_common2" name="min_distance" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_distance" onKeyUp='NumFormat(this)'>
+    <input type="text" class="p_input_common2" name="min_distance" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_distance" value="999" onKeyUp='NumFormat(this)'>
     </td>
   </tr>
   
       <tr>
   <th class="th_product_add">최소 조리개</th>
   <td class="td_product_add">
-    <input type="text" class="p_input_common2" name="min_minaperture" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_minaperture" onKeyUp='NumFormat(this)'>
+    <input type="text" class="p_input_common2" name="min_minaperture" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_minaperture" value="99" onKeyUp='NumFormat(this)'>
   </td>
   <th class="th_product_add">최대 조리개</th>
   <td class="td_product_add">
-     <input type="text" class="p_input_common2" name="min_maxaperture" onKeyUp='NumFormat(this)'> ~ 
-    <input type="text" class="p_input_common2" name="max_maxaperture" onKeyUp='NumFormat(this)'>
+     <input type="text" class="p_input_common2" name="min_maxaperture" value="0" onKeyUp='NumFormat(this)'> ~ 
+    <input type="text" class="p_input_common2" name="max_maxaperture" value="99" onKeyUp='NumFormat(this)'>
   </td>
   <th class="th_product_add"></th>
     <td class="td_product_add">
@@ -252,5 +287,13 @@ td.td_product_add{
 <th class="th_product_add" id="product_add_kind" colspan="6" style="height:5px"></th>
 </tr>
 </table>
-<input class="btn" type="button" value="상세검색" onClick="go_search_detail(this.form)"/>
-<input class="btn" type="button" id="detailBtn" value="▲" onClick="go_detail()"/><br />
+
+<%-- 
+<input class="btn" type="button" value="검색" onClick="do_submit_dsearch()" /> &nbsp;&nbsp;          
+<input class="btn" type="button" value="취소" onClick="do_close_dsearch()" />
+</form> 
+</article>
+<%@ include file="/admin/footer.jsp"%>
+</body>
+</html>
+ --%>

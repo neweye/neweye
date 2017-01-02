@@ -18,11 +18,17 @@ public class AdminQnaResaveAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
+		request.setCharacterEncoding("utf-8");
+		
 		String url = "adminQnaList.ne";
-
+		
+		System.out.println("1111");
 		String qseq = request.getParameter("qseq").trim();
-		String reply = request.getParameter("reply").trim();
+		System.out.println("22222");
+		String reply = request.getParameter("reply"); //여기서 에러
+		System.out.println("33333");
+		System.out.println("테스트:"+request.getParameter(reply));
 
 		QnaVO qnaVO = new QnaVO();
 		qnaVO.setQseq(Integer.parseInt(qseq));

@@ -18,7 +18,9 @@ public class AdminQnaDetailAction implements Action {
   @Override
   public String execute(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-
+	  
+	//request.setCharacterEncoding("utf-8");
+	  
     String url = "qna/qnaDetail.jsp";
 
     String qseq = request.getParameter("qseq").trim();
@@ -26,13 +28,13 @@ public class AdminQnaDetailAction implements Action {
     /*QnaDAO qnaDAO = QnaDAO_JDBC.getInstance();*/
     QnaDAO qnaDAO = QnaDAO_iBatis.getInstance();
     QnaVO qnaVO=null;
-	try {
-		qnaVO = qnaDAO.getQna(Integer.parseInt(qseq));
-	} catch (NumberFormatException e) {
-		e.printStackTrace();
-	} catch (SQLException e) {
-		e.printStackTrace();
-	}
+   try {
+      qnaVO = qnaDAO.getQna(Integer.parseInt(qseq));
+   } catch (NumberFormatException e) {
+      e.printStackTrace();
+   } catch (SQLException e) {
+      e.printStackTrace();
+   }
 
     request.setAttribute("qnaVO", qnaVO);
         
