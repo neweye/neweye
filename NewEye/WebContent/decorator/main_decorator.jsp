@@ -66,6 +66,9 @@
 										<a href="<%=request.getContextPath() %>/index.ne">Home</a>
 								</li>
 								<li>
+								<a href="<%=request.getContextPath() %>/companyInfo.ne">Info</a>
+								</li>
+								<li>
 									|&nbsp;&nbsp;&nbsp;
 									<div class="dropdown">
 									<a href="product.ne">PRODUCT</a>
@@ -169,7 +172,8 @@
                   상호명 : 주식회사 뉴아이코리아 / 대표이사 : JSP / TEL : 080-000-0000 / FAX : 042-0000-0000<br>
 주소 : 대전광역시 중구 중앙로 76 영민빌딩 2층
 
-사업자등록번호 : 000-00-12345 / 통신판매업신고 : 중구 제12345호 / 콜센터 운영시간 : 평일 09:00 ~ 18:00 (토·일·공휴일 휴무)
+사업자등록번호 : 000-00-12345 / 통신판매업신고 : 중구 제12345호 / 콜센터 운영시간 : 평일 09:00 ~ 18:00 (토·일·공휴일 휴무)<br>
+
                </div>
             </div>
          </div>
