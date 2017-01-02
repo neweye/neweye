@@ -25,13 +25,13 @@ input[type=button], input[type=submit] {
 	float: right;
 }
 </style>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	function idok() {
 		opener.formm.id.value = "${id}";
 		opener.formm.reid.value = "${id}";
 		self.close();
 	}
-</script>
+</script> -->
 </head>
 <body>
 	<div id="wrap">

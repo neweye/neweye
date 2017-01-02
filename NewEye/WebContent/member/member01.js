@@ -75,8 +75,12 @@
 
 
 
-
-
+/* 아이디 중복체크 창 */
+function idok() {
+	opener.formm.id.value = "${id}";
+	opener.formm.reid.value = "${id}";
+	self.close();
+}
 
 
 
