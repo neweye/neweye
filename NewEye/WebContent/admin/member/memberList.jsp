@@ -28,9 +28,11 @@
 			<th>이름</th>
 			<th>비밀번호</th>
 			<th>우편번호</th>
+			<th>이메일</th>
 			<th>주소</th>
 			<th>전화</th>
 			<th>가입일</th>
+			<th>수정/탈퇴</th>
 		</tr>
 	</tbody>
 	<c:forEach items="${memberList}" var="memberVO">
