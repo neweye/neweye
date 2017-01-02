@@ -16,7 +16,7 @@ public class MyPageUpdateMemberAction implements Action {
    @Override
    public String execute(HttpServletRequest request,
          HttpServletResponse response) throws ServletException, IOException {
-	   request.setCharacterEncoding("utf-8");
+      request.setCharacterEncoding("utf-8");
       String url = "/mypage/myPageForm.jsp";
       String message = "fail";
       HttpSession session = request.getSession();

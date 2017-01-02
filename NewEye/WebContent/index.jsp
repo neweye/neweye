@@ -66,7 +66,7 @@
 	<br/>
 	<table border="1">
 	<tr>
-	<%
+	<%-- <%
 		String cp = request.getContextPath();
 		request.setCharacterEncoding("utf-8");
 		
@@ -100,7 +100,7 @@
 				}
 			} */
 		} 
-	%>
+	%> --%>
 	</tr>
 	</table>
 	<!-- Section: separator -->
@@ -144,14 +144,14 @@
 		</div>
 	</section> -->
 	<!-- /Section: separator -->
-	<div id="rightSide">
+	<!-- <div id="rightSide">
 	<div id="right_zzim">
 		<div  class="recTit">최근본상품 <span id=recentCnt></span></div>
-			<ul></ul>    <!-- 본 상품이 뿌려질 부분  -->
+			<ul></ul>    본 상품이 뿌려질 부분 
 		<div id="paging"><a class="btn_prev" style="cursor:pointer" >이전</a><span  id="currentPage"></span><span id="totalPageCount"></span><a class="btn_next" style="cursor:pointer" >다음</a></div>
 	</div>
 
-</div>
+</div> -->
 	
 	<!-- ///////////여백 시작/////////// -->
 	<section id="blanck" class="home-section parallax text-center">
