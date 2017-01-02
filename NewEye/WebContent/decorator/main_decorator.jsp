@@ -36,7 +36,7 @@
 <link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/color/default.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/css/shopping.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/zzim.css" rel="stylesheet">
+<%-- <link href="<%=request.getContextPath()%>/css/zzim.css" rel="stylesheet"> --%>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
