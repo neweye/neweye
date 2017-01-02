@@ -42,7 +42,7 @@
             <table class="table_qna_form">
                <tr>
                   <td class="lg_qna_view" style="border-bottom:0;"><label>작성</label>
-                  <td class="md_qna_view" style="border-bottom:0;"><textarea class="cls_qna_form" ></textarea></td></tr>
+                  <td class="md_qna_view" style="border-bottom:0;"><textarea name="reply" class="cls_qna_form" ></textarea></td></tr>
                   <tr><td colspan="2" style="border-bottom:0;">
                      <a href="adminQnaList.ne" class="btn_default_org" >목록</a>&nbsp;&nbsp;&nbsp;
                      <input type="button" class="btn btn_default_org" style="vertical-align:middle;float:middle;" value="저장" onClick="go_rep('${qnaVO.qseq}')"></td>
@@ -55,7 +55,7 @@
                <tr>
                   <td class="lg_qna_view" style="border-bottom:0;"><label>댓글</label></td>
                   <td class="md_qna_view" style="border-bottom:0;">
-                  <textarea name="reply" id="reply" class="cls_qna_form" readonly >${qnaVO.reply}</textarea></td>
+                  <textarea name="reply" class="cls_qna_form" >${qnaVO.reply}</textarea></td>
                </tr>
                <tr><td colspan="2" style="border-bottom:0;"><a href="adminQnaList.ne" class="btn_default_org" >목록</a></td></tr>
             </table>
