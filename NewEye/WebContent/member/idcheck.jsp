@@ -28,7 +28,7 @@ input[type=button], input[type=submit] {
 <script type="text/javascript">
 	function idok() {
 		opener.formm.id.value = "${id}";
-		opener.formm.reid.value = "${id}";
+		/* opener.formm.reid.value = "${id}"; */
 		self.close();
 	}
 </script>
