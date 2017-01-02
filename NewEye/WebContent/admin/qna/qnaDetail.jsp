@@ -11,12 +11,12 @@
       theForm.submit();
    } */
 
-   function go_rep(qseq) {
+/*    function go_rep(qseq) {
       var theForm = document.frm;
       theForm.qseq.value = qseq;
       theForm.action = "adminQnaRepsave.ne";
       theForm.submit();
-   }
+   } */
 </script>
 <article>
 <div id="board_outside">
@@ -54,7 +54,8 @@
             <table class="table_qna_form">
                <tr>
                   <td class="lg_qna_view" style="border-bottom:0;"><label>댓글</label></td>
-                  <td class="md_qna_view" style="border-bottom:0;"><textarea class="cls_qna_form" readonly >${qnaVO.reply}</textarea></td>
+                  <td class="md_qna_view" style="border-bottom:0;">
+                  <textarea name="reply" id="reply" class="cls_qna_form" readonly >${qnaVO.reply}</textarea></td>
                </tr>
                <tr><td colspan="2" style="border-bottom:0;"><a href="adminQnaList.ne" class="btn_default_org" >목록</a></td></tr>
             </table>
