@@ -19,7 +19,7 @@ function go_addcart() {
   alert("수량을 입력하여 주세요.");
   document.formm.quantity.focus();
  } else {
-  document.formm.action = "cartInsert.ne";
+  document.formm.action = "/cartInsert";
   document.formm.submit();
  }
 }
