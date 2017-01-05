@@ -307,12 +307,40 @@ td.td_product_add{
       <textarea name="content" rows="8" cols="70" value="${productVO.content}"></textarea>
     </td>
   </tr>
-  <tr>
+  
+    <tr>
+    <th class="th_product_add">상품이미지</th>
+    <td class="td_product_add" colspan="5">
+<img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>    
+      <br>
+      <input type="hidden" name="img_list_hidden" value="${productVO.img_list}"/>
+      <input type="file" name="img_list" id="img_list_hidden">
+      <c:if test="${empty productVO.img_list}"></c:if>
+    </td>
+</tr>    
+<tr>    
+    <th class="th_product_add">상세이미지</th>
+    <td class="td_product_add" colspan="5">
+<img src="<%=request.getContextPath() %>/productimg/${productVO.img_detail}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>    
+      <br>
+      <input type="hidden" name="img_detail_hidden" value="${productVO.img_detail}"/>
+      <input type="file" name="img_detail" id="img_detail_hidden">
+    </td>
+  </tr>
+  
+  
+  
+  
+  
+  
+  
+  <%-- <tr>
     <th class="th_product_add">상품이미지</th>
     <td class="td_product_add" colspan="5">
 <img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>    
       <br>
       <input type="file" name="img_list">
+      
     </td>
 </tr>    
 <tr>    
@@ -323,7 +351,8 @@ td.td_product_add{
       <input type="file" name="img_list">
     </td>
     
-  </tr>
+  </tr> --%>
+  
   <tr>
   <th class="th_product_add" id="product_add_kind" colspan="6" style="height:5px"></th>
 </tr>
