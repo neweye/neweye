@@ -15,8 +15,8 @@ import com.neweye.dto.OrderVO;
 
 public class AdminOrderSearchListAction implements Action {
 
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
+	/*@Override
+	public String adminOrderSearchListAction(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "order/orderList.jsp";
 		String key = request.getParameter("key");
@@ -24,7 +24,7 @@ public class AdminOrderSearchListAction implements Action {
 			key = request.getParameter("key");
 		}
 
-		/*OrderDAO orderDAO = OrderDAO_JDBC.getInstance();*/
+		OrderDAO orderDAO = OrderDAO_JDBC.getInstance();
 		OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
 		ArrayList<OrderVO> orderList=null;
 		try {
@@ -36,6 +36,6 @@ public class AdminOrderSearchListAction implements Action {
 		request.setAttribute("orderList", orderList);
 
 		return url;
-	}
+	}*/
 
 }
