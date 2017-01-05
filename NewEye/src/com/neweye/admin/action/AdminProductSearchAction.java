@@ -15,8 +15,8 @@ import com.neweye.dto.ProductVO;
 
 public class AdminProductSearchAction implements Action {
 
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
+	/*@Override
+	public String adminProductSearch(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "product/productList.jsp";
 		String key = request.getParameter("key");
@@ -52,5 +52,5 @@ public class AdminProductSearchAction implements Action {
 		
 		return url;
 	}
-
+*/
 }

@@ -56,7 +56,7 @@
           <c:if test='${productVO.kind=="0"}'>(삭제)</c:if>
         </td> 
       <td><fmt:formatDate value="${productVO.indate }" pattern="yyyy-MM-dd" /></td>
-      <th><a href="adminProductUpdateForm.ne?pseq=${productVO.pseq}">수정</a>/<a href="adminDelete.ne?pseq=${productVO.pseq}">삭제</a></th>
+      <th><a href="adminProductUpdateForm?pseq=${productVO.pseq}">수정</a>/<a href="adminDelete?pseq=${productVO.pseq}">삭제</a></th>
     </tr>
     </c:forEach>
     <tr style="border-bottom:0;"><td colspan="7" style="border-bottom:0;text-align:center;"> ${paging}</td></tr>
