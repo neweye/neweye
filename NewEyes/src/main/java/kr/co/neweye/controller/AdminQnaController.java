@@ -69,7 +69,7 @@ public class AdminQnaController {
 	    return url;
 	  }
 	
-	@RequestMapping("/adminQnaResave")
+	@RequestMapping("/adminQnaRepsave")
 	public String adminQnaResave(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
