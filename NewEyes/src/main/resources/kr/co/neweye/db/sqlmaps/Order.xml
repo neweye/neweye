@@ -36,6 +36,18 @@
 		select * from order_view where id=#id# and result like '%'||#result#||'%' and oseq=#oseq#
 	</select>
 	
+	<select id="selectSeqOrderTotal" parameterClass="str" resultClass="int">
+		select distinct oseq from order_view where id=#id# order by oseq desc
+	</select>
+	
+	<select id="listOrderByAdmin" parameterClass="order" resultClass="order">
+		select * from order_view where result like '%'||#result#||'%' and oseq=#oseq#
+	</select>
+	
+	<select id="selectSeqOrderTotalAdmin" parameterClass="str" resultClass="int">
+		select distinct oseq from order_view order by oseq desc
+	</select>
+	
 	<select id="listOrderByOseq" parameterClass="int" resultClass="order">
 		select * from order_view where oseq=#oseq#
 	</select>
@@ -44,10 +56,6 @@
 		select distinct oseq from order_view where id=#id# and result='1' order by oseq desc
 	</select>
 
-	<select id="selectSeqOrderTotal" parameterClass="str" resultClass="int">
-		select distinct oseq from order_view where id=#id# order by oseq desc
-	</select>
-	
 	<select id="listOrder" parameterClass="str" resultClass="order">
 		select * from order_view where mname like '%'||#mname#||'%' order by oseq desc
 	</select>

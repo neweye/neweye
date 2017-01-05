@@ -38,4 +38,9 @@ public interface OrderDAO {
 	void updateOrderAdmin(OrderVO oseq) throws SQLException;
 
 	void updateOrderOne(OrderVO oseq) throws SQLException;
+
+	ArrayList<Integer> selectSeqOrderTotalAdmin() throws SQLException;
+
+	ArrayList<OrderVO> listOrderByAdmin(String result, int oseq)
+			throws SQLException;
 }

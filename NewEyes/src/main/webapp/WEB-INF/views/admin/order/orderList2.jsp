@@ -37,7 +37,7 @@
 				<c:forEach items="${orderList}" var="orderVO">
 					<tr>
 						<td>
-                  		   ${orderVO.oseq} &nbsp;
+                  		   ${orderVO.odseq} &nbsp;
                   		   <input type="hidden" name="code" value="${orderVO.odseq}"/>
 							<c:choose>
 								<c:when test='${orderVO.result=="1"}'>
@@ -124,6 +124,7 @@
 							<%-- <input type="checkbox" name="result" value="${orderVO.odseq}"> --%>
 						</td>
 						<td>${orderVO.name}</td>
+						<%-- <td><a href="adminOrderDetail?oseq=${orderVO.oseq}">${orderVO.pname}</a></td> --%>
 						<td><a href="adminOrderDetail?oseq=${orderVO.oseq}">${orderVO.pname}</a></td>
 						<td>${orderVO.quantity}</td>
 						<td>${orderVO.address}</td>
