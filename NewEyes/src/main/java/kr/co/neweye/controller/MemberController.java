@@ -2,21 +2,23 @@ package kr.co.neweye.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import kr.co.neweye.dto.AddressVO;
 import kr.co.neweye.dto.MemberVO;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import co.kr.neweye.dao.AddressDAO;
 import co.kr.neweye.dao.MemberDAO;
+import co.kr.neweye.ibatis.AddressDAO_iBatis;
 import co.kr.neweye.ibatis.MemberDAO_iBatis;
 
 @Controller
@@ -186,4 +188,100 @@ public class MemberController {
 		
 	}
 	
+	@RequestMapping("/findIdForm")
+	public String findIdForm(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		String url = "/member/findIdForm";		
+		
+		return url;
+	}
+	
+	
+	
+	@RequestMapping("/findId")
+	public String findId(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		String url = "/member/findIdForm";
+		
+		String name = request.getParameter("name");
+		String phone = request.getParameter("phone");
+		MemberDAO memberDAO=MemberDAO_iBatis.getInstance();
+		MemberVO member=null;
+		try {
+			member = (MemberVO)memberDAO.searchId(name, phone);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		request.setAttribute("member", member);
+		return url;
+	}
+	
+	@RequestMapping("/joinForm")
+	public String joinForm(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String url = "/member/join";		
+		
+		return url;
+
+	}
+	
+	@RequestMapping("/contract")
+	public String contract(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		String url = "/member/contract";		
+		
+		return url;
+	}
+	
+	@RequestMapping("/idCheckForm")
+	public String idCheckForm(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String url = "/member/idcheck";
+		String id = request.getParameter("id").trim();
+		
+		//MemberDAO memberDAO=MemberDAO_JDBC.getInstance();		
+		MemberDAO memberDAO=MemberDAO_iBatis.getInstance();
+		int message=-1;
+		try {
+			message = memberDAO.confirmID(id);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		request.setAttribute("message", message);
+		request.setAttribute("id", id);
+		
+		return url;
+	}
+	
+	@RequestMapping("/findZipNum")
+	public String findZipNum(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		
+		String url = "member/findZipNum";
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		String dong = request.getParameter("dong");
+
+		if (dong != null && dong.trim().equals("") == false) {
+			//AddressDAO addressDAO = AddressDAO_JDBC.getInstance();
+			AddressDAO addressDAO = AddressDAO_iBatis.getInstance();
+			try {
+				ArrayList<AddressVO> addressList = addressDAO
+						.selectAddressByDong(dong.trim());
+				request.setAttribute("addressList", addressList);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return url;
+	}
 }

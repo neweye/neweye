@@ -15,8 +15,8 @@ import com.neweye.dto.AddressVO;
 
 public class FindZipNumAction implements Action {
 
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
+	/*@Override
+	public String findZipNum(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		
@@ -37,7 +37,7 @@ public class FindZipNumAction implements Action {
 			}
 		}
 		return url;
-	}
+	}*/
 }
 
 

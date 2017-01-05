@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 
-<script type="text/javascript" src="member/member01.js"></script>
-
-
 <article>
 	<br> <br>
 	<div id="contract">

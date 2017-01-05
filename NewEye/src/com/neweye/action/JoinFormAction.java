@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 
 public class JoinFormAction implements Action {
 
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
+/*	@Override
+	public String joinForm(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "/member/join.jsp";		
 		
 		return url;
 
-	}
+	}*/
 
 }

@@ -124,10 +124,10 @@
    <script src="<%=request.getContextPath()%>/js/nivo-lightbox.min.js"></script>
    <!-- Custom Theme JavaScript -->
    <script src="<%=request.getContextPath()%>/js/custom.js"></script>
-   <script src="<%=request.getContextPath()%>/product/products.js"></script>
-   <script src="<%=request.getContextPath()%>/mypage/mypage01.js"></script>
-   <script src="<%=request.getContextPath()%>/member/member01.js"></script>
-   <script src="<%=request.getContextPath()%>/admin/product/product01.js"></script>
+   <script src="<%=request.getContextPath()%>/js/products.js"></script>
+   <script src="<%=request.getContextPath()%>/js/mypage01.js"></script>
+   <script src="<%=request.getContextPath()%>/js/member01.js"></script>
+   <script src="<%=request.getContextPath()%>/js/product01.js"></script>
    <script src="<%=request.getContextPath()%>/js/order.js"></script>
    <script src="<%=request.getContextPath()%>/js/qna.js"></script>
 

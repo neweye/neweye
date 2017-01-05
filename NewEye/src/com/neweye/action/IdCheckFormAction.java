@@ -13,8 +13,8 @@ import com.neweye.dao.iBatis.MemberDAO_iBatis;
 
 public class IdCheckFormAction implements Action {
 
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
+	/*@Override
+	public String idCheckForm(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "/member/idcheck.jsp";
 		String id = request.getParameter("id").trim();
@@ -33,6 +33,6 @@ public class IdCheckFormAction implements Action {
 		request.setAttribute("id", id);
 		
 		return url;
-	}
+	}*/
 
 }

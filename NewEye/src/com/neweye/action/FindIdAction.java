@@ -13,8 +13,8 @@ import com.neweye.dto.MemberVO;
 
 public class FindIdAction implements Action{
 
-	@Override
-	public String execute(HttpServletRequest request,
+	/*@Override
+	public String findId(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		
@@ -33,6 +33,6 @@ public class FindIdAction implements Action{
 		
 		request.setAttribute("member", member);
 		return url;
-	}
+	}*/
 
 }

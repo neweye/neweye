@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 public class FindIdFormAction implements Action{
 
 
-		@Override
-		public String execute(HttpServletRequest request, HttpServletResponse response)
+		/*@Override
+		public String findIdForm(HttpServletRequest request, HttpServletResponse response)
 				throws ServletException, IOException {
 			
 			String url = "/member/findIdForm.jsp";		
 			
 			return url;
-		}
+		}*/
 
 }

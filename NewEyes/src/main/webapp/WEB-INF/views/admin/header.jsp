@@ -16,7 +16,7 @@
 
 <title>Lonely - Free bootstrap 3 one page template</title>
 
-<script type="text/javascript" src="member/member01.js"></script>
+<script type="text/javascript" src="js/member01.js"></script>
 
 <!-- CSS -->
 <link href="<%=request.getContextPath()%>/css/bootstrap.min.css"

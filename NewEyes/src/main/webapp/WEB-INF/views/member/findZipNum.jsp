@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <title>우편 번호 검색</title>
-<link href="CSS/subpage.css" rel="stylesheet">
+<!-- <link href="CSS/subpage.css" rel="stylesheet"> -->
 <style type="text/css">
 body{   
    background-color:#ffffff;
