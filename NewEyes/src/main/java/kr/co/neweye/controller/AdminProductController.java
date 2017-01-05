@@ -298,12 +298,12 @@ public class AdminProductController {
 //	      String savePath = "productimg";
 //	      ServletContext context = session.getServletContext();
 //	      String uploadFilePath = context.getRealPath(savePath);
-//
+//	      
 //	      MultipartRequest multi = new MultipartRequest(request,
-//	            uploadFilePath,
-//	            sizeLimit,
-//	            "UTF-8",
-//	            new DefaultFileRenamePolicy()
+//	          uploadFilePath,
+//	          sizeLimit,
+//	          "UTF-8",
+//	          new DefaultFileRenamePolicy()
 //	      );
 //	      
 //	      ProductVO productVO = new ProductVO();
@@ -359,9 +359,16 @@ public class AdminProductController {
 //	      productVO.setFunctions(multi.getParameter("functions"));
 //	      productVO.setZoomyn(multi.getParameter("zoomyn"));
 //	      productVO.setTypes(multi.getParameter("types"));
-//	      productVO.setImg_list(multi.getFilesystemName("img_list"));
-//	      productVO.setImg_detail(multi.getFilesystemName("img_detail"));
-//	      
+//	      if(multi.getFilesystemName("img_list")==null||multi.getFilesystemName("img_list").equals("")){
+//	    	  productVO.setImg_list(multi.getParameter("img_list_hidden"));
+//	      }else{
+//	    	  productVO.setImg_list(multi.getFilesystemName("img_list"));
+//	      }
+//	      if(multi.getFilesystemName("img_detail")==null||multi.getFilesystemName("img_detail").equals("")){
+//	    	  productVO.setImg_list(multi.getParameter("img_detail_hidden"));
+//	      }else{
+//	    	  productVO.setImg_detail(multi.getFilesystemName("img_detail"));
+//	      }
 //	      ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 //	      try {
 //	         productDAO.updateProduct(productVO);
