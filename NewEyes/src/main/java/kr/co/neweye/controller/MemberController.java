@@ -225,13 +225,45 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/joinForm")
-	public String joinForm(HttpServletRequest request, HttpServletResponse response)
+	public String dForm(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "/member/join";		
 		
 		return url;
 
 	}
+	@RequestMapping("/join")
+	public String Join(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		String url = "redirect:login";
+		
+		HttpSession session = request.getSession();
+		
+		MemberVO memberVO = new MemberVO();
+		
+		memberVO.setId(request.getParameter("id"));
+		memberVO.setPassword(request.getParameter("password"));
+		memberVO.setName(request.getParameter("name"));
+		memberVO.setEmail(request.getParameter("email"));
+		memberVO.setZipNum(request.getParameter("zipNum"));
+		memberVO.setAddress(request.getParameter("addr1") +	request.getParameter("addr2"));
+		memberVO.setPhone(request.getParameter("phone"));		
+	
+		//MemberDAO memberDAO = MemberDAO_JDBC.getInstance();
+		MemberDAO memberDAO = MemberDAO_iBatis.getInstance();
+		try {
+			memberDAO.insertMember(memberVO);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		session.setAttribute("id", request.getParameter("id"));		
+		return url;
+	}
+
 	
 	@RequestMapping("/contract")
 	public String contract(HttpServletRequest request, HttpServletResponse response)
