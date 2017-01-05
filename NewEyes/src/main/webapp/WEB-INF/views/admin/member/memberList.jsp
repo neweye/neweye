@@ -16,7 +16,7 @@
 <form name="frm" method="post">
 <table class="table" id="table_board">
 		<tr>
-			<td id="td_table_board">주문자이름 <input type="text" name="key">&nbsp;&nbsp;&nbsp;
+			<td id="td_table_board">회원이름 <input type="text" name="key">&nbsp;&nbsp;&nbsp;
 				<button type="submit" class="btn"onclick="go_order_search()" >검색</button></td> <!-- class="btn btn-skin btn-block" -->
 		</tr>
  </table>
