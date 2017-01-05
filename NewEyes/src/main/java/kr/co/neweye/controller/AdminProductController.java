@@ -19,6 +19,7 @@ import co.kr.neweye.ibatis.ProductDAO_iBatis;
 
 
 @Controller
+@RequestMapping("/adminProductList")
 public class AdminProductController {
 
 	
