@@ -15,8 +15,8 @@ import com.neweye.dto.MemberVO;
 
 public class JoinAction implements Action {
 
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
+	/*@Override
+	public String Join(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
@@ -46,5 +46,5 @@ public class JoinAction implements Action {
 		session.setAttribute("id", request.getParameter("id"));		
 		return url;
 	}
-
+*/
 }

@@ -56,11 +56,6 @@
 					<div class="text-center">
 						<button type="submit" id="btnContactUs" onclick="go_save()">회원가입</button>
 						<button type="submit" id="btnContactUs" onclick="history.go(-1);">취소</button>
-
-
-
-
-
 					</div>
 				</form>
 			</div>
