@@ -111,5 +111,33 @@ public class AdminOrderController {
 			
 			return url;
 		}
+	   
+	   @RequestMapping("/adminOrderSave")
+		public String adminOrderSave(HttpServletRequest request,
+				HttpServletResponse response) throws ServletException, IOException {
+			String url = "redirect:adminOrderList";
+
+			String[] resultArr = request.getParameterValues("result");
+			String[] codeArr = request.getParameterValues("code");
+			
+			
+			
+			for (int i = 0; i < resultArr.length; i++) {
+				
+				OrderVO orderVO = new OrderVO();
+				orderVO.setOdseq(Integer.parseInt(codeArr[i]));
+				orderVO.setResult(resultArr[i]);
+				
+				/*OrderDAO orderDAO = OrderDAO_JDBC.getInstance();*/
+				OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
+				try {
+					orderDAO.updateOrderResult(orderVO);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+
+			return url;
+		}
 
 }
