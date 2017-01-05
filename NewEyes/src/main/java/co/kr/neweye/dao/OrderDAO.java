@@ -36,4 +36,6 @@ public interface OrderDAO {
 	void updateOrder(OrderVO oseq) throws SQLException;
 
 	void updateOrderAdmin(OrderVO oseq) throws SQLException;
+
+	void updateOrderOne(OrderVO oseq) throws SQLException;
 }

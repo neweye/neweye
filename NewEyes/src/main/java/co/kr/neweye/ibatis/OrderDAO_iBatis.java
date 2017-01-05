@@ -136,6 +136,11 @@ public class OrderDAO_iBatis implements OrderDAO {
 	}
 	
 	@Override
+	public void updateOrderOne(OrderVO oseq) throws SQLException {
+		client.update("updateOrderResultOne", oseq);
+	}
+	
+	@Override
 	public void updateOrder(OrderVO oseq) throws SQLException {
 		client.update("updateOrderResult", oseq);
 	}

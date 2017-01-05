@@ -51,10 +51,19 @@
 	<select id="listOrder" parameterClass="str" resultClass="order">
 		select * from order_view where mname like '%'||#mname#||'%' order by oseq desc
 	</select>
-	
+	<update id="updateOrderResultOne" parameterClass="order">
+		update order_detail 
+		set 
+			result=#result#
+		where oseq=#oseq#
+	</update>
 	<update id="updateOrderResult" parameterClass="order">
 		update order_detail 
-		set result=#result#, deliback=#deliback#, delibacknum=#delibacknum#, payback=#payback# 
+		set 
+			result=#result#, 
+			deliback=#deliback#, 
+			delibacknum=#delibacknum#, 
+			payback=#payback# 
 		where oseq=#oseq#
 	</update>
 	<update id="updateOrder" parameterClass="order">
