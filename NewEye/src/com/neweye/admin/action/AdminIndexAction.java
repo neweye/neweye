@@ -10,11 +10,11 @@ import com.neweye.action.Action;
 
 public class AdminIndexAction implements Action {
 
-  @Override
-  public String execute(HttpServletRequest request, HttpServletResponse response)
+  /*@Override
+  public String adminIndex(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     String url = "main.jsp";  
      
     return url;
-  }
+  }*/
 }

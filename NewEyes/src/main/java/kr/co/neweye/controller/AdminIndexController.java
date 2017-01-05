@@ -8,11 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import co.kr.neweye.dao.WorkerDAO;
 import co.kr.neweye.ibatis.WorkerDAO_iBatis;
 
+@Controller
+@RequestMapping("/admin")
 public class AdminIndexController {
 
 	  @RequestMapping("/adminLogin")
@@ -35,7 +38,7 @@ public class AdminIndexController {
 	    if (result == 1) {// 로그인 성공
 	      HttpSession session = request.getSession();
 	      session.setAttribute("workerId", workerId);
-	      url = "adminProductList.ne";
+	      url = "adminProductList";
 	    } else if (result == 0) {
 	      msg = "비밀번호를 확인하세요.";
 	    } else if (result == -1) {
@@ -44,4 +47,13 @@ public class AdminIndexController {
 	    request.setAttribute("message", msg);
 	    return url;
 	  }
+	  
+	  @RequestMapping("/adminLoginForm")
+	  public String adminIndex(HttpServletRequest request, HttpServletResponse response)
+	      throws ServletException, IOException {
+	    String url = "admin/main";  
+	     
+	    return url;
+	  }
+	  
 }
