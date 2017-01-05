@@ -18,10 +18,10 @@
       select * from member where id=#id#
    </select>
    
-   <insert id="insertMember" parameterClass="member" >
+   <update id="insertMember" parameterClass="member">
       insert into member(id, password, name, email, zipNum, address, phone) 
       values(#id#, #password#, #name#,#email#, #zipNum#, #address#, #phone#)
-   </insert>
+   </update>
    
    <select id="listMember" parameterClass="str" resultClass="member">
       select * from member where name like '%'||#name#||'%' order by indate desc

@@ -12,7 +12,7 @@
 		<div class="col-lg-8 col-md-offset-2">
 			<div class="form-wrapper marginbot-50">
 				<form id="formm" name="formm" method="post" action="join" class="contactForm">
-
+					${message}
 					ID: <input name="id" type="text" class="form-control"><br>
 					<div class="validation"></div>
 

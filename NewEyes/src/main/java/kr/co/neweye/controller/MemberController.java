@@ -244,7 +244,7 @@ public class MemberController {
 		MemberVO memberVO = new MemberVO();
 		
 		memberVO.setId(request.getParameter("id"));
-		memberVO.setPassword(request.getParameter("password"));
+		memberVO.setPassword(request.getParameter("pwd"));
 		memberVO.setName(request.getParameter("name"));
 		memberVO.setEmail(request.getParameter("email"));
 		memberVO.setZipNum(request.getParameter("zipNum"));
@@ -260,7 +260,7 @@ public class MemberController {
 			e.printStackTrace();
 		}
 		if(result==1){
-			url="redirect:login";
+			url="redirect:loginForm";
 		}
 		session.setAttribute("id", request.getParameter("id"));		
 		return url;
