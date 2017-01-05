@@ -15,8 +15,8 @@ import com.neweye.dto.ProductVO;
 
 public class AdminProductListAction implements Action {
 
-  @Override
-  public String execute(HttpServletRequest request, HttpServletResponse response)
+  /*@Override adminProductList
+  public String adminProductList(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
     String url = "product/productList.jsp";
@@ -34,7 +34,7 @@ public class AdminProductListAction implements Action {
     request.setAttribute("key", key);
     request.setAttribute("tpage",tpage);
     
-    /*ProductDAO productDAO=ProductDAO_JDBC.getInstance();*/
+    ProductDAO productDAO=ProductDAO_JDBC.getInstance();
     ProductDAO productDAO=ProductDAO_iBatis.getInstance();   
     
     ArrayList<ProductVO> productList=null;
@@ -56,6 +56,6 @@ public class AdminProductListAction implements Action {
     request.setAttribute("paging", paging);   
     
     return url;
-  }
+  }*/
 }
 
