@@ -6,7 +6,7 @@
 <%-- <%@ include file="/admin/sub_menu.jsp"%> --%>
 <script type="text/javascript">
 	function go_search() {
-		document.frm.action = "admin/MemberList.ne";
+		document.frm.action = "admin/MemberList";
 		document.frm.submit();
 	}
 </script>
@@ -56,7 +56,7 @@
 			<td>${memberVO.address}</td>
 			<td>${memberVO.phone}</td>
 			<td><fmt:formatDate value="${memberVO.indate }" pattern="yyyy-MM-dd" /></td>
-			<td><a href="adminUpdateForm.ne?id=${memberVO.id}">수정</a>/<a href="admindeleteuseMember.ne?id=${memberVO.id }">삭제</a></td>
+			<td><a href="adminUpdateForm?id=${memberVO.id}">수정</a>/<a href="admindeleteuseMember?id=${memberVO.id }">삭제</a></td>
 		</tr>
 	</c:forEach>
 </table>

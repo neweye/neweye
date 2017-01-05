@@ -84,7 +84,7 @@ public int deleteMember(String userid) throws SQLException {
 
 @Override
 public void deleteuseMember(MemberVO memberVO) throws SQLException {
-	client.update("deleteuseMember", memberVO);
+	client.update("deleteuseMember", memberVO.getId());
 	
 }
 

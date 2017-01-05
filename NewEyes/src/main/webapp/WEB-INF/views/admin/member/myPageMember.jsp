@@ -13,7 +13,7 @@
          <div class="form-wrapper marginbot-50">
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form id="contact-form" action="join.ne" method="post" role="form"
+            <form id="contact-form" action="adminUpdate" method="post" role="form"
                class="contactForm" name="formm">
 
                <div class="form-group">
@@ -77,9 +77,9 @@
                </div>
 
                <div id="buttons">
-                  <input type="button" value="수정" class="submit" onclick="go_update(this.form)">
-                  <input type="button" value="탈퇴" class="cancel" onclick="go_delete(this.form)"> 
-                  <input type="button" value="뒤로가기" class="submit" onclick="history.go(-1);">
+                  <input type="button" value="수정" class="submit" onclick="go_update_admin(this.form)">
+                  <input type="button" value="탈퇴" class="cancel" onclick="go_delete_admin(this.form)"> 
+                  <input type="button" value="뒤로가기" class="submit" onclick="location.href='adminMemberList'">
                </div>
             </form>
          </div>
@@ -87,16 +87,3 @@
       </div>  
    </div>
 </article>
-<script>
-function go_update(form){
-   form.action="adminUpdate.ne";
-   form.method="post";
-   form.submit();
-}
-
-function go_delete(form){
-   form.action="admindeleteuseMember.ne";
-   form.method="post";
-   form.submit();
-}
-</script>
