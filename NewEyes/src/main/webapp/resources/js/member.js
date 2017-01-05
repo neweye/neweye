@@ -1,4 +1,4 @@
-function go_save() {
+/*function go_save() {
   if (document.formm.id.value == "") {
     alert("아이디를 입력하여 주세요.");
     document.formm.id.focus();
@@ -21,9 +21,9 @@ function go_save() {
     document.formm.action = "join";
     document.formm.submit();
   }
-}
+}*/
 
-function idcheck() {
+/*function idcheck() {
   if (document.formm.id.value == "") {
     alert('아이디를 입력하여 주십시오.');
     document.formm.id.focus();
@@ -32,7 +32,7 @@ function idcheck() {
   var url = "idCheckForm?id="+ document.formm.id.value;
   window.open( url, "_blank_1","toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=400, height=200");
 }
-
+*/
 function post_zip() {
   var url = "findZipNum1";
   window.open( url, "_blank_1",

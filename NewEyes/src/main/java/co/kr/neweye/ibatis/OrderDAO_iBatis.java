@@ -96,7 +96,20 @@ public class OrderDAO_iBatis implements OrderDAO {
 
 		return orderList;
 	}
+	
+	@Override
+	public ArrayList<OrderVO> listOrderByAdmin(String result, int oseq)
+			throws SQLException {
+		OrderVO oVo = new OrderVO();
+		oVo.setResult(result);
+		oVo.setOseq(oseq);
 
+		ArrayList<OrderVO> orderList = (ArrayList<OrderVO>) client
+				.queryForList("listOrderByAdmin", oVo);
+
+		return orderList;
+	}
+	
 	@Override
 	public ArrayList<OrderVO> listOrderByOseq(int oseq)
 			throws SQLException {
@@ -122,7 +135,15 @@ public class OrderDAO_iBatis implements OrderDAO {
 				"selectSeqOrderTotal", id);
 		return oseqList;
 	}
-
+	
+	@Override
+	public ArrayList<Integer> selectSeqOrderTotalAdmin()
+			throws SQLException {
+		ArrayList<Integer> oseqList = (ArrayList<Integer>) client.queryForList(
+				"selectSeqOrderTotalAdmin");
+		return oseqList;
+	}
+	
 	@Override
 	public ArrayList<OrderVO> listOrder(String member_name) throws SQLException {
 		ArrayList<OrderVO> orderList = (ArrayList<OrderVO>) client

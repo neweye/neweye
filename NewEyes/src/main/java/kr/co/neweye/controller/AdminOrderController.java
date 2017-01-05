@@ -22,7 +22,7 @@ import co.kr.neweye.ibatis.OrderDAO_iBatis;
 @RequestMapping("/admin")
 public class AdminOrderController {
 	
-	  @RequestMapping("/adminOrderList")
+	@RequestMapping("/adminOrderList")
 	  public String adminOrderList(HttpServletRequest request, HttpServletResponse response)
 	      throws ServletException, IOException {
 
@@ -32,19 +32,57 @@ public class AdminOrderController {
 	      key = request.getParameter("key");
 	    }
 
-	    /*OrderDAO orderDAO = OrderDAO_JDBC.getInstance();*/
 	    OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
-	    ArrayList<OrderVO> orderList=null;
+		ArrayList<OrderVO> orderList = new ArrayList<OrderVO>();
+
 		try {
-			orderList = orderDAO.listOrder(key);
-		} catch (SQLException e) {	
+			ArrayList<Integer> oseqList = orderDAO.selectSeqOrderTotalAdmin();
+			for (int oseq : oseqList) {
+				ArrayList<OrderVO> orderListIng = orderDAO.listOrderByAdmin("%", oseq);
+
+				OrderVO orderVO = orderListIng.get(0);
+				orderVO.setPname(orderVO.getPname() + " 외 " + orderListIng.size() + "건");
+
+				int totalPrice = 0;
+				for (OrderVO ovo : orderListIng) {
+					totalPrice += ovo.getPrice() * ovo.getQuantity();
+				}
+				orderVO.setPrice(totalPrice);
+				orderList.add(orderVO);
+			}
+			request.setAttribute("title", "총 주문 내역");
+			request.setAttribute("orderList", orderList);
+		} catch (SQLException e) {
+
 			e.printStackTrace();
 		}
 
-	    request.setAttribute("orderList", orderList);
-
 	    return url;
 	  }
+	
+//	  @RequestMapping("/adminOrderList")
+//	  public String adminOrderList(HttpServletRequest request, HttpServletResponse response)
+//	      throws ServletException, IOException {
+//
+//	    String url = "admin/order/orderList";
+//	    String key = "";
+//	    if (request.getParameter("key") != null) {
+//	      key = request.getParameter("key");
+//	    }
+//
+//	    OrderDAO orderDAO = OrderDAO_JDBC.getInstance();
+//	    OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
+//	    ArrayList<OrderVO> orderList=null;
+//		try {
+//			orderList = orderDAO.listOrder(key);
+//		} catch (SQLException e) {	
+//			e.printStackTrace();
+//		}
+//
+//	    request.setAttribute("orderList", orderList);
+//
+//	    return url;
+//	  }
 	  
 	  @RequestMapping("/adminOrderDetail")
 	  public String adminOrderDetail(HttpServletRequest request,
