@@ -19,6 +19,7 @@ import co.kr.neweye.ibatis.OrderDAO_iBatis;
 
 
 @Controller
+@RequestMapping("/admin")
 public class AdminOrderController {
 	
 	  @RequestMapping("/adminOrderList")
