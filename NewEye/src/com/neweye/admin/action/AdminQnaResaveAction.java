@@ -15,8 +15,8 @@ import com.neweye.dto.QnaVO;
 
 public class AdminQnaResaveAction implements Action {
 
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
+	/*@Override
+	public String adminQnaResave(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
@@ -34,7 +34,7 @@ public class AdminQnaResaveAction implements Action {
 		qnaVO.setQseq(Integer.parseInt(qseq));
 		qnaVO.setReply(reply);
 
-		/* QnaDAO qnaDAO = QnaDAO_JDBC.getInstance(); */
+		 QnaDAO qnaDAO = QnaDAO_JDBC.getInstance(); 
 		QnaDAO qnaDAO = QnaDAO_iBatis.getInstance();
 		try {
 			qnaDAO.updateQna(qnaVO);
@@ -43,5 +43,5 @@ public class AdminQnaResaveAction implements Action {
 		}
 
 		return url;
-	}
+	}*/
 }

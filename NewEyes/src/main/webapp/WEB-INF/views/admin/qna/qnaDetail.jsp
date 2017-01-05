@@ -5,18 +5,12 @@
 <%-- <%@ include file="/admin/header.jsp"%> --%>
 <%-- <%@ include file="/admin/sub_menu.jsp"%> --%>
 <script type="text/javascript">
-/*    function go_list() {
-      var theForm = document.frm;
-      theForm.action = "adminQnaList.ne";
-      theForm.submit();
-   } */
-
-/*    function go_rep(qseq) {
+    function go_rep(qseq) {
       var theForm = document.frm;
       theForm.qseq.value = qseq;
-      theForm.action = "adminQnaRepsave.ne";
+      theForm.action = "adminQnaRepsave";
       theForm.submit();
-   } */
+   } 
 </script>
 <article>
 <div id="board_outside">
@@ -57,7 +51,7 @@
                   <td class="md_qna_view" style="border-bottom:0;">
                   <textarea name="reply" id="reply" class="cls_qna_form" readonly >${qnaVO.reply}</textarea></td>
                </tr>
-               <tr><td colspan="2" style="border-bottom:0;"><a href="adminQnaList.ne" class="btn_default_org" >목록</a></td></tr>
+               <tr><td colspan="2" style="border-bottom:0;"><a href="adminQnaList" class="btn_default_org" >목록</a></td></tr>
             </table>
          </c:otherwise>
       </c:choose>
