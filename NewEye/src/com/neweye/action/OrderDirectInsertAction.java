@@ -22,7 +22,7 @@ import com.neweye.dto.ProductVO;
 
 public class OrderDirectInsertAction implements Action {
 
-	@Override
+	/*@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String url = "mypage/orderInsert.jsp";
@@ -50,5 +50,5 @@ public class OrderDirectInsertAction implements Action {
 		request.setAttribute("cartList", cartList);
 		
 		return url;
-	}
+	}*/
 }

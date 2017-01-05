@@ -57,5 +57,10 @@ public class IndexController{
 		
 		return url;
 	}
+	@RequestMapping("/index")
+	public String toIndex(){
+		String url="redirect:/";
+		return url;
+	}
 
 }

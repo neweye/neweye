@@ -95,15 +95,5 @@
    </div>
 </article>
 <script>
-function go_update(form){
-   form.action="mypageMemberUpdate.ne";
-   form.method="post";
-   form.submit();
-}
 
-function go_delete(form){
-   form.action="deleteuseMember.ne";
-   form.method="post";
-   form.submit();
-}
 </script>

@@ -16,7 +16,7 @@ import com.neweye.dto.CartVO;
 import com.neweye.dto.MemberVO;
 
 public class CartListAction implements Action {
-
+/*
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -30,7 +30,7 @@ public class CartListAction implements Action {
 			url = "loginForm.ne";
 		} else {
 			CartDAO cartDAO = CartDAO_iBatis.getInstance();
-			/*CartDAO cartDAO = CartDAO_JDBC.getInstance();*/
+			CartDAO cartDAO = CartDAO_JDBC.getInstance();
 			try {
 				ArrayList<CartVO> cartList = cartDAO
 						.listCart(loginUser.getId());
@@ -45,5 +45,5 @@ public class CartListAction implements Action {
 			}
 		}
 		return url;		
-	}
+	}*/
 }

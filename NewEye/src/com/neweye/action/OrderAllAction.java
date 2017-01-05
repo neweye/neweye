@@ -16,7 +16,7 @@ import com.neweye.dto.OrderVO;
 
 public class OrderAllAction implements Action {
 
-	@Override
+	/*@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "mypage/mypage.jsp";
 
@@ -51,5 +51,5 @@ public class OrderAllAction implements Action {
 			}
 		}
 		return url;
-	}
+	}*/
 }

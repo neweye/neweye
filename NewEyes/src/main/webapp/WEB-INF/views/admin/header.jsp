@@ -42,7 +42,7 @@
 	</div>
 	<br/>
 	<div class="slogan">
-			<a href="<%=request.getContextPath() %>/index.ne"><img src="<%=request.getContextPath()%>/img/logo.png" alt="NewEye" /></a>
+			<a href="<%=request.getContextPath() %>/"><img src="<%=request.getContextPath()%>/img/logo.png" alt="NewEye" /></a>
 	</div>
 	<div class="page-scroll">
 	<!-- <a href="#about"> <i class="fa fa-angle-down fa-5x animated"></i></a> -->
@@ -65,7 +65,7 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="menu">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="<%=request.getContextPath() %>/index.ne">Go To The Product Page</a></li></li>
+								<li class="active"><a href="<%=request.getContextPath() %>/">Go To The Product Page</a></li></li>
 							</ul>
 						</div>
 						<!-- /.Navbar-collapse -->

@@ -189,6 +189,50 @@ public class ProductController {
 	}
 	
 	
+	@RequestMapping("/productSearch")
+	public String execute(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String url = "redirect:product_list";
+
+		String key = request.getParameter("key");
+		String tpage = request.getParameter("tpage");
+		if (key == null) {
+			key = "";
+		}
+		if (tpage == null) {
+			tpage = "1"; // 현재 페이지 (default 1)
+		} else if (tpage.equals("")) {
+			tpage = "1";
+		}
+		request.setAttribute("key", key);
+		request.setAttribute("tpage", tpage);
+
+		/* ProductDAO productDAO = ProductDAO_JDBC.getInstance(); */
+		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
+
+		ArrayList<ProductVO> productList = null;
+		String paging = null;
+		try {
+			productList = productDAO.listProduct(Integer.parseInt(tpage), key);
+			paging = productDAO.pageNumber(Integer.parseInt(tpage), key);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		for(ProductVO vo : productList){
+			System.out.println(vo.getName());
+		}
+		
+		request.setAttribute("productKindList", productList);
+		int n = productList.size();
+		request.setAttribute("productListSize", n);
+		request.setAttribute("paging", paging);
+		
+		return url;
+	}
+	
 	// productDetail
 	@RequestMapping("/productDetail")
 	public String productDetail(HttpServletRequest request, HttpServletResponse response)

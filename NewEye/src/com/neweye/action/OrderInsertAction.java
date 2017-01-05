@@ -19,7 +19,7 @@ import com.neweye.dto.OrderVO;
 
 public class OrderInsertAction implements Action {
 
-	@Override
+	/*@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String url = "mypage/orderInsert.jsp";
@@ -43,5 +43,5 @@ public class OrderInsertAction implements Action {
 		request.setAttribute("cartList", cartList);
 		
 		return url;
-	}
+	}*/
 }

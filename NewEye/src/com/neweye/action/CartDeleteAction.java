@@ -12,7 +12,7 @@ import com.neweye.dao.iBatis.CartDAO_iBatis;
 
 public class CartDeleteAction implements Action {
 
-	@Override
+	/*@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "cartList.ne";
@@ -30,5 +30,5 @@ public class CartDeleteAction implements Action {
 			}
 		}
 		return url;
-	}
+	}*/
 }

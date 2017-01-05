@@ -14,7 +14,7 @@ import com.neweye.dto.CartVO;
 import com.neweye.dto.MemberVO;
 
 public class CartInsertAction implements Action {
-
+/*
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -49,5 +49,5 @@ public class CartInsertAction implements Action {
 		}
 		return url;
 	}
-
+*/
 }

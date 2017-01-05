@@ -36,7 +36,7 @@
 							<c:otherwise>
 								<span style="color: red"> 처리완료 </span>
 							</c:otherwise>
-						</c:choose><a href="orderDetail.ne?oseq=${orderVO.oseq}"> [조회] </a></td>
+						</c:choose><a href="orderDetail?oseq=${orderVO.oseq}"> [조회] </a></td>
 				</tr>
 			</c:forEach>
 		</table>
@@ -45,14 +45,13 @@
 		
 		<br><br><br>
 		<div id="buttons">
-		<a href="index.ne" class="btn_default_org">쇼핑계속하기</a>&nbsp;&nbsp;&nbsp;
-		<a href="mypage.ne" class="btn_default_org">진행중인 주문</a>&nbsp;&nbsp;&nbsp;
-		<a href="orderAll.ne" class="btn_default_org">총 주문내역</a>&nbsp;&nbsp;&nbsp;
-		<a href="mypageForm.ne" class="btn_default_org">마이페이지</a>
+		<a href="/" class="btn_default_org">쇼핑계속하기</a>&nbsp;&nbsp;&nbsp;
+		<a href="mypage" class="btn_default_org">진행중인 주문</a>&nbsp;&nbsp;&nbsp;
+		<a href="orderAll" class="btn_default_org">총 주문내역</a>&nbsp;&nbsp;&nbsp;
+		<a href="mypageForm" class="btn_default_org">마이페이지</a>
 			<!-- <input type="button" value="쇼핑 계속하기" class="cancel"
-				onclick="location.href='index.ne'"> -->
+				onclick="location.href='index'"> -->
 		</div>
 	</form>
 </div>
 </article>
-<%-- <%@ include file="../footer.jsp"%> --%>

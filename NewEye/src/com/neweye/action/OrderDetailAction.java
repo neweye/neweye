@@ -16,7 +16,7 @@ import com.neweye.dto.OrderVO;
 
 public class OrderDetailAction implements Action {
 
-	@Override
+	/*@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "mypage/orderDetail.jsp";
 
@@ -43,5 +43,5 @@ public class OrderDetailAction implements Action {
 			request.setAttribute("totalPrice", totalPrice);
 		}
 		return url;
-	}
+	}*/
 }

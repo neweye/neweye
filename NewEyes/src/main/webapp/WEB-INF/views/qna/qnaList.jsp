@@ -36,7 +36,7 @@
 		<div id="buttons">
 			<input type="button" value="1:1 질문하기" class="submit btn_default_org"
 				onclick="location.href='qnaWriteForm.ne'">&nbsp;&nbsp;&nbsp;
-				<input type="button" value="쇼핑 계속하기" class="cancel btn_default_org" onclick="location.href='index.ne'">&nbsp;&nbsp;&nbsp;
+				<input type="button" value="쇼핑 계속하기" class="cancel btn_default_org" onclick="location.href='index'">&nbsp;&nbsp;&nbsp;
 				<a href="mypageForm.ne" class="btn_default_org">마이페이지</a>
 		</div>
 	</form>

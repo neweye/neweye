@@ -79,7 +79,7 @@
 		<br><br><br>
 		<div id="buttons">
 		
-		<a href="index.ne" class="btn_default_org">쇼핑계속하기</a>
+		<a href="/" class="btn_default_org">쇼핑계속하기</a>
 		<a class="btn_default_org" onclick="go_order_perfect()">주문하기</a>
 			<!-- <input type="button" value="쇼핑 계속하기" class="cancel"
 				onclick="location.href='index.ne'"> -->

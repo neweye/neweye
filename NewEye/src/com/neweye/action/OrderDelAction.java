@@ -13,7 +13,7 @@ import com.neweye.dto.OrderVO;
 
 public class OrderDelAction implements Action {
 
-	@Override
+	/*@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
@@ -22,7 +22,7 @@ public class OrderDelAction implements Action {
 		
 		OrderVO orderVO = new OrderVO();
 		orderVO.setOseq(Integer.parseInt(request.getParameter("oseq")));
-		/*
+		
 		1 : 입금대기
 		2 : 입금확인
 		3 : 배송중
@@ -30,7 +30,7 @@ public class OrderDelAction implements Action {
 		5 : 주문취소
 		6 : 반품중
 		7 : 환불완료
-		*/
+		
 		if(Integer.parseInt(request.getParameter("result"))<3){
 			//주문취소
 			orderVO.setResult("5");
@@ -48,6 +48,6 @@ public class OrderDelAction implements Action {
 			e.printStackTrace();
 		}
 		return url;
-	}
+	}*/
 
 }

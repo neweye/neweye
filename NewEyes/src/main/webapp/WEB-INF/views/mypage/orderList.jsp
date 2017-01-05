@@ -23,7 +23,7 @@
 			</tr>
 			<c:forEach items="${orderList}" var="orderVO">
 				<tr>
-					<td style="font-size: 20px"><a href="productDetail.ne?pseq=${cartVO.pseq}">
+					<td style="font-size: 20px"><a href="productDetail?pseq=${cartVO.pseq}">
 							${orderVO.pname}
 					</a></td>
 					<td>${orderVO.quantity}</td>
@@ -44,8 +44,8 @@
 		<div class="clear"></div>
 		<br><br><br>
 		<div id="buttons">
-		<a href="mypageForm.ne" class="btn_default_org">마이페이지</a>&nbsp;&nbsp;&nbsp;
-		<a href="index.ne" class="btn_default_org">쇼핑계속하기</a>
+		<a href="mypageForm" class="btn_default_org">마이페이지</a>&nbsp;&nbsp;&nbsp;
+		<a href="/" class="btn_default_org">쇼핑계속하기</a>
 			<!-- <input type="button" value="쇼핑 계속하기" class="cancel"
 				onclick="location.href='index.ne'"> -->
 		</div>

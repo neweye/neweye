@@ -17,7 +17,7 @@
 		 <div id="buttons">
 			<input type="submit"  value="작성완료" class="submit btn_default_org">&nbsp;&nbsp;&nbsp;
 			<a href="qnaList.ne" class="btn_default_org" >돌아가기</a>&nbsp;&nbsp;&nbsp;
-			<input type="button" value="쇼핑 계속하기" class="submit btn_default_org"  onclick="location.href='index.ne'">
+			<input type="button" value="쇼핑 계속하기" class="submit btn_default_org"  onclick="location.href='index'">
 		  </div>
 		</form>
 		</div>

@@ -7,7 +7,7 @@
 
  setTimeout("move()",0);
  function move(){
-    location.href="<%=request.getContextPath() %>/index.ne"
+    location.href="<%=request.getContextPath() %>/"
  }
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

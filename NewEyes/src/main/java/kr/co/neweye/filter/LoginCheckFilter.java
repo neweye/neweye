@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class LoginCheckFilter implements Filter {
@@ -49,8 +50,9 @@ public class LoginCheckFilter implements Filter {
 			if (login) {
 				chain.doFilter(request, response);
 			} else {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("member/login.jsp");
-				dispatcher.forward(request, response);
+				((HttpServletResponse)response).sendRedirect("loginForm");
+				/*RequestDispatcher dispatcher = request.getRequestDispatcher("loginForm");
+				dispatcher.forward(request, response);*/
 			}
 		}else{
 			chain.doFilter(request, response);

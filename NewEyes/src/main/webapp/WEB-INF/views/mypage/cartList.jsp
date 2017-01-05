@@ -60,7 +60,7 @@
 			<!-- <input value="쇼핑 계속하기" class="btn_default_org"
 				onclick="location.href='index.ne'"> -->
 				
-				<a href="index.ne" class="btn_default_org">쇼핑계속하기</a>&nbsp;&nbsp;&nbsp;
+				<a href="/" class="btn_default_org">쇼핑계속하기</a>&nbsp;&nbsp;&nbsp;
 			<c:if test="${cartList.size() != 0}">			
 			<a class="btn_default_org" onclick="go_order_insert()">주문하기</a>&nbsp;&nbsp;&nbsp;
 			<a href="mypageForm.ne" class="btn_default_org">마이페이지</a>
