@@ -61,8 +61,7 @@
 	</select>
 	<update id="updateOrderResultOne" parameterClass="order">
 		update order_detail 
-		set 
-			result=#result#
+		set result=#result#
 		where oseq=#oseq#
 	</update>
 	<update id="updateOrderResult" parameterClass="order">

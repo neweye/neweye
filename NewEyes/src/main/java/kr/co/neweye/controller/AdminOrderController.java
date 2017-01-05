@@ -50,7 +50,6 @@ public class AdminOrderController {
 				orderVO.setPrice(totalPrice);
 				orderList.add(orderVO);
 			}
-			request.setAttribute("title", "총 주문 내역");
 			request.setAttribute("orderList", orderList);
 		} catch (SQLException e) {
 

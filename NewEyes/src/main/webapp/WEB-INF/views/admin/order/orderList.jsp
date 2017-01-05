@@ -37,8 +37,7 @@
 				<c:forEach items="${orderList}" var="orderVO">
 					<tr>
 						<td>
-                  		   ${orderVO.oseq} &nbsp;
-                  		   <input type="hidden" name="code" value="${orderVO.oseq}"/>
+                  		   ${orderVO.oseq}<input type="hidden" name="code" value="${orderVO.oseq}"/>
 							<c:choose>
 								<c:when test='${orderVO.result=="1"}'>
 									<select name="result" size="1">
