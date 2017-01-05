@@ -14,27 +14,27 @@ import com.neweye.dao.MemberDAO;
 import com.neweye.dto.MemberVO;
 
 public class AdminMemberListAction implements Action {
-
-  @Override
-  public String execute(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
-
-    String url = "member/memberList.jsp";
-    String key = "";
-    if (request.getParameter("key") != null) {
-      key = request.getParameter("key");
-    }
-
-    MemberDAO memberDAO = MemberDAO_iBatis.getInstance();
-    ArrayList<MemberVO> memberList=null;
-	try {
-		memberList = memberDAO.listMember(key);
-	} catch (SQLException e) {
-		e.printStackTrace();
-	}
-
-    request.setAttribute("memberList", memberList);
-
-    return url;
-  }
+//
+//  @Override
+//  public String adminMemberList(HttpServletRequest request, HttpServletResponse response)
+//      throws ServletException, IOException {
+//
+//    String url = "member/memberList.jsp";
+//    String key = "";
+//    if (request.getParameter("key") != null) {
+//      key = request.getParameter("key");
+//    }
+//
+//    MemberDAO memberDAO = MemberDAO_iBatis.getInstance();
+//    ArrayList<MemberVO> memberList=null;
+//	try {
+//		memberList = memberDAO.listMember(key);
+//	} catch (SQLException e) {
+//		e.printStackTrace();
+//	}
+//
+//    request.setAttribute("memberList", memberList);
+//
+//    return url;
+//  }
 }
