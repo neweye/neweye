@@ -14,8 +14,8 @@ import com.neweye.dao.iBatis.OrderDAO_iBatis;
 import com.neweye.dto.OrderVO;
 
 public class AdminOrderUpdateAction implements Action {
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
+	/*@Override
+	public String adminOrderUpdate(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		
@@ -53,6 +53,6 @@ public class AdminOrderUpdateAction implements Action {
 		}
 		
 		return url;
-	}
+	}*/
 
 }
