@@ -45,7 +45,7 @@ public class AdminIndexController {
 		if (result == 1) {// 로그인 성공
 			HttpSession session = request.getSession();
 			session.setAttribute("workerId", workerId);
-			url = "index"; ///////////////////로긴 후 넘어갈 곳 주소
+			url = "index"; // /////////////////로긴 후 넘어갈 곳 주소
 		} else if (result == 0) {
 			msg = "비밀번호를 확인하세요.";
 		} else if (result == -1) {
@@ -54,9 +54,23 @@ public class AdminIndexController {
 		request.setAttribute("message", msg);
 		return url;
 	}
-	
+
 	@RequestMapping("/index")
-	public String index(){
+	public String index() {
 		return "admin/index";
+	}
+
+	@RequestMapping("/adminLogout")
+	public String adminLogout(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		String url = "redirect:/index";
+
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			session.invalidate();
+			request.setAttribute("message", "");
+		}
+		
+		return url;
 	}
 }

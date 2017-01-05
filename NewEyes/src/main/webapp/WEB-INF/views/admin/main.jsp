@@ -21,13 +21,13 @@
 
 					<div class="form-group">
 						<input type="text" name="workerId" class="form-control"
-							placeholder="Your Id" data-rule="minlen:4" />
+							placeholder="Your Id" data-rule="minlen:4" value="admin"/>
 						<div class="validation"></div>
 					</div>
 
 					<div class="form-group">
 						<input type="password" class="form-control" name="workerPassword"
-							placeholder="Your Password" data-rule="email" />
+							placeholder="Your Password" data-rule="email" value="admin"/>
 						<div class="validation"></div>
 					</div>
 
