@@ -16,13 +16,13 @@ import com.neweye.dto.QnaVO;
 
 public class AdminQnaListAction implements Action {
 
-  @Override
-  public String execute(HttpServletRequest request, HttpServletResponse response)
+  /*@Override
+  public String adminQnaList(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
     String url = "qna/qnaList.jsp";
     
-    /*QnaDAO qnaDAO = QnaDAO_JDBC.getInstance();*/
+    QnaDAO qnaDAO = QnaDAO_JDBC.getInstance();
     QnaDAO qnaDAO = QnaDAO_iBatis.getInstance();
     ArrayList<QnaVO> qnaList=null;
 	try {
@@ -34,5 +34,5 @@ public class AdminQnaListAction implements Action {
     request.setAttribute("qnaList", qnaList);
 
     return url;
-  }
+  }*/
 }

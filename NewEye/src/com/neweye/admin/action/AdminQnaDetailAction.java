@@ -15,8 +15,8 @@ import com.neweye.dto.QnaVO;
 
 public class AdminQnaDetailAction implements Action {
 
-  @Override
-  public String execute(HttpServletRequest request, HttpServletResponse response)
+  /*@Override
+  public String adminQnaDetail(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 	  
 	//request.setCharacterEncoding("utf-8");
@@ -25,7 +25,7 @@ public class AdminQnaDetailAction implements Action {
 
     String qseq = request.getParameter("qseq").trim();
 
-    /*QnaDAO qnaDAO = QnaDAO_JDBC.getInstance();*/
+    QnaDAO qnaDAO = QnaDAO_JDBC.getInstance();
     QnaDAO qnaDAO = QnaDAO_iBatis.getInstance();
     QnaVO qnaVO=null;
    try {
@@ -39,5 +39,5 @@ public class AdminQnaDetailAction implements Action {
     request.setAttribute("qnaVO", qnaVO);
         
     return url;
-  }
+  }*/
 }
