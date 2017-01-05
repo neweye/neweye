@@ -45,5 +45,30 @@ public class AdminOrderController {
 
 	    return url;
 	  }
+	  
+	  @RequestMapping("/adminOrderDetail")
+	  public String adminOrderDetail(HttpServletRequest request,
+				HttpServletResponse response) throws ServletException, IOException {
+			String url = "admin/order/orderDetail";
+
+			int oseq = Integer.parseInt(request.getParameter("oseq"));
+			OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
+			ArrayList<OrderVO> orderList = null;
+			try {
+				orderList = orderDAO.listOrderByOseq(oseq);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			int totalPrice = 0;
+			for (OrderVO ovo : orderList) {
+				totalPrice += ovo.getPrice() * ovo.getQuantity();
+			}
+			request.setAttribute("orderDetail", orderList.get(0));
+			request.setAttribute("orderList", orderList);
+			request.setAttribute("totalPrice", totalPrice);
+
+			return url;
+		}
 
 }
