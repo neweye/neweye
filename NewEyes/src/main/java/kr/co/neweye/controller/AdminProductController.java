@@ -378,13 +378,12 @@ public class AdminProductController {
 		public String adminDelete(HttpServletRequest request,
 				HttpServletResponse response) throws ServletException, IOException {
 			String url = "redirect:adminProductList";
-			
+		
 			ProductVO productVO = new ProductVO();
-			
 			
 			productVO.setPseq(Integer.parseInt(request.getParameter("pseq")));
 			productVO.setKind("0");
-			
+			productVO.setUseyn("N");
 			
 			ProductDAO productDAO = ProductDAO_iBatis.getInstance();
 			
