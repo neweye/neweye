@@ -13,7 +13,7 @@
 		<h2>로그인</h2>
 		<h4>Login</h4>
 	</div>
-	<form name="frm" method="post" action="adminLogin.ne">
+	<form name="frm" method="post" action="adminLogin">
 		<div class="row">
 			<div class="col-lg-8 col-md-offset-2">
 				<div class="form-wrapper marginbot-50">
@@ -49,7 +49,7 @@
 <%-- <div id="wrap">
     <div class="contract"></div>
       <div class="" id="loginform">
-      <form name="frm" method="post" action="adminLogin.ne">
+      <form name="frm" method="post" action="adminLogin">
       <table>
         <tr>
           <td> ID </td>
