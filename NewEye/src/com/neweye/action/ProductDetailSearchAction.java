@@ -15,48 +15,4 @@ import com.neweye.dto.ProductVO;
 
 public class ProductDetailSearchAction implements Action {
 
-	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String url = "product/product_list.jsp";
-
-		String name = request.getParameter("name");
-		String tpage = request.getParameter("tpage");
-		if (name == null) {
-			name = "";
-		}
-		if (tpage == null) {
-			tpage = "1"; // 현재 페이지 (default 1)
-		} else if (tpage.equals("")) {
-			tpage = "1";
-		}
-		request.setAttribute("name", name);
-		request.setAttribute("tpage", tpage);
-
-		/* ProductDAO productDAO = ProductDAO_JDBC.getInstance(); */
-		ProductDAO productDAO = ProductDAO_iBatis.getInstance();
-
-		ArrayList<ProductVO> productList = null;
-		String paging = null;
-		try {
-			productList = productDAO.listProduct(Integer.parseInt(tpage), name);
-			paging = productDAO.pageNumber(Integer.parseInt(tpage), name);
-		} catch (NumberFormatException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		for(ProductVO vo : productList){
-			System.out.println(vo.getName());
-		}
-		
-		request.setAttribute("productKindList", productList);
-		int n = productList.size();
-		request.setAttribute("productListSize", n);
-		request.setAttribute("paging", paging);
-		
-		return url;
-	}
-
 }
