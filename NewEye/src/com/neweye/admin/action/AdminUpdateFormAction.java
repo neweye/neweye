@@ -13,9 +13,9 @@ import com.neweye.dao.iBatis.MemberDAO_iBatis;
 import com.neweye.dto.MemberVO;
 
 public class AdminUpdateFormAction implements Action{
-
+/*
 	@Override
-	public String execute(HttpServletRequest request,
+	public String adminUpdate(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String url = "member/myPageMember.jsp";
 		
@@ -34,5 +34,5 @@ public class AdminUpdateFormAction implements Action{
 		
 		return url;
 	}
-
+*/
 }

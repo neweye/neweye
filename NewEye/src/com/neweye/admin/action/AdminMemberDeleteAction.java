@@ -14,9 +14,9 @@ import com.neweye.dao.iBatis.MemberDAO_iBatis;
 import com.neweye.dto.MemberVO;
 
 public class AdminMemberDeleteAction implements Action{
-
+/*
 	@Override
-	public String execute(HttpServletRequest request,
+	public String admindeleteuseMember(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		
@@ -41,5 +41,5 @@ public class AdminMemberDeleteAction implements Action{
 		
 		return url;
 	}
-
+*/
 }

@@ -14,9 +14,9 @@ import com.neweye.dao.iBatis.MemberDAO_iBatis;
 import com.neweye.dto.MemberVO;
 
 public class AdminMemberUpdateAction implements Action {
-
+/*
 	@Override
-	public String execute(HttpServletRequest request,
+	public String adminUpdate(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
@@ -53,5 +53,5 @@ public class AdminMemberUpdateAction implements Action {
 
 		return url;
 	}
-
+*/
 }
