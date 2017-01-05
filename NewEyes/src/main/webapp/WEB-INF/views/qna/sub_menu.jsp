@@ -5,9 +5,9 @@
 
 <nav id="sub_menu">
     <ul>    
-      <li><a href="qnaList.ne">
+      <li><a href="qnaList">
       Q&amp;A 게시글 리스트</a></li>
-      <li><a href="qnaWriteForm.ne">
+      <li><a href="qnaWriteForm">
       Q&amp;A 게시글 쓰기</a></li> 
     </ul>
 </nav>

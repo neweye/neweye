@@ -3,7 +3,7 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <nav id="sub_menu">
 	<ul>
-		<li><a href="loginForm.ne">Login</a></li>
-		<li><a href="contract.ne">Join us</a></li>
+		<li><a href="loginForm">Login</a></li>
+		<li><a href="contract">Join us</a></li>
 	</ul>
 </nav>

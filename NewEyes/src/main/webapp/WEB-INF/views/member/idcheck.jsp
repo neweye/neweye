@@ -37,7 +37,7 @@ input[type=button], input[type=submit] {
 	<div id="wrap">
 		<h1>ID 중복확인</h1>
 		<form method=post name=formm style="margin-right: 0"
-			action="idCheckForm.ne">
+			action="idCheckForm">
 			User ID <input type=text name="id" value=""> <input
 				type=submit value="검색" class="submit"><br>
 			<div style="margin-top: 20px">

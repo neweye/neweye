@@ -21,7 +21,7 @@
 			<c:forEach items="${qnaList}" var="qnaVO">
 				<tr>
 					<td>${qnaVO.qseq}</td>
-					<td><a href="qnaView.ne?qseq=${qnaVO.qseq}">
+					<td><a href="qnaView?qseq=${qnaVO.qseq}">
 							${qnaVO.subject}</a></td>
 					<td><fmt:formatDate value="${qnaVO.indate}" type="date" /></td>
 					<td><c:choose>
@@ -35,9 +35,9 @@
 		<br><br><br>
 		<div id="buttons">
 			<input type="button" value="1:1 질문하기" class="submit btn_default_org"
-				onclick="location.href='qnaWriteForm.ne'">&nbsp;&nbsp;&nbsp;
+				onclick="location.href='qnaWriteForm'">&nbsp;&nbsp;&nbsp;
 				<input type="button" value="쇼핑 계속하기" class="cancel btn_default_org" onclick="location.href='index'">&nbsp;&nbsp;&nbsp;
-				<a href="mypageForm.ne" class="btn_default_org">마이페이지</a>
+				<a href="mypageForm" class="btn_default_org">마이페이지</a>
 		</div>
 	</form>
 	</div>

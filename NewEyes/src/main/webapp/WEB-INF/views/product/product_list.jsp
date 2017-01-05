@@ -141,7 +141,7 @@ div.invisibleClass{
             <div class="div_all">
                   <div id="product_list">
                      <ul class="plist">
-                        <li><a href="productDetail.ne?pseq=${productVO.pseq}">
+                        <li><a href="productDetail?pseq=${productVO.pseq}">
                               <img src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
                         </a></li>
                      </ul>

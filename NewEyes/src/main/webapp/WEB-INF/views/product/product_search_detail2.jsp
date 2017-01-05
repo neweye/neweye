@@ -8,7 +8,7 @@
 <script>
 function do_submit_dsearch(){
 	var theForm = document.frm;
-	theForm.action = "ProductDetailSearch.ne?name="+name;
+	theForm.action = "ProductDetailSearch?name="+name;
 	theForm.target=name; //삽질
 	theForm.method="post";//삽질
 	theForm.submit();

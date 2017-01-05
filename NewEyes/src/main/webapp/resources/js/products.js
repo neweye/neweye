@@ -1,5 +1,5 @@
 function go_list() { 
- document.formm.action = "product.ne";
+ document.formm.action = "product";
  document.formm.submit();
 }
 
@@ -8,7 +8,7 @@ function go_buynow() {
 		  alert("수량을 입력하여 주세요.");
 		  document.formm.quantity.focus();
 		 } else {
- document.formm.action = "orderDirectInsert.ne";
+ document.formm.action = "orderDirectInsert";
  document.formm.submit();
 		 }
 }
@@ -35,7 +35,7 @@ function go_cart_delete() {
   alert("삭제할 항목을 선택해 주세요.");
 
  } else {
-  document.formm.action = "cartDelete.ne";
+  document.formm.action = "cartDelete";
   document.formm.submit();
  }
 }
@@ -51,7 +51,7 @@ function go_order_insert() {
   alert("주문할 항목을 선택해 주세요.");
 
  } else {
-  document.formm.action = "orderInsert.ne";
+  document.formm.action = "orderInsert";
   document.formm.submit();
  } 
 }
@@ -67,7 +67,7 @@ function go_order_delete() {
   alert("삭제할 항목을 선택해 주세요.");
 
  } else {
-  document.formm.action = "orderDelete.ne";
+  document.formm.action = "orderDelete";
   document.formm.submit();
  }
 }
@@ -94,7 +94,7 @@ function go_search(form) {
 	theForm.submit();
 }
 function go_search_detail(form){
-	document.frm.action = "product.ne";
+	document.frm.action = "product";
 	document.frm.submit();
 }
 function go_detail(){
@@ -106,7 +106,7 @@ $(function(){
 	$('#orderToList').change(order);
 	function order(){
 		$('option:selected').each(function(i){
-			document.frm.action = "product.ne";
+			document.frm.action = "product";
 			document.frm.submit();
 		})
 	}

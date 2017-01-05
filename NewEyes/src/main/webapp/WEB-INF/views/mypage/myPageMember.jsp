@@ -14,7 +14,7 @@
          <div class="form-wrapper marginbot-50">
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form id="contact-form" action="join.ne" method="post" role="form"
+            <form id="contact-form" action="join" method="post" role="form"
                class="contactForm" name="formm">
 
                <div class="form-group">

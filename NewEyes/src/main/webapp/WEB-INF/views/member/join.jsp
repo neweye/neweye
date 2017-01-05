@@ -14,7 +14,7 @@
 	<div class="row">
 		<div class="col-lg-8 col-md-offset-2">
 			<div class="form-wrapper marginbot-50">
-				<form id="join" method="post" action="login.ne" class="contactForm"
+				<form id="join" method="post" action="login" class="contactForm"
 					name="formm">
 
 					ID: <input name="id" type="text" class="form-control"><br>

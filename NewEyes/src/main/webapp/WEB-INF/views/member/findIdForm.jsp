@@ -37,7 +37,7 @@
 	<div class="row">
 		<div class="col-lg-8 col-md-offset-2">
 			<div class="form-wrapper marginbot-50">
-				<form method="post" action="findId.ne" class="contactForm"
+				<form method="post" action="findId" class="contactForm"
 					name="formm">
 					<input name="name" type="text" class="form-control"
 						placeholder="Your name"><br>

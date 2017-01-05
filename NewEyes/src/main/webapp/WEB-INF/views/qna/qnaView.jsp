@@ -37,7 +37,7 @@ $(function() {
     </table>
     <div class="clear"></div>
      <div id="buttons">
-      <input type="button"  value="목록보기"     class="submit btn_default_org"  onclick="location.href='qnaList.ne'">&nbsp;&nbsp;&nbsp;
+      <input type="button"  value="목록보기"     class="submit btn_default_org"  onclick="location.href='qnaList'">&nbsp;&nbsp;&nbsp;
       <input type="button"  value="쇼핑 계속하기"  class="cancel btn_default_org"  onclick="location.href='index'">  
       </div>
     </form>

@@ -5,7 +5,7 @@
 	<article>
 	<div id="board_outside">
 	    <h2> 1:1 문의 하기 </h2>
-		<form name="formm" method="post" action="qnaWrite.ne">
+		<form name="formm" method="post" action="qnaWrite">
 				<!-- <legend>Board Info</legend> -->
 				<table class="table_qna_form">		
 			    <tr><td style="border-bottom:0;"><label>Title</label></td>
@@ -16,7 +16,7 @@
 		<div class="clear"></div>
 		 <div id="buttons">
 			<input type="submit"  value="작성완료" class="submit btn_default_org">&nbsp;&nbsp;&nbsp;
-			<a href="qnaList.ne" class="btn_default_org" >돌아가기</a>&nbsp;&nbsp;&nbsp;
+			<a href="qnaList" class="btn_default_org" >돌아가기</a>&nbsp;&nbsp;&nbsp;
 			<input type="button" value="쇼핑 계속하기" class="submit btn_default_org"  onclick="location.href='index'">
 		  </div>
 		</form>

@@ -91,7 +91,7 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
 	<%-- <div class="row">
 		<div class="col-lg-8 col-md-offset-2">
 			<div class="form-wrapper marginbot-50">
-				<form method="post" action="login.ne" class="contactForm"
+				<form method="post" action="login" class="contactForm"
 					name="formm">
 					<input name="id" type="text" value="${id}" class="form-control"
 						placeholder="Your Id"><br>
@@ -104,8 +104,8 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
 
 					<div style="text-align:center;">
 						<input type="submit" class="submit btn btn-skin" value="로그인" style="width:80px;">&nbsp;&nbsp;&nbsp;
-						<input type="button" class="cancel btn btn-skin" onclick="location='joinForm.ne'" value="회원가입" style="width:90px;"><br/>
-						<input type="button" class="submit btn btn-skin btn-block" onclick="location='findIdForm.ne'" value="아이디 비밀번호 찾기" style="width:188px;margin:10px auto;">
+						<input type="button" class="cancel btn btn-skin" onclick="location='joinForm'" value="회원가입" style="width:90px;"><br/>
+						<input type="button" class="submit btn btn-skin btn-block" onclick="location='findIdForm'" value="아이디 비밀번호 찾기" style="width:188px;margin:10px auto;">
 					</div>
 				</form>
 			</div>
@@ -130,15 +130,15 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
 				</table>
 				<div id="contract">
 				<input type="submit" class="submit btn btn-skin" value="로그인" style="width:80px;">
-				<input type="button" class="cancel btn btn-skin" onclick="location='joinForm.ne'" value="회원가입" style="width:90px;">
-				<input type="button" class="submit btn btn-skin" onclick="location='findIdForm.ne'" value="아이디 비밀번호 찾기" style="width:188px;">
+				<input type="button" class="cancel btn btn-skin" onclick="location='joinForm'" value="회원가입" style="width:90px;">
+				<input type="button" class="submit btn btn-skin" onclick="location='findIdForm'" value="아이디 비밀번호 찾기" style="width:188px;">
 				</div>
 				</form>
 
 	
 
 	<%-- 
-	<form method="post" action="login.ne">
+	<form method="post" action="login">
         <fieldset>
         <legend></legend>
           <label>User ID</label>
@@ -152,9 +152,9 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
         <div id="buttons">
             <input type="submit" value="로그인" class="submit">
             <input type="button" value="회원가입" class="cancel"
-                 onclick="location='joinForm.ne'">
+                 onclick="location='joinForm'">
             <input type="button" value="아이디 비밀번호 찾기" class="submit"
-                 onclick="location='findIdForm.ne'">     
+                 onclick="location='findIdForm'">     
         </div>
     </form>   
  --%>

@@ -47,7 +47,7 @@
 		<a href="mypageForm" class="btn_default_org">마이페이지</a>&nbsp;&nbsp;&nbsp;
 		<a href="/" class="btn_default_org">쇼핑계속하기</a>
 			<!-- <input type="button" value="쇼핑 계속하기" class="cancel"
-				onclick="location.href='index.ne'"> -->
+				onclick="location.href='index'"> -->
 		</div>
 	</form>
 </div>

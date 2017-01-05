@@ -58,7 +58,7 @@ img.index_product_img {
 				<span class="div_areasize">
 				<div class="index_div_all">
 				<div id='#index_product_list'>
-					<a href="productDetail.ne?pseq=${productVO.pseq}">
+					<a href="productDetail?pseq=${productVO.pseq}">
 						<ul class="plist">
 							<li class="product_list_new_li"><img class="index_product_img"
 								src="<%=request.getContextPath() %>/productimg/${productVO.img_list}"
