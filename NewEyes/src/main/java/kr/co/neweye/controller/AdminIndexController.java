@@ -45,7 +45,7 @@ public class AdminIndexController {
 		if (result == 1) {// 로그인 성공
 			HttpSession session = request.getSession();
 			session.setAttribute("workerId", workerId);
-			url = "index"; // /////////////////로긴 후 넘어갈 곳 주소
+			url = "redirect:adminOrderList"; // /////////////////로긴 후 넘어갈 곳 주소
 		} else if (result == 0) {
 			msg = "비밀번호를 확인하세요.";
 		} else if (result == -1) {
