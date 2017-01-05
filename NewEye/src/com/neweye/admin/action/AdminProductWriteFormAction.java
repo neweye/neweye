@@ -10,8 +10,8 @@ import com.neweye.action.Action;
 
 public class AdminProductWriteFormAction implements Action {
 
-  @Override
-  public String execute(HttpServletRequest request, HttpServletResponse response)
+/*  @Override
+  public String adminProductWriteForm(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
     String url = "product/productWrite.jsp";
@@ -19,5 +19,5 @@ public class AdminProductWriteFormAction implements Action {
     request.setAttribute("kindList", kindList);
     
     return url;
-  }
+  }*/
 }
