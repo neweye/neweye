@@ -18,42 +18,45 @@ import co.kr.neweye.ibatis.WorkerDAO_iBatis;
 @RequestMapping("/admin")
 public class AdminIndexController {
 
-	  @RequestMapping("/adminLogin")
-	  public String adminLogin(HttpServletRequest request, HttpServletResponse response)
-	      throws ServletException, IOException {
-	    String url = "redirect:adminLoginForm";
-	    String msg = "";
-	    String workerId = request.getParameter("workerId").trim();
-	    String workerPassword = request.getParameter("workerPassword").trim();
+	@RequestMapping("/adminLoginForm")
+	public String adminIndex(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		String url = "admin/main";
+		return url;
+	}
 
-	    WorkerDAO workerDAO = WorkerDAO_iBatis.getInstance();
+	@RequestMapping("/adminLogin")
+	public String adminLogin(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		String url = "redirect:adminLoginForm";
+		String msg = "";
+		String workerId = request.getParameter("workerId").trim();
+		String workerPassword = request.getParameter("workerPassword").trim();
 
-	    int result=-1;
+		WorkerDAO workerDAO = WorkerDAO_iBatis.getInstance();
+
+		int result = -1;
 		try {
 			result = workerDAO.workerCheck(workerId, workerPassword);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	    
-	    if (result == 1) {// 로그인 성공
-	      HttpSession session = request.getSession();
-	      session.setAttribute("workerId", workerId);
-	      url = "adminProductList";
-	    } else if (result == 0) {
-	      msg = "비밀번호를 확인하세요.";
-	    } else if (result == -1) {
-	      msg = "아이디를 확인하세요.";
-	    }
-	    request.setAttribute("message", msg);
-	    return url;
-	  }
-	  
-	  @RequestMapping("/adminLoginForm")
-	  public String adminIndex(HttpServletRequest request, HttpServletResponse response)
-	      throws ServletException, IOException {
-	    String url = "admin/main";  
-	     
-	    return url;
-	  }
-	  
+
+		if (result == 1) {// 로그인 성공
+			HttpSession session = request.getSession();
+			session.setAttribute("workerId", workerId);
+			url = "index"; ///////////////////로긴 후 넘어갈 곳 주소
+		} else if (result == 0) {
+			msg = "비밀번호를 확인하세요.";
+		} else if (result == -1) {
+			msg = "아이디를 확인하세요.";
+		}
+		request.setAttribute("message", msg);
+		return url;
+	}
+	
+	@RequestMapping("/index")
+	public String index(){
+		return "admin/index";
+	}
 }
