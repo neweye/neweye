@@ -47,7 +47,7 @@
    <!-- /Section: intro -->
    <br/>
    <div class="slogan">
-         <a href="<%=request.getContextPath() %>/index.ne"><img src="<%=request.getContextPath()%>/img/logo.png" alt="NewEye" /></a>
+         <a href="<%=request.getContextPath() %>/index"><img src="<%=request.getContextPath()%>/img/logo.png" alt="NewEye" /></a>
    </div>
    <div class="page-scroll">
    <!-- <a href="#about"> <i class="fa fa-angle-down fa-5x animated"></i></a> -->
@@ -71,12 +71,12 @@
                   <div class="collapse navbar-collapse" id="menu">
                      <ul class="nav navbar-nav">
                         <li class="active">
-                        <a href="adminProductList.ne">상품리스트</a></li>
-                        <li><a href="adminOrderList.ne">주문리스트</a></li>
-                        <li><a href="adminMemberList.ne">회원리스트</a></li>
-                        <li><a href="adminQnaList.ne">Q&amp;A리스트</a></li>
-                        <!-- <li><a href="adminQnaList.ne">Q&amp;A리스트</a></li> -->
-                        <li><a href="adminLogout.ne">LOGOUT</a></li>
+                        <a href="adminProductList">상품리스트</a></li>
+                        <li><a href="adminOrderList">주문리스트</a></li>
+                        <li><a href="adminMemberList">회원리스트</a></li>
+                        <li><a href="adminQnaList">Q&amp;A리스트</a></li>
+                        <!-- <li><a href="adminQnaList">Q&amp;A리스트</a></li> -->
+                        <li><a href="adminLogout">LOGOUT</a></li>
                      </ul>
                   </div>
                   <!-- /.Navbar-collapse -->
