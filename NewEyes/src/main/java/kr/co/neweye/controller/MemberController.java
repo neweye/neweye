@@ -332,7 +332,7 @@ public class MemberController {
 	@RequestMapping("/qnaWrite")
 	public String qnaWrite(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "qna/qnaList";
+		String url = "redirect:qnaList";
 			
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
