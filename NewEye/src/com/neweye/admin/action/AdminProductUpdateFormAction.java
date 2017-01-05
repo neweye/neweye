@@ -14,15 +14,15 @@ import com.neweye.dto.ProductVO;
 
 public class AdminProductUpdateFormAction implements Action {
 
-  @Override
-  public String execute(HttpServletRequest request, HttpServletResponse response)
+ /* @Override
+  public String adminProductUpdateForm(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
     String url = "product/productUpdate.jsp";
 
     String pseq = request.getParameter("pseq").trim();
 
-    /*ProductDAO productDAO = ProductDAO_JDBC.getInstance();*/
+    ProductDAO productDAO = ProductDAO_JDBC.getInstance();
     ProductDAO productDAO = ProductDAO_iBatis.getInstance();
     ProductVO productVO=null;
 	try {
@@ -44,5 +44,5 @@ public class AdminProductUpdateFormAction implements Action {
     request.setAttribute("kindList", kindList);
     
     return url;
-  }
+  }*/
 }

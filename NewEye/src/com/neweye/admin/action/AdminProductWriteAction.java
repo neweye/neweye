@@ -19,8 +19,8 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class AdminProductWriteAction implements Action {
 
-  @Override
-  public String execute(HttpServletRequest request, HttpServletResponse response)
+  /*@Override
+  public String adminProductWrite(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     String url = "adminProductList.ne";
     
@@ -95,7 +95,7 @@ public class AdminProductWriteAction implements Action {
     productVO.setImg_detail(multi.getFilesystemName("img_detail"));
     
     
-    /*ProductDAO productDAO = ProductDAO_JDBC.getInstance();*/
+    ProductDAO productDAO = ProductDAO_JDBC.getInstance();
     ProductDAO productDAO = ProductDAO_iBatis.getInstance();
     try {
       productDAO.insertProduct(productVO);
@@ -104,5 +104,5 @@ public class AdminProductWriteAction implements Action {
    }
     
     return url;
-  }
+  }*/
 }

@@ -19,8 +19,8 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class AdminProductUpdateAction implements Action {
 
-   @Override
-   public String execute(HttpServletRequest request, HttpServletResponse response)
+  /* @Override
+   public String adminProductUpdate(HttpServletRequest request, HttpServletResponse response)
          throws ServletException, IOException {
       String url = "adminProductList.ne";
 
@@ -102,5 +102,5 @@ public class AdminProductUpdateAction implements Action {
       }
 
       return url;
-   }
+   }*/
 }
