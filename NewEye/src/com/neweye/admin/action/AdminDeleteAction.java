@@ -14,7 +14,7 @@ import com.neweye.dto.ProductVO;
 
 public class AdminDeleteAction implements Action {
 
-	@Override
+	/*@Override
 	public String execute(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String url = "adminProductList.ne";
@@ -36,6 +36,6 @@ public class AdminDeleteAction implements Action {
 		}
 		
 		return url;
-	}
+	}*/
 
 }

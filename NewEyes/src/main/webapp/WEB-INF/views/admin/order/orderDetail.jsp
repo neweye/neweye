@@ -284,7 +284,7 @@ text-align: center;
 			<div class="clear"></div>
 			<div id="buttons" style="float: center">
 				<input type="button" value="수정하기" class="btn_default_org" onclick="go_order_admin()" />
-				<input type="button" value="목록으로" class="btn_default_org" onclick="location.href='adminOrderList.ne'" />
+				<input type="button" value="목록으로" class="btn_default_org" onclick="location.href='adminOrderList'" />
 			</div>
 			<br/>
 		</form>

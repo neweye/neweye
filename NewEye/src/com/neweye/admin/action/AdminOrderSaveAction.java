@@ -14,8 +14,8 @@ import com.neweye.dto.OrderVO;
 
 public class AdminOrderSaveAction implements Action {
 
-	@Override
-	public String execute(HttpServletRequest request,
+	/*@Override
+	public String adminOrderSave(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String url = "adminOrderList.ne";
 
@@ -30,7 +30,7 @@ public class AdminOrderSaveAction implements Action {
 			orderVO.setOdseq(Integer.parseInt(codeArr[i]));
 			orderVO.setResult(resultArr[i]);
 			
-			/*OrderDAO orderDAO = OrderDAO_JDBC.getInstance();*/
+			OrderDAO orderDAO = OrderDAO_JDBC.getInstance();
 			OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
 			try {
 				orderDAO.updateOrderResult(orderVO);
@@ -40,5 +40,5 @@ public class AdminOrderSaveAction implements Action {
 		}
 
 		return url;
-	}
+	}*/
 }
