@@ -139,5 +139,28 @@ public class AdminOrderController {
 
 			return url;
 		}
+	   
+	   @RequestMapping("/adminOrderSearch")
+		public String adminOrderSearch(HttpServletRequest request, HttpServletResponse response)
+				throws ServletException, IOException {
+			String url = "admin/order/orderList";
+			String key = request.getParameter("key");
+			if (request.getParameter("key") != null) {
+				key = request.getParameter("key");
+			}
+
+			/*OrderDAO orderDAO = OrderDAO_JDBC.getInstance();*/
+			OrderDAO orderDAO = OrderDAO_iBatis.getInstance();
+			ArrayList<OrderVO> orderList=null;
+			try {
+				orderList = orderDAO.listOrder(key);
+			} catch (SQLException e) {		
+				e.printStackTrace();
+			}
+
+			request.setAttribute("orderList", orderList);
+
+			return url;
+		}
 
 }
