@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import kr.co.neweye.dto.AddressVO;
 import kr.co.neweye.dto.MemberVO;
+import kr.co.neweye.dto.QnaVO;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import co.kr.neweye.dao.AddressDAO;
 import co.kr.neweye.dao.MemberDAO;
+import co.kr.neweye.dao.QnaDAO;
 import co.kr.neweye.ibatis.AddressDAO_iBatis;
 import co.kr.neweye.ibatis.MemberDAO_iBatis;
+import co.kr.neweye.ibatis.QnaDAO_iBatis;
 
 @Controller
 public class MemberController {
@@ -284,4 +287,72 @@ public class MemberController {
 		}
 		return url;
 	}
+	
+	@RequestMapping("/qnaList")
+	public String qnaList(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String url = "qna/qnaList";
+
+		HttpSession session = request.getSession();
+		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+
+		if (loginUser == null) {
+			url = "loginForm";
+		} else {
+			/* QnaDAO qnaDAO = QnaDAO_iBatis_iBatis.getInstance(); */
+			QnaDAO_iBatis qnaDAO = QnaDAO_iBatis.getInstance();
+
+			ArrayList<QnaVO> qnaList=null;
+			try {
+				qnaList = qnaDAO.listQna(loginUser.getId());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			request.setAttribute("qnaList", qnaList);
+		}
+		return url;
+	}
+	
+	@RequestMapping("/qnaWriteForm")
+	  public String qnaWriteForm(HttpServletRequest request, HttpServletResponse response)
+	      throws ServletException, IOException {
+	    String url = "qna/qnaWrite";
+	    
+	    HttpSession session = request.getSession();
+	    MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");    
+	    
+	    if (loginUser == null) {
+	      url = "loginForm";
+	    } 
+	    
+	    return url;
+	  }
+	
+	
+	@RequestMapping("/qnaWrite")
+	public String qnaWrite(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String url = "qna/qnaList";
+			
+		request.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession();
+		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+
+		if (loginUser == null) {
+			url = "loginForm";
+		} else {
+			QnaVO qnaVO = new QnaVO();
+			qnaVO.setSubject(request.getParameter("subject"));
+			qnaVO.setContent(request.getParameter("content"));
+			/* QnaDAO qnaDAO = QnaDAO_JDBC.getInstance(); */
+			QnaDAO qnaDAO = QnaDAO_iBatis.getInstance();
+			try {
+				qnaDAO.insertqna(qnaVO, loginUser.getId());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return url;
+	}
+	
 }
