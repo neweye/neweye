@@ -124,7 +124,7 @@
 							<%-- <input type="checkbox" name="result" value="${orderVO.odseq}"> --%>
 						</td>
 						<td>${orderVO.name}</td>
-						<td><a href="adminOrderDetail.ne?oseq=${orderVO.oseq}">${orderVO.pname}</a></td>
+						<td><a href="adminOrderDetail?oseq=${orderVO.oseq}">${orderVO.pname}</a></td>
 						<td>${orderVO.quantity}</td>
 						<td>${orderVO.address}</td>
 						<td>${orderVO.phone}</td>
