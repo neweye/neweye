@@ -235,10 +235,9 @@ public class MemberController {
 	@RequestMapping("/join")
 	public String Join(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-		String url = "redirect:login";
+		String url = "redirect:joinForm";
 		
 		HttpSession session = request.getSession();
 		
@@ -254,12 +253,15 @@ public class MemberController {
 	
 		//MemberDAO memberDAO = MemberDAO_JDBC.getInstance();
 		MemberDAO memberDAO = MemberDAO_iBatis.getInstance();
+		int result=-1;
 		try {
-			memberDAO.insertMember(memberVO);
+			result=memberDAO.insertMember(memberVO);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+		if(result==1){
+			url="redirect:login";
+		}
 		session.setAttribute("id", request.getParameter("id"));		
 		return url;
 	}
