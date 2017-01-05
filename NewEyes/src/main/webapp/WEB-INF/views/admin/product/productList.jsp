@@ -50,7 +50,8 @@
       <td>${productVO.quantity}</td>
       <td>
          <c:choose>
-             <c:when test='${productVO.useyn=="y"}'>판매</c:when>
+             <c:when test='${productVO.useyn=="Y"||productVO.useyn=="y"}'>
+             <c:if test='${productVO.kind!="0"}'>판매</c:if></c:when>
              <c:otherwise>판매중단</c:otherwise>             
           </c:choose>
           <c:if test='${productVO.kind=="0"}'>(삭제)</c:if>
