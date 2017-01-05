@@ -10,9 +10,9 @@ import javax.servlet.http.HttpSession;
 import com.neweye.action.Action;
 
 public class AdminLogoutAction implements Action {
-
+/*
   @Override
-  public String execute(HttpServletRequest request, HttpServletResponse response)
+  public String adminLogout(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     String url="bye.jsp";
     
@@ -23,5 +23,5 @@ public class AdminLogoutAction implements Action {
     }
     
     return url;
-  }
+  }*/
 }
