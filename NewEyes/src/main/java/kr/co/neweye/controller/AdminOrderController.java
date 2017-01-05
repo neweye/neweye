@@ -120,9 +120,6 @@ public class AdminOrderController {
 			String[] resultArr = request.getParameterValues("result");
 			String[] codeArr = request.getParameterValues("code");
 			
-			System.out.println(resultArr.toString());
-			System.out.println(codeArr.toString());
-			
 			for (int i = 0; i < resultArr.length; i++) {
 				
 				OrderVO orderVO = new OrderVO();
