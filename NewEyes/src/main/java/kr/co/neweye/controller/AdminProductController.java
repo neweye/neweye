@@ -19,6 +19,7 @@ import co.kr.neweye.ibatis.ProductDAO_iBatis;
 
 
 @Controller
+@RequestMapping("/admin")
 public class AdminProductController {
 
 	
@@ -28,7 +29,7 @@ public class AdminProductController {
 	      throws ServletException, IOException {
 
 	    //String url = "product/productList";
-		String url = "redirect:productList";
+		String url = "admin/product/productList";
 		
 	    String key=request.getParameter("key");
 	    String tpage=request.getParameter("tpage");
@@ -69,7 +70,7 @@ public class AdminProductController {
 	
 	
 	
-	@RequestMapping("/adminProductSearch")
+	/*@RequestMapping("/adminProductSearch")
 	public String adminProductSearch(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -109,7 +110,7 @@ public class AdminProductController {
 		
 		return url;
 	}
-
+*/
 	
 	
 	
