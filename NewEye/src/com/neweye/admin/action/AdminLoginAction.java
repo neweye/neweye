@@ -13,9 +13,9 @@ import com.neweye.dao.WorkerDAO;
 import com.neweye.dao.iBatis.WorkerDAO_iBatis;
 
 public class AdminLoginAction implements Action {
-
+/*
   @Override
-  public String execute(HttpServletRequest request, HttpServletResponse response)
+  public String adminLoginForm(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     String url = "adminLoginForm.ne";
     String msg = "";
@@ -42,5 +42,5 @@ public class AdminLoginAction implements Action {
     }
     request.setAttribute("message", msg);
     return url;
-  }
+  }*/
 }
