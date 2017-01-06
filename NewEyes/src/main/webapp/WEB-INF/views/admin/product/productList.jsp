@@ -49,6 +49,8 @@
       <td><fmt:formatNumber value="${productVO.price}"/></td>
       <td>${productVO.quantity}</td>
       <td>
+      <%--임시로 해놓았지만 판매중단인것을 다시 판매로 돌릴 때 Y뿐만 아니라
+      	kind도 사용자가 수정하도록 유효성 줘야함!! --%>
          <c:choose>
              <c:when test='${productVO.useyn=="Y"||productVO.useyn=="y"}'>판매
              <%-- <c:if test='${productVO.kind!="0"}'>판매</c:if> --%></c:when>
