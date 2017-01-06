@@ -112,6 +112,10 @@ table.product_img_detail{
 .img_detail_list{
 width:250px;
 }
+/* .img_product_img_detail{
+	width:700px;
+	margin:auto;
+} */
 
 
 input.btn_product_detail {
@@ -204,7 +208,7 @@ input.btn_product_detail:active {
  <!-- 상품상세 테이블 시작 -->
  <article>
   <table class="product_img_detail"><tr><td colspan="2" style="border-bottom:0">
-  <img src="<%=request.getContextPath() %>/productimg/${productVO.img_detail}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
+  <img class="img_product_img_detail" src="<%=request.getContextPath() %>/productimg/${productVO.img_detail}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
   <%-- <img src="<%=request.getContextPath()%>/productimg/D500_2.jpg"/> --%>
   </td></tr></table>
   
