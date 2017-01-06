@@ -224,16 +224,24 @@ public class AdminProductController {
        if(request.getParameter("distance")==null||request.getParameter("distance").equals("")) { productVO.setDistance(0);
        }else{ productVO.setDistance(Float.parseFloat(request.getParameter("distance"))); }
        
-       productVO.setUseyn(request.getParameter("useyn"));
-       productVO.setContent(request.getParameter("content"));
-       productVO.setSizee(request.getParameter("sizee"));
-       productVO.setFormat(request.getParameter("format"));
-       productVO.setFunctions(request.getParameter("functions"));
-       productVO.setZoomyn(request.getParameter("zoomyn"));
-       productVO.setTypes(request.getParameter("types"));
+       if(request.getParameter("useyn")==null||request.getParameter("useyn").isEmpty()){productVO.setUseyn(" ");
+       }else{productVO.setUseyn(request.getParameter("useyn"));}
+       if(request.getParameter("content")==null||request.getParameter("content").isEmpty()){productVO.setContent(" ");
+       }else{productVO.setContent(request.getParameter("content"));}
+       if(request.getParameter("sizee")==null||request.getParameter("sizee").isEmpty()){productVO.setSizee(" ");
+       }else{productVO.setSizee(request.getParameter("sizee"));}
+       if(request.getParameter("format")==null||request.getParameter("format").isEmpty()){productVO.setFormat(" ");
+       }else{productVO.setFormat(request.getParameter("format"));}
+       if(request.getParameter("functions")==null||request.getParameter("functions").isEmpty()){productVO.setFunctions(" ");
+       }else{productVO.setFunctions(request.getParameter("functions"));}
+       if(request.getParameter("zoomyn")==null||request.getParameter("zoomyn").isEmpty()){productVO.setZoomyn(" ");
+       }else{productVO.setZoomyn(request.getParameter("zoomyn"));}
+       if(request.getParameter("types")==null||request.getParameter("types").isEmpty()){productVO.setTypes(" ");
+       }else{productVO.setTypes(request.getParameter("types"));}
+       
+       
        productVO.setImg_list(request.getParameter("img_list"));
        productVO.setImg_detail(request.getParameter("img_detail"));
-       
        
        /*ProductDAO productDAO = ProductDAO_JDBC.getInstance();*/
        ProductDAO productDAO = ProductDAO_iBatis.getInstance();

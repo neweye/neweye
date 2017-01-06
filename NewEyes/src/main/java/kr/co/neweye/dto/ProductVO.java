@@ -228,5 +228,23 @@ public class ProductVO {
 	public void setTypes(String types) {
 		this.types = types;
 	}
+	@Override
+	public String toString() {
+		return "ProductVO [pseq=" + pseq + ", first_level=" + first_level
+				+ ", second_level=" + second_level + ", kind=" + kind
+				+ ", name=" + name + ", price=" + price + ", indate=" + indate
+				+ ", read_count=" + read_count + ", quantity=" + quantity
+				+ ", useyn=" + useyn + ", content=" + content + ", img_list="
+				+ img_list + ", img_detail=" + img_detail + ", sizee=" + sizee
+				+ ", weight=" + weight + ", ratio=" + ratio + ", pixel="
+				+ pixel + ", speed=" + speed + ", seqpictures=" + seqpictures
+				+ ", screen=" + screen + ", iso=" + iso + ", movframe="
+				+ movframe + ", format=" + format + ", filter=" + filter
+				+ ", functions=" + functions + ", zoomyn=" + zoomyn
+				+ ", minfocus=" + minfocus + ", maxfocus=" + maxfocus
+				+ ", minaperture=" + minaperture + ", maxaperture="
+				+ maxaperture + ", distance=" + distance + ", types=" + types
+				+ "]";
+	}
 	
 }
