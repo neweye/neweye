@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"  
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Member">
+
+   <typeAlias alias="str" type="java.lang.String" />
+   <typeAlias alias="int" type="java.lang.Integer" />
+   <typeAlias alias="product" type="kr.co.neweye.dto.ProductVO" />
+   <typeAlias alias="member" type="kr.co.neweye.dto.MemberVO" />
+   
+   <select id="confirmID" parameterClass="str" resultClass="member">
+      select * from member where id=#id#
+   </select>
+   
+   <select id="getMember" parameterClass="str" resultClass="member">
+      select * from member where id=#id#
+   </select>
+   
+   <update id="insertMember" parameterClass="member">
+      insert into member(id, password, name, email, zipNum, address, phone) 
+      values(#id#, #password#, #name#,#email#, #zipNum#, #address#, #phone#)
+   </update>
+   
+   <select id="listMember" parameterClass="str" resultClass="member">
+      select * from member where name like '%'||#name#||'%' order by indate desc
+   </select>
+   
+   <update id="updateMember" parameterClass="member">
+      update member set 
+      password=#password#,
+      name=#name#,
+      email=#email#,
+      zipnum=#zipNum#,
+      address=#address#,
+      phone=#phone# where id=#id#
+     </update>
+
+   <update id="deleteuseMember" parameterClass="str">
+   update member set useyn='n' where id=#id#
+   </update>
+   
+   <select id="serchId" parameterClass="member" resultClass="member">
+      select * from member where name=#name# and phone=#phone#
+   </select>
+  
+     
+</sqlMap>

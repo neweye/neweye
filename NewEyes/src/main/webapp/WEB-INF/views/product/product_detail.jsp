@@ -60,21 +60,22 @@
 }
 div#detail_table_outline{
    margin:30px auto;
-   width: 800px;
+   width: 700px;
    border : 1px dashed #888888;
 }
 div.product_detail_div{
-margin: 30px auto;
-
- width: 800px;
- height: 550px;
-   border: 1px solid #999999;
+	margin: 50px auto;
+	width: 700px;
+	height: 450px;
+	padding:10px;
+	border: 1px solid #999999;
 }
 table.product_detail{
-margin:50px auto;
- width: 800px;
- height: 500px;
-/* border: 1px solid #999999; */
+margin:auto;
+ width: 680px;
+ height: 430px;
+border: 0px;
+font-size:17px;
 
 }
 
@@ -90,7 +91,7 @@ th#th_detail_table{
 }
 
 td#td_img_detail{
- width:600px;  /* 여기 왜 적용이 안되는가... */
+ width:400px;  /* 여기 왜 적용이 안되는가... */
  text-align:center;
 }
 
@@ -109,7 +110,7 @@ table.product_img_detail{
 }
 
 .img_detail_list{
-width:400px;
+width:250px;
 }
 
 
@@ -163,6 +164,7 @@ input.btn_product_detail:active {
 
  <!-- 상품 상세 상단 영역 시작 -->
  <article>
+
  <form method="post" name="formm">
  <div class="product_detail_div">
   <table class="product_detail">
@@ -172,19 +174,19 @@ input.btn_product_detail:active {
     <img class="img_detail_list" src="<%=request.getContextPath() %>/productimg/${productVO.img_list}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
     </td>
     <td style="background:#cccccc; width:2px;" rowspan="3" ></td>
-    <td colspan="2">${productVO.name}</td>
+    <td colspan="2" style="border-bottom:0;">${productVO.name}</td>
    </tr>
    <tr>
-    <td>가격</td>
-    <td>| <fmt:formatNumber value="${productVO.price}" type="number"/> 원</td>
+    <td style="border-bottom:0;">가격</td>
+    <td style="border-bottom:0;">| <fmt:formatNumber value="${productVO.price}" type="number"/> 원</td>
    </tr>
    <tr>
-    <td>수량</td>
-    <td>| <input type="text" name="quantity" value="1" style="width:30px"/> ea&nbsp;
+    <td style="border-bottom:0;">수량</td>
+    <td style="border-bottom:0;">| <input type="text" name="quantity" value="1" style="width:30px"/> ea&nbsp;
     </td>
    </tr>
      <tr>
-    <td colspan="4" style="text-align:center;">
+    <td colspan="4" style="text-align:center;border-bottom:0;">
      <input type="hidden" name="pseq" value="${productVO.pseq}"/>
      <input type="button" class="btn_product_detail" value="ADD TO CART" class="submit" onclick="go_addcart()"/>&nbsp;&nbsp;
      <input type="button" class="btn_product_detail" value="BUY NOW" class="submit" onclick="go_buynow()" />&nbsp;&nbsp;
@@ -201,7 +203,7 @@ input.btn_product_detail:active {
 
  <!-- 상품상세 테이블 시작 -->
  <article>
-  <table class="product_img_detail"><tr><td>
+  <table class="product_img_detail"><tr><td colspan="2" style="border-bottom:0">
   <img src="<%=request.getContextPath() %>/productimg/${productVO.img_detail}" onerror="this.src='<%=request.getContextPath() %>/productimg/default.png'"/>
   <%-- <img src="<%=request.getContextPath()%>/productimg/D500_2.jpg"/> --%>
   </td></tr></table>
@@ -212,12 +214,10 @@ input.btn_product_detail:active {
    
    <tr style="background:#999999; height:5px;"><td colspan="6"></td></tr>
    
-   <c:if test="${!empty productVO.pseq || productVO.pseq!=0 || productVO.pseq!=' '}">
    <tr>
     <td class="content_td">상품번호</td>
-    <td>| ${productVO.pseq}</td>
+    <td>| No.${productVO.pseq}</td>
    </tr>
-   </c:if>
    <tr>
     <td  class="content_td">대분류</td>
     <td>| ${productVO.first_level}</td>
@@ -239,79 +239,92 @@ input.btn_product_detail:active {
     <td>| <fmt:formatDate value="${productVO.indate}" pattern="yyyy-MM-dd" /></td>
    </tr>
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   --> 
-    <c:if test="${!empty productVO.sizee || productVO.sizee!=0 || productVO.sizee!=' '}">
+    <%-- <c:if test="${!empty productVO.sizee || productVO.sizee!=0 || productVO.sizee!=' '}"> --%>
+    <c:if test="${productVO.sizee!=' '}">
    <tr>
     <td  class="content_td">크기</td>
     <td>| ${productVO.sizee}</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.weight || productVO.weight!=0 || productVO.weight!=' '}">
+   <%-- <c:if test="${!empty productVO.weight || productVO.weight!=0 || productVO.weight!=' '}"> --%>
+   <c:if test="${productVO.weight!=0}">
    <tr>
     <td  class="content_td">무게</td>
     <td>| ${productVO.weight}g</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.ratio || productVO.ratio!=0 || productVO.ratio!=' '}">
+   <%-- <c:if test="${!empty productVO.ratio || productVO.ratio!=0 || productVO.ratio!=' '}"> --%>
+   <c:if test="${productVO.ratio!=0 }">
    <tr>
     <td  class="content_td">센서크기</td>
     <td>| ${productVO.ratio}</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.pixel || productVO.pixel!=0 || productVO.pixel!=' '}">
+  <%--  <c:if test="${!empty productVO.pixel || productVO.pixel!=0 || productVO.pixel!=' '}"> --%>
+  	 <c:if test="${productVO.pixel!=0}">
    <tr>
     <td  class="content_td">화소</td>
     <td>| ${productVO.pixel}만 화소</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.speed || productVO.speed!=0 || productVO.speed!=' '}">
+  <%--  <c:if test="${!empty productVO.speed || productVO.speed!=0 || productVO.speed!=' '}"> --%>
+   <c:if test="${productVO.speed!=0}">
    <tr>
     <td  class="content_td">최소셔터스피드</td>
     <td>| 1/${productVO.speed}</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.seqpictures || productVO.seqpictures!=0 || productVO.seqpictures!=' '}">
+   <%-- <c:if test="${!empty productVO.seqpictures || productVO.seqpictures!=0 || productVO.seqpictures!=' '}"> --%>
+   <c:if test="${productVO.seqpictures!=0}">
    <tr>
     <td  class="content_td">연속촬영</td>
     <td>| ${productVO.seqpictures}매</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.screen || productVO.screen!=0 || productVO.screen!=' '}">
+   <%-- <c:if test="${!empty productVO.screen || productVO.screen!=0 || productVO.screen!=' '}"> --%>
+   <c:if test="${productVO.screen!=0}">
    <tr>
     <td  class="content_td">화면크기</td>
     <td>| ${productVO.screen}cm</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.iso || productVO.iso!=0 || productVO.iso!=' '}">
+   <%-- <c:if test="${!empty productVO.iso || productVO.iso!=0 || productVO.iso!=' '}"> --%>
+   <c:if test="${productVO.iso!=0}">
    <tr>
     <td  class="content_td">ISO</td>
     <td>| ${productVO.iso}</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.movframe || productVO.movframe!=0 || productVO.movframe!=' '}">
+   <%-- <c:if test="${!empty productVO.movframe || productVO.movframe!=0 || productVO.movframe!=' '}"> --%>
+   <c:if test="${productVO.movframe!=0}">
    <tr>
     <td  class="content_td">동영상프레임</td>
     <td>| ${productVO.movframe}장</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.format || productVO.format!=0 || productVO.format!=' '}">
+   <%-- <c:if test="${!empty productVO.format || productVO.format!=0 || productVO.format!=' '}"> --%>
+   <c:if test="${productVO.format!=' '}">
    <tr>
     <td  class="content_td">렌즈호환</td>
     <td>| ${productVO.format}</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.filter || productVO.filter!=0 || productVO.filter!=' '}">
+   <%-- <c:if test="${!empty productVO.filter || productVO.filter!=0 || productVO.filter!=' '}"> --%>
+   <c:if test="${productVO.filter!=0}">
    <tr>
     <td  class="content_td">필터구경</td>
     <td>| ${productVO.filter}mm</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.functions || productVO.functions!=0 || productVO.functions!=' '}">
+   <%-- <c:if test="${!empty productVO.functions || productVO.functions!=0 || productVO.functions!=' '}"> --%>
+   <c:if test="${productVO.functions!=' '}">
    <tr>
     <td  class="content_td">렌즈기능</td>
     <td>| ${productVO.functions}</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.zoomyn || productVO.zoomyn!=0 || productVO.zoomyn!=' '}">
+   <%-- <c:if test="${!empty productVO.zoomyn || productVO.zoomyn!=0 || productVO.zoomyn!=' '}"> --%>
+   <c:if test="${productVO.zoomyn!=' '}">
    <tr>
     <td  class="content_td">줌</td>
     <td>| 
@@ -324,43 +337,49 @@ input.btn_product_detail:active {
     </td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.minfocus || productVO.minfocus!=0 || productVO.minfocus!=' '}">
+   <%-- <c:if test="${!empty productVO.minfocus || productVO.minfocus!=0 || productVO.minfocus!=' '}"> --%>
+   <c:if test="${productVO.minfocus!=0}">
    <tr>
     <td class="content_td">최소초점거리</td>
     <td>| ${productVO.minfocus}mm</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.maxfocus || productVO.maxfocus!=0 || productVO.maxfocus!=' '}">
+   <%-- <c:if test="${!empty productVO.maxfocus || productVO.maxfocus!=0 || productVO.maxfocus!=' '}"> --%>
+   <c:if test="${productVO.maxfocus!=0}">
    <tr>
     <td class="content_td">최대초첨거리</td>
     <td>| ${productVO.maxfocus}mm</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.minaperture || productVO.minaperture!=0 || productVO.minaperture!=' '}">
+   <%-- <c:if test="${!empty productVO.minaperture || productVO.minaperture!=0 || productVO.minaperture!=' '}"> --%>
+   <c:if test="${productVO.minaperture!=0}">
    <tr>
     <td class="content_td">최소조리개</td>
     <td>| f/${productVO.minaperture}</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.maxaperture || productVO.maxaperture!=0 || productVO.maxaperture!=' '}">
+   <%-- <c:if test="${!empty productVO.maxaperture || productVO.maxaperture!=0 || productVO.maxaperture!=' '}"> --%>
+   <c:if test="${productVO.maxaperture!=0}">
    <tr>
     <td class="content_td">최대조리개</td>
     <td>| f/${productVO.maxaperture}</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.distance || productVO.distance!=0 || productVO.distance!=' '}">
+   <%-- <c:if test="${!empty productVO.distance || productVO.distance!=0 || productVO.distance!=' '}"> --%>
+   <c:if test="${productVO.distance!=0}">
    <tr>
     <td class="content_td">최소촬영거리</td>
     <td>| ${productVO.distance}cm</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.types || productVO.types!=0 || productVO.types!=' '}">
+   <%-- <c:if test="${!empty productVO.types || productVO.types!=0 || productVO.types!=' '}"> --%>
+   <c:if test="${productVO.types!=' '}">
    <tr>
     <td class="content_td">액세서리 분류</td>
     <td>| ${productVO.types}</td>
    </tr>
    </c:if>
-   <c:if test="${!empty productVO.content || productVO.content!=0 || productVO.content!=' '}">
+   <c:if test="${productVO.content!=' '}">
     <tr>
     <td class="content_td">상품설명</td>
     <td>| ${productVO.content}</td>
