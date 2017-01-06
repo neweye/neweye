@@ -108,7 +108,7 @@ td.td_product_add{
 <tr>
 <th class="th_product_add">가격</th>
   <td class="td_product_add">
-    <input type="text" class="p_input_common" name="price" onKeyUp='NumFormat(this)' value="${productVO.price}">
+    <input type="text" class="p_input_common" name="price" value="${productVO.price}">
   </td>
   <th class="th_product_add">수량</th>
   <td class="td_product_add">
