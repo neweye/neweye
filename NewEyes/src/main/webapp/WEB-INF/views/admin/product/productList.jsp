@@ -49,12 +49,14 @@
       <td><fmt:formatNumber value="${productVO.price}"/></td>
       <td>${productVO.quantity}</td>
       <td>
+      <%--임시로 해놓았지만 판매중단인것을 다시 판매로 돌릴 때 Y뿐만 아니라
+      	kind도 사용자가 수정하도록 유효성 줘야함!! --%>
          <c:choose>
-             <c:when test='${productVO.useyn=="Y"||productVO.useyn=="y"}'>
-             <c:if test='${productVO.kind!="0"}'>판매</c:if></c:when>
+             <c:when test='${productVO.useyn=="Y"||productVO.useyn=="y"}'>판매
+             <%-- <c:if test='${productVO.kind!="0"}'>판매</c:if> --%></c:when>
              <c:otherwise>판매중단</c:otherwise>             
           </c:choose>
-          <c:if test='${productVO.kind=="0"}'>(삭제)</c:if>
+          <c:if test='${productVO.useyn=="N"&&productVO.kind=="0"}'>(삭제)</c:if>
         </td> 
       <td><fmt:formatDate value="${productVO.indate }" pattern="yyyy-MM-dd" /></td>
       <th><a href="adminProductUpdateForm?pseq=${productVO.pseq}">수정</a>/<a href="adminDelete?pseq=${productVO.pseq}">삭제</a></th>
